@@ -7,13 +7,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/"></Route>
-          <Route path="/"></Route>
-          <Route path="/"></Route>
-          <Route path="/"></Route>
-          <Route path="/"></Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/"></Route>
+            <Route path="/"></Route>
+            <Route path="/"></Route>
+            <Route path="/"></Route>
+            <Route path="/"></Route>
+          </Switch>
+        </Layout>
       </BrowserRouter>
     </div>
   );
