@@ -6,7 +6,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route></Route>
+          <Route exact path="/"></Route>
+          <Route path="/"></Route>
+          <Route path="/"></Route>
+          <Route path="/"></Route>
+          <Route path="/"></Route>
         </Switch>
       </BrowserRouter>
     </div>
