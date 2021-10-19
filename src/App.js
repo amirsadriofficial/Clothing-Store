@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Switch, Router} from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
