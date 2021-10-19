@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
+          <Route></Route>
         </Switch>
       </BrowserRouter>
     </div>
