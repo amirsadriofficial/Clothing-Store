@@ -4,7 +4,8 @@ import Footer from './Footer';
 
 const Layout = () => {
     <Header/>;
-    <div>Layout</div>
+    <div>Layout</div>;
+    <Footer/>;
 }
 
 export default Layout;
