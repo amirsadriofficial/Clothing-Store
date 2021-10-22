@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Layout from './../src/container/Layout';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import './App.css'
+import Layout from './../src/container/Layout'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         </Layout>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
