@@ -10,7 +10,7 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path="/" />
-            <Route path="/1" />
+            <Route path="/" />
             <Route path="/" />
             <Route path="/" />
             <Route path="/" />
