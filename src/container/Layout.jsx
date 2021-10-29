@@ -7,6 +7,7 @@ const Layout = () => {
     <>
       <Header />
       <div> Layout </div>
+      {Children}
       <Footer />
     </>
   )
