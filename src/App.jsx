@@ -16,18 +16,19 @@ function App() {
               <Shop />
             </Route>
             <Route path="/about">
-              <about />
+              <About />
             </Route>
             <Route path="/contact">
-              <contact />
+              <Contact />
             </Route>
-            <Route path="/" />
-            <cart />
+            <Route path="/">
+              <Cart />
             </Route>
           </Switch>
         </Layout>
       </BrowserRouter>
-    </  )
+    </div>
+  )
 }
 
 export default App
