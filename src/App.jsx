@@ -13,13 +13,13 @@ function App() {
               <Home />
             </Route>
             <Route path="/shop">
-              <Home />
+              <shop />
             </Route>
             <Route path="/about">
-              <Home />
+              <about />
             </Route>
             <Route path="/contact">
-              <Home />
+              <contact />
             </Route>
             <Route path="/" />
           </Switch>
