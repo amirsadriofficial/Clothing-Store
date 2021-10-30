@@ -9,10 +9,18 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/" />
-            <Route path="/shop" />
-            <Route path="/about" />
-            <Route path="/contact" />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/shop">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <Home />
+            </Route>
+            <Route path="/contact">
+              <Home />
+            </Route>
             <Route path="/" />
           </Switch>
         </Layout>
