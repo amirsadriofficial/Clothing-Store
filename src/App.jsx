@@ -21,7 +21,7 @@ function App() {
             <Route path="/contact">
               <Contact />
             </Route>
-            <Route path="/">
+            <Route path="/cart">
               <Cart />
             </Route>
           </Switch>
