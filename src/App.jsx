@@ -13,7 +13,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/shop">
-              <shop />
+              <Shop />
             </Route>
             <Route path="/about">
               <about />
@@ -22,11 +22,12 @@ function App() {
               <contact />
             </Route>
             <Route path="/" />
+            <cart />
+            </Route>
           </Switch>
         </Layout>
       </BrowserRouter>
-    </div>
-  )
+    </  )
 }
 
 export default App
