@@ -2,10 +2,12 @@ import React from 'react'
 
 const Header = () => {
   return (
-    // Header desktop
-    <div className="container">
-      {/* Topbar */}
-<div></div>
+    // Header Desktop
+    <div className="black">
+      <div className="right-align">
+        Free shopping for standard order over $100
+      </div>
+    </div>
   )
 }
 
