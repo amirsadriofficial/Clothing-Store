@@ -1,3 +1,27 @@
 /* 
 The App.css file is currently empty
 */
+/* #top-bar {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around;
+  align-items: center;
+} */
+
+#top-bar div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff;
+}
+#top-bar div div a {
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+#top-bar div div a:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
