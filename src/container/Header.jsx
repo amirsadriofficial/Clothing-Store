@@ -15,59 +15,64 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <nav className="container navbar navbar-expand-md navbar-light mb-3">
-        <a href="#/" className="navbar-brand">
-          <img
-            src={Logo}
-            alt=""
-            style={{
-              height: '50px',
-              width: '100px',
-            }}
-          />
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#/">
-                خانه
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/">
-                درباره ما
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/">
-                خدمات
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/">
-                ارتباط با ما
-              </a>
-            </li>
-          </ul>
-
-          <form className="form-inline mr-auto">
-            <input
-              type="text"
-              className="form-control ml-2"
-              placeholder="جستحو ..."
+      <nav
+        id="navbar"
+        className="container navbar navbar-expand-md navbar-light mb-3"
+      >
+        <div className="container">
+          <a href="#/" className="navbar-brand">
+            <img
+              src={Logo}
+              alt=""
+              style={{
+                height: '50px',
+                width: '100px',
+              }}
             />
-            <button type="button" className="btn btn-outline-success">
-              جستجو
-            </button>
-          </form>
+          </a>
+          <button
+            type="button"
+            className="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="#/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#/">
+                  Shop
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#/">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#/">
+                  Contact
+                </a>
+              </li>
+            </ul>
+
+            <form className="form-inline d-flex mr-auto">
+              <button type="button" className="btn btn-outline-primary">
+                Search
+              </button>
+              <input
+                type="text"
+                className="form-control ml-2"
+                placeholder="Search ..."
+              />
+            </form>
+          </div>
         </div>
       </nav>
     </>

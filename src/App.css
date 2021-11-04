@@ -1,9 +1,5 @@
 #top-bar {
   background: #000;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center; */
 }
 #top-bar div {
   display: flex;
@@ -24,9 +20,9 @@
 #top-bar div div a:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
-/* nav {
-  background-color !important;
-} */
-/* .Logo {
-  background-image: url(./../public/images/logo.png);
-} */
+#navbar div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+}
