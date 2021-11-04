@@ -1,9 +1,10 @@
-/* #top-bar {
-  display: flex;
+#top-bar {
+  background: #000;
+  /* display: flex;
   flex-direction: row;
-  /* justify-content: space-around;
-  align-items: center;
-} */
+  justify-content: space-around;
+  align-items: center; */
+}
 #top-bar div {
   display: flex;
   flex-direction: row;
@@ -18,7 +19,7 @@
   padding-left: 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   color: #b2b2b2;
-  /* text-decoration: none; */
+  text-decoration: none;
 }
 #top-bar div div a:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
