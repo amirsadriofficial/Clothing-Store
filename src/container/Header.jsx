@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from '../images/logo.png'
 
 const Header = () => {
   return (
@@ -17,15 +18,22 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <nav className="limiter-menu-desktop container">
+        <nav className="container">
           {/* <!-- Logo desktop -->		 */}
-          <a href="#/" className="logo">
-            <img src="./../../public/images/logo.png" alt="IMG-LOGO" />
+          <a href="#/" className="">
+            <img
+              src={Logo}
+              alt=""
+              style={{
+                height: '100px',
+                width: '100px',
+              }}
+            />
           </a>
           {/* <!-- Menu desktop --> */}
-          <div className="menu-desktop">
-            <ul className="main-menu">
-              <li className="active-menu">
+          <div className="">
+            <ul className="">
+              <li className="">
                 <a href="#/">Home</a>
               </li>
               <li>
@@ -40,22 +48,15 @@ const Header = () => {
             </ul>
           </div>
           {/* <!-- Icon header */}
-          <div className="wrap-icon-header flex-w flex-r-m">
-            <div className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-              <i className="zmdi zmdi-search" />
+          <div className="">
+            <div className="">
+              <i className="" />
             </div>
-            <div
-              className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-              data-notify="2"
-            >
-              <i className="zmdi zmdi-shopping-cart" />
+            <div className="" data-notify="2">
+              <i className="" />
             </div>
-            <a
-              href="#/"
-              className="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-              data-notify="0"
-            >
-              <i className="zmdi zmdi-favorite-outline" />
+            <a href="#/" className="" data-notify="0">
+              <i className="" />
             </a>
           </div>
         </nav>
