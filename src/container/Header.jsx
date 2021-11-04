@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
+    <div id="top-bar" className="black">
       <div className="left-align">
         Free shipping for standard order over $100
       </div>
