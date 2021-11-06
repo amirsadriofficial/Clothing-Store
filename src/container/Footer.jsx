@@ -10,25 +10,25 @@ const Footer = () => {
 
             <ul>
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Women
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Men
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Shoes
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Watches
                 </a>
               </li>
@@ -40,25 +40,25 @@ const Footer = () => {
 
             <ul>
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Track Order
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Returns
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   Shipping
                 </a>
               </li>
 
               <li className="p-b-10">
-                <a href="#" className="stext-107 cl7 hov-cl1 trans-04">
+                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
                   FAQs
                 </a>
               </li>
