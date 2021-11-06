@@ -6,8 +6,8 @@ import { AiOutlineLinkedin, AiOutlineFacebook } from 'react-icons/ai'
 const Footer = () => {
   return (
     <div id="footer">
-      <div className="container">
-        <div className="row">
+      <div className="container pt-5 pb-5">
+        <div className="row pt-4">
           <div className="col-sm-6 col-lg-3 p-b-50">
             <h4>Help</h4>
             <ul className="reset-space">
@@ -62,6 +62,28 @@ const Footer = () => {
                 <a href="#/">Watches</a>
               </li>
             </ul>
+          </div>
+          <div className="col-sm-6 col-lg-3 p-b-50">
+            <h4 className="stext-301 cl0 p-b-30">Newsletter</h4>
+            <form>
+              <div className="wrap-input1 w-full p-b-4">
+                <input
+                  className="input1 bg-none plh1 stext-107 cl7"
+                  type="text"
+                  name="email"
+                  placeholder="email@example.com"
+                />
+                <div className="focus-input1 trans-04" />
+              </div>
+              <div className="p-t-18">
+                <button
+                  type="button"
+                  className="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
