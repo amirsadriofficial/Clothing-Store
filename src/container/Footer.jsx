@@ -27,31 +27,22 @@ const Footer = () => {
           </div>
 
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4 className="stext-301 cl0 p-b-30">Help</h4>
-
+            <h4>Help</h4>
             <ul>
-              <li className="p-b-10">
-                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
-                  Track Order
-                </a>
+              <li>
+                <a href="#/">Track Order</a>
               </li>
 
-              <li className="p-b-10">
-                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
-                  Returns
-                </a>
+              <li>
+                <a href="#/">Returns</a>
               </li>
 
-              <li className="p-b-10">
-                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
-                  Shipping
-                </a>
+              <li>
+                <a href="#/">Shipping</a>
               </li>
 
-              <li className="p-b-10">
-                <a href="#/" className="stext-107 cl7 hov-cl1 trans-04">
-                  FAQs
-                </a>
+              <li>
+                <a href="#/">FAQs</a>
               </li>
             </ul>
           </div>
