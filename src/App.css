@@ -1,3 +1,4 @@
+/* ---------------------------------------- Start Header ---------------------------------------- */
 #top-bar {
   background: #000;
 }
@@ -26,3 +27,23 @@
   justify-content: space-between !important;
   align-items: center;
 }
+/* ---------------------------------------- End Header ---------------------------------------- */
+/* ---------------------------------------- Start Footer ---------------------------------------- */
+#footer {
+  background-color: #000;
+  color: #fff;
+}
+#footer div div ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+#footer div div ul li {
+  list-style: none;
+}
+#footer div div ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+/* ---------------------------------------- End Footer ---------------------------------------- */
