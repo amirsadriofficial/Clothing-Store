@@ -55,4 +55,11 @@
 #social-media a {
   margin-right: 20px;
 }
+#pay-author {
+  margin-top: 100px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 /* ---------------------------------------- End Footer ---------------------------------------- */
