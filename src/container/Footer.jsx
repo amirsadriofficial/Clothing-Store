@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-sm-6 col-lg-3 p-b-50">
             <h4>Categories</h4>
-            <ul>
+            <ul className="reset-space">
               <li>
                 <a href="#/">Women</a>
               </li>
@@ -28,7 +28,7 @@ const Footer = () => {
 
           <div className="col-sm-6 col-lg-3 p-b-50">
             <h4>Help</h4>
-            <ul>
+            <ul className="reset-space">
               <li>
                 <a href="#/">Track Order</a>
               </li>
