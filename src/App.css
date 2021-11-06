@@ -33,8 +33,7 @@
   background-color: #000;
   color: #fff;
 }
-#footer div div div,
-#footer div div div ul li {
+#footer div div div {
   display: flex;
   flex-direction: column;
   justify-content: center;
