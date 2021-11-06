@@ -64,7 +64,7 @@ const Header = () => {
               </li>
             </ul>
             <div>
-              <form className="form-inline d-flex">
+              <form className="form-inline d-flex me-3">
                 <button type="button" className="btn btn-outline-primary">
                   Search
                 </button>
@@ -74,7 +74,7 @@ const Header = () => {
                   placeholder="Search ..."
                 />
               </form>
-              <MdShoppingCart size={30} />
+              <MdShoppingCart size={30} className="me-3" />
               <FiHeart size={30} />
             </div>
           </div>
