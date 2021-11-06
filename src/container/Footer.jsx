@@ -2,6 +2,11 @@ import React from 'react'
 import { BsInstagram } from 'react-icons/bs'
 import { FiTwitter } from 'react-icons/fi'
 import { AiOutlineLinkedin, AiOutlineFacebook } from 'react-icons/ai'
+import icon_pay_01 from '../images/icons/icon-pay-01.png'
+import icon_pay_02 from '../images/icons/icon-pay-02.png'
+import icon_pay_03 from '../images/icons/icon-pay-03.png'
+import icon_pay_04 from '../images/icons/icon-pay-04.png'
+import icon_pay_05 from '../images/icons/icon-pay-05.png'
 
 const Footer = () => {
   return (
@@ -81,6 +86,30 @@ const Footer = () => {
                 </button>
               </div>
             </form>
+          </div>
+          <div className="p-t-40">
+            <div className="flex-c-m flex-w p-b-18">
+              <a href="#/" className="m-all-1">
+                <img src={icon_pay_01} alt="ICON-PAY" />
+              </a>
+
+              <a href="#/" className="m-all-1">
+                <img src={icon_pay_02} alt="ICON-PAY" />
+              </a>
+
+              <a href="#/" className="m-all-1">
+                <img src={icon_pay_03} alt="ICON-PAY" />
+              </a>
+
+              <a href="#/" className="m-all-1">
+                <img src={icon_pay_04} alt="ICON-PAY" />
+              </a>
+
+              <a href="#/" className="m-all-1">
+                <img src={icon_pay_05} alt="ICON-PAY" />
+              </a>
+              <p>Developed by @Amir Sadri</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdShoppingCart } from 'react-icons/md'
 import { FiHeart } from 'react-icons/fi'
-import Logo from '../images/logo.png'
+import Logo from '../images/icons/logo.png'
 
 const Header = () => {
   return (
