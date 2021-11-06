@@ -1,4 +1,7 @@
 import React from 'react'
+import { BsInstagram } from 'react-icons/bs'
+import { FiTwitter } from 'react-icons/fi'
+import { AiOutlineLinkedin, AiOutlineFacebook } from 'react-icons/ai'
 
 const Footer = () => {
   return (
@@ -23,20 +26,23 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4 className="stext-301 cl0 p-b-30">GET IN TOUCH</h4>
-            <p className="stext-107 cl7 size-201">
-              Any questions? Let us know in store at 8th floor, 379 Hudson St,
-              New York, NY 10018 or call us on (+1) 96 716 6879
+            <h4>GET IN TOUCH</h4>
+            <p>
+              Lorem ipsum dolor sit amet, duo te graeci apeirian, at has
+              albucius salutatus referrentur. Nusquam mandamus te qui.
             </p>
-            <div className="p-t-27">
-              <a href="#/" className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                <i className="fa fa-facebook" />
+            <div id="social-media">
+              <a href="#/">
+                <AiOutlineFacebook size={20} />
               </a>
-              <a href="#/" className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                <i className="fa fa-instagram" />
+              <a href="#/">
+                <FiTwitter />
               </a>
-              <a href="#/" className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                <i className="fa fa-pinterest-p" />
+              <a href="#/">
+                <BsInstagram />
+              </a>
+              <a href="#/">
+                <AiOutlineLinkedin size={20} />
               </a>
             </div>
           </div>

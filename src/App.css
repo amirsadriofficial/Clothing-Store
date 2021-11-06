@@ -46,4 +46,13 @@
   color: #fff;
   text-decoration: none;
 }
+#social-media {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: stretch !important;
+}
+#social-media a {
+  margin-right: 20px;
+}
 /* ---------------------------------------- End Footer ---------------------------------------- */
