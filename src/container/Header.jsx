@@ -27,8 +27,8 @@ const Header = () => {
               src={Logo}
               alt=""
               style={{
-                height: '50px',
-                width: '100px',
+                height: '40px',
+                width: '120px',
               }}
             />
           </a>
