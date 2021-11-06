@@ -43,7 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4 className="pb-3">GET IN TOUCH</h4>
+            <h4 className="pb-3">Get In Touch</h4>
             <p>
               Lorem ipsum dolor sit amet, duo te graeci apeirian, at has
               albucius salutatus referrentur. Nusquam mandamus te qui.
@@ -71,7 +71,7 @@ const Footer = () => {
                   type="text"
                   name="email"
                   placeholder="email@example.com"
-                  className="customize-input"
+                  className="customize-input mb-4 p-2"
                 />
                 {/* <div className="focus-input1 trans-04" /> */}
               </div>

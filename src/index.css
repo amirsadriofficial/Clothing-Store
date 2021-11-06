@@ -2,3 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.customize-input {
+  background: none;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
