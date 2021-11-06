@@ -6,8 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4 className="stext-301 cl0 p-b-30">Categories</h4>
-
+            <h4>Categories</h4>
             <ul>
               <li>
                 <a href="#/">Women</a>
