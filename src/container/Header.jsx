@@ -1,4 +1,6 @@
 import React from 'react'
+import { MdShoppingCart } from 'react-icons/md'
+import { FiHeart } from 'react-icons/fi'
 import Logo from '../images/logo.png'
 
 const Header = () => {
@@ -61,17 +63,20 @@ const Header = () => {
                 </a>
               </li>
             </ul>
-
-            <form className="form-inline d-flex mr-auto">
-              <button type="button" className="btn btn-outline-primary">
-                Search
-              </button>
-              <input
-                type="text"
-                className="form-control ml-2"
-                placeholder="Search ..."
-              />
-            </form>
+            <div>
+              <form className="form-inline d-flex mr-auto">
+                <button type="button" className="btn btn-outline-primary">
+                  Search
+                </button>
+                <input
+                  type="text"
+                  className="form-control ml-2"
+                  placeholder="Search ..."
+                />
+              </form>
+              <MdShoppingCart />
+              <FiHeart />
+            </div>
           </div>
         </div>
       </nav>
