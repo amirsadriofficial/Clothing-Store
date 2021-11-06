@@ -74,8 +74,12 @@ const Header = () => {
                   placeholder="Search ..."
                 />
               </form>
-              <MdShoppingCart size={30} className="me-3" />
-              <FiHeart size={30} />
+              <a href="#/">
+                <MdShoppingCart size={30} className="me-3" />
+              </a>
+              <a href="#/">
+                <FiHeart size={30} />
+              </a>
             </div>
           </div>
         </div>
