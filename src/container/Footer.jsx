@@ -9,7 +9,24 @@ const Footer = () => {
       <div className="container pt-5 pb-5">
         <div className="row pt-4">
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4>Help</h4>
+            <h4 className="pb-3">Categories</h4>
+            <ul className="reset-space">
+              <li>
+                <a href="#/">Women</a>
+              </li>
+              <li>
+                <a href="#/">Men</a>
+              </li>
+              <li>
+                <a href="#/">Shoes</a>
+              </li>
+              <li>
+                <a href="#/">Watches</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-6 col-lg-3 p-b-50">
+            <h4 className="pb-3">Help</h4>
             <ul className="reset-space">
               <li>
                 <a href="#/">Track Order</a>
@@ -26,7 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4>GET IN TOUCH</h4>
+            <h4 className="pb-3">GET IN TOUCH</h4>
             <p>
               Lorem ipsum dolor sit amet, duo te graeci apeirian, at has
               albucius salutatus referrentur. Nusquam mandamus te qui.
@@ -47,39 +64,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4>Categories</h4>
-            <ul className="reset-space">
-              <li>
-                <a href="#/">Women</a>
-              </li>
-              <li>
-                <a href="#/">Men</a>
-              </li>
-              <li>
-                <a href="#/">Shoes</a>
-              </li>
-              <li>
-                <a href="#/">Watches</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-6 col-lg-3 p-b-50">
-            <h4 className="stext-301 cl0 p-b-30">Newsletter</h4>
+            <h4 className="pb-3">Newsletter</h4>
             <form>
-              <div className="wrap-input1 w-full p-b-4">
+              <div>
                 <input
-                  className="input1 bg-none plh1 stext-107 cl7"
                   type="text"
                   name="email"
                   placeholder="email@example.com"
+                  className="customize-input"
                 />
-                <div className="focus-input1 trans-04" />
+                {/* <div className="focus-input1 trans-04" /> */}
               </div>
-              <div className="p-t-18">
-                <button
-                  type="button"
-                  className="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04"
-                >
+              <div>
+                <button type="button" className="btn btn-outline-primary">
                   Subscribe
                 </button>
               </div>
