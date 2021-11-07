@@ -21,6 +21,9 @@
 #top-bar div div a:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
+#navbar {
+  background-color: #fff;
+}
 #navbar div div {
   display: flex;
   flex-direction: row;
@@ -66,11 +69,14 @@
 /* ---------------------------------------- Start Home ---------------------------------------- */
 #slideOne {
   background: url(./images/root/slide-01.jpg);
+  width: 100vw;
 }
 #slideTwo {
   background: url(./images/root/slide-02.jpg);
+  width: 100vw;
 }
 #slideThree {
   background: url(./images/root/slide-03.jpg);
+  width: 100vw;
 }
 /* ---------------------------------------- End Home ---------------------------------------- */

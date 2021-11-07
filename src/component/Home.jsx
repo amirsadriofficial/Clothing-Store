@@ -17,14 +17,14 @@ const Home = () => {
     <>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Slider {...settings}>
-        <div>
-          <div id="slideOne" className="slide-landing-page" />
+        <div id="slideOne" className="slide-landing-page">
+          <div>A</div>
         </div>
-        <div>
-          <div id="slideTwo" className="slide-landing-page" />
+        <div id="slideTwo" className="slide-landing-page">
+          <div>B</div>
         </div>
-        <div>
-          <div id="slideThree" className="slide-landing-page" />
+        <div id="slideThree" className="slide-landing-page">
+          <div>C</div>
         </div>
       </Slider>
     </>

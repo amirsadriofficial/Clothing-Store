@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <nav
         id="navbar"
-        className="container navbar navbar-expand-md navbar-light"
+        className="navbar navbar-expand-md navbar-light sticky-top"
       >
         <div className="container">
           <a href="#/" className="navbar-brand">
