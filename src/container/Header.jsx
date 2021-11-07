@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdShoppingCart } from 'react-icons/md'
 import { FiHeart } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import Logo from '../images/icons/logo.png'
 
 const Header = () => {
@@ -43,24 +44,24 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#/">
-                  Home
-                </a>
+                <Link to="/" className="nav-link">
+                  <button type="button">Home</button>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/">
-                  Shop
-                </a>
+                <Link to="/shop" className="nav-link">
+                  <button type="button">Shop</button>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/">
-                  About
-                </a>
+                <Link to="/about" className="nav-link">
+                  <button type="button">About</button>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/">
-                  Contact
-                </a>
+                <Link to="/contact" className="nav-link">
+                  <button type="button">Contact</button>
+                </Link>
               </li>
             </ul>
             <div>
