@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css'
 import Layout from './container/Layout'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Switch>
-            {/* <Route exact path="/">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/shop">
@@ -24,7 +24,7 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
-            </Route> */}
+            </Route>
           </Switch>
         </Layout>
       </BrowserRouter>
