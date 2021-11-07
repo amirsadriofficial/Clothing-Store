@@ -63,3 +63,14 @@
   align-items: center !important;
 }
 /* ---------------------------------------- End Footer ---------------------------------------- */
+/* ---------------------------------------- Start Home ---------------------------------------- */
+#slideOne {
+  background: url(./images/root/slide-01.jpg);
+}
+#slideTwo {
+  background: url(./images/root/slide-02.jpg);
+}
+#slideThree {
+  background: url(./images/root/slide-03.jpg);
+}
+/* ---------------------------------------- End Home ---------------------------------------- */
