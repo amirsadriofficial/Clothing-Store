@@ -8,3 +8,11 @@
   border: none;
   border-bottom: 1px solid #fff;
 }
+.nav-link-button {
+  background: none;
+  border: none;
+}
+.slide-landing-page {
+  height: 83vh;
+  width: 100vw;
+}

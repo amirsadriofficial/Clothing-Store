@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <nav
         id="navbar"
-        className="container navbar navbar-expand-md navbar-light mb-3"
+        className="container navbar navbar-expand-md navbar-light"
       >
         <div className="container">
           <a href="#/" className="navbar-brand">
@@ -45,22 +45,30 @@ const Header = () => {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/" className="nav-link">
-                  <button type="button">Home</button>
+                  <button type="button" className="nav-link-button">
+                    Home
+                  </button>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/shop" className="nav-link">
-                  <button type="button">Shop</button>
+                  <button type="button" className="nav-link-button">
+                    Shop
+                  </button>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/about" className="nav-link">
-                  <button type="button">About</button>
+                  <button type="button" className="nav-link-button">
+                    About
+                  </button>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link">
-                  <button type="button">Contact</button>
+                  <button type="button" className="nav-link-button">
+                    Contact
+                  </button>
                 </Link>
               </li>
             </ul>
