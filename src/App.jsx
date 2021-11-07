@@ -1,8 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css'
-import Layout from './container/Layout'
 import 'bootstrap/dist/css/bootstrap.css'
+import Layout from './container/Layout'
+import Home from './component/Home'
+import Shop from './component/Shop'
+import About from './component/About'
+import Contact from './component/Contact'
+import Cart from './component/Cart'
 
 function App() {
   return (
