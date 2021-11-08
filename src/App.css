@@ -79,4 +79,9 @@
   background: url(./images/root/slide-03.jpg);
   width: 100vw;
 }
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
 /* ---------------------------------------- End Home ---------------------------------------- */
