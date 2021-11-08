@@ -27,18 +27,18 @@ const Home = () => {
           <div>C</div>
         </div>
       </Slider>
-      <div className="container my-5 d-flex flex-row ">
-        <div id="bannerOne">
-          <span>Womenn</span>
-          <span>Spring 2018</span>
+      <div className="container my-5 d-flex flex-row justify-content-center align-item-center">
+        <div id="bannerOne" className="p-4">
+          {/* <span>Womenn</span>
+          <span>Spring 2018</span> */}
         </div>
-        <div id="bannerTwo">
-          <span>Men</span>
-          <span>Spring 2018</span>
+        <div id="bannerTwo" className="p-4">
+          {/* <span>Men</span>
+          <span>Spring 2018</span> */}
         </div>
-        <div id="bannerThree">
-          <span>Accessories</span>
-          <span>New Trend</span>
+        <div id="bannerThree" className="p-4">
+          {/* <span>Accessories</span>
+          <span>New Trend</span> */}
         </div>
       </div>
     </>

@@ -88,4 +88,10 @@
 #bannerThree {
   background: url(./images/banner/banner-03.jpg);
 }
+#bannerOne,
+#bannerTwo,
+#bannerThree {
+  width: 370px;
+  height: 250px;
+}
 /* ---------------------------------------- End Home ---------------------------------------- */
