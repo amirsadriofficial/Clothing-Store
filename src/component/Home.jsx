@@ -27,6 +27,20 @@ const Home = () => {
           <div>C</div>
         </div>
       </Slider>
+      <div className="container my-5 d-flex flex-row ">
+        <div>
+          <span>Womenn</span>
+          <span>Spring 2018</span>
+        </div>
+        <div>
+          <span>Men</span>
+          <span>Spring 2018</span>
+        </div>
+        <div>
+          <span>Accessories</span>
+          <span>New Trend</span>
+        </div>
+      </div>
     </>
   )
 }
