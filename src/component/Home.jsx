@@ -28,15 +28,15 @@ const Home = () => {
         </div>
       </Slider>
       <div className="container my-5 d-flex flex-row ">
-        <div>
+        <div id="bannerOne">
           <span>Womenn</span>
           <span>Spring 2018</span>
         </div>
-        <div>
+        <div id="bannerTwo">
           <span>Men</span>
           <span>Spring 2018</span>
         </div>
-        <div>
+        <div id="bannerThree">
           <span>Accessories</span>
           <span>New Trend</span>
         </div>

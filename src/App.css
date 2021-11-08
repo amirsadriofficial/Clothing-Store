@@ -68,20 +68,24 @@
 /* ---------------------------------------- End Footer ---------------------------------------- */
 /* ---------------------------------------- Start Home ---------------------------------------- */
 #slideOne {
-  background: url(./images/root/slide-01.jpg);
+  background: url(./images/slide/slide-01.jpg);
   width: 100vw;
 }
 #slideTwo {
-  background: url(./images/root/slide-02.jpg);
+  background: url(./images/slide/slide-02.jpg);
   width: 100vw;
 }
 #slideThree {
-  background: url(./images/root/slide-03.jpg);
+  background: url(./images/slide/slide-03.jpg);
   width: 100vw;
 }
-.swiper {
-  width: 600px;
-  height: 300px;
+#bannerOne {
+  background: url(./images/banner/banner-01.jpg);
 }
-
+#bannerTwo {
+  background: url(./images/banner/banner-02.jpg);
+}
+#bannerThree {
+  background: url(./images/banner/banner-03.jpg);
+}
 /* ---------------------------------------- End Home ---------------------------------------- */
