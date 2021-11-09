@@ -28,7 +28,7 @@ const Home = () => {
           <div>C</div>
         </div>
       </Slider>
-      <div className="container my-5 d-flex flex-row justify-content-center align-item-center">
+      <section className="container my-5 d-flex flex-row justify-content-center align-item-center">
         <div className="d-flex flex-row p-4">
           <div className="d-flex flex-column justify-content-center align-item-center absoluteOne">
             <span>Womenn</span>
@@ -50,7 +50,12 @@ const Home = () => {
           </div>
           <img src={bannerThree} alt="Banner" id="bannerThree" />
         </div>
-      </div>
+      </section>
+      <section className="container">
+        <div>
+          <h2>Product Overview</h2>
+        </div>
+      </section>
     </>
   )
 }
