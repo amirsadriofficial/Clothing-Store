@@ -30,25 +30,25 @@ const Home = () => {
       </Slider>
       <div className="container my-5 d-flex flex-row justify-content-center align-item-center">
         <div className="d-flex flex-row p-4">
-          <div className="d-flex flex-column justify-content-center align-item-center absolute">
+          <div className="d-flex flex-column justify-content-center align-item-center absoluteOne">
             <span>Womenn</span>
             <span>Spring 2018</span>
           </div>
-          <img src={bannerOne} alt="" id="bannerOne" />
+          <img src={bannerOne} alt="Banner" id="bannerOne" />
         </div>
-        <div id="bannerTwo" className="p-4">
-          <div className="d-flex flex-column justify-content-center align-item-center">
+        <div className="d-flex flex-row p-4">
+          <div className="d-flex flex-column justify-content-center align-item-center absoluteTwo">
             <span>Men</span>
             <span>Spring 2018</span>
           </div>
-          <img src={bannerTwo} alt="" id="bannerTwo" />
+          <img src={bannerTwo} alt="Banner" id="bannerTwo" />
         </div>
-        <div id="bannerThree" className="p-4">
-          <div className="d-flex flex-column justify-content-center align-item-center">
+        <div className="d-flex flex-row p-4">
+          <div className="d-flex flex-column justify-content-center align-item-center absoluteThree">
             <span>Accessories</span>
             <span>New Trend</span>
           </div>
-          <img src={bannerThree} alt="" id="bannerThree" />
+          <img src={bannerThree} alt="Banner" id="bannerThree" />
         </div>
       </div>
     </>

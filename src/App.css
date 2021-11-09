@@ -87,31 +87,41 @@
 }
 #bannerOne {
   background: url(./images/banner/banner-01.jpg);
-  width: 370px;
-  height: 250px;
-  position: relative;
 }
 #bannerTwo {
   background: url(./images/banner/banner-02.jpg);
-  width: 370px;
-  height: 250px;
 }
 #bannerThree {
   background: url(./images/banner/banner-03.jpg);
-  width: 370px;
-  height: 250px;
 }
 #bannerOne,
 #bannerTwo,
 #bannerThree {
+  position: relative;
   width: 370px;
   height: 250px;
+  border: 1px solid #e6e6e6;
 }
-.absolute {
+.absoluteOne {
   position: absolute;
   top: 900px;
-  left: 250px;
+  left: 225px;
   z-index: 1;
+}
+.absoluteTwo {
+  position: absolute;
+  top: 900px;
+  left: 625px;
+  z-index: 1;
+}
+.absoluteThree {
+  position: absolute;
+  top: 900px;
+  left: 1050px;
+  z-index: 1;
+}
+.banner {
+  border: 1px solid rgb(102, 101, 101);
 }
 /* ---------------------------------------- End Home ---------------------------------------- */
 /* ---------------------------------------- Start Shop ---------------------------------------- */
