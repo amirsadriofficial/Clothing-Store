@@ -1,7 +1,9 @@
 import React from 'react'
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
-import bannerO from '../images/banner/banner-01.jpg'
+import bannerOne from '../images/banner/banner-01.jpg'
+import bannerTwo from '../images/banner/banner-02.jpg'
+import bannerThree from '../images/banner/banner-03.jpg'
 
 const Home = () => {
   const settings = {
@@ -32,17 +34,21 @@ const Home = () => {
             <span>Womenn</span>
             <span>Spring 2018</span>
           </div>
-          <img src={bannerO} alt="" id="bannerOne" />
+          <img src={bannerOne} alt="" id="bannerOne" />
         </div>
         <div id="bannerTwo" className="p-4">
-          {/* <div className="d-flex flex-column justify-content-center align-item-center">
+          <div className="d-flex flex-column justify-content-center align-item-center">
             <span>Men</span>
             <span>Spring 2018</span>
-          </div> */}
+          </div>
+          <img src={bannerTwo} alt="" id="bannerTwo" />
         </div>
         <div id="bannerThree" className="p-4">
-          {/* <span>Accessories</span>
-          <span>New Trend</span> */}
+          <div className="d-flex flex-column justify-content-center align-item-center">
+            <span>Accessories</span>
+            <span>New Trend</span>
+          </div>
+          <img src={bannerThree} alt="" id="bannerThree" />
         </div>
       </div>
     </>
