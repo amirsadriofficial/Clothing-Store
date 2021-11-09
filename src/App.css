@@ -79,6 +79,12 @@
   background: url(./images/slide/slide-03.jpg);
   width: 100vw;
 }
+#slideOne,
+#slideTwo,
+#slideThree {
+  height: 83vh;
+  width: 100vw;
+}
 #bannerOne {
   background: url(./images/banner/banner-01.jpg);
 }
