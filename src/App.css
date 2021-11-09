@@ -87,18 +87,31 @@
 }
 #bannerOne {
   background: url(./images/banner/banner-01.jpg);
+  width: 370px;
+  height: 250px;
+  position: relative;
 }
 #bannerTwo {
   background: url(./images/banner/banner-02.jpg);
+  width: 370px;
+  height: 250px;
 }
 #bannerThree {
   background: url(./images/banner/banner-03.jpg);
+  width: 370px;
+  height: 250px;
 }
 #bannerOne,
 #bannerTwo,
 #bannerThree {
   width: 370px;
   height: 250px;
+}
+.absolute {
+  position: absolute;
+  top: 900px;
+  left: 250px;
+  z-index: 1;
 }
 /* ---------------------------------------- End Home ---------------------------------------- */
 /* ---------------------------------------- Start Shop ---------------------------------------- */

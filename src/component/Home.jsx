@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
+import bannerO from '../images/banner/banner-01.jpg'
 
 const Home = () => {
   const settings = {
@@ -26,13 +27,18 @@ const Home = () => {
         </div>
       </Slider>
       <div className="container my-5 d-flex flex-row justify-content-center align-item-center">
-        <div id="bannerOne" className="p-4">
-          {/* <span>Womenn</span>
-          <span>Spring 2018</span> */}
+        <div className="d-flex flex-row p-4">
+          <div className="d-flex flex-column justify-content-center align-item-center absolute">
+            <span>Womenn</span>
+            <span>Spring 2018</span>
+          </div>
+          <img src={bannerO} alt="" id="bannerOne" />
         </div>
         <div id="bannerTwo" className="p-4">
-          {/* <span>Men</span>
-          <span>Spring 2018</span> */}
+          {/* <div className="d-flex flex-column justify-content-center align-item-center">
+            <span>Men</span>
+            <span>Spring 2018</span>
+          </div> */}
         </div>
         <div id="bannerThree" className="p-4">
           {/* <span>Accessories</span>
