@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
 
-const Slider = () => {
+const SliderComponent = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -29,4 +29,4 @@ const Slider = () => {
 
 Slider.propTypes = { settings: PropTypes.node.isRequired }
 
-export default Slider
+export default SliderComponent
