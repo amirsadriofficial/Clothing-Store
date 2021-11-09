@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css'
-import Layout from './container/Layout'
+import Layout from './container/Layout/Layout'
 import Home from './component/Home/Home'
 import Shop from './component/Shop/Shop'
 import About from './component/About/About'
