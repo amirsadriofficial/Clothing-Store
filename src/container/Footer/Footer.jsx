@@ -10,7 +10,7 @@ import iconPayFive from '../../images/icons/icon-pay-05.png'
 
 const Footer = () => {
   return (
-    <div id="footer">
+    <footer id="footer">
       <div className="container pt-5 pb-4">
         <div className="row pt-4">
           <div className="col-sm-6 col-lg-3 p-b-50">
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
