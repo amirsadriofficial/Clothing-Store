@@ -1,8 +1,3 @@
-// import desktopclock_1 from '../public/image/Products/Desktop Clock/desktopclock_1.jpg'
-// import desktopclock_2 from '../public/image/Products/Desktop Clock/desktopclock_2.jpg'
-// import desktopclock_3 from '../public/image/Products/Desktop Clock/desktopclock_3.jpg'
-// import desktopclock_4 from '../public/image/Products/Desktop Clock/desktopclock_4.jpg'
-
 const WOMEN_PRODUCTS = [
   {
     id: 'women_product_1',
