@@ -11,7 +11,7 @@ const NavBar = () => {
       className="navbar navbar-expand-md navbar-light sticky-top"
     >
       <div className="container">
-        <a href="#/" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <img
             src={Logo}
             alt=""
