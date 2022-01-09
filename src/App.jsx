@@ -17,19 +17,15 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-
             <Route path="/shop">
               <Shop />
             </Route>
-
             <Route path="/about">
               <About />
             </Route>
-
             <Route path="/contact">
               <Contact />
             </Route>
-
             <Route path="/cart">
               <Cart />
             </Route>
