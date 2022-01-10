@@ -9,6 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Logo from '../../images/icons/logo.png'
 
 const pages = ['Home', 'Shop', 'About', 'Contact']
@@ -26,14 +28,6 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            Logo
-          </Typography> */}
           <img
             src={Logo}
             alt="Logo"
@@ -75,14 +69,6 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            Name
-          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -93,6 +79,14 @@ const NavBar = () => {
                 {page}
               </Button>
             ))}
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <IconButton aria-label="delete">
+              <ShoppingCartIcon />
+            </IconButton>
+            <IconButton aria-label="delete">
+              <FavoriteBorderIcon />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
