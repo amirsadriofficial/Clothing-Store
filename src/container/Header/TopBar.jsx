@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
 
 const useStyles = makeStyles(() => ({
   box: {
@@ -16,12 +17,23 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  color: {
-    color: '#666',
+  flexGrid: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  // button: {
-  //   border
-  // },
+  color: {
+    color: '#b2b2b2',
+  },
+  border: {
+    paddingRight: '25px',
+    paddingLeft: '25px',
+    borderLeft: '1px solid rgba(255,255,255,0.3)',
+  },
+  aloneBorder: {
+    borderRight: '1px solid rgba(255,255,255,0.3)',
+  },
 }))
 
 const TopBar = () => {
@@ -33,19 +45,27 @@ const TopBar = () => {
         <Grid className={classes.color}>
           Free shipping for standard order over $100
         </Grid>
-        <Grid>
-          <Button className={classes.color} href="#">
-            Help & FAQs
-          </Button>
-          <Button className={classes.color} href="#">
-            My Account
-          </Button>
-          <Button className={classes.color} href="#">
-            EN
-          </Button>
-          <Button className={classes.color} href="#">
-            USD
-          </Button>
+        <Grid className={classes.flexGrid}>
+          <Grid className={classes.border}>
+            <Button className={classes.color} href="#">
+              Help & FAQs
+            </Button>
+          </Grid>
+          <Grid className={classes.border}>
+            <Button className={classes.color} href="#">
+              My Account
+            </Button>
+          </Grid>
+          <Grid className={classes.border}>
+            <Button className={classes.color} href="#">
+              EN
+            </Button>
+          </Grid>
+          <Grid className={clsx(classes.border, classes.aloneBorder)}>
+            <Button className={classes.color} href="#">
+              USD
+            </Button>
+          </Grid>
         </Grid>
       </Container>
     </Box>
