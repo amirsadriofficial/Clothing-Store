@@ -9,7 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
-// import Logo from '../../images/icons/logo.png'
+import Logo from '../../images/icons/logo.png'
 
 const pages = ['Home', 'Shop', 'About', 'Contact']
 
@@ -26,14 +26,19 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
             Logo
-          </Typography>
+          </Typography> */}
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{ width: '150px', height: '50px' }}
+          />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -70,14 +75,14 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             Name
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
