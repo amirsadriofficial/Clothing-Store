@@ -23,12 +23,12 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  color: {
+  TextColor: {
     color: '#b2b2b2',
   },
   border: {
-    paddingRight: '25px',
-    paddingLeft: '25px',
+    paddingRight: '15px',
+    paddingLeft: '15px',
     borderLeft: '1px solid rgba(255,255,255,0.3)',
   },
   aloneBorder: {
@@ -42,27 +42,27 @@ const TopBar = () => {
   return (
     <Box className={classes.box}>
       <Container className={classes.flex}>
-        <Grid className={classes.color}>
+        <Grid className={classes.TextColor}>
           Free shipping for standard order over $100
         </Grid>
         <Grid className={classes.flexGrid}>
           <Grid className={classes.border}>
-            <Button className={classes.color} href="#">
+            <Button className={classes.TextColor} href="#">
               Help & FAQs
             </Button>
           </Grid>
           <Grid className={classes.border}>
-            <Button className={classes.color} href="#">
+            <Button className={classes.TextColor} href="#">
               My Account
             </Button>
           </Grid>
           <Grid className={classes.border}>
-            <Button className={classes.color} href="#">
+            <Button className={classes.TextColor} href="#">
               EN
             </Button>
           </Grid>
           <Grid className={clsx(classes.border, classes.aloneBorder)}>
-            <Button className={classes.color} href="#">
+            <Button className={classes.TextColor} href="#">
               USD
             </Button>
           </Grid>
