@@ -52,11 +52,6 @@ const useStyles = makeStyles(() => ({
   footerItem: {
     marginTop: '10px',
   },
-  input: {
-    '&::placeholder': {
-      color: '#b2b2b2 !importent',
-    },
-  },
   buttonStyle: {
     backgroundColor: '#717fe0',
     borderRadius: '25px',
