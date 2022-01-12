@@ -68,6 +68,8 @@ const useStyles = makeStyles(() => ({
   },
   buttonStyle: {
     backgroundColor: '#717fe0',
+    marginTop: '20px',
+    marginBottom: '10px',
   },
 }))
 
@@ -78,7 +80,7 @@ const Footer = () => {
       <Container>
         <Grid container spacing={3} className={classes.flexGridRow}>
           <Grid item xs={6} sm={3}>
-            <h4 className={classes.titleTextColor}>Categories</h4>
+            <h4 className={classes.titleTextColor}>CATEGORIES</h4>
             <ul>
               <li>
                 <Link href="#/" className={classes.TextColor}>
@@ -103,7 +105,7 @@ const Footer = () => {
             </ul>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <h4 className={classes.titleTextColor}>Help</h4>
+            <h4 className={classes.titleTextColor}>HELP</h4>
             <ul>
               <li>
                 <Link href="#/" className={classes.TextColor}>
@@ -149,7 +151,7 @@ const Footer = () => {
             </div>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <h4 className={classes.titleTextColor}>Newsletter</h4>
+            <h4 className={classes.titleTextColor}>NEWSLETTER</h4>
             <TextField
               label="Email"
               InputLabelProps={{
