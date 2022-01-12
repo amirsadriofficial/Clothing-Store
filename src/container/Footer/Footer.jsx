@@ -23,6 +23,8 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#222',
   },
   flex: {
+    marginTop: '50px',
+    paddingBottom: '30px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -74,6 +76,10 @@ const useStyles = makeStyles(() => ({
   spanColor: {
     color: '#007bff',
     paddingLeft: '5px',
+  },
+  notchedOutline: {
+    borderWidth: '1px',
+    borderColor: 'yellow !important',
   },
 }))
 
@@ -163,8 +169,10 @@ const Footer = () => {
               InputLabelProps={{
                 style: { color: '#b2b2b2' },
               }}
-              InputProps={{
-                classes: { input: classes.input },
+              inputProps={{
+                style: {
+                  color: '#b2b2b2',
+                },
               }}
               placeholder="email@example.com"
             />
@@ -185,12 +193,10 @@ const Footer = () => {
             <img src={iconPayFour} alt="Icon Pay Four" />
             <img src={iconPayFive} alt="Icon Pay Five" />
           </div>
-          <div>
-            <p className={classes.TextColor}>
-              Copyright ©2022 All rights reserved | Developed By
-              <span className={classes.spanColor}>Amir Sadri</span>
-            </p>
-          </div>
+          <p className={classes.TextColor}>
+            Copyright ©2022 All rights reserved | Developed By
+            <span className={classes.spanColor}>Amir Sadri</span>
+          </p>
         </Grid>
       </Container>
     </Box>
