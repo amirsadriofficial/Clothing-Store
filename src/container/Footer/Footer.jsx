@@ -67,6 +67,7 @@ const useStyles = makeStyles(() => ({
   },
   buttonStyle: {
     backgroundColor: '#717fe0',
+    borderRadius: '25px',
     marginTop: '35px',
     marginBottom: '1px',
   },
@@ -76,10 +77,6 @@ const useStyles = makeStyles(() => ({
   spanColor: {
     color: '#007bff',
     paddingLeft: '5px',
-  },
-  notchedOutline: {
-    borderWidth: '1px',
-    borderColor: 'yellow !important',
   },
 }))
 
@@ -174,10 +171,12 @@ const Footer = () => {
                   color: '#b2b2b2',
                 },
               }}
+              fullWidth
               placeholder="email@example.com"
             />
             <Button
               className={classes.buttonStyle}
+              fullWidth
               variant="contained"
               color="primary"
             >
