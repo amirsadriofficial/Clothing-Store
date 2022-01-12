@@ -71,6 +71,10 @@ const useStyles = makeStyles(() => ({
   buttonSpacing: {
     paddingLeft: '0px',
   },
+  spanColor: {
+    color: '#007bff',
+    paddingLeft: '5px',
+  },
 }))
 
 const Footer = () => {
@@ -175,16 +179,16 @@ const Footer = () => {
         </Grid>
         <Grid container className={classes.flex}>
           <div>
-            <img src={iconPayOne} alt="" />
-            <img src={iconPayTwo} alt="" />
-            <img src={iconPayThree} alt="" />
-            <img src={iconPayFour} alt="" />
-            <img src={iconPayFive} alt="" />
+            <img src={iconPayOne} alt="Icon Pay One" />
+            <img src={iconPayTwo} alt="Icon Pay Two" />
+            <img src={iconPayThree} alt="Icon Pay Three" />
+            <img src={iconPayFour} alt="Icon Pay Four" />
+            <img src={iconPayFive} alt="Icon Pay Five" />
           </div>
           <div>
-            <p>
+            <p className={classes.TextColor}>
               Copyright ©2022 All rights reserved | Developed By
-              <span>Amir Sadri</span>
+              <span className={classes.spanColor}>Amir Sadri</span>
             </p>
           </div>
         </Grid>
