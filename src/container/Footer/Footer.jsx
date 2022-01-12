@@ -4,10 +4,13 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
+import TextField from '@material-ui/core/TextField'
 // import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import TwitterIcon from '@material-ui/icons/Twitter'
 // import clsx from 'clsx'
 // import { BsInstagram } from 'react-icons/bs'
 // import { FiTwitter } from 'react-icons/fi'
@@ -123,44 +126,28 @@ const Footer = () => {
               New York, NY 10018 or call us on (+1) 96 716 6879
             </p>
             <div>
-              <IconButton>
+              <IconButton className={classes.TextColor}>
                 <FacebookIcon />
               </IconButton>
-              <IconButton>
+              <IconButton className={classes.TextColor}>
                 <InstagramIcon />
               </IconButton>
-              <IconButton>
-                <FacebookIcon />
+              <IconButton className={classes.TextColor}>
+                <LinkedInIcon />
               </IconButton>
-              <IconButton>
-                <FacebookIcon />
+              <IconButton className={classes.TextColor}>
+                <TwitterIcon />
               </IconButton>
             </div>
           </Grid>
           <Grid item xs={6} sm={3}>
             <h4 className={classes.titleTextColor}>Newsletter</h4>
-            <ul>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Women
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Men
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Shoes
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Watches
-                </Link>
-              </li>
-            </ul>
+            <TextField
+              className={classes.TextColor}
+              id="standard-textarea"
+              label="Email"
+              placeholder="email@example.com"
+            />
           </Grid>
         </Grid>
       </Container>
