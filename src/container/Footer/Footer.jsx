@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
@@ -65,6 +65,9 @@ const useStyles = makeStyles(() => ({
     '&::placeholder': {
       color: '#b2b2b2 !importent',
     },
+  },
+  buttonStyle: {
+    backgroundColor: '#717fe0',
   },
 }))
 
@@ -157,6 +160,13 @@ const Footer = () => {
               }}
               placeholder="email@example.com"
             />
+            <Button
+              className={classes.buttonStyle}
+              variant="contained"
+              color="primary"
+            >
+              Subscribe
+            </Button>
           </Grid>
         </Grid>
       </Container>
