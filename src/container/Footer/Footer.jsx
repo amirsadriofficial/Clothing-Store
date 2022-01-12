@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import IconButton from '@material-ui/core/IconButton'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import clsx from 'clsx'
 import iconPayOne from '../../images/icons/icon-pay-01.png'
 import iconPayTwo from '../../images/icons/icon-pay-02.png'
 import iconPayThree from '../../images/icons/icon-pay-03.png'
@@ -48,14 +48,6 @@ const useStyles = makeStyles(() => ({
   TextColor: {
     color: '#b2b2b2',
     textDecoration: 'none',
-  },
-  border: {
-    paddingRight: '15px',
-    paddingLeft: '15px',
-    borderLeft: '1px solid rgba(255,255,255,0.3)',
-  },
-  aloneBorder: {
-    borderRight: '1px solid rgba(255,255,255,0.3)',
   },
   footerItem: {
     marginTop: '10px',
