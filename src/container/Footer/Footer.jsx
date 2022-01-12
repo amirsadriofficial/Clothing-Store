@@ -61,6 +61,10 @@ const useStyles = makeStyles(() => ({
   footerItem: {
     marginTop: '10px',
   },
+  textFieldColor: {
+    color: '#b2b2b2',
+    borderColor: '#b2b2b2 !importent',
+  },
 }))
 
 const Footer = () => {
@@ -143,7 +147,7 @@ const Footer = () => {
           <Grid item xs={6} sm={3}>
             <h4 className={classes.titleTextColor}>Newsletter</h4>
             <TextField
-              className={classes.TextColor}
+              className={classes.textFieldColor}
               id="standard-textarea"
               label="Email"
               placeholder="email@example.com"
