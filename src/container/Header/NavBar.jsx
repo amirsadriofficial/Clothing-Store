@@ -129,14 +129,6 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <IconButton aria-label="delete">
-              <ShoppingCartIcon />
-            </IconButton>
-            <IconButton aria-label="delete">
-              <FavoriteBorderIcon />
-            </IconButton>
-          </Box> */}
           <Box className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
