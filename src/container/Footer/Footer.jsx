@@ -69,6 +69,7 @@ const useStyles = makeStyles(() => ({
 
 const Footer = () => {
   const classes = useStyles()
+
   return (
     <Box className={classes.box}>
       <Container>
