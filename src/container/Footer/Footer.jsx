@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -42,6 +43,7 @@ const useStyles = makeStyles(() => ({
   },
   TextColor: {
     color: '#b2b2b2',
+    textDecoration: 'none',
   },
   border: {
     paddingRight: '15px',
@@ -61,17 +63,102 @@ const Footer = () => {
         <Grid className={classes.flexGridRow}>
           <Grid>
             <h4 className={classes.titleTextColor}>Categories</h4>
-            {/* <Grid className={classes.flexGridColumn}>
-              <Button className={classes.TextColor}>Women</Button>
-              <Button className={classes.TextColor}>Men</Button>
-              <Button className={classes.TextColor}>Shoes</Button>
-              <Button className={classes.TextColor}>Watches</Button>
-            </Grid> */}
             <ul>
-              <li className={classes.TextColor}>Women</li>
-              <li className={classes.TextColor}>Men</li>
-              <li className={classes.TextColor}>Shoes</li>
-              <li className={classes.TextColor}>Watches</li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Women
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Shoes
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Watches
+                </Link>
+              </li>
+            </ul>
+          </Grid>
+          <Grid>
+            <h4 className={classes.titleTextColor}>Categories</h4>
+            <ul>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Women
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Shoes
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Watches
+                </Link>
+              </li>
+            </ul>
+          </Grid>
+          <Grid>
+            <h4 className={classes.titleTextColor}>Categories</h4>
+            <ul>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Women
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Shoes
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Watches
+                </Link>
+              </li>
+            </ul>
+          </Grid>
+          <Grid>
+            <h4 className={classes.titleTextColor}>Categories</h4>
+            <ul>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Women
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Shoes
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Watches
+                </Link>
+              </li>
             </ul>
           </Grid>
         </Grid>
