@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 // import clsx from 'clsx'
 // import { BsInstagram } from 'react-icons/bs'
@@ -25,11 +25,20 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  flexGrid: {
+  flexGridRow: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  flexGridColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  titleTextColor: {
+    color: '#fff',
   },
   TextColor: {
     color: '#b2b2b2',
@@ -49,15 +58,21 @@ const Footer = () => {
   return (
     <Box className={classes.box}>
       <Container>
-        <Grid className={classes.flexGrid}>
+        <Grid className={classes.flexGridRow}>
           <Grid>
-            <h4>Categories</h4>
-            <Grid direction="column">
-              <Button>Women</Button>
-              <Button>Men</Button>
-              <Button>Shoes</Button>
-              <Button>Watches</Button>
-            </Grid>
+            <h4 className={classes.titleTextColor}>Categories</h4>
+            {/* <Grid className={classes.flexGridColumn}>
+              <Button className={classes.TextColor}>Women</Button>
+              <Button className={classes.TextColor}>Men</Button>
+              <Button className={classes.TextColor}>Shoes</Button>
+              <Button className={classes.TextColor}>Watches</Button>
+            </Grid> */}
+            <ul>
+              <li className={classes.TextColor}>Women</li>
+              <li className={classes.TextColor}>Men</li>
+              <li className={classes.TextColor}>Shoes</li>
+              <li className={classes.TextColor}>Watches</li>
+            </ul>
           </Grid>
         </Grid>
       </Container>
