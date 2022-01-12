@@ -64,6 +64,10 @@ const useStyles = makeStyles(() => ({
   textFieldColor: {
     color: '#b2b2b2',
     borderColor: '#b2b2b2 !importent',
+    '&::placeholder': {
+      // textOverflow: 'ellipsis !important',
+      color: '#fff !importent',
+    },
   },
 }))
 
@@ -147,9 +151,10 @@ const Footer = () => {
           <Grid item xs={6} sm={3}>
             <h4 className={classes.titleTextColor}>Newsletter</h4>
             <TextField
-              className={classes.textFieldColor}
-              id="standard-textarea"
               label="Email"
+              InputLabelProps={{
+                style: { color: '#b2b2b2' },
+              }}
               placeholder="email@example.com"
             />
           </Grid>
