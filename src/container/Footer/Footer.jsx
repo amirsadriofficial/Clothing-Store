@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 // import clsx from 'clsx'
 // import { BsInstagram } from 'react-icons/bs'
@@ -48,20 +48,17 @@ const Footer = () => {
   const classes = useStyles()
   return (
     <Box className={classes.box}>
-      <Container className={classes.flex}>
+      <Container>
         <Grid className={classes.flexGrid}>
           <Grid>
             <h4>Categories</h4>
-            <ul>
-              <li>Women</li>
-              <li>Men</li>
-              <li> Shoes</li>
-              <li>Watches</li>
-            </ul>
+            <Grid direction="column">
+              <Button>Women</Button>
+              <Button>Men</Button>
+              <Button>Shoes</Button>
+              <Button>Watches</Button>
+            </Grid>
           </Grid>
-          {/* <Grid>Help</Grid>
-          <Grid>GET IN TOUCH</Grid>
-          <Grid>Newsletter </Grid> */}
         </Grid>
       </Container>
     </Box>
