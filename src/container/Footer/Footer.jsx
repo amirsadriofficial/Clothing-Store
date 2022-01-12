@@ -61,12 +61,9 @@ const useStyles = makeStyles(() => ({
   footerItem: {
     marginTop: '10px',
   },
-  textFieldColor: {
-    color: '#b2b2b2',
-    borderColor: '#b2b2b2 !importent',
+  input: {
     '&::placeholder': {
-      // textOverflow: 'ellipsis !important',
-      color: '#fff !importent',
+      color: '#b2b2b2 !importent',
     },
   },
 }))
@@ -154,6 +151,9 @@ const Footer = () => {
               label="Email"
               InputLabelProps={{
                 style: { color: '#b2b2b2' },
+              }}
+              InputProps={{
+                classes: { input: classes.input },
               }}
               placeholder="email@example.com"
             />
