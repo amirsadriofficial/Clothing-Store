@@ -11,10 +11,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
-// import clsx from 'clsx'
-// import { BsInstagram } from 'react-icons/bs'
-// import { FiTwitter } from 'react-icons/fi'
-// import { AiOutlineLinkedin, AiOutlineFacebook } from 'react-icons/ai'
+import clsx from 'clsx'
 // import iconPayOne from '../../images/icons/icon-pay-01.png'
 // import iconPayTwo from '../../images/icons/icon-pay-02.png'
 // import iconPayThree from '../../images/icons/icon-pay-03.png'
@@ -68,8 +65,11 @@ const useStyles = makeStyles(() => ({
   },
   buttonStyle: {
     backgroundColor: '#717fe0',
-    marginTop: '20px',
-    marginBottom: '10px',
+    marginTop: '35px',
+    marginBottom: '1px',
+  },
+  buttonSpacing: {
+    paddingLeft: '0px',
   },
 }))
 
@@ -136,7 +136,9 @@ const Footer = () => {
               New York, NY 10018 or call us on (+1) 96 716 6879
             </p>
             <div>
-              <IconButton className={classes.TextColor}>
+              <IconButton
+                className={clsx(classes.TextColor, classes.buttonSpacing)}
+              >
                 <FacebookIcon />
               </IconButton>
               <IconButton className={classes.TextColor}>
@@ -170,6 +172,10 @@ const Footer = () => {
               Subscribe
             </Button>
           </Grid>
+        </Grid>
+        <Grid>
+          <div>ssssssssssss</div>
+          <div>aaaaaaaaaaaaaaaa</div>
         </Grid>
       </Container>
     </Box>
