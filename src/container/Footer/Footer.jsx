@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton'
 // import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import FacebookIcon from '@material-ui/icons/Facebook'
+import InstagramIcon from '@material-ui/icons/Instagram'
 // import clsx from 'clsx'
 // import { BsInstagram } from 'react-icons/bs'
 // import { FiTwitter } from 'react-icons/fi'
@@ -126,7 +127,7 @@ const Footer = () => {
                 <FacebookIcon />
               </IconButton>
               <IconButton>
-                <FacebookIcon />
+                <InstagramIcon />
               </IconButton>
               <IconButton>
                 <FacebookIcon />
