@@ -12,11 +12,11 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import clsx from 'clsx'
-// import iconPayOne from '../../images/icons/icon-pay-01.png'
-// import iconPayTwo from '../../images/icons/icon-pay-02.png'
-// import iconPayThree from '../../images/icons/icon-pay-03.png'
-// import iconPayFour from '../../images/icons/icon-pay-04.png'
-// import iconPayFive from '../../images/icons/icon-pay-05.png'
+import iconPayOne from '../../images/icons/icon-pay-01.png'
+import iconPayTwo from '../../images/icons/icon-pay-02.png'
+import iconPayThree from '../../images/icons/icon-pay-03.png'
+import iconPayFour from '../../images/icons/icon-pay-04.png'
+import iconPayFive from '../../images/icons/icon-pay-05.png'
 
 const useStyles = makeStyles(() => ({
   box: {
@@ -24,8 +24,8 @@ const useStyles = makeStyles(() => ({
   },
   flex: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   flexGridRow: {
@@ -173,9 +173,20 @@ const Footer = () => {
             </Button>
           </Grid>
         </Grid>
-        <Grid>
-          <div>ssssssssssss</div>
-          <div>aaaaaaaaaaaaaaaa</div>
+        <Grid container className={classes.flex}>
+          <div>
+            <img src={iconPayOne} alt="" />
+            <img src={iconPayTwo} alt="" />
+            <img src={iconPayThree} alt="" />
+            <img src={iconPayFour} alt="" />
+            <img src={iconPayFive} alt="" />
+          </div>
+          <div>
+            <p>
+              Copyright ©2022 All rights reserved | Developed By
+              <span>Amir Sadri</span>
+            </p>
+          </div>
         </Grid>
       </Container>
     </Box>
