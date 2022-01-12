@@ -17,7 +17,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => ({
   box: {
-    // height: '40px',
     backgroundColor: '#222',
   },
   flex: {
@@ -87,7 +86,32 @@ const Footer = () => {
             </ul>
           </Grid>
           <Grid>
-            <h4 className={classes.titleTextColor}>Categories</h4>
+            <h4 className={classes.titleTextColor}>Help</h4>
+            <ul>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Track Order
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Returns
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  Shipping
+                </Link>
+              </li>
+              <li>
+                <Link href="#/" className={classes.TextColor}>
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </Grid>
+          <Grid>
+            <h4 className={classes.titleTextColor}>GET IN TOUCH</h4>
             <ul>
               <li>
                 <Link href="#/" className={classes.TextColor}>
@@ -112,32 +136,7 @@ const Footer = () => {
             </ul>
           </Grid>
           <Grid>
-            <h4 className={classes.titleTextColor}>Categories</h4>
-            <ul>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Women
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Men
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Shoes
-                </Link>
-              </li>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Watches
-                </Link>
-              </li>
-            </ul>
-          </Grid>
-          <Grid>
-            <h4 className={classes.titleTextColor}>Categories</h4>
+            <h4 className={classes.titleTextColor}>Newsletter</h4>
             <ul>
               <li>
                 <Link href="#/" className={classes.TextColor}>
