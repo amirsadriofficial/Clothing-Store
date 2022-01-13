@@ -78,7 +78,7 @@ const TopBar = () => {
       </Hidden>
       <Hidden mdUp>
         <Container>
-          <Grid className={classes.TextColor}>
+          <Grid className={classes.TextColor} style={{ textAlign: 'center' }}>
             Free shipping for standard order over $100
           </Grid>
           <Grid className={classes.flexGrid}>
