@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -70,6 +71,9 @@ const useStyles = makeStyles(() => ({
   spanColor: {
     color: '#007bff',
     paddingLeft: '5px',
+  },
+  buttonResponsiveStyle: {
+    marginBottom: '30px',
   },
 }))
 
@@ -153,30 +157,61 @@ const Footer = () => {
               </IconButton>
             </div>
           </Grid>
-          <Grid item xs={5} sm={6} md={3}>
-            <h4 className={classes.titleTextColor}>NEWSLETTER</h4>
-            <TextField
-              label="Email"
-              InputLabelProps={{
-                style: { color: '#b2b2b2' },
-              }}
-              inputProps={{
-                style: {
-                  color: '#b2b2b2',
-                },
-              }}
-              fullWidth
-              placeholder="email@example.com"
-            />
-            <Button
-              className={classes.buttonStyle}
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
-              Subscribe
-            </Button>
-          </Grid>
+          <Hidden smDown>
+            <Grid item xs={5} sm={6} md={3}>
+              <h4 className={classes.titleTextColor}>NEWSLETTER</h4>
+              <TextField
+                label="Email"
+                InputLabelProps={{
+                  style: { color: '#b2b2b2' },
+                }}
+                inputProps={{
+                  style: {
+                    color: '#b2b2b2',
+                  },
+                }}
+                fullWidth
+                placeholder="email@example.com"
+              />
+              <Button
+                className={classes.buttonStyle}
+                fullWidth
+                variant="contained"
+                color="primary"
+              >
+                Subscribe
+              </Button>
+            </Grid>
+          </Hidden>
+          <Hidden mdUp>
+            <Grid item xs={5} sm={6} md={3}>
+              <h4 className={classes.titleTextColor}>NEWSLETTER</h4>
+              <TextField
+                label="Email"
+                InputLabelProps={{
+                  style: { color: '#b2b2b2' },
+                }}
+                inputProps={{
+                  style: {
+                    color: '#b2b2b2',
+                  },
+                }}
+                fullWidth
+                placeholder="email@example.com"
+              />
+              <Button
+                className={clsx(
+                  classes.buttonStyle,
+                  classes.buttonResponsiveStyle
+                )}
+                fullWidth
+                variant="contained"
+                color="primary"
+              >
+                Subscribe
+              </Button>
+            </Grid>
+          </Hidden>
         </Grid>
         <Grid container className={classes.flexIconPay}>
           <Grid item>

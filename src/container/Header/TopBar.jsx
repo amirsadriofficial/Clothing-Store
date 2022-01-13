@@ -83,7 +83,6 @@ const TopBar = () => {
         </Container>
       </Hidden>
       <Hidden mdUp>
-        {/* <Container> */}
         <Grid
           className={clsx(classes.TextColor, classes.sectionSpacing)}
           style={{ textAlign: 'center' }}
@@ -113,7 +112,6 @@ const TopBar = () => {
             </Button>
           </Grid>
         </Grid>
-        {/* </Container> */}
       </Hidden>
     </Box>
   )
