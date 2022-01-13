@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
   box: {
     backgroundColor: '#222',
   },
-  flex: {
+  flexIconPay: {
     marginTop: '50px',
     paddingBottom: '30px',
     display: 'flex',
@@ -40,6 +40,12 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  flex: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   titleTextColor: {
@@ -172,7 +178,7 @@ const Footer = () => {
             </Button>
           </Grid>
         </Grid>
-        <Grid container className={classes.flex}>
+        <Grid container className={classes.flexIconPay}>
           <Grid item>
             <img src={iconPayOne} alt="Icon Pay One" />
             <img src={iconPayTwo} alt="Icon Pay Two" />
@@ -180,15 +186,12 @@ const Footer = () => {
             <img src={iconPayFour} alt="Icon Pay Four" />
             <img src={iconPayFive} alt="Icon Pay Five" />
           </Grid>
-          <Grid item className={classes.flexGridRow}>
-            <Grid xs={} className={classes.TextColor}>
-              Copyright ©2022 All rights reserved
-            </Grid>
-            <Grid xs={12} className={classes.TextColor}>
-              Developed By
-              <span className={classes.spanColor}>Amir Sadri</span>
-            </Grid>
+          {/* <Grid item className={classes.flex}> */}
+          <Grid xs={12} className={classes.TextColor}>
+            Copyright ©2022 All rights reserved | Developed By
+            <span className={classes.spanColor}>Amir Sadri</span>
           </Grid>
+          {/* </Grid> */}
         </Grid>
       </Container>
     </Box>
