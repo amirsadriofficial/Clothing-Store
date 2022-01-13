@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Hidden from '@material-ui/core/Hidden'
+import Divider from '@material-ui/core/Divider'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
@@ -41,7 +42,7 @@ const useStyles = makeStyles(() => ({
     borderRight: '1px solid rgba(255,255,255,0.3)',
   },
   sectionSpacing: {
-    marginTop: '10px',
+    paddingTop: '10px',
   },
 }))
 
@@ -87,6 +88,7 @@ const TopBar = () => {
           >
             Free shipping for standard order over $100
           </Grid>
+          <Divider />
           <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
             <Grid className={classes.borderResponsive}>
               <Button className={classes.TextColor} size="small" href="#">
