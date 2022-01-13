@@ -80,7 +80,7 @@ const Footer = () => {
     <Box className={classes.box}>
       <Container>
         <Grid container spacing={3} className={classes.flexGridRow}>
-          <Grid item xs={6} sm={3}>
+          <Grid item xs={7} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>CATEGORIES</h4>
             <ul>
               <li>
@@ -105,7 +105,7 @@ const Footer = () => {
               </li>
             </ul>
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid item xs={5} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>HELP</h4>
             <ul>
               <li>
@@ -130,7 +130,7 @@ const Footer = () => {
               </li>
             </ul>
           </Grid>
-          <Grid item xs={7} sm={3}>
+          <Grid item xs={7} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>GET IN TOUCH</h4>
             <p className={classes.TextColor}>
               Any questions? Let us know in store at 8th floor, 379 Hudson St,
@@ -153,7 +153,7 @@ const Footer = () => {
               </IconButton>
             </div>
           </Grid>
-          <Grid item xs={5} sm={3}>
+          <Grid item xs={5} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>NEWSLETTER</h4>
             <TextField
               label="Email"
@@ -186,12 +186,15 @@ const Footer = () => {
             <img src={iconPayFour} alt="Icon Pay Four" />
             <img src={iconPayFive} alt="Icon Pay Five" />
           </Grid>
-          {/* <Grid item className={classes.flex}> */}
-          <Grid xs={12} className={classes.TextColor}>
+          <Grid
+            item
+            xs={12}
+            className={classes.TextColor}
+            style={{ textAlign: 'center', paddingTop: '20px' }}
+          >
             Copyright ©2022 All rights reserved | Developed By
             <span className={classes.spanColor}>Amir Sadri</span>
           </Grid>
-          {/* </Grid> */}
         </Grid>
       </Container>
     </Box>
