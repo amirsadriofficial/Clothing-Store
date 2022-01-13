@@ -98,6 +98,7 @@ const NavBar = () => {
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 // elevation={0}
+                marginThreshold={0}
                 getContentAnchorEl={null}
                 anchorOrigin={{
                   vertical: 'bottom',
@@ -107,6 +108,14 @@ const NavBar = () => {
                 transformOrigin={{
                   vertical: 'top',
                   horizontal: 'center',
+                }}
+                PaperProps={{
+                  style: {
+                    width: '100%',
+                    maxWidth: '100%',
+                    left: 0,
+                    right: 0,
+                  },
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
