@@ -40,6 +40,9 @@ const useStyles = makeStyles(() => ({
   aloneBorder: {
     borderRight: '1px solid rgba(255,255,255,0.3)',
   },
+  sectionSpacing: {
+    marginTop: '10px',
+  },
 }))
 
 const TopBar = () => {
@@ -78,10 +81,13 @@ const TopBar = () => {
       </Hidden>
       <Hidden mdUp>
         <Container>
-          <Grid className={classes.TextColor} style={{ textAlign: 'center' }}>
+          <Grid
+            className={clsx(classes.TextColor, classes.sectionSpacing)}
+            style={{ textAlign: 'center' }}
+          >
             Free shipping for standard order over $100
           </Grid>
-          <Grid className={classes.flexGrid}>
+          <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
             <Grid className={classes.borderResponsive}>
               <Button className={classes.TextColor} size="small" href="#">
                 Help & FAQs
