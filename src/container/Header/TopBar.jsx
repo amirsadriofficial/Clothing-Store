@@ -4,12 +4,12 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Hidden from '@material-ui/core/Hidden'
+import Divider from '@material-ui/core/Divider'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
 const useStyles = makeStyles(() => ({
   box: {
-    // height: '40px',
     backgroundColor: '#222',
   },
   flex: {
@@ -33,8 +33,6 @@ const useStyles = makeStyles(() => ({
     borderLeft: '1px solid rgba(255,255,255,0.3)',
   },
   borderResponsive: {
-    // paddingRight: '5px',
-    // paddingLeft: '5px',
     borderLeft: '1px solid rgba(255,255,255,0.3)',
   },
   aloneBorder: {
@@ -46,7 +44,7 @@ const useStyles = makeStyles(() => ({
   },
   dividerStyle: {
     width: '100% !importent',
-    backgroundColor: 'rgba(255,255,255,0.3)',
+    backgroundColor: 'rgba(255,255,255,0.05)',
   },
 }))
 
@@ -85,38 +83,37 @@ const TopBar = () => {
         </Container>
       </Hidden>
       <Hidden mdUp>
-        <Container>
-          <Grid
-            className={clsx(classes.TextColor, classes.sectionSpacing)}
-            style={{ textAlign: 'center' }}
-          >
-            Free shipping for standard order over $100
+        {/* <Container> */}
+        <Grid
+          className={clsx(classes.TextColor, classes.sectionSpacing)}
+          style={{ textAlign: 'center' }}
+        >
+          Free shipping for standard order over $100
+        </Grid>
+        <Divider className={classes.dividerStyle} />
+        <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
+          <Grid className={classes.borderResponsive}>
+            <Button className={classes.TextColor} size="small" href="#">
+              Help & FAQs
+            </Button>
           </Grid>
-          <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
-            <Grid className={classes.borderResponsive}>
-              <Button className={classes.TextColor} size="small" href="#">
-                Help & FAQs
-              </Button>
-            </Grid>
-            <Grid className={classes.borderResponsive}>
-              <Button className={classes.TextColor} size="small" href="#">
-                My Account
-              </Button>
-            </Grid>
-            <Grid className={classes.borderResponsive}>
-              <Button className={classes.TextColor} size="small" href="#">
-                EN
-              </Button>
-            </Grid>
-            <Grid
-              className={clsx(classes.borderResponsive, classes.aloneBorder)}
-            >
-              <Button className={classes.TextColor} size="small" href="#">
-                USD
-              </Button>
-            </Grid>
+          <Grid className={classes.borderResponsive}>
+            <Button className={classes.TextColor} size="small" href="#">
+              My Account
+            </Button>
           </Grid>
-        </Container>
+          <Grid className={classes.borderResponsive}>
+            <Button className={classes.TextColor} size="small" href="#">
+              EN
+            </Button>
+          </Grid>
+          <Grid className={clsx(classes.borderResponsive, classes.aloneBorder)}>
+            <Button className={classes.TextColor} size="small" href="#">
+              USD
+            </Button>
+          </Grid>
+        </Grid>
+        {/* </Container> */}
       </Hidden>
     </Box>
   )
