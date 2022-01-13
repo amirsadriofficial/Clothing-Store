@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import Hidden from '@material-ui/core/Hidden'
 import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
@@ -59,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  menuStyle: {
+    marginLeft: '10px',
+  },
 }))
 
 const pages = ['Home', 'Shop', 'About', 'Contact']
@@ -78,13 +82,23 @@ const NavBar = () => {
       <Container maxWidth="xl">
         <Container>
           <Toolbar disableGutters>
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ width: '150px', height: '50px' }}
-            />
+            <Hidden smDown>
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: '150px', height: '50px' }}
+              />
+            </Hidden>
+            <Hidden mdUp>
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: '75px', height: '25px' }}
+              />
+            </Hidden>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
+                className={classes.menuStyle}
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -130,7 +144,10 @@ const NavBar = () => {
                 ))}
               </Menu>
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box
+              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+              className={classes.menuStyle}
+            >
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -157,9 +174,11 @@ const NavBar = () => {
             <IconButton aria-label="delete">
               <ShoppingCartIcon />
             </IconButton>
-            <IconButton aria-label="delete">
-              <FavoriteBorderIcon />
-            </IconButton>
+            <Hidden smDown>
+              <IconButton aria-label="delete">
+                <FavoriteBorderIcon />
+              </IconButton>
+            </Hidden>
           </Toolbar>
         </Container>
       </Container>
