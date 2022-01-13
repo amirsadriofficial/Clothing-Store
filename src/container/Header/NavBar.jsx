@@ -97,14 +97,16 @@ const NavBar = () => {
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
+                // elevation={0}
+                getContentAnchorEl={null}
                 anchorOrigin={{
                   vertical: 'bottom',
-                  horizontal: 'left',
+                  horizontal: 'center',
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: 'top',
-                  horizontal: 'left',
+                  horizontal: 'center',
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
