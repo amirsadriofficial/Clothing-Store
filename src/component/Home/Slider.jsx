@@ -8,6 +8,8 @@ const SliderComponent = () => {
   return (
     <Carousel>
       <img src={SlideOne} alt="SlideOne" />
+      <img src={SlideTwo} alt="SlideOne" />
+      <img src={SlideThree} alt="SlideOne" />
     </Carousel>
   )
 }
