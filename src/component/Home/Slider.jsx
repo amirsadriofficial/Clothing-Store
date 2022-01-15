@@ -9,6 +9,10 @@ const useStyles = makeStyles(() => ({
   carousel: {
     height: '86.5vh',
   },
+  responsive: {
+    width: '100%',
+    height: 'auto',
+  },
 }))
 
 const SliderComponent = () => {
@@ -16,9 +20,9 @@ const SliderComponent = () => {
 
   return (
     <Carousel className={classes.carousel}>
-      <img src={SlideOne} alt="SlideOne" />
-      <img src={SlideTwo} alt="SlideOne" />
-      <img src={SlideThree} alt="SlideOne" />
+      <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
+      <img src={SlideTwo} alt="SlideOne" className={classes.responsive} />
+      <img src={SlideThree} alt="SlideOne" className={classes.responsive} />
     </Carousel>
   )
 }
