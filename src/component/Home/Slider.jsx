@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 
-function Example(props) {
+function SliderComponent(props) {
   const items = [
     {
       name: 'Random Name #1',
@@ -45,3 +45,4 @@ function Item(props) {
     </Paper>
   )
 }
+export default SliderComponent
