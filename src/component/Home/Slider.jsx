@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 
-function SliderComponent(props) {
+const SliderComponent = (props) => {
   const items = [
     {
       name: 'Random Name #1',
