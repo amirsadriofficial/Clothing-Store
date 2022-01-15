@@ -7,7 +7,7 @@ import SlideThree from '../../images/slide/slide-03.jpg'
 
 const useStyles = makeStyles(() => ({
   carousel: {
-    height: '87vh',
+    height: '86.5vh',
   },
 }))
 
