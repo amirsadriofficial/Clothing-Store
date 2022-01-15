@@ -11,7 +11,6 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import PropTypes from 'prop-types'
-// import { Paper, Button } from '@mui/material'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 
