@@ -10,6 +10,7 @@
 
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
+import SlideOne from '../../images/slide/slide-01.jpg'
 // import PropTypes from 'prop-types'
 // import Paper from '@material-ui/core/Paper'
 // import Button from '@material-ui/core/Button'
@@ -28,9 +29,12 @@ const SliderComponent = () => {
 
   return (
     <Carousel>
-      {items.map((item, i) => (
+      {/* {items.map((item, i) => (
         <Item key={i} item={item} />
-      ))}
+      ))} */}
+      {/* <Item> */}
+      <img src={SlideOne} alt="SlideOne" />
+      {/* </Item> */}
     </Carousel>
   )
 }
