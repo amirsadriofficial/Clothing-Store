@@ -6,9 +6,9 @@ import SlideTwo from '../../images/slide/slide-02.jpg'
 import SlideThree from '../../images/slide/slide-03.jpg'
 
 const useStyles = makeStyles(() => ({
-  // carousel: {
-  //   height: '86.5vh',
-  // },
+  carousel: {
+    height: '86.5vh',
+  },
   responsive: {
     width: '100%',
     height: 'auto',
