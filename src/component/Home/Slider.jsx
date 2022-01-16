@@ -19,7 +19,7 @@ const SliderComponent = () => {
   const classes = useStyles()
 
   return (
-    <Carousel className={classes.carousel}>
+    <Carousel>
       <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
       <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
       <img src={SlideThree} alt="SlideThree" className={classes.responsive} />
