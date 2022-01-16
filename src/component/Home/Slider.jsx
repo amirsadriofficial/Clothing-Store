@@ -13,15 +13,26 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     height: 'auto',
   },
+  // imagePosition: {
+  //   position: 'absolute',
+  //   // bottom: '1000px',
+  // },
+  descriptionPosition: {
+    position: 'relative',
+    bottom: '550px',
+  },
 }))
 
 const SliderComponent = () => {
   const classes = useStyles()
 
   return (
-    <Carousel>
+    <Carousel autoPlay={false}>
       <div>
         <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
+        <div className={classes.descriptionPosition}>
+          <h4>woman</h4>
+        </div>
       </div>
       <div>
         <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
