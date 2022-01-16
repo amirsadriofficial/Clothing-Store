@@ -8,17 +8,10 @@ import SlideTwo from '../../images/slide/slide-02.jpg'
 import SlideThree from '../../images/slide/slide-03.jpg'
 
 const useStyles = makeStyles(() => ({
-  carousel: {
-    height: '86.5vh',
-  },
   responsive: {
     width: '100%',
     height: 'auto',
   },
-  // imagePosition: {
-  //   position: 'absolute',
-  //   // bottom: '1000px',
-  // },
   descriptionPosition: {
     position: 'absolute',
     bottom: '350px',
@@ -54,9 +47,33 @@ const SliderComponent = () => {
       </div>
       <div>
         <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
+        <div className={classes.descriptionPosition}>
+          <h2>Man New-Season</h2>
+          <p>JACKETS & COATS</p>
+          <Button
+            className={clsx(classes.buttonStyle, classes.buttonResponsiveStyle)}
+            size="large"
+            variant="contained"
+            color="primary"
+          >
+            Shop Now
+          </Button>
+        </div>
       </div>
       <div>
         <img src={SlideThree} alt="SlideThree" className={classes.responsive} />
+        <div className={classes.descriptionPosition}>
+          <h2>Man Collection 2022</h2>
+          <p>NEW ARRIVALS</p>
+          <Button
+            className={clsx(classes.buttonStyle, classes.buttonResponsiveStyle)}
+            size="large"
+            variant="contained"
+            color="primary"
+          >
+            Shop Now
+          </Button>
+        </div>
       </div>
     </Carousel>
   )
