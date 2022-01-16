@@ -16,6 +16,6 @@ const Home = () => {
   )
 }
 
-Home.propTypes = { settings: PropTypes.node.isRequired }
+// Home.propTypes = { settings: PropTypes.node.isRequired }
 
 export default Home
