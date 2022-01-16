@@ -1,6 +1,8 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import clsx from 'clsx'
 import SlideOne from '../../images/slide/slide-01.jpg'
 import SlideTwo from '../../images/slide/slide-02.jpg'
 import SlideThree from '../../images/slide/slide-03.jpg'
@@ -18,8 +20,15 @@ const useStyles = makeStyles(() => ({
   //   // bottom: '1000px',
   // },
   descriptionPosition: {
-    position: 'relative',
-    bottom: '550px',
+    position: 'absolute',
+    bottom: '350px',
+    left: '200px',
+  },
+  buttonStyle: {
+    backgroundColor: '#717fe0',
+    borderRadius: '25px',
+    marginTop: '35px',
+    marginBottom: '1px',
   },
 }))
 
@@ -31,7 +40,16 @@ const SliderComponent = () => {
       <div>
         <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
         <div className={classes.descriptionPosition}>
-          <h4>woman</h4>
+          <h2>Woman Collection 2022</h2>
+          <p>NEW SEASON</p>
+          <Button
+            className={clsx(classes.buttonStyle, classes.buttonResponsiveStyle)}
+            size="large"
+            variant="contained"
+            color="primary"
+          >
+            Shop Now
+          </Button>
         </div>
       </div>
       <div>
