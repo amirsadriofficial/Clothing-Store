@@ -20,7 +20,9 @@ const SliderComponent = () => {
 
   return (
     <Carousel>
-      <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
+      <div>
+        <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
+      </div>
       <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
       <img src={SlideThree} alt="SlideThree" className={classes.responsive} />
     </Carousel>
