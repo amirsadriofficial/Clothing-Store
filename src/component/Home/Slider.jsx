@@ -55,7 +55,7 @@ const SliderComponent = () => {
   const classes = useStyles()
 
   return (
-    <Carousel autoPlay={false}>
+    <Carousel>
       <div>
         <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
         <Hidden mdDown>
