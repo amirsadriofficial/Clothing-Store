@@ -3,7 +3,6 @@ import React from 'react'
 import Slider from './slider/Slider'
 import Banner from './Banner'
 import ProductOverview from './ProductOverview'
-import Shop from '../Shop/Shop'
 
 const Home = () => {
   return (
@@ -11,7 +10,6 @@ const Home = () => {
       <Slider />
       <Banner />
       <ProductOverview />
-      <Shop />
     </>
   )
 }
