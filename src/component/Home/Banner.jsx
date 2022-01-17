@@ -17,13 +17,18 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
   },
   singleGrid: {
-    marginLeft: '10px',
-    marginRight: '10px',
+    // margin: '15px',
+    position: 'relative',
     border: '1px solid #e6e6e6',
   },
   img: {
     width: '100%',
     height: '100%',
+  },
+  descriptionPosition: {
+    position: 'absolute',
+    top: '10px',
+    left: '30px',
   },
 }))
 
@@ -32,15 +37,27 @@ const Banner = () => {
 
   return (
     <Container className={classes.containerSpacing}>
-      <Grid spacing={1} className={classes.flexGrid}>
+      <Grid container className={classes.flexGrid}>
         <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
           <img src={bannerOne} alt="bannerOne" className={classes.img} />
+          <div className={classes.descriptionPosition}>
+            <h4>Woman</h4>
+            <p>Spring 2022</p>
+          </div>
         </Grid>
         <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
           <img src={bannerTwo} alt="bannerTwo" className={classes.img} />
+          <div className={classes.descriptionPosition}>
+            <h4>Man</h4>
+            <p>Spring 2022</p>
+          </div>
         </Grid>
         <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
           <img src={bannerThree} alt="bannerThree" className={classes.img} />
+          <div className={classes.descriptionPosition}>
+            <h4>Accessories</h4>
+            <p>New Trend</p>
+          </div>
         </Grid>
       </Grid>
     </Container>
