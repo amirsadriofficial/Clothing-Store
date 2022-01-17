@@ -14,7 +14,6 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     height: 'auto',
   },
-  //-----------------------------------------------------------------------
   descriptionPosition: {
     position: 'absolute',
     bottom: '250px',
@@ -35,7 +34,6 @@ const useStyles = makeStyles(() => ({
     bottom: '90px',
     left: '40px',
   },
-  //-----------------------------------------------------------------------
   descriptionFont: {
     fontSize: '50px',
   },
@@ -48,12 +46,9 @@ const useStyles = makeStyles(() => ({
   descriptionFontSm: {
     fontSize: '15px',
   },
-  //-----------------------------------------------------------------------
   buttonStyle: {
     backgroundColor: '#717fe0',
     borderRadius: '25px',
-    marginTop: '0px',
-    marginBottom: '1px',
   },
 }))
 
@@ -97,10 +92,7 @@ const SliderComponent = () => {
             <h2 className={classes.descriptionFontMd}>Woman Collection 2022</h2>
             <p className={classes.descriptionFontMd}>NEW SEASON</p>
             <Button
-              className={clsx(
-                classes.buttonStyle,
-                classes.buttonResponsiveStyle
-              )}
+              className={classes.buttonStyle}
               variant="contained"
               color="primary"
             >
