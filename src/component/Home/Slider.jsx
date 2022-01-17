@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import clsx from 'clsx'
 import SlideOne from '../../images/slide/slide-01.jpg'
 import SlideTwo from '../../images/slide/slide-02.jpg'
 import SlideThree from '../../images/slide/slide-03.jpg'
@@ -193,8 +192,8 @@ const SliderComponent = () => {
         </Hidden>
         <Hidden lgUp smDown>
           <Grid className={classes.descriptionPositionLg}>
-            <h2 className={classes.descriptionFontLg}>Man New-Season</h2>
-            <p className={classes.descriptionFontLg}>JACKETS & COATS</p>
+            <h2 className={classes.descriptionFontLg}>Man Collection 2022</h2>
+            <p className={classes.descriptionFontLg}>NEW ARRIVALS</p>
             <Button
               className={classes.buttonStyle}
               size="large"
@@ -207,8 +206,8 @@ const SliderComponent = () => {
         </Hidden>
         <Hidden mdUp xsDown>
           <Grid className={classes.descriptionPositionMd}>
-            <h2 className={classes.descriptionFontMd}>Man New-Season</h2>
-            <p className={classes.descriptionFontMd}>JACKETS & COATS</p>
+            <h2 className={classes.descriptionFontMd}>Man Collection 2022</h2>
+            <p className={classes.descriptionFontMd}>NEW ARRIVALS</p>
             <Button
               className={classes.buttonStyle}
               variant="contained"
@@ -220,8 +219,8 @@ const SliderComponent = () => {
         </Hidden>
         <Hidden smUp>
           <Grid className={classes.descriptionPositionSm}>
-            <h2 className={classes.descriptionFontSm}>Man New-Season</h2>
-            <p className={classes.descriptionFontSm}>JACKETS & COATS</p>
+            <h2 className={classes.descriptionFontSm}>Man Collection 2022</h2>
+            <p className={classes.descriptionFontSm}>NEW ARRIVALS</p>
             <Button
               className={classes.buttonStyle}
               style={{ fontSize: '8px' }}
