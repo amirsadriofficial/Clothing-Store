@@ -44,11 +44,10 @@ function a11yProps(index) {
     'aria-controls': `full-width-tabpanel-${index}`,
   }
 }
-
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: 1000,
   },
 }))
 
@@ -56,18 +55,16 @@ export default function FullWidthTabs() {
   const classes = useStyles()
   const theme = useTheme()
   const [value, setValue] = React.useState(0)
-
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-
   const handleChangeIndex = (index) => {
     setValue(index)
   }
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="inherit">
         <Tabs
           value={value}
           onChange={handleChange}
@@ -77,11 +74,17 @@ export default function FullWidthTabs() {
           aria-label="full width tabs example"
         >
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="All Products" {...a11yProps(0)} />
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Women" {...a11yProps(1)} />
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Men" {...a11yProps(2)} />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Tab label="Bag" {...a11yProps(3)} />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Tab label="Shoes" {...a11yProps(4)} />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Tab label="Watches" {...a11yProps(5)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -90,13 +93,22 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+          Item One All Products
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+          Item Two Women
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+          Item Three Men
+        </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          Item Four Bag
+        </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+          Item Five Shoes
+        </TabPanel>
+        <TabPanel value={value} index={5} dir={theme.direction}>
+          Item Six Watches
         </TabPanel>
       </SwipeableViews>
     </div>
