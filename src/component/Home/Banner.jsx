@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -17,8 +18,9 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
   },
   singleGrid: {
-    // margin: '15px',
     position: 'relative',
+  },
+  singleGridStyle: {
     border: '1px solid #e6e6e6',
   },
   img: {
@@ -27,8 +29,9 @@ const useStyles = makeStyles(() => ({
   },
   descriptionPosition: {
     position: 'absolute',
-    top: '10px',
-    left: '30px',
+    top: '20px',
+    left: '50px',
+    fontSize: '18px',
   },
 }))
 
@@ -37,27 +40,43 @@ const Banner = () => {
 
   return (
     <Container className={classes.containerSpacing}>
-      <Grid container className={classes.flexGrid}>
-        <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
-          <img src={bannerOne} alt="bannerOne" className={classes.img} />
-          <div className={classes.descriptionPosition}>
-            <h4>Woman</h4>
-            <p>Spring 2022</p>
-          </div>
+      <Grid container spacing={2} className={classes.flexGrid}>
+        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
+          <Grid className={classes.singleGridStyle}>
+            <Link href="/">
+              <img src={bannerOne} alt="bannerOne" className={classes.img} />
+              <div className={classes.descriptionPosition}>
+                <h4>Woman</h4>
+                <p>Spring 2022</p>
+              </div>
+            </Link>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
-          <img src={bannerTwo} alt="bannerTwo" className={classes.img} />
-          <div className={classes.descriptionPosition}>
-            <h4>Man</h4>
-            <p>Spring 2022</p>
-          </div>
+        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
+          <Grid className={classes.singleGridStyle}>
+            <Link href="/">
+              <img src={bannerTwo} alt="bannerTwo" className={classes.img} />
+              <div className={classes.descriptionPosition}>
+                <h4>Man</h4>
+                <p>Spring 2022</p>
+              </div>
+            </Link>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={4} className={classes.singleGrid}>
-          <img src={bannerThree} alt="bannerThree" className={classes.img} />
-          <div className={classes.descriptionPosition}>
-            <h4>Accessories</h4>
-            <p>New Trend</p>
-          </div>
+        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
+          <Grid className={classes.singleGridStyle}>
+            <Link href="/">
+              <img
+                src={bannerThree}
+                alt="bannerThree"
+                className={classes.img}
+              />
+              <div className={classes.descriptionPosition}>
+                <h4>Accessories</h4>
+                <p>New Trend</p>
+              </div>
+            </Link>
+          </Grid>
         </Grid>
       </Grid>
     </Container>

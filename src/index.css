@@ -5,3 +5,6 @@ ul {
   list-style: none;
   padding: 0px;
 }
+a {
+  color: inherit;
+}
