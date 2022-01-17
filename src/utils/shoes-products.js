@@ -28,4 +28,5 @@ const SHOES_PRODUCTS = [
     price: 475,
   },
 ]
+
 export default SHOES_PRODUCTS
