@@ -14,12 +14,13 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     height: 'auto',
   },
+  //-----------------------------------------------------------------------
   descriptionPosition: {
     position: 'absolute',
-    bottom: '350px',
-    left: '200px',
+    bottom: '250px',
+    left: '125px',
   },
-  descriptionPositionll: {
+  descriptionPositionLg: {
     position: 'absolute',
     bottom: '50px',
     left: '20px',
@@ -34,13 +35,24 @@ const useStyles = makeStyles(() => ({
     bottom: '70px',
     left: '35px',
   },
+  //-----------------------------------------------------------------------
+  descriptionFont: {
+    fontSize: '50px',
+  },
+  descriptionFontLg: {
+    fontSize: '16px',
+  },
+  descriptionFontMd: {
+    fontSize: '16px',
+  },
   descriptionFontSm: {
     fontSize: '16px',
   },
+  //-----------------------------------------------------------------------
   buttonStyle: {
     backgroundColor: '#717fe0',
     borderRadius: '25px',
-    marginTop: '35px',
+    marginTop: '0px',
     marginBottom: '1px',
   },
   buttonStyleSm: {
@@ -59,14 +71,11 @@ const SliderComponent = () => {
         <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
         <Hidden mdDown>
           <Grid className={classes.descriptionPosition}>
-            <h2>Woman Collection 2022</h2>
-            <p>NEW SEASON</p>
+            <h2 className={classes.descriptionFont}>Woman Collection 2022</h2>
+            <p className={classes.descriptionFont}>NEW SEASON</p>
             <Button
-              className={clsx(
-                classes.buttonStyle,
-                classes.buttonResponsiveStyle
-              )}
-              size="large"
+              className={classes.buttonStyle}
+              style={{ width: '200px', height: '50px', fontSize: '20px' }}
               variant="contained"
               color="primary"
             >
