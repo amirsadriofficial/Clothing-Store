@@ -179,8 +179,8 @@ const SliderComponent = () => {
         <img src={SlideThree} alt="SlideThree" className={classes.responsive} />
         <Hidden mdDown>
           <Grid className={classes.descriptionPosition}>
-            <h2 className={classes.descriptionFont}>Man New-Season</h2>
-            <p className={classes.descriptionFont}>JACKETS & COATS</p>
+            <h2 className={classes.descriptionFont}>Man Collection 2022</h2>
+            <p className={classes.descriptionFont}>NEW ARRIVALS</p>
             <Button
               className={classes.buttonStyle}
               style={{ width: '200px', height: '50px', fontSize: '20px' }}
@@ -233,18 +233,6 @@ const SliderComponent = () => {
             </Button>
           </Grid>
         </Hidden>
-        <div className={classes.descriptionPosition}>
-          <h2>Man Collection 2022</h2>
-          <p>NEW ARRIVALS</p>
-          <Button
-            className={clsx(classes.buttonStyle, classes.buttonResponsiveStyle)}
-            size="large"
-            variant="contained"
-            color="primary"
-          >
-            Shop Now
-          </Button>
-        </div>
       </div>
     </Carousel>
   )
