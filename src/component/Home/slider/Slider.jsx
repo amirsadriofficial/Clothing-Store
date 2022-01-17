@@ -5,8 +5,6 @@ import Slide2 from './Slide2'
 import Slide3 from './Slide3'
 
 const Slider = () => {
-  // const classes = useStyles()
-
   return (
     <Carousel>
       <Slide1 />
