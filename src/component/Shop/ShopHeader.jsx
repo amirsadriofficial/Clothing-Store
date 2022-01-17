@@ -38,7 +38,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 }
 
-function a11yProps(index) {
+const a11yProps = (index) => {
   return {
     id: `full-width-tab-${index}`,
     'aria-controls': `full-width-tabpanel-${index}`,
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function FullWidthTabs() {
+const ShopHeader = () => {
   const classes = useStyles()
   const theme = useTheme()
   const [value, setValue] = React.useState(0)
@@ -114,3 +114,4 @@ export default function FullWidthTabs() {
     </div>
   )
 }
+export default ShopHeader
