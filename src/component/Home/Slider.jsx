@@ -118,21 +118,121 @@ const SliderComponent = () => {
       </div>
       <div>
         <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
-        <div className={classes.descriptionPosition}>
-          <h2>Man New-Season</h2>
-          <p>JACKETS & COATS</p>
-          <Button
-            className={clsx(classes.buttonStyle, classes.buttonResponsiveStyle)}
-            size="large"
-            variant="contained"
-            color="primary"
-          >
-            Shop Now
-          </Button>
-        </div>
+        <Hidden mdDown>
+          <Grid className={classes.descriptionPosition}>
+            <h2 className={classes.descriptionFont}>Man New-Season</h2>
+            <p className={classes.descriptionFont}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              style={{ width: '200px', height: '50px', fontSize: '20px' }}
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden lgUp smDown>
+          <Grid className={classes.descriptionPositionLg}>
+            <h2 className={classes.descriptionFontLg}>Man New-Season</h2>
+            <p className={classes.descriptionFontLg}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              size="large"
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp xsDown>
+          <Grid className={classes.descriptionPositionMd}>
+            <h2 className={classes.descriptionFontMd}>Man New-Season</h2>
+            <p className={classes.descriptionFontMd}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden smUp>
+          <Grid className={classes.descriptionPositionSm}>
+            <h2 className={classes.descriptionFontSm}>Man New-Season</h2>
+            <p className={classes.descriptionFontSm}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              style={{ fontSize: '8px' }}
+              size="small"
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
       </div>
       <div>
         <img src={SlideThree} alt="SlideThree" className={classes.responsive} />
+        <Hidden mdDown>
+          <Grid className={classes.descriptionPosition}>
+            <h2 className={classes.descriptionFont}>Man New-Season</h2>
+            <p className={classes.descriptionFont}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              style={{ width: '200px', height: '50px', fontSize: '20px' }}
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden lgUp smDown>
+          <Grid className={classes.descriptionPositionLg}>
+            <h2 className={classes.descriptionFontLg}>Man New-Season</h2>
+            <p className={classes.descriptionFontLg}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              size="large"
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp xsDown>
+          <Grid className={classes.descriptionPositionMd}>
+            <h2 className={classes.descriptionFontMd}>Man New-Season</h2>
+            <p className={classes.descriptionFontMd}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
+        <Hidden smUp>
+          <Grid className={classes.descriptionPositionSm}>
+            <h2 className={classes.descriptionFontSm}>Man New-Season</h2>
+            <p className={classes.descriptionFontSm}>JACKETS & COATS</p>
+            <Button
+              className={classes.buttonStyle}
+              style={{ fontSize: '8px' }}
+              size="small"
+              variant="contained"
+              color="primary"
+            >
+              Shop Now
+            </Button>
+          </Grid>
+        </Hidden>
         <div className={classes.descriptionPosition}>
           <h2>Man Collection 2022</h2>
           <p>NEW ARRIVALS</p>
