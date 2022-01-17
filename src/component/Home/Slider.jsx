@@ -3,6 +3,7 @@ import Carousel from 'react-material-ui-carousel'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import clsx from 'clsx'
+import Grid from '@material-ui/core/Grid'
 import SlideOne from '../../images/slide/slide-01.jpg'
 import SlideTwo from '../../images/slide/slide-02.jpg'
 import SlideThree from '../../images/slide/slide-03.jpg'
@@ -32,7 +33,7 @@ const SliderComponent = () => {
     <Carousel autoPlay={false}>
       <div>
         <img src={SlideOne} alt="SlideOne" className={classes.responsive} />
-        <div className={classes.descriptionPosition}>
+        <Grid className={classes.descriptionPosition}>
           <h2>Woman Collection 2022</h2>
           <p>NEW SEASON</p>
           <Button
@@ -43,7 +44,7 @@ const SliderComponent = () => {
           >
             Shop Now
           </Button>
-        </div>
+        </Grid>
       </div>
       <div>
         <img src={SlideTwo} alt="SlideTwo" className={classes.responsive} />
