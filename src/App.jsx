@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css'
-import Layout from './container/Layout/Layout'
-import Home from './component/Home/Home'
-import Shop from './component/Shop/Shop'
-import About from './component/About/About'
-import Contact from './component/Contact/Contact'
-import Cart from './component/Cart/Cart'
+import Layout from './container/layout/Layout'
+import Home from './component/home/Home'
+import Shop from './component/shop/Shop'
+import About from './component/about/About'
+import Contact from './component/contact/Contact'
+import Cart from './component/cart/Cart'
 
 function App() {
   return (

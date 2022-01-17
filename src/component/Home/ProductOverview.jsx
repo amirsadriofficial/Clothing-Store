@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
-import Shop from '../Shop/Shop'
+import Shop from '../shop/Shop'
 
 const ProductOverview = () => {
   return (
