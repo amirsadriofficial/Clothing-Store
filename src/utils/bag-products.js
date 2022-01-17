@@ -28,4 +28,5 @@ const BAG_PRODUCTS = [
     price: 475,
   },
 ]
+
 export default BAG_PRODUCTS
