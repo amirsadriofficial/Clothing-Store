@@ -22,42 +22,37 @@ const useStyles = makeStyles(() => ({
   },
   descriptionPositionLg: {
     position: 'absolute',
-    bottom: '50px',
-    left: '20px',
+    bottom: '200px',
+    left: '100px',
   },
   descriptionPositionMd: {
     position: 'absolute',
-    bottom: '100px',
-    left: '80px',
+    bottom: '150px',
+    left: '75px',
   },
   descriptionPositionSm: {
     position: 'absolute',
-    bottom: '70px',
-    left: '35px',
+    bottom: '90px',
+    left: '40px',
   },
   //-----------------------------------------------------------------------
   descriptionFont: {
     fontSize: '50px',
   },
   descriptionFontLg: {
-    fontSize: '16px',
+    fontSize: '35px',
   },
   descriptionFontMd: {
-    fontSize: '16px',
+    fontSize: '25px',
   },
   descriptionFontSm: {
-    fontSize: '16px',
+    fontSize: '15px',
   },
   //-----------------------------------------------------------------------
   buttonStyle: {
     backgroundColor: '#717fe0',
     borderRadius: '25px',
     marginTop: '0px',
-    marginBottom: '1px',
-  },
-  buttonStyleSm: {
-    backgroundColor: '#717fe0',
-    borderRadius: '25px',
     marginBottom: '1px',
   },
 }))
@@ -84,14 +79,12 @@ const SliderComponent = () => {
           </Grid>
         </Hidden>
         <Hidden lgUp smDown>
-          <Grid className={classes.descriptionPositionll}>
-            {/* <h2>Woman Collection 2022</h2>
-            <p>NEW SEASON</p> */}
+          <Grid className={classes.descriptionPositionLg}>
+            <h2 className={classes.descriptionFontLg}>Woman Collection 2022</h2>
+            <p className={classes.descriptionFontLg}>NEW SEASON</p>
             <Button
-              className={clsx(
-                classes.buttonStyle,
-                classes.buttonResponsiveStyle
-              )}
+              className={classes.buttonStyle}
+              size="large"
               variant="contained"
               color="primary"
             >
@@ -101,8 +94,8 @@ const SliderComponent = () => {
         </Hidden>
         <Hidden mdUp xsDown>
           <Grid className={classes.descriptionPositionMd}>
-            <h2>Woman Collection 2022</h2>
-            <p>NEW SEASON</p>
+            <h2 className={classes.descriptionFontMd}>Woman Collection 2022</h2>
+            <p className={classes.descriptionFontMd}>NEW SEASON</p>
             <Button
               className={clsx(
                 classes.buttonStyle,
@@ -120,10 +113,8 @@ const SliderComponent = () => {
             <h2 className={classes.descriptionFontSm}>Woman Collection 2022</h2>
             <p className={classes.descriptionFontSm}>NEW SEASON</p>
             <Button
-              className={clsx(
-                classes.buttonStyleSm,
-                classes.buttonResponsiveStyle
-              )}
+              className={classes.buttonStyle}
+              style={{ fontSize: '8px' }}
               size="small"
               variant="contained"
               color="primary"
