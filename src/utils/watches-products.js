@@ -28,4 +28,5 @@ const WATCH_PRODUCTS = [
     price: 475,
   },
 ]
+
 export default WATCH_PRODUCTS
