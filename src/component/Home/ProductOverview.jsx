@@ -1,5 +1,10 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
+import WomanSlider from './products-slider/WomanSlider'
+import ManSlider from './products-slider/ManSlider'
+import BagSlider from './products-slider/BagSlider'
+import ShoesSlider from './products-slider/ShoesSlider'
+import WatchesSlider from './products-slider/WatchesSlider'
 
 const ProductOverview = () => {
   return (
