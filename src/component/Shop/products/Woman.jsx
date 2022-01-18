@@ -14,11 +14,11 @@ import Products from '../../../utils/woman-products'
 
 const useStyles = makeStyles({
   root: {
-    width: '270px',
+    width: '100%',
     height: '100%',
   },
   media: {
-    width: '270px',
+    width: '100%',
     height: '335px',
   },
   priceText: {
@@ -34,7 +34,7 @@ const Woman = () => {
   return (
     <Grid container spacing={3}>
       {Products.map((product) => (
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
