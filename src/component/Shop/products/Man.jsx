@@ -7,7 +7,7 @@ const Man = () => {
       <div>
         {Products.map((Product) => (
           <>
-            <p>{Product.name}</p>
+            <h3>{Product.name}</h3>
             <p>{Product.description}</p>
           </>
         ))}
