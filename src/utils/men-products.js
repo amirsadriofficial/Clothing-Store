@@ -1,31 +1,29 @@
+// eslint-disable-next-line import/no-unresolved
+import manProduct1 from '../images/products/man/man-product-1.jpg'
+import manProduct2 from '../images/products/man/man-product-2.jpg'
+import manProduct3 from '../images/products/man/man-product-3.jpg'
+
 const MEN_PRODUCTS = [
   {
-    id: 'men_product_1',
-    name: 'Men Product',
+    id: 'man_product_1',
+    name: 'Man Product',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    // image: men_product_1,
+    image: manProduct1,
     price: 175,
   },
   {
-    id: 'men_product_2',
-    name: 'Men Product',
+    id: 'man_product_2',
+    name: 'Man Product',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    // image: men_product_2,
+    image: manProduct2,
     price: 275,
   },
   {
-    id: 'men_product_3',
-    name: 'Men Product',
+    id: 'man_product_3',
+    name: 'Man Product',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    // image: men_product_3,
+    image: manProduct3,
     price: 375,
-  },
-  {
-    id: 'men_product_4',
-    name: 'Men Product',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    // image: men_product_4,
-    price: 475,
   },
 ]
 
