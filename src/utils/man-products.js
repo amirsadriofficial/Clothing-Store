@@ -1,6 +1,7 @@
 import manProduct1 from '../images/products/man/man-product-01.jpg'
 import manProduct2 from '../images/products/man/man-product-02.jpg'
 import manProduct3 from '../images/products/man/man-product-03.jpg'
+import manProduct4 from '../images/products/man/man-product-04.jpg'
 
 const MAN_PRODUCTS = [
   {
@@ -22,6 +23,13 @@ const MAN_PRODUCTS = [
     name: 'Man Product',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct3,
+    price: 375,
+  },
+  {
+    id: 'man_product_3',
+    name: 'Man Product',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    image: manProduct4,
     price: 375,
   },
 ]
