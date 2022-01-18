@@ -1,9 +1,11 @@
 // eslint-disable-next-line import/no-unresolved
-import manProduct1 from '../images/products/man/man-product-1.jpg'
-import manProduct2 from '../images/products/man/man-product-2.jpg'
-import manProduct3 from '../images/products/man/man-product-3.jpg'
+import manProduct1 from '../images/products/man/man-product-01.jpg'
+// eslint-disable-next-line import/no-unresolved
+import manProduct2 from '../images/products/man/man-product-02.jpg'
+// eslint-disable-next-line import/no-unresolved
+import manProduct3 from '../images/products/man/man-product-03.jpg'
 
-const MEN_PRODUCTS = [
+const MAN_PRODUCTS = [
   {
     id: 'man_product_1',
     name: 'Man Product',
@@ -27,4 +29,4 @@ const MEN_PRODUCTS = [
   },
 ]
 
-export default MEN_PRODUCTS
+export default MAN_PRODUCTS

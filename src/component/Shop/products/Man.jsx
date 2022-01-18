@@ -2,7 +2,18 @@ import React from 'react'
 import Products from '../../../utils/man-products'
 
 const Man = () => {
-  return <Products />
+  return (
+    <>
+      <div>
+        {Products.map((Product) => (
+          <>
+            <p>{Product.name}</p>
+            <p>{Product.description}</p>
+          </>
+        ))}
+      </div>
+    </>
+  )
 }
 
 export default Man
