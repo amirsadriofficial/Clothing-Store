@@ -1,6 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import Slider from './slider/Slider'
+import Slider from './landing-slider/Slider'
 import Banner from './Banner'
 import ProductOverview from './ProductOverview'
 
