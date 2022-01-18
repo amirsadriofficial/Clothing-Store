@@ -1,7 +1,7 @@
 import React from 'react'
 
-const WomanSlides = () => {
+const WomanSlider = () => {
   return <div />
 }
 
-export default WomanSlides
+export default WomanSlider

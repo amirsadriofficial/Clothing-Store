@@ -1,7 +1,7 @@
 import React from 'react'
 
-const WatchesSlides = () => {
+const WatchesSlider = () => {
   return <div />
 }
 
-export default WatchesSlides
+export default WatchesSlider

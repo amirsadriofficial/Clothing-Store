@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ManSlides = () => {
+const ManSlider = () => {
   return <div />
 }
 
-export default ManSlides
+export default ManSlider

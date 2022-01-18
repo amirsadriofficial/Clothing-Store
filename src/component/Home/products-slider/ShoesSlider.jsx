@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ShoesSlides = () => {
+const ShoesSlider = () => {
   return <div />
 }
 
-export default ShoesSlides
+export default ShoesSlider
