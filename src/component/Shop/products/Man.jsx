@@ -9,6 +9,7 @@ const Man = () => {
           <>
             <h3>{Product.name}</h3>
             <p>{Product.description}</p>
+            <h4>{Product.price}</h4>
           </>
         ))}
       </div>
