@@ -10,6 +10,11 @@ const ProductOverview = () => {
   return (
     <Container>
       <h2>Products Overview</h2>
+      <WomanSlider />
+      <ManSlider />
+      <BagSlider />
+      <ShoesSlider />
+      <WatchesSlider />
     </Container>
   )
 }
