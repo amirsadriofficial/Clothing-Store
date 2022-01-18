@@ -6,14 +6,14 @@ import manProduct4 from '../images/products/man/man-product-04.jpg'
 const MAN_PRODUCTS = [
   {
     id: 'man_product_1',
-    name: 'Man Product',
+    name: 'Only Check Trouser',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct1,
     price: 175,
   },
   {
     id: 'man_product_2',
-    name: 'Man Product',
+    name: 'Herschel supply',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct2,
     price: 275,

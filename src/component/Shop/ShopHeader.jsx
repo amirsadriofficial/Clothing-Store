@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
+import FilterListIcon from '@material-ui/icons/FilterList'
 import ManProducts from './products/Man'
 import BagProducts from './products/Bag'
 import WomanProducts from './products/Woman'
@@ -108,7 +109,11 @@ const ShopHeader = () => {
             <Tab label="Watches" {...a11yProps(5)} />
           </Tabs>
           <div className={classes.filterButton}>
-            <Button variant="outlined" color="primary">
+            <Button
+              variant="outlined"
+              color="primary"
+              startIcon={<FilterListIcon />}
+            >
               Filter
             </Button>
           </div>
