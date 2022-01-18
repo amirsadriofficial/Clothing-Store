@@ -1,8 +1,5 @@
-// eslint-disable-next-line import/no-unresolved
 import manProduct1 from '../images/products/man/man-product-01.jpg'
-// eslint-disable-next-line import/no-unresolved
 import manProduct2 from '../images/products/man/man-product-02.jpg'
-// eslint-disable-next-line import/no-unresolved
 import manProduct3 from '../images/products/man/man-product-03.jpg'
 
 const MAN_PRODUCTS = [
