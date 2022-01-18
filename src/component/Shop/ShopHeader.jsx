@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
+import ManProducts from './products/Man'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
@@ -99,7 +100,7 @@ const ShopHeader = () => {
           Item Two Women
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three Men
+          <ManProducts />
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
           Item Four Bag
