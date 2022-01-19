@@ -45,18 +45,19 @@ const useStyles = makeStyles({
   bodySection: {
     marginTop: '50px',
     marginBottom: '50px',
-    border: '1.5px solid #000',
+    // border: '1.5px solid #000',
     backgroundColor: '#f5f5f5',
   },
   carouselStyle: {
-    marginBottom: '30px',
+    paddingBottom: '30px',
     marginLeft: '30px',
   },
   titleText: {
     marginLeft: '30px',
     fontSize: '25px',
-    // paddingTop: '10px',
-    borderBottom: '1.5px solid #000',
+    paddingTop: '30px',
+    paddingBottom: '10px',
+    borderBottom: '2px solid #717fe0',
   },
 })
 
@@ -64,7 +65,9 @@ const WomanSlider = () => {
   const classes = useStyles()
   return (
     <Grid className={classes.bodySection}>
-      <h3 className={classes.titleText}>Woman</h3>
+      <Grid item xs={6} sm={3} md={2} lg={2}>
+        <h3 className={classes.titleText}>Woman</h3>
+      </Grid>
       <Carousel responsive={responsive} className={classes.carouselStyle}>
         {Products.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={4}>
