@@ -83,7 +83,7 @@ const WOMEN_PRODUCTS = [
   },
   {
     id: 'women_product_4',
-    name: 'affordable women office wear',
+    name: 'Women office wear',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: womenProduct11,
     price: 475,
