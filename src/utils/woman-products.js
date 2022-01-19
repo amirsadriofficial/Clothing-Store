@@ -7,6 +7,8 @@ import womenProduct6 from '../images/products/woman/woman-product-06.jpg'
 import womenProduct7 from '../images/products/woman/woman-product-07.jpg'
 import womenProduct8 from '../images/products/woman/woman-product-08.jpg'
 import womenProduct9 from '../images/products/woman/woman-product-09.jpg'
+import womenProduct10 from '../images/products/woman/woman-product-10.jpg'
+import womenProduct11 from '../images/products/woman/woman-product-11.jpg'
 
 const WOMEN_PRODUCTS = [
   {
@@ -70,6 +72,20 @@ const WOMEN_PRODUCTS = [
     name: 'Femme T-Shirt In Stripe',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: womenProduct9,
+    price: 475,
+  },
+  {
+    id: 'women_product_4',
+    name: 'Cloud Jersey Cardigan',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    image: womenProduct10,
+    price: 475,
+  },
+  {
+    id: 'women_product_4',
+    name: 'affordable women office wear',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    image: womenProduct11,
     price: 475,
   },
 ]
