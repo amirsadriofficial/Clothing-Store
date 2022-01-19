@@ -48,9 +48,9 @@ const responsive = {
   },
 }
 
-const WomanSlider = () => {
+const WomanSlider = (props) => {
   const classes = useStyles()
-
+  const { deviceType } = props
   return (
     <Carousel
       swipeable={false}
@@ -59,14 +59,14 @@ const WomanSlider = () => {
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-      autoPlay={this.props.deviceType !== 'mobile'}
-      autoPlaySpeed={1000}
+      // autoPlay={deviceType !== 'mobile'}
+      // autoPlaySpeed={1000}
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}
       containerClass="carousel-container"
       removeArrowOnDeviceType={['tablet', 'mobile']}
-      deviceType={this.props.deviceType}
+      deviceType={deviceType}
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
@@ -95,11 +95,6 @@ const WomanSlider = () => {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            {/* <CardActions>
-              <IconButton aria-label="delete">
-                <FavoriteBorderIcon />
-              </IconButton>
-            </CardActions> */}
           </Card>
         </Grid>
       ))}
