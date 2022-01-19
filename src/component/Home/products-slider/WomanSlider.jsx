@@ -48,7 +48,7 @@ const responsive = {
   },
 }
 
-const WomanSlider = (props) => {
+const WomanSlider = () => {
   const classes = useStyles()
 
   return (
@@ -59,14 +59,14 @@ const WomanSlider = (props) => {
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-      autoPlay={props.deviceType !== 'mobile'}
+      autoPlay={this.props.deviceType !== 'mobile'}
       autoPlaySpeed={1000}
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}
       containerClass="carousel-container"
       removeArrowOnDeviceType={['tablet', 'mobile']}
-      // deviceType={props.deviceType}
+      deviceType={this.props.deviceType}
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
