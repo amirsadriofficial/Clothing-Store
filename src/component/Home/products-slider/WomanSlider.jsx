@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import { makeStyles } from '@material-ui/core/styles'
-// import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 // import CardActions from '@material-ui/core/CardActions'
@@ -16,7 +16,7 @@ import Products from '../../../utils/woman-products'
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
+    width: '270px',
     height: '100%',
   },
   media: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 4,
     slidesToSlide: 3, // optional, default to 1.
   },
   tablet: {
@@ -63,40 +63,40 @@ const WomanSlider = (props) => {
       // autoPlaySpeed={1000}
       keyBoardControl
       customTransition="all .5"
-      transitionDuration={500}
+      transitionDuration={1000}
       containerClass="carousel-container"
       removeArrowOnDeviceType={['tablet', 'mobile']}
       deviceType={deviceType}
       dotListClass="custom-dot-list-style"
-      itemClass="carousel-item-padding-40-px"
+      // itemClass="carousel-item-padding-40-px"
     >
       {Products.map((product) => (
-        // <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image={product.image}
-              title={product.name}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                {product.name}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {product.description}
-              </Typography>
-              <Typography
-                variant="h6"
-                color="textSecondary"
-                className={classes.priceText}
-              >
-                ${product.price}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        // </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={4}>
+          <Card className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={product.image}
+                title={product.name}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h6" component="h2">
+                  {product.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {product.description}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  color="textSecondary"
+                  className={classes.priceText}
+                >
+                  ${product.price}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
       ))}
     </Carousel>
   )
