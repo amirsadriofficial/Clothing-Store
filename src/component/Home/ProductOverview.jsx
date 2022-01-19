@@ -9,7 +9,7 @@ import WatchesSlider from './products-slider/WatchesSlider'
 const ProductOverview = () => {
   return (
     <Container>
-      <h2>Products Overview</h2>
+      <h2 style={{ fontSize: '36px' }}>Products Overview</h2>
       <WomanSlider />
       <ManSlider />
       <BagSlider />
