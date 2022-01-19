@@ -45,7 +45,6 @@ const useStyles = makeStyles({
   bodySection: {
     marginTop: '50px',
     marginBottom: '50px',
-    // border: '1.5px solid #000',
     backgroundColor: '#f5f5f5',
   },
   carouselStyle: {
