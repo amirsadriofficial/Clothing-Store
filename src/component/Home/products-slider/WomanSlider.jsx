@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import Products from '../../../utils/women-products'
 
 const responsive = {
@@ -46,6 +47,9 @@ const useStyles = makeStyles({
     marginTop: '50px',
     marginBottom: '50px',
     backgroundColor: '#f5f5f5',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   carouselStyle: {
     paddingBottom: '30px',
@@ -57,6 +61,12 @@ const useStyles = makeStyles({
     paddingTop: '30px',
     paddingBottom: '10px',
     borderBottom: '2px solid #717fe0',
+  },
+  buttonStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: '20px',
   },
 })
 
@@ -101,6 +111,13 @@ const WomanSlider = () => {
           </Grid>
         ))}
       </Carousel>
+      <Grid item xs={12} className={classes.buttonStyle}>
+        <Grid item xs={3}>
+          <Button variant="contained" color="primary" fullWidth>
+            See All Products
+          </Button>
+        </Grid>
+      </Grid>
     </Grid>
   )
 }

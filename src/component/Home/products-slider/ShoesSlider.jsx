@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import Products from '../../../utils/shoes-products'
 
 const responsive = {
@@ -58,6 +59,12 @@ const useStyles = makeStyles({
     paddingBottom: '10px',
     borderBottom: '2px solid #717fe0',
   },
+  buttonStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: '20px',
+  },
 })
 
 const ShoesSlider = () => {
@@ -101,6 +108,13 @@ const ShoesSlider = () => {
           </Grid>
         ))}
       </Carousel>
+      <Grid item xs={12} className={classes.buttonStyle}>
+        <Grid item xs={3}>
+          <Button variant="contained" color="primary" fullWidth>
+            See All Products
+          </Button>
+        </Grid>
+      </Grid>
     </Grid>
   )
 }
