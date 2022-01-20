@@ -1,8 +1,8 @@
-import bagProduct1 from '../images/products/bag/bag-product-01.jpg'
-import bagProduct2 from '../images/products/bag/bag-product-02.jpg'
-import bagProduct3 from '../images/products/bag/bag-product-03.webp'
-import bagProduct4 from '../images/products/bag/bag-product-04.webp'
-import bagProduct5 from '../images/products/bag/bag-product-05.webp'
+import bagProduct1 from '../images/products/bags/bag-product-01.jpg'
+import bagProduct2 from '../images/products/bags/bag-product-02.jpg'
+import bagProduct3 from '../images/products/bags/bag-product-03.webp'
+import bagProduct4 from '../images/products/bags/bag-product-04.webp'
+import bagProduct5 from '../images/products/bags/bag-product-05.webp'
 
 const BAGS_PRODUCTS = [
   {

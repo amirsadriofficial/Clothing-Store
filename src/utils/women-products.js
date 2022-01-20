@@ -1,91 +1,91 @@
-import womenProduct1 from '../images/products/woman/woman-product-01.jpg'
-import womenProduct2 from '../images/products/woman/woman-product-02.jpg'
-import womenProduct3 from '../images/products/woman/woman-product-03.jpg'
-import womenProduct4 from '../images/products/woman/woman-product-04.jpg'
-import womenProduct5 from '../images/products/woman/woman-product-05.jpg'
-import womenProduct6 from '../images/products/woman/woman-product-06.jpg'
-import womenProduct7 from '../images/products/woman/woman-product-07.jpg'
-import womenProduct8 from '../images/products/woman/woman-product-08.jpg'
-import womenProduct9 from '../images/products/woman/woman-product-09.jpg'
-import womenProduct10 from '../images/products/woman/woman-product-10.jpg'
-import womenProduct11 from '../images/products/woman/woman-product-11.jpg'
+import womanProduct1 from '../images/products/women/woman-product-01.jpg'
+import womanProduct2 from '../images/products/women/woman-product-02.jpg'
+import womanProduct3 from '../images/products/women/woman-product-03.jpg'
+import womanProduct4 from '../images/products/women/woman-product-04.jpg'
+import womanProduct5 from '../images/products/women/woman-product-05.jpg'
+import womanProduct6 from '../images/products/women/woman-product-06.jpg'
+import womanProduct7 from '../images/products/women/woman-product-07.jpg'
+import womanProduct8 from '../images/products/women/woman-product-08.jpg'
+import womanProduct9 from '../images/products/women/woman-product-09.jpg'
+import womanProduct10 from '../images/products/women/woman-product-10.jpg'
+import womanProduct11 from '../images/products/women/woman-product-11.jpg'
 
 const WOMEN_PRODUCTS = [
   {
     id: 'woman_product_1',
     name: 'Esprit Ruffle Shirt',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct1,
+    image: womanProduct1,
     price: 105,
   },
   {
     id: 'woman_product_2',
     name: 'Herschel Supply',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct2,
+    image: womanProduct2,
     price: 120,
   },
   {
     id: 'woman_product_3',
     name: 'T-Shirt With Sleeve',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct3,
+    image: womanProduct3,
     price: 85,
   },
   {
     id: 'woman_product_4',
     name: 'Classic Trench Coat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct4,
+    image: womanProduct4,
     price: 90,
   },
   {
     id: 'woman_product_5',
     name: 'Front Pocket Jumper',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct5,
+    image: womanProduct5,
     price: 135,
   },
   {
     id: 'woman_product_6',
     name: 'Square Neck Back',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct6,
+    image: womanProduct6,
     price: 70,
   },
   {
     id: 'woman_product_7',
     name: 'Shirt in Stretch Cotton',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct7,
+    image: womanProduct7,
     price: 220,
   },
   {
     id: 'woman_product_8',
     name: 'Pieces Metallic Printed',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct8,
+    image: womanProduct8,
     price: 160,
   },
   {
     id: 'woman_product_9',
     name: 'Femme T-Shirt In Stripe',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct9,
+    image: womanProduct9,
     price: 180,
   },
   {
     id: 'woman_product_10',
     name: 'Cloud Jersey Cardigan',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct10,
+    image: womanProduct10,
     price: 145,
   },
   {
     id: 'woman_product_11',
     name: 'Women Office Wear',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image: womenProduct11,
+    image: womanProduct11,
     price: 200,
   },
 ]
