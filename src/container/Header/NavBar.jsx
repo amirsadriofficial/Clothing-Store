@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -71,25 +71,25 @@ const pages = ['Home', 'Shop', 'About', 'Contact']
 const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
-  // const navigate = useNavigate()
-  // const handleSwitching = (page) => {
-  //   switch (page) {
-  //     case 'Home':
-  //       navigate('/')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'Shop':
-  //       navigate('/shop')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'About':
-  //       navigate('/about')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'Contact':
-  //       navigate('/contact')
-  //     // eslint-disable-next-line no-fallthrough
-  //     default:
-  //       navigate('/')
-  //   }
-  // }
+  const history = useHistory()
+  const handleSwitching = (page) => {
+    switch (page) {
+      case 'Home':
+        history.push('/')
+      // eslint-disable-next-line no-fallthrough
+      case 'Shop':
+        history.push('/shop')
+      // eslint-disable-next-line no-fallthrough
+      case 'About':
+        history.push('/about')
+      // eslint-disable-next-line no-fallthrough
+      case 'Contact':
+        history.push('/contact')
+      // eslint-disable-next-line no-fallthrough
+      default:
+        history.push('/')
+    }
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -158,7 +158,7 @@ const NavBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleSwitching(page)}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
