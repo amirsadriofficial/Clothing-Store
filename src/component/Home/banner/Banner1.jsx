@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import bannerOne from '../../../images/banner/banner-01.jpg'
-import bannerTwo from '../../../images/banner/banner-02.jpg'
-import bannerThree from '../../../images/banner/banner-03.jpg'
+import banner1 from '../../../images/banner/banner1-1.jpg'
+import banner2 from '../../../images/banner/banner1-2.jpg'
+import banner3 from '../../../images/banner/banner1-3.jpg'
 
 const useStyles = makeStyles(() => ({
   containerSpacing: {
@@ -44,7 +44,7 @@ const Banner1 = () => {
         <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
           <Grid className={classes.singleGridStyle}>
             <Link href="/">
-              <img src={bannerOne} alt="bannerOne" className={classes.img} />
+              <img src={banner1} alt="bannerOne" className={classes.img} />
               <div className={classes.descriptionPosition}>
                 <h4>Woman</h4>
                 <p>Spring 2022</p>
@@ -55,7 +55,7 @@ const Banner1 = () => {
         <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
           <Grid className={classes.singleGridStyle}>
             <Link href="/">
-              <img src={bannerTwo} alt="bannerTwo" className={classes.img} />
+              <img src={banner2} alt="bannerTwo" className={classes.img} />
               <div className={classes.descriptionPosition}>
                 <h4>Man</h4>
                 <p>Spring 2022</p>
@@ -66,11 +66,7 @@ const Banner1 = () => {
         <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
           <Grid className={classes.singleGridStyle}>
             <Link href="/">
-              <img
-                src={bannerThree}
-                alt="bannerThree"
-                className={classes.img}
-              />
+              <img src={banner3} alt="bannerThree" className={classes.img} />
               <div className={classes.descriptionPosition}>
                 <h4>Accessories</h4>
                 <p>New Trend</p>
