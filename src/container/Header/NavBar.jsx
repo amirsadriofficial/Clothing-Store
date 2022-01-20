@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -70,6 +71,29 @@ const pages = ['Home', 'Shop', 'About', 'Contact']
 const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = React.useState(null)
+  const history = useHistory()
+  const handleSwitching = (key) => {
+    switch (key) {
+      case 'Home':
+        history.push('/')
+      // break
+      // eslint-disable-next-line no-fallthrough
+      case 'Shop':
+        history.push('/shop')
+      // break
+      // eslint-disable-next-line no-fallthrough
+      case 'About':
+        history.push('/about')
+      // break
+      // eslint-disable-next-line no-fallthrough
+      case 'Contact':
+        history.push('/contact')
+      // break
+      // eslint-disable-next-line no-fallthrough
+      default:
+        history.push('/shop')
+    }
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -138,7 +162,7 @@ const NavBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleSwitching}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
