@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
@@ -70,13 +70,13 @@ const pages = ['Home', 'Shop', 'About', 'Contact']
 
 const NavBar = () => {
   const classes = useStyles()
-  const [anchorElNav, setAnchorElNav] = React.useState(null)
+  const [anchorElNav, setAnchorElNav] = useState(null)
   const history = useHistory()
   const handleSwitching = (page) => {
     switch (page) {
       case 'Home':
         history.push('/')
-        console.log('Pushed Home')
+        alert('Pushed Home')
       // eslint-disable-next-line no-fallthrough
       case 'Shop':
         history.push('/shop')
