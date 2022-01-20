@@ -8,7 +8,7 @@ import manProduct7 from '../images/products/man/man-product-07.jpg'
 import manProduct8 from '../images/products/man/man-product-08.jpg'
 import manProduct9 from '../images/products/man/man-product-09.jpg'
 
-const MAN_PRODUCTS = [
+const MEN_PRODUCTS = [
   {
     id: 'man_product_1',
     name: 'Only Check Trouser',
@@ -74,4 +74,4 @@ const MAN_PRODUCTS = [
   },
 ]
 
-export default MAN_PRODUCTS
+export default MEN_PRODUCTS

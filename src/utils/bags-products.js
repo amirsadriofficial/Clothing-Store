@@ -4,7 +4,7 @@ import bagProduct3 from '../images/products/bag/bag-product-03.webp'
 import bagProduct4 from '../images/products/bag/bag-product-04.webp'
 import bagProduct5 from '../images/products/bag/bag-product-05.webp'
 
-const BAG_PRODUCTS = [
+const BAGS_PRODUCTS = [
   {
     id: 'bag_product_1',
     name: 'Celine Micro Belt Bag',
@@ -42,4 +42,4 @@ const BAG_PRODUCTS = [
   },
 ]
 
-export default BAG_PRODUCTS
+export default BAGS_PRODUCTS

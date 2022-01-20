@@ -8,7 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import Products from '../../../utils/woman-products'
+import Products from '../../../utils/women-products'
 
 const responsive = {
   desktop: {

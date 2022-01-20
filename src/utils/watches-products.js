@@ -5,7 +5,7 @@ import watchProduct4 from '../images/products/watches/watches-product-04.webp'
 import watchProduct5 from '../images/products/watches/watches-product-05.webp'
 import watchProduct6 from '../images/products/watches/watches-product-06.webp'
 
-const WATCH_PRODUCTS = [
+const WATCHES_PRODUCTS = [
   {
     id: 'watch_product_1',
     name: 'Watch With Jelly Strap ',
@@ -50,4 +50,4 @@ const WATCH_PRODUCTS = [
   },
 ]
 
-export default WATCH_PRODUCTS
+export default WATCHES_PRODUCTS

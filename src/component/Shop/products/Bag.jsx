@@ -10,7 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 // import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
-import Products from '../../../utils/bag-products'
+import Products from '../../../utils/bags-products'
 
 const useStyles = makeStyles({
   root: {
