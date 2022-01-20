@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -71,23 +71,23 @@ const pages = ['Home', 'Shop', 'About', 'Contact']
 const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
-  const history = useHistory()
+  const navigate = useNavigate
   const handleSwitching = (page) => {
     switch (page) {
       case 'Home':
-        history.push('/')
+        navigate('/')
       // eslint-disable-next-line no-fallthrough
       case 'Shop':
-        history.push('/shop')
+        navigate('/shop')
       // eslint-disable-next-line no-fallthrough
       case 'About':
-        history.push('/about')
+        navigate('/about')
       // eslint-disable-next-line no-fallthrough
       case 'Contact':
-        history.push('/contact')
+        navigate('/contact')
       // eslint-disable-next-line no-fallthrough
       default:
-        history.push('/')
+        navigate('/')
     }
   }
   const handleOpenNavMenu = (event) => {
