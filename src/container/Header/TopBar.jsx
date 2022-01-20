@@ -32,9 +32,9 @@ const useStyles = makeStyles(() => ({
     paddingLeft: '15px',
     borderLeft: '1px solid rgba(255,255,255,0.3)',
   },
-  borderResponsive: {
-    borderLeft: '1px solid rgba(255,255,255,0.3)',
-  },
+  // borderResponsive: {
+  //   borderLeft: '1px solid rgba(255,255,255,0.3)',
+  // },
   aloneBorder: {
     borderRight: '1px solid rgba(255,255,255,0.3)',
   },
@@ -61,22 +61,22 @@ const TopBar = () => {
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
               <Button className={classes.TextColor} href="#">
-                Help & FAQs
-              </Button>
-            </Grid>
-            <Grid className={classes.border}>
-              <Button className={classes.TextColor} href="#">
                 My Account
               </Button>
             </Grid>
-            <Grid className={classes.border}>
+            {/* <Grid className={classes.border}>
               <Button className={classes.TextColor} href="#">
                 EN
+              </Button>
+            </Grid> */}
+            <Grid className={classes.border}>
+              <Button className={classes.TextColor} href="#">
+                USD
               </Button>
             </Grid>
             <Grid className={clsx(classes.border, classes.aloneBorder)}>
               <Button className={classes.TextColor} href="#">
-                USD
+                Help & FAQs
               </Button>
             </Grid>
           </Grid>
@@ -91,24 +91,24 @@ const TopBar = () => {
         </Grid>
         <Divider className={classes.dividerStyle} />
         <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
-          <Grid className={classes.borderResponsive}>
-            <Button className={classes.TextColor} size="small" href="#">
-              Help & FAQs
-            </Button>
-          </Grid>
-          <Grid className={classes.borderResponsive}>
+          <Grid className={classes.border}>
             <Button className={classes.TextColor} size="small" href="#">
               My Account
             </Button>
           </Grid>
-          <Grid className={classes.borderResponsive}>
+          {/* <Grid className={classes.borderResponsive}>
             <Button className={classes.TextColor} size="small" href="#">
               EN
             </Button>
-          </Grid>
-          <Grid className={clsx(classes.borderResponsive, classes.aloneBorder)}>
+          </Grid> */}
+          <Grid className={classes.border}>
             <Button className={classes.TextColor} size="small" href="#">
               USD
+            </Button>
+          </Grid>
+          <Grid className={clsx(classes.border, classes.aloneBorder)}>
+            <Button className={classes.TextColor} size="small" href="#">
+              Help & FAQs
             </Button>
           </Grid>
         </Grid>
