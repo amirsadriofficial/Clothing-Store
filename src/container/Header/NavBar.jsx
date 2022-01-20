@@ -72,26 +72,26 @@ const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const history = useHistory()
-  const handleSwitching = (key) => {
-    switch (key) {
+  const handleSwitching = (page) => {
+    switch (page) {
       case 'Home':
         history.push('/')
-      // break
+        console.log('Pushed Home')
       // eslint-disable-next-line no-fallthrough
       case 'Shop':
         history.push('/shop')
-      // break
+        console.log('Pushed Shop')
       // eslint-disable-next-line no-fallthrough
       case 'About':
         history.push('/about')
-      // break
+        console.log('Pushed About')
       // eslint-disable-next-line no-fallthrough
       case 'Contact':
         history.push('/contact')
-      // break
+        console.log('Pushed Contact')
       // eslint-disable-next-line no-fallthrough
       default:
-        history.push('/shop')
+        history.push('/')
     }
   }
   const handleOpenNavMenu = (event) => {
@@ -162,7 +162,7 @@ const NavBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleSwitching}>
+                  <MenuItem key={page} onClick={handleSwitching()}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
