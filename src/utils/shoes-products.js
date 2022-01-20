@@ -7,38 +7,38 @@ import shoesProduct5 from '../images/products/shoes/shoes-product-05.webp'
 const SHOES_PRODUCTS = [
   {
     id: 'shoes_product_1',
-    name: 'Shoes Product',
+    name: 'Adidas Black Shoes',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: shoesProduct1,
-    price: 175,
+    price: 95,
   },
   {
     id: 'shoes_product_2',
-    name: 'Shoes Product',
+    name: 'Adidas Gray Shoes',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: shoesProduct2,
-    price: 275,
+    price: 90,
   },
   {
     id: 'shoes_product_3',
-    name: 'Shoes Product',
+    name: 'Adidas Pink Shoes',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: shoesProduct3,
-    price: 375,
+    price: 95,
   },
   {
     id: 'shoes_product_4',
-    name: 'Shoes Product',
+    name: 'Adidas Black Sneakers',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: shoesProduct4,
-    price: 475,
+    price: 120,
   },
   {
     id: 'shoes_product_5',
-    name: 'Shoes Product',
+    name: 'Adidas Gray Sneakers',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: shoesProduct5,
-    price: 475,
+    price: 100,
   },
 ]
 

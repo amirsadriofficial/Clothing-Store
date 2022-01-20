@@ -24,7 +24,7 @@ const BAG_PRODUCTS = [
     name: 'Beautiful Chamber Bag',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: bagProduct3,
-    price: 145,
+    price: 135,
   },
   {
     id: 'bag_product_4',

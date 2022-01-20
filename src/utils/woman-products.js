@@ -20,14 +20,14 @@ const WOMEN_PRODUCTS = [
   },
   {
     id: 'women_product_2',
-    name: 'Herschel supply',
+    name: 'Herschel Supply',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: womenProduct2,
     price: 120,
   },
   {
     id: 'women_product_3',
-    name: 'T-Shirt with Sleeve',
+    name: 'T-Shirt With Sleeve',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: womenProduct3,
     price: 85,
@@ -83,7 +83,7 @@ const WOMEN_PRODUCTS = [
   },
   {
     id: 'women_product_11',
-    name: 'Women office wear',
+    name: 'Women Office Wear',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: womenProduct11,
     price: 200,
