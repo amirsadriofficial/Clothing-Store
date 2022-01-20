@@ -1,9 +1,9 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import banner1 from '../../../images/banner/banner2.jpg'
+import banner1 from '../../../images/banner/banner2-1.jpg'
 import banner2 from '../../../images/banner/banner2-2.jpg'
 
-const Banner2 = () => {
+const Banner4 = () => {
   return (
     <Grid
       container
@@ -31,4 +31,4 @@ const Banner2 = () => {
   )
 }
 
-export default Banner2
+export default Banner4

@@ -1,9 +1,8 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import banner1 from '../../../images/banner/banner2.jpg'
-import banner2 from '../../../images/banner/banner2-2.jpg'
+import banner from '../../../images/banner/banner3.jpg'
 
-const Banner2 = () => {
+const Banner3 = () => {
   return (
     <Grid
       container
@@ -13,16 +12,9 @@ const Banner2 = () => {
         justifyContent: 'center',
       }}
     >
-      <Grid item xl={12} sm={7} md={5}>
+      <Grid item xl={12}>
         <img
-          src={banner1}
-          alt="banner"
-          style={{ width: '100%', height: 'auto' }}
-        />
-      </Grid>
-      <Grid item xl={12} sm={7} md={6}>
-        <img
-          src={banner2}
+          src={banner}
           alt="banner"
           style={{ width: '100%', height: 'auto' }}
         />
@@ -31,4 +23,4 @@ const Banner2 = () => {
   )
 }
 
-export default Banner2
+export default Banner3
