@@ -76,19 +76,15 @@ const NavBar = () => {
     switch (page) {
       case 'Home':
         history.push('/')
-        alert('Pushed Home')
       // eslint-disable-next-line no-fallthrough
       case 'Shop':
         history.push('/shop')
-        console.log('Pushed Shop')
       // eslint-disable-next-line no-fallthrough
       case 'About':
         history.push('/about')
-        console.log('Pushed About')
       // eslint-disable-next-line no-fallthrough
       case 'Contact':
         history.push('/contact')
-        console.log('Pushed Contact')
       // eslint-disable-next-line no-fallthrough
       default:
         history.push('/')
@@ -162,7 +158,7 @@ const NavBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleSwitching()}>
+                  <MenuItem key={page} onClick={handleSwitching(page)}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
