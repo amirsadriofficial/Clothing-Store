@@ -64,15 +64,21 @@ const Contact = () => {
             </Button>
           </Grid>
           <Grid item sm={6} className={classes.sectionStyle}>
-            <LocationOnOutlinedIcon />
-            <h4>Address</h4>
-            <p>Text</p>
-            <CallOutlinedIcon />
-            <h4>Address</h4>
-            <p>Text</p>
-            <EmailOutlinedIcon />
-            <h4>Address</h4>
-            <p>Text</p>
+            <Grid>
+              <LocationOnOutlinedIcon />
+              <h4>Address</h4>
+              <p>Text</p>
+            </Grid>
+            <Grid>
+              <CallOutlinedIcon />
+              <h4>Address</h4>
+              <p>Text</p>
+            </Grid>
+            <Grid>
+              <EmailOutlinedIcon />
+              <h4>Address</h4>
+              <p>Text</p>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
