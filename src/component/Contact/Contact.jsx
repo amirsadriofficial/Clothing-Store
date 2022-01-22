@@ -18,6 +18,10 @@ const useStyles = makeStyles({
     fontSize: '50px',
     color: '#fff',
   },
+  container: {
+    marginBottom: '75px',
+    marginTop: '75px',
+  },
 })
 
 const Contact = () => {
@@ -28,7 +32,7 @@ const Contact = () => {
       <div className={classes.background}>
         <h2 className={classes.title}>Contact</h2>
       </div>
-      <Container>
+      <Container className={classes.container}>
         <Grid container spacing={0}>
           <Grid item sm={6}>
             <p>
