@@ -65,8 +65,14 @@ const Contact = () => {
           </Grid>
           <Grid item sm={6} className={classes.sectionStyle}>
             <LocationOnOutlinedIcon />
+            <h4>Address</h4>
+            <p>Text</p>
             <CallOutlinedIcon />
+            <h4>Address</h4>
+            <p>Text</p>
             <EmailOutlinedIcon />
+            <h4>Address</h4>
+            <p>Text</p>
           </Grid>
         </Grid>
       </Container>
