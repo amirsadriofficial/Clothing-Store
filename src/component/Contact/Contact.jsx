@@ -31,11 +31,50 @@ const useStyles = makeStyles({
   sectionStyle: {
     border: '1px solid #e6e6e6',
   },
-  flexColumn: {
+  firstSection: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  secondSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'start',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    paddingLeft: '100px',
+    paddingRight: '100px',
+  },
+  secondSubSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'start',
+    marginTop: '30px',
+  },
+  flexSubSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'start',
+  },
+  titleSection: {
+    fontSize: '30px',
+    marginBottom: '25px',
+  },
+  objectSubSection: {
+    marginBottom: '15px',
+  },
+  titleSubSection: {
+    marginTop: '0px',
+    marginBottom: '0px',
+    paddingLeft: '10px',
+  },
+  textSubSection: {
+    color: '#717fe0',
+    cursor: 'pointer',
   },
 })
 
@@ -52,46 +91,67 @@ const Contact = () => {
           <Grid
             item
             sm={6}
-            className={clsx(classes.sectionStyle, classes.flexColumn)}
+            className={clsx(classes.sectionStyle, classes.firstSection)}
           >
-            <h3>Send Us A Message</h3>
-            <TextField
-              id="outlined-textarea"
-              label="Multiline Placeholder"
-              placeholder="Placeholder"
-              multiline
-              variant="outlined"
-            />
-            <TextField
-              id="outlined-textarea"
-              label="Multiline Placeholder"
-              placeholder="Placeholder"
-              multiline
-              rows={4}
-              variant="outlined"
-            />
-            <Button variant="contained" color="primary">
-              Primary
-            </Button>
+            <Grid item sm={12} className={classes.firstSection}>
+              <h3 className={classes.titleSection}>Send Us A Message</h3>
+              <TextField
+                className={classes.objectSubSection}
+                id="outlined-textarea"
+                label="Your Email Address"
+                placeholder="email@example.com"
+                multiline
+                fullWidth
+                variant="outlined"
+              />
+              <TextField
+                className={classes.objectSubSection}
+                id="outlined-textarea"
+                label="How Can We Help?"
+                placeholder="Write your opinion or problem for us"
+                multiline
+                rows={4}
+                fullWidth
+                variant="outlined"
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                className={classes.objectSubSection}
+              >
+                Submit
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item sm={6} className={classes.sectionStyle}>
-            <Grid>
+          <Grid
+            item
+            sm={6}
+            className={clsx(classes.sectionStyle, classes.secondSection)}
+          >
+            <Grid className={classes.secondSubSection}>
               <LocationOnOutlinedIcon />
-              <h4>Address</h4>
-              <p>
-                The Amazon Corporate Headquarters address is 410 Terry Ave N,
-                Seattle 98109, WA.
-              </p>
+              <Grid className={classes.flexSubSection}>
+                <h4 className={classes.titleSubSection}>Address</h4>
+                <p>
+                  The Amazon Corporate Headquarters address is 410 Terry Ave N,
+                  Seattle 98109, WA.
+                </p>
+              </Grid>
             </Grid>
-            <Grid>
+            <Grid className={classes.secondSubSection}>
               <CallOutlinedIcon />
-              <h4>Lets Talk</h4>
-              <p>+1 888-280-4331</p>
+              <Grid className={classes.flexSubSection}>
+                <h4 className={classes.titleSubSection}>Lets Talk</h4>
+                <p className={classes.textSubSection}>+1 888-280-4331</p>
+              </Grid>
             </Grid>
-            <Grid>
+            <Grid className={classes.secondSubSection}>
               <EmailOutlinedIcon />
-              <h4>Sale Support</h4>
-              <p>cis@amazon.com</p>
+              <Grid className={classes.flexSubSection}>
+                <h4 className={classes.titleSubSection}>Sale Support</h4>
+                <p className={classes.textSubSection}>cis@amazon.com</p>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
