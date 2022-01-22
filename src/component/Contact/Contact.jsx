@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     marginBottom: '75px',
     marginTop: '75px',
   },
+  sectionStyle: {
+    border: '1px solid #e6e6e6',
+  },
 })
 
 const Contact = () => {
