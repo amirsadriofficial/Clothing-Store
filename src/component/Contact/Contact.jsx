@@ -37,7 +37,7 @@ const Contact = () => {
       </div>
       <Container className={classes.container}>
         <Grid container spacing={0}>
-          <Grid item sm={6}>
+          <Grid item sm={6} className={classes.sectionStyle}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
               architecto aspernatur officiis veniam voluptates est dolores cum
@@ -45,7 +45,7 @@ const Contact = () => {
               quasi incidunt libero quas illo.
             </p>
           </Grid>
-          <Grid item sm={6}>
+          <Grid item sm={6} className={classes.sectionStyle}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
               architecto aspernatur officiis veniam voluptates est dolores cum
