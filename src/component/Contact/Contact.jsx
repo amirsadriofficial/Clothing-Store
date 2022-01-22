@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles'
 import Background from '../../images/background/contact-bg.jpg'
 
@@ -38,12 +39,21 @@ const Contact = () => {
       <Container className={classes.container}>
         <Grid container spacing={0}>
           <Grid item sm={6} className={classes.sectionStyle}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              architecto aspernatur officiis veniam voluptates est dolores cum
-              praesentium quo? Iusto facilis odio, doloremque officiis veniam
-              quasi incidunt libero quas illo.
-            </p>
+            <TextField
+              id="outlined-textarea"
+              label="Multiline Placeholder"
+              placeholder="Placeholder"
+              multiline
+              variant="outlined"
+            />
+            <TextField
+              id="outlined-textarea"
+              label="Multiline Placeholder"
+              placeholder="Placeholder"
+              multiline
+              rows={4}
+              variant="outlined"
+            />
           </Grid>
           <Grid item sm={6} className={classes.sectionStyle}>
             <p>
