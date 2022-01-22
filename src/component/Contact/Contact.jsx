@@ -67,17 +67,20 @@ const Contact = () => {
             <Grid>
               <LocationOnOutlinedIcon />
               <h4>Address</h4>
-              <p>Text</p>
+              <p>
+                The Amazon Corporate Headquarters address is 410 Terry Ave N,
+                Seattle 98109, WA.
+              </p>
             </Grid>
             <Grid>
               <CallOutlinedIcon />
-              <h4>Address</h4>
-              <p>Text</p>
+              <h4>Lets Talk</h4>
+              <p>+1 888-280-4331</p>
             </Grid>
             <Grid>
               <EmailOutlinedIcon />
-              <h4>Address</h4>
-              <p>Text</p>
+              <h4>Sale Support</h4>
+              <p>cis@amazon.com</p>
             </Grid>
           </Grid>
         </Grid>
