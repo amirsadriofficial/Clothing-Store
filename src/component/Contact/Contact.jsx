@@ -55,6 +55,9 @@ const Contact = () => {
               rows={4}
               variant="outlined"
             />
+            <Button variant="contained" color="primary">
+              Primary
+            </Button>
           </Grid>
           <Grid item sm={6} className={classes.sectionStyle}>
             <p>
