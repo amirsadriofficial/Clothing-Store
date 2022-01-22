@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Background from '../../images/background/contact-bg.jpg'
 
@@ -8,6 +9,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: '100%',
     backgroundImage: `url('${Background}')`,
+    marginBottom: '100px',
   },
   title: {
     fontSize: '50px',
@@ -23,14 +25,14 @@ const Contact = () => {
 
   return (
     <>
-      <div className={classes.background}>
+      <Paper className={classes.background}>
         {/* <img
           src={Background}
           alt="Background"
           style={{ width: '100%', height: '100p' }}
         /> */}
         {/* <h2 className={classes.title}>Contact</h2> */}
-      </div>
+      </Paper>
       <Container>
         <div>aaaaaaaaaaa</div>
       </Container>
