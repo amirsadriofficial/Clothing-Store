@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Background from '../../images/background/contact-bg.jpg'
 
@@ -28,12 +29,14 @@ const Contact = () => {
         <h2 className={classes.title}>Contact</h2>
       </div>
       <Container>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-          architecto aspernatur officiis veniam voluptates est dolores cum
-          praesentium quo? Iusto facilis odio, doloremque officiis veniam quasi
-          incidunt libero quas illo.
-        </p>
+        <Grid container spacing={0}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+            architecto aspernatur officiis veniam voluptates est dolores cum
+            praesentium quo? Iusto facilis odio, doloremque officiis veniam
+            quasi incidunt libero quas illo.
+          </p>
+        </Grid>
       </Container>
     </>
   )
