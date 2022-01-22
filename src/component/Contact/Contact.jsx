@@ -31,7 +31,6 @@ const Contact = () => {
       <Container>
         <Grid container spacing={0}>
           <Grid item sm={6}>
-            {' '}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
               architecto aspernatur officiis veniam voluptates est dolores cum
@@ -40,7 +39,6 @@ const Contact = () => {
             </p>
           </Grid>
           <Grid item sm={6}>
-            {' '}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
               architecto aspernatur officiis veniam voluptates est dolores cum
