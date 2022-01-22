@@ -90,6 +90,9 @@ const NavBar = () => {
         history.replace('/')
     }
   }
+  // const handleExampleClick = () => {
+  //   history.replace('/shop')
+  // }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -171,7 +174,7 @@ const NavBar = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleCloseNavMenu}
+                  onClick={handleSwitching}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page}
