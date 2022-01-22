@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
+import clsx from 'clsx'
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
 import Background from '../../images/background/contact-bg.jpg'
@@ -30,6 +31,12 @@ const useStyles = makeStyles({
   sectionStyle: {
     border: '1px solid #e6e6e6',
   },
+  flexColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })
 
 const Contact = () => {
@@ -42,7 +49,11 @@ const Contact = () => {
       </div>
       <Container className={classes.container}>
         <Grid container spacing={0}>
-          <Grid item sm={6} className={classes.sectionStyle}>
+          <Grid
+            item
+            sm={6}
+            className={clsx(classes.sectionStyle, classes.flexColumn)}
+          >
             <h3>Send Us A Message</h3>
             <TextField
               id="outlined-textarea"
@@ -90,9 +101,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-/* <img
-  src={Background}
-  alt="Background"
-  style={{ width: '', height: '240p' }}
-/> */
