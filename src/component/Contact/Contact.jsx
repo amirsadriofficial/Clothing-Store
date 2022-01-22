@@ -64,12 +64,9 @@ const Contact = () => {
             </Button>
           </Grid>
           <Grid item sm={6} className={classes.sectionStyle}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              architecto aspernatur officiis veniam voluptates est dolores cum
-              praesentium quo? Iusto facilis odio, doloremque officiis veniam
-              quasi incidunt libero quas illo.
-            </p>
+            <LocationOnOutlinedIcon />
+            <CallOutlinedIcon />
+            <EmailOutlinedIcon />
           </Grid>
         </Grid>
       </Container>
