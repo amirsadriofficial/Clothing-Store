@@ -39,6 +39,7 @@ const Contact = () => {
       <Container className={classes.container}>
         <Grid container spacing={0}>
           <Grid item sm={6} className={classes.sectionStyle}>
+            <h3>Send Us A Message</h3>
             <TextField
               id="outlined-textarea"
               label="Multiline Placeholder"
