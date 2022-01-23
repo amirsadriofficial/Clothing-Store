@@ -25,6 +25,10 @@ const useStyles = makeStyles({
     color: '#fff',
   },
   container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: '75px',
     marginTop: '75px',
   },
@@ -47,10 +51,10 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'start',
-    paddingTop: '50px',
-    paddingBottom: '50px',
-    paddingLeft: '100px',
-    paddingRight: '100px',
+    // paddingTop: '50px',
+    // paddingBottom: '50px',
+    // paddingLeft: '100px',
+    // paddingRight: '100px',
   },
   secondSubSection: {
     display: 'flex',
@@ -74,6 +78,7 @@ const useStyles = makeStyles({
   },
   titleSubSection: {
     marginTop: '0px',
+    fontSize: '18px',
     marginBottom: '0px',
     paddingLeft: '10px',
   },
@@ -95,7 +100,9 @@ const Contact = () => {
         <Grid container spacing={0}>
           <Grid
             item
-            sm={6}
+            xs={12}
+            sm={9}
+            md={6}
             className={clsx(classes.sectionStyle, classes.firstSectionStyle)}
           >
             <Grid item sm={9} className={classes.firstSection}>
@@ -132,6 +139,7 @@ const Contact = () => {
           </Grid>
           <Grid
             item
+            xs={12}
             sm={6}
             className={clsx(classes.sectionStyle, classes.secondSection)}
           >
