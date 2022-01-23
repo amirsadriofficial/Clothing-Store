@@ -24,10 +24,6 @@ const useStyles = makeStyles({
     color: '#fff',
   },
   container: {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
     marginBottom: '75px',
     marginTop: '75px',
   },
