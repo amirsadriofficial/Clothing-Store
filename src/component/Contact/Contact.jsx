@@ -18,7 +18,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // marginBottom: '100px,
   },
   title: {
     fontSize: '50px',
