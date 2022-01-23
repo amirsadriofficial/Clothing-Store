@@ -1,4 +1,14 @@
 import React from 'react'
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
+import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
+import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
+import Background from '../../images/background/contact-bg.jpg'
 
 const useStyles = makeStyles({
   background: {
