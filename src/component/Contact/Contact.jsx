@@ -135,7 +135,6 @@ const Contact = () => {
             md={6}
             className={clsx(classes.sectionStyle, classes.secondSection)}
           >
-            {/* <Grid item xs={9} className={classes.secondSection}> */}
             <Grid className={classes.secondSubSection}>
               <LocationOnOutlinedIcon />
               <Grid className={classes.flexSubSection}>
