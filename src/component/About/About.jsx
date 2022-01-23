@@ -1,6 +1,8 @@
 import React from 'react'
 
 const About = () => {
+  const classes = useStyles()
+
   return (
     <>
       <div className={classes.background}>
