@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
-import Background from '../../images/background/contact-bg.jpg'
+import Background from '../../images/background/about-bg.jpg'
 
 const useStyles = makeStyles({
   background: {
@@ -87,7 +87,7 @@ const About = () => {
   return (
     <>
       <div className={classes.background}>
-        <h2 className={classes.title}>Contact</h2>
+        <h2 className={classes.title}>About</h2>
       </div>
       <Container className={classes.container}>
         <Grid container spacing={1}>
