@@ -37,6 +37,11 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  firstSectionStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   secondSection: {
     display: 'flex',
     flexDirection: 'column',
@@ -65,7 +70,7 @@ const useStyles = makeStyles({
     marginBottom: '25px',
   },
   objectSubSection: {
-    marginBottom: '15px',
+    marginBottom: '20px',
   },
   titleSubSection: {
     marginTop: '0px',
@@ -91,9 +96,9 @@ const Contact = () => {
           <Grid
             item
             sm={6}
-            className={clsx(classes.sectionStyle, classes.firstSection)}
+            className={clsx(classes.sectionStyle, classes.firstSectionStyle)}
           >
-            <Grid item sm={12} className={classes.firstSection}>
+            <Grid item sm={9} className={classes.firstSection}>
               <h3 className={classes.titleSection}>Send Us A Message</h3>
               <TextField
                 className={classes.objectSubSection}
@@ -119,6 +124,7 @@ const Contact = () => {
                 color="primary"
                 fullWidth
                 className={classes.objectSubSection}
+                style={{ borderRadius: '25px' }}
               >
                 Submit
               </Button>
