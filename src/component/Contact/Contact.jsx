@@ -72,7 +72,7 @@ const useStyles = makeStyles({
     alignItems: 'start',
   },
   titleSection: {
-    fontSize: '30px',
+    fontSize: '25px',
     marginBottom: '25px',
   },
   objectSubSection: {
