@@ -25,10 +25,10 @@ const useStyles = makeStyles({
     color: '#fff',
   },
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    // alignItems: 'center',
     marginBottom: '75px',
     marginTop: '75px',
   },
@@ -97,12 +97,13 @@ const Contact = () => {
         <h2 className={classes.title}>Contact</h2>
       </div>
       <Container className={classes.container}>
-        <Grid container spacing={0}>
+        <Grid container spacing={1}>
           <Grid
             item
             xs={12}
-            sm={9}
+            sm={12}
             md={6}
+            // lg={6}
             className={clsx(classes.sectionStyle, classes.firstSectionStyle)}
           >
             <Grid item sm={9} className={classes.firstSection}>
@@ -138,9 +139,10 @@ const Contact = () => {
             </Grid>
           </Grid>
           <Grid
-            item
             xs={12}
-            sm={6}
+            sm={12}
+            md={5}
+            // lg={6}
             className={clsx(classes.sectionStyle, classes.secondSection)}
           >
             <Grid className={classes.secondSubSection}>
