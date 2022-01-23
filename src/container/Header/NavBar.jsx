@@ -72,22 +72,22 @@ const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
   const history = useHistory()
-  const handleSwitching = (key) => {
-    switch (key) {
+  const handleSwitching = (page) => {
+    switch (page) {
       case 'Home':
-        history.replace('/')
+        history.push('/')
       // eslint-disable-next-line no-fallthrough
       case 'Shop':
-        history.replace('/shop')
+        history.push('/shop')
       // eslint-disable-next-line no-fallthrough
       case 'About':
-        history.replace('/about')
+        history.push('/about')
       // eslint-disable-next-line no-fallthrough
       case 'Contact':
-        history.replace('/contact')
+        history.push('/contact')
       // eslint-disable-next-line no-fallthrough
       default:
-        history.replace('/')
+        history.push('/')
     }
   }
   // const handleExampleClick = () => {
@@ -161,7 +161,7 @@ const NavBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleSwitching}>
+                  <MenuItem key={page} onClick={() => handleSwitching(page)}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
@@ -174,7 +174,7 @@ const NavBar = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleSwitching}
+                  onClick={() => handleSwitching(page)}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page}
