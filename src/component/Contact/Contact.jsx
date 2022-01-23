@@ -46,10 +46,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'start',
-    // paddingTop: '50px',
-    // paddingBottom: '50px',
-    // paddingLeft: '100px',
-    // paddingRight: '100px',
   },
   secondSubSection: {
     display: 'flex',
