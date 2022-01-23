@@ -101,9 +101,7 @@ const Contact = () => {
           <Grid
             item
             xs={12}
-            sm={12}
             md={6}
-            // lg={6}
             className={clsx(classes.sectionStyle, classes.firstSectionStyle)}
           >
             <Grid item sm={9} className={classes.firstSection}>
@@ -123,7 +121,7 @@ const Contact = () => {
                 label="How Can We Help?"
                 placeholder="Write your opinion or problem for us"
                 multiline
-                rows={4}
+                rows={5}
                 fullWidth
                 variant="outlined"
               />
@@ -141,9 +139,7 @@ const Contact = () => {
           <Grid
             item
             xs={12}
-            sm={12}
             md={6}
-            // lg={6}
             className={clsx(classes.sectionStyle, classes.secondSection)}
           >
             <Grid className={classes.secondSubSection}>
