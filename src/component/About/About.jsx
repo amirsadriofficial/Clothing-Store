@@ -25,10 +25,30 @@ const useStyles = makeStyles({
     marginBottom: '75px',
     marginTop: '75px',
   },
-  backgroundImage: {
-    border: '1px solid #666',
+  imgSection: {
+    width: '100%',
+    position: 'relative',
   },
-  imgStyle: {},
+  imgStyle: {
+    maxHeight: '400px',
+    maxWidth: '500px',
+    // marginRight: '30px',
+    marginBottom: '30px',
+  },
+  backgroundImage: {
+    width: '72%',
+    height: '100%',
+    border: '3px solid #666',
+    // backgroundColor: 'blue',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    marginRight: '10px',
+    // right: '10px',
+    // left: '100px',
+    // bottom: '100px',
+    zIndex: '-1',
+  },
 })
 
 const About = () => {
@@ -65,14 +85,9 @@ const About = () => {
               </p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Grid>
-            <Grid item xs={6}>
-              <div className={classes.backgroundImage}>
-                <img
-                  src={Gallery1}
-                  alt="Gallery1"
-                  className={classes.imgStyle}
-                />
-              </div>
+            <Grid item xs={6} className={classes.imgSection}>
+              <img src={Gallery1} alt="Gallery1" className={classes.imgStyle} />
+              <div className={classes.backgroundImage} />
             </Grid>
           </Grid>
           <Grid item xs={12}>
