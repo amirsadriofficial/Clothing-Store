@@ -123,57 +123,136 @@ const About = () => {
               </Hidden>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <Grid container spacing={3}>
-              <Hidden smUp>
-                <Grid item xs={12} className={classes.imgSection}>
-                  <img
-                    src={Gallery2}
-                    alt="Gallery 2"
-                    className={classes.imgStyle}
-                  />
-                  <div className={classes.backgroundImageXs} />
-                </Grid>
-              </Hidden>
-              <Hidden xsDown>
-                <Grid item xs={12} sm={9} md={6} className={classes.imgSection}>
-                  <img
-                    src={Gallery2}
-                    alt="Gallery 2"
-                    className={classes.imgStyle}
-                  />
-                  <div className={classes.backgroundImage} />
-                </Grid>
-              </Hidden>
-              <Grid item xs={12} sm={9} md={6} style={{ marginBottom: '50px' }}>
-                <h4>Our Mission</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris consequat consequat enim, non auctor massa ultrices
-                  non. Morbi sed odio massa. Quisque at vehicula tellus, sed
-                  tincidunt augue. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus. Maecenas varius
-                  egestas diam, eu sodales metus scelerisque congue.
-                  Pellentesque habitant morbi tristique senectus et netus et
-                  malesuada fames ac turpis egestas. Maecenas gravida justo eu
-                  arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum
-                  eget, dictum enim. Donec non neque ut enim dapibus tincidunt
-                  vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec
-                  condimentum euismod tortor, eget facilisis diam faucibus et.
-                  Morbi a tempor elit.
-                </p>
-                <div>
+          <Hidden mdUp>
+            <Grid item xs={12}>
+              <Grid container spacing={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={9}
+                  md={6}
+                  style={{ marginBottom: '50px' }}
+                >
+                  <h4>Our Mission</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris consequat consequat enim, non auctor massa ultrices
                     non. Morbi sed odio massa. Quisque at vehicula tellus, sed
-                    tincidunt augue.
+                    tincidunt augue. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus. Maecenas varius
+                    egestas diam, eu sodales metus scelerisque congue.
+                    Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas. Maecenas gravida justo eu
+                    arcu egestas convallis. Nullam eu erat bibendum, tempus
+                    ipsum eget, dictum enim. Donec non neque ut enim dapibus
+                    tincidunt vitae nec augue. Suspendisse potenti. Proin ut est
+                    diam. Donec condimentum euismod tortor, eget facilisis diam
+                    faucibus et. Morbi a tempor elit.
                   </p>
-                  <h6>Jeff Bezos</h6>
-                </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Mauris consequat consequat enim, non auctor massa ultrices
+                      non. Morbi sed odio massa. Quisque at vehicula tellus, sed
+                      tincidunt augue.
+                    </p>
+                    <h6>Jeff Bezos</h6>
+                  </div>
+                </Grid>
+                <Hidden smUp>
+                  <Grid item xs={12} className={classes.imgSection}>
+                    <img
+                      src={Gallery2}
+                      alt="Gallery 2"
+                      className={classes.imgStyle}
+                    />
+                    <div className={classes.backgroundImageXs} />
+                  </Grid>
+                </Hidden>
+                <Hidden xsDown>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={9}
+                    md={6}
+                    className={classes.imgSection}
+                  >
+                    <img
+                      src={Gallery2}
+                      alt="Gallery 2"
+                      className={classes.imgStyle}
+                    />
+                    <div className={classes.backgroundImage} />
+                  </Grid>
+                </Hidden>
               </Grid>
             </Grid>
-          </Grid>
+          </Hidden>
+          <Hidden smDown>
+            <Grid item xs={12}>
+              <Grid container spacing={3}>
+                <Hidden smUp>
+                  <Grid item xs={12} className={classes.imgSection}>
+                    <img
+                      src={Gallery2}
+                      alt="Gallery 2"
+                      className={classes.imgStyle}
+                    />
+                    <div className={classes.backgroundImageXs} />
+                  </Grid>
+                </Hidden>
+                <Hidden xsDown>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={9}
+                    md={6}
+                    className={classes.imgSection}
+                  >
+                    <img
+                      src={Gallery2}
+                      alt="Gallery 2"
+                      className={classes.imgStyle}
+                    />
+                    <div className={classes.backgroundImage} />
+                  </Grid>
+                </Hidden>
+                <Grid
+                  item
+                  xs={12}
+                  sm={9}
+                  md={6}
+                  style={{ marginBottom: '50px' }}
+                >
+                  <h4>Our Mission</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris consequat consequat enim, non auctor massa ultrices
+                    non. Morbi sed odio massa. Quisque at vehicula tellus, sed
+                    tincidunt augue. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus. Maecenas varius
+                    egestas diam, eu sodales metus scelerisque congue.
+                    Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas. Maecenas gravida justo eu
+                    arcu egestas convallis. Nullam eu erat bibendum, tempus
+                    ipsum eget, dictum enim. Donec non neque ut enim dapibus
+                    tincidunt vitae nec augue. Suspendisse potenti. Proin ut est
+                    diam. Donec condimentum euismod tortor, eget facilisis diam
+                    faucibus et. Morbi a tempor elit.
+                  </p>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Mauris consequat consequat enim, non auctor massa ultrices
+                      non. Morbi sed odio massa. Quisque at vehicula tellus, sed
+                      tincidunt augue.
+                    </p>
+                    <h6>Jeff Bezos</h6>
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Hidden>
         </Grid>
       </Container>
     </>
