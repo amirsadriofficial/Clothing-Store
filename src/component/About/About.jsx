@@ -25,6 +25,11 @@ const useStyles = makeStyles({
     marginBottom: '75px',
     marginTop: '75px',
   },
+  flexSection: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   imgSection: {
     width: '100%',
     position: 'relative',
@@ -41,8 +46,8 @@ const useStyles = makeStyles({
     maxHeight: '400px',
     border: '3px solid #666',
     position: 'absolute',
-    top: '50px',
-    left: '50px',
+    top: '40px',
+    left: '40px',
     zIndex: '-1',
   },
 })
