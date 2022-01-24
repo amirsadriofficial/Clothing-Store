@@ -27,27 +27,8 @@ const useStyles = makeStyles({
   },
   backgroundImage: {
     border: '1px solid #666',
-    position: 'absolute',
-    display: 'none',
-    right: '0',
-    bottom: '0',
-    zIndex: '-1',
   },
-  imgStyle: {
-    position: 'absolute',
-    bottom: '36px',
-    left: '36px',
-    zIndex: '1',
-    width: '100px',
-    height: 'auto',
-    // paddingRight: '57px',
-    // paddingLeft: ' 57px',
-    // paddingTop: '33px',
-    // display: 'flex',
-    // alignItems: 'flex-start',
-    // justifyContent: 'flex-start',
-    // flexDirection: 'column',
-  },
+  imgStyle: {},
 })
 
 const About = () => {
