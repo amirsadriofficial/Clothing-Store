@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     height: '90%',
     maxWidth: '500px',
     maxHeight: '400px',
-    border: '3px solid #666',
+    border: '3px solid #888',
     position: 'absolute',
     top: '25px',
     right: '40px',
@@ -62,6 +62,13 @@ const useStyles = makeStyles({
     right: '15px',
     zIndex: '-1',
   },
+  titleSection: {
+    fontSize: '25px',
+  },
+  textSubSection: {
+    borderLeft: '3px solid #888',
+    paddingLeft: '20px',
+  },
 })
 
 const About = () => {
@@ -77,7 +84,7 @@ const About = () => {
           <Grid item xs={12}>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={9} md={6} style={{ marginBottom: '50px' }}>
-                <h4>Our Story</h4>
+                <h4 className={classes.titleSection}>Our Story</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Mauris consequat consequat enim, non auctor massa ultrices
@@ -133,7 +140,7 @@ const About = () => {
                   md={6}
                   style={{ marginBottom: '50px' }}
                 >
-                  <h4>Our Mission</h4>
+                  <h4 className={classes.titleSection}>Our Mission</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris consequat consequat enim, non auctor massa ultrices
@@ -149,14 +156,14 @@ const About = () => {
                     diam. Donec condimentum euismod tortor, eget facilisis diam
                     faucibus et. Morbi a tempor elit.
                   </p>
-                  <div>
+                  <div className={classes.textSubSection}>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Mauris consequat consequat enim, non auctor massa ultrices
                       non. Morbi sed odio massa. Quisque at vehicula tellus, sed
                       tincidunt augue.
                     </p>
-                    <h6>Jeff Bezos</h6>
+                    <h5>- Jeff Bezos</h5>
                   </div>
                 </Grid>
                 <Hidden smUp>
@@ -224,7 +231,7 @@ const About = () => {
                   md={6}
                   style={{ marginBottom: '50px' }}
                 >
-                  <h4>Our Mission</h4>
+                  <h4 className={classes.titleSection}>Our Mission</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris consequat consequat enim, non auctor massa ultrices
@@ -240,14 +247,14 @@ const About = () => {
                     diam. Donec condimentum euismod tortor, eget facilisis diam
                     faucibus et. Morbi a tempor elit.
                   </p>
-                  <div>
+                  <div className={classes.textSubSection}>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Mauris consequat consequat enim, non auctor massa ultrices
                       non. Morbi sed odio massa. Quisque at vehicula tellus, sed
                       tincidunt augue.
                     </p>
-                    <h6>Jeff Bezos</h6>
+                    <h5>- Jeff Bezos</h5>
                   </div>
                 </Grid>
               </Grid>
