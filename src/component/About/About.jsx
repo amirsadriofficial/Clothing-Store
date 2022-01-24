@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
 // import TextField from '@material-ui/core/TextField'
 // import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
@@ -36,25 +37,40 @@ const useStyles = makeStyles({
   // },
   imgSection: {
     width: '100%',
+    maxWidth: '625px',
+    maxHeight: '625px',
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
   imgStyle: {
+    width: '90%',
+    height: '90%',
     maxWidth: '500px',
     maxHeight: '400px',
     marginBottom: '100px',
   },
   backgroundImage: {
-    width: '375px',
-    height: '375px',
+    width: '90%',
+    height: '90%',
     maxWidth: '500px',
     maxHeight: '400px',
     border: '3px solid #666',
     position: 'absolute',
-    top: '55px',
-    right: '90px',
+    top: '25px',
+    right: '40px',
+    zIndex: '-1',
+  },
+  backgroundImageXs: {
+    width: '80%',
+    height: '80%',
+    maxWidth: '500px',
+    maxHeight: '400px',
+    border: '3px solid #666',
+    position: 'absolute',
+    top: '20px',
+    right: '15px',
     zIndex: '-1',
   },
 })
@@ -71,7 +87,7 @@ const About = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} className={classes.flexSection}>
             <Grid container spacing={3}>
-              <Grid item xs={12} sm={9} md={6}>
+              <Grid item xs={12} sm={9} md={6} style={{ marginBottom: '35px' }}>
                 <h4>Our Story</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -96,14 +112,26 @@ const About = () => {
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </Grid>
-              <Grid item xs={12} sm={9} md={6} className={classes.imgSection}>
-                <img
-                  src={Gallery1}
-                  alt="Gallery1"
-                  className={classes.imgStyle}
-                />
-                <div className={classes.backgroundImage} />
-              </Grid>
+              <Hidden smUp>
+                <Grid item xs={12} className={classes.imgSection}>
+                  <img
+                    src={Gallery1}
+                    alt="Gallery1"
+                    className={classes.imgStyle}
+                  />
+                  <div className={classes.backgroundImageXs} />
+                </Grid>
+              </Hidden>
+              <Hidden xsDown>
+                <Grid item xs={12} sm={9} md={6} className={classes.imgSection}>
+                  <img
+                    src={Gallery1}
+                    alt="Gallery1"
+                    className={classes.imgStyle}
+                  />
+                  <div className={classes.backgroundImage} />
+                </Grid>
+              </Hidden>
             </Grid>
           </Grid>
           <Grid item xs={12}>
