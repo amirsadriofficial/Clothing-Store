@@ -25,9 +25,33 @@ const useStyles = makeStyles({
     marginBottom: '75px',
     marginTop: '75px',
   },
+  // imgStyle: {
+  //   width: '100%',
+  //   height: 'auto',
+  // },
+  backgroundImage: {
+    border: '1px solid #666',
+    position: 'absolute',
+    display: 'none',
+    right: '0',
+    bottom: '0',
+    zIndex: '-1',
+  },
   imgStyle: {
-    width: '100%',
+    position: 'absolute',
+    bottom: '36px',
+    width: '100%px',
     height: 'auto',
+    zIndex: '1',
+    left: 'calc(50vw)',
+    // color: 'white',
+    paddingRight: '57px',
+    paddingLeft: ' 57px',
+    paddingTop: '33px',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
   },
 })
 
@@ -66,8 +90,13 @@ const About = () => {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Grid>
             <Grid item xs={6}>
-              <div />
-              <img src={Gallery1} alt="" className={classes.imgStyle} />
+              <div className={classes.backgroundImage}>
+                <img
+                  src={Gallery1}
+                  alt="Gallery1"
+                  className={classes.imgStyle}
+                />
+              </div>
             </Grid>
           </Grid>
           <Grid item xs={12}>
@@ -75,7 +104,30 @@ const About = () => {
               picture 2
             </Grid>
             <Grid item xs={6}>
-              text 2
+              <h4>Our Mission</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                consequat consequat enim, non auctor massa ultrices non. Morbi
+                sed odio massa. Quisque at vehicula tellus, sed tincidunt augue.
+                Orci varius natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales
+                metus scelerisque congue. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Maecenas
+                gravida justo eu arcu egestas convallis. Nullam eu erat
+                bibendum, tempus ipsum eget, dictum enim. Donec non neque ut
+                enim dapibus tincidunt vitae nec augue. Suspendisse potenti.
+                Proin ut est diam. Donec condimentum euismod tortor, eget
+                facilisis diam faucibus et. Morbi a tempor elit.
+              </p>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris consequat consequat enim, non auctor massa ultrices
+                  non. Morbi sed odio massa. Quisque at vehicula tellus, sed
+                  tincidunt augue.
+                </p>
+                <h6>Jeff Bezos</h6>
+              </div>
             </Grid>
           </Grid>
         </Grid>
