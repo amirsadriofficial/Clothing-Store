@@ -24,7 +24,7 @@ const Help = () => {
 
   return (
     <Container>
-      <h2>Have Any Question?</h2>
+      <h2>Have Any Questions?</h2>
       <div className={classes.root}>
         <Accordion>
           <AccordionSummary
@@ -86,7 +86,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 4</Typography>
+            <Typography className={classes.heading}>
+              Returns & Refunds
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -102,7 +104,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 5</Typography>
+            <Typography className={classes.heading}>
+              Shipping Policies
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -118,7 +122,7 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 6</Typography>
+            <Typography className={classes.heading}>Amazon Devices</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -134,7 +138,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 7</Typography>
+            <Typography className={classes.heading}>
+              Digital Services & Content
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -150,7 +156,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 8</Typography>
+            <Typography className={classes.heading}>
+              Amazon Business Accounts
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -166,7 +174,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 9</Typography>
+            <Typography className={classes.heading}>
+              Other Topics & Help Sites
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -182,7 +192,7 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 10</Typography>
+            <Typography className={classes.heading}>Need More Help?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
