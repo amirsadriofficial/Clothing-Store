@@ -7,6 +7,7 @@ import Shop from './component/shop/Shop'
 import About from './component/about/About'
 import Contact from './component/contact/Contact'
 import Cart from './component/cart/Cart'
+import Help from './component/help/Help'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/help">
+              <Help />
             </Route>
           </Switch>
         </Layout>
