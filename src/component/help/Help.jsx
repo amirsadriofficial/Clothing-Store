@@ -32,7 +32,9 @@ const Help = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>Accordion 1</Typography>
+            <Typography className={classes.heading}>
+              Where is My Stuff?
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -48,7 +50,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 2</Typography>
+            <Typography className={classes.heading}>
+              Managing Your Orders
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
