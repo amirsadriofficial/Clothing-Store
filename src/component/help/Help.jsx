@@ -10,12 +10,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginTop: '50px',
-    marginBottom: '100px',
+    marginTop: '25px',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
+  },
+  container: {
+    textAlign: 'center',
+    marginTop: '25px',
+    marginBottom: '50px',
   },
 }))
 
@@ -23,7 +27,7 @@ const Help = () => {
   const classes = useStyles()
 
   return (
-    <Container>
+    <Container className={classes.container}>
       <h2>Have Any Questions?</h2>
       <div className={classes.root}>
         <Accordion>
