@@ -68,7 +68,9 @@ const Help = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>Accordion 3</Typography>
+            <Typography className={classes.heading}>
+              Account Settings & Payment
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
