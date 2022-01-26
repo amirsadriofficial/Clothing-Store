@@ -16,15 +16,18 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('January', 0),
+  createData('February', 300),
+  createData('March', 600),
+  createData('April', 800),
+  createData('May', 1500),
+  createData('June', 1600),
+  createData('July', 1700),
+  createData('August', 1300),
+  createData('September', 1900),
+  createData('October', 2000),
+  createData('November', 2200),
+  createData('December', 2400),
 ]
 
 const Chart = () => {
@@ -32,7 +35,7 @@ const Chart = () => {
 
   return (
     <>
-      <Title>Today</Title>
+      <Title>Last Year</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -50,7 +53,7 @@ const Chart = () => {
               position="left"
               style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
             >
-              Sales ($)
+              Shopping Chart ($)
             </Label>
           </YAxis>
           <Line

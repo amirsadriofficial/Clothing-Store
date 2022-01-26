@@ -95,7 +95,7 @@ const NavBar = () => {
 
   return (
     <AppBar position="static" color="inherit">
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Hidden smDown>
             <img

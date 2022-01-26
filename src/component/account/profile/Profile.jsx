@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    height: 310,
   },
   button: {
     backgroundColor: '#fff',
@@ -154,17 +154,20 @@ const Dashboard = () => {
             noWrap
             className={classes.title}
           >
-            Dashboard
+            My Account
           </Typography>
-          <Button
-            variant="contained"
-            className={classes.button}
-            endIcon={<HomeOutlinedIcon className={classes.iconButton} />}
-          >
-            <Link href="/" className={classes.linkButton}>
-              Back To Home
-            </Link>
-          </Button>
+          <Grid item xs={12} sm={4} lg={2}>
+            <Button
+              variant="contained"
+              className={classes.button}
+              fullWidth
+              endIcon={<HomeOutlinedIcon className={classes.iconButton} />}
+            >
+              <Link href="/" className={classes.linkButton}>
+                Back To Home
+              </Link>
+            </Button>
+          </Grid>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -218,4 +221,5 @@ const Dashboard = () => {
     </div>
   )
 }
+
 export default Dashboard
