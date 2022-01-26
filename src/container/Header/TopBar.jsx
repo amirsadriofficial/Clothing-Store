@@ -32,9 +32,6 @@ const useStyles = makeStyles(() => ({
     paddingLeft: '15px',
     borderLeft: '1px solid rgba(255,255,255,0.3)',
   },
-  // borderResponsive: {
-  //   borderLeft: '1px solid rgba(255,255,255,0.3)',
-  // },
   aloneBorder: {
     borderRight: '1px solid rgba(255,255,255,0.3)',
   },
@@ -60,22 +57,15 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
-              <Button className={classes.TextColor} href="#">
+              <Button className={classes.TextColor} href="/signin">
                 My Account
               </Button>
             </Grid>
-            {/* <Grid className={classes.border}>
-              <Button className={classes.TextColor} href="#">
-                EN
-              </Button>
-            </Grid> */}
             <Grid className={classes.border}>
-              <Button className={classes.TextColor} href="#">
-                USD
-              </Button>
+              <Button className={classes.TextColor}>USD</Button>
             </Grid>
             <Grid className={clsx(classes.border, classes.aloneBorder)}>
-              <Button className={classes.TextColor} href="#">
+              <Button className={classes.TextColor} href="/help">
                 Help & FAQs
               </Button>
             </Grid>
@@ -92,22 +82,17 @@ const TopBar = () => {
         <Divider className={classes.dividerStyle} />
         <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
           <Grid className={classes.border}>
-            <Button className={classes.TextColor} size="small" href="#">
+            <Button className={classes.TextColor} size="small" href="/signin">
               My Account
             </Button>
           </Grid>
-          {/* <Grid className={classes.borderResponsive}>
-            <Button className={classes.TextColor} size="small" href="#">
-              EN
-            </Button>
-          </Grid> */}
           <Grid className={classes.border}>
-            <Button className={classes.TextColor} size="small" href="#">
+            <Button className={classes.TextColor} size="small">
               USD
             </Button>
           </Grid>
           <Grid className={clsx(classes.border, classes.aloneBorder)}>
-            <Button className={classes.TextColor} size="small" href="#">
+            <Button className={classes.TextColor} size="small" href="/help">
               Help & FAQs
             </Button>
           </Grid>

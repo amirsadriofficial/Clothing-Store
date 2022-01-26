@@ -96,106 +96,102 @@ const NavBar = () => {
   return (
     <AppBar position="static" color="inherit">
       <Container maxWidth="xl">
-        <Container>
-          <Toolbar disableGutters>
-            <Hidden smDown>
-              <img
-                src={Logo}
-                alt="Logo"
-                style={{ width: '150px', height: '50px' }}
-              />
-            </Hidden>
-            <Hidden mdUp>
-              <img
-                src={Logo}
-                alt="Logo"
-                style={{ width: '75px', height: '25px' }}
-              />
-            </Hidden>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                className={classes.menuStyle}
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                // elevation={0}
-                marginThreshold={0}
-                getContentAnchorEl={null}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'center',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'center',
-                }}
-                PaperProps={{
-                  style: {
-                    width: '100%',
-                    maxWidth: '100%',
-                    left: 0,
-                    right: 0,
-                  },
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page.name}>
-                    <Link to={page.path}>{page.name}</Link>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Box
-              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+        <Toolbar disableGutters>
+          <Hidden smDown>
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{ width: '150px', height: '50px' }}
+            />
+          </Hidden>
+          <Hidden mdUp>
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{ width: '75px', height: '25px' }}
+            />
+          </Hidden>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
               className={classes.menuStyle}
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              // elevation={0}
+              marginThreshold={0}
+              getContentAnchorEl={null}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'center',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+              }}
+              PaperProps={{
+                style: {
+                  width: '100%',
+                  maxWidth: '100%',
+                  left: 0,
+                  right: 0,
+                },
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page.name}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
+                <MenuItem key={page.name}>
                   <Link to={page.path}>{page.name}</Link>
-                </Button>
+                </MenuItem>
               ))}
-            </Box>
-            <Box className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Box>
-            <IconButton aria-label="delete">
-              <ShoppingCartIcon />
-            </IconButton>
-            <Hidden smDown>
-              <IconButton aria-label="delete">
-                <FavoriteBorderIcon />
-              </IconButton>
-            </Hidden>
-          </Toolbar>
-        </Container>
+            </Menu>
+          </Box>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+            className={classes.menuStyle}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                <Link to={page.path}>{page.name}</Link>
+              </Button>
+            ))}
+          </Box>
+          <Box className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Box>
+          <IconButton aria-label="delete">
+            <ShoppingCartIcon />
+          </IconButton>
+          <IconButton aria-label="delete">
+            <FavoriteBorderIcon />
+          </IconButton>
+        </Toolbar>
       </Container>
     </AppBar>
   )
