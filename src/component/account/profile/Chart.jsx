@@ -27,7 +27,7 @@ const data = [
   createData('24:00', undefined),
 ]
 
-export default function Chart() {
+const Chart = () => {
   const theme = useTheme()
 
   return (
@@ -64,3 +64,4 @@ export default function Chart() {
     </>
   )
 }
+export default Chart
