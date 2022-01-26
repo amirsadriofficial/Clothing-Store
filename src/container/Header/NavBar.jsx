@@ -179,7 +179,7 @@ const NavBar = () => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page.name}>
-                    <Link href={page.path}>{page.name}</Link>
+                    <Link to={page.path}>{page.name}</Link>
                   </MenuItem>
                 ))}
               </Menu>
@@ -193,7 +193,7 @@ const NavBar = () => {
                   key={page.name}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link href={page.path}>{page.name}</Link>
+                  <Link to={page.path}>{page.name}</Link>
                 </Button>
               ))}
             </Box>
