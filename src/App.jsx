@@ -16,37 +16,47 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
+        <Switch>
+          <Route exact path="/">
+            <Layout>
               <Home />
-            </Route>
-            <Route path="/shop">
+            </Layout>
+          </Route>
+          <Route path="/shop">
+            <Layout>
               <Shop />
-            </Route>
-            <Route path="/about">
+            </Layout>
+          </Route>
+          <Route path="/about">
+            <Layout>
               <About />
-            </Route>
-            <Route path="/contact">
+            </Layout>
+          </Route>
+          <Route path="/contact">
+            <Layout>
               <Contact />
-            </Route>
-            <Route path="/cart">
+            </Layout>
+          </Route>
+          <Route path="/cart">
+            <Layout>
               <Cart />
-            </Route>
-            <Route path="/help">
+            </Layout>
+          </Route>
+          <Route path="/help">
+            <Layout>
               <Help />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/signin">
-              <SignIn />
-            </Route>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-          </Switch>
-        </Layout>
+            </Layout>
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/signin">
+            <SignIn />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   )

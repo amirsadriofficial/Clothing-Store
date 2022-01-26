@@ -12,18 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}.
-    </Typography>
-  )
-}
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -42,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  linkButton: {
+    color: '#fff',
+    textDecoration: 'none',
   },
 }))
 
@@ -131,8 +124,24 @@ export default function SignUp() {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
+      <Box
+        mt={8}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          endIcon={<HomeOutlinedIcon />}
+        >
+          <Link to="/" className={classes.linkButton}>
+            Back To Home
+          </Link>
+        </Button>
       </Box>
     </Container>
   )
