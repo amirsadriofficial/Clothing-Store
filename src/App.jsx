@@ -7,6 +7,7 @@ import Shop from './component/shop/Shop'
 import About from './component/about/About'
 import Contact from './component/contact/Contact'
 import Cart from './component/cart/Cart'
+import Favorites from './component/favorites/Favorites'
 import Help from './component/help/Help'
 import Profile from './component/account/profile/Profile'
 import SignIn from './component/account/SignIn'
@@ -40,6 +41,11 @@ function App() {
           <Route path="/cart">
             <Layout>
               <Cart />
+            </Layout>
+          </Route>
+          <Route path="/favorites">
+            <Layout>
+              <Favorites />
             </Layout>
           </Route>
           <Route path="/help">
