@@ -9,7 +9,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
-// import MenuItem from '@material-ui/core/MenuItem'
+import MenuItem from '@material-ui/core/MenuItem'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
@@ -177,11 +177,11 @@ const NavBar = () => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {/* {pages.map((page) => (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
+                {pages.map((page) => (
+                  <MenuItem key={page.name}>
+                    <Link href={page.path}>{page.name}</Link>
                   </MenuItem>
-                ))} */}
+                ))}
               </Menu>
             </Box>
             <Box
