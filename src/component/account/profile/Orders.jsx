@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow'
 import Title from './Title'
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
+const createData = (id, date, name, shipTo, paymentMethod, amount) => {
   return { id, date, name, shipTo, paymentMethod, amount }
 }
 
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Orders() {
+const Orders = () => {
   const classes = useStyles()
   return (
     <>
@@ -101,3 +101,5 @@ export default function Orders() {
     </>
   )
 }
+
+export default Orders
