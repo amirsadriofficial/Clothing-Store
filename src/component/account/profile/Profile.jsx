@@ -23,7 +23,7 @@ import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Dashboard() {
+const Dashboard = () => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(true)
   const handleDrawerOpen = () => {
@@ -211,3 +211,4 @@ export default function Dashboard() {
     </div>
   )
 }
+export default Dashboard
