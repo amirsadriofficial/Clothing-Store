@@ -86,7 +86,6 @@ const pages = [
 const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
-  // const history = useHistory()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
