@@ -8,6 +8,9 @@ import About from './component/about/About'
 import Contact from './component/contact/Contact'
 import Cart from './component/cart/Cart'
 import Help from './component/help/Help'
+import Profile from './component/account/profile/Profile'
+import SignIn from './component/account/SignIn'
+import SignUp from './component/account/SignUp'
 
 function App() {
   return (
@@ -32,6 +35,15 @@ function App() {
             </Route>
             <Route path="/help">
               <Help />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
             </Route>
           </Switch>
         </Layout>
