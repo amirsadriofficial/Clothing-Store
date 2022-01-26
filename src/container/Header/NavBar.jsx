@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
+// import Typography from '@material-ui/core/Typography'
 import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
-import MenuItem from '@material-ui/core/MenuItem'
+// import MenuItem from '@material-ui/core/MenuItem'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
@@ -66,30 +66,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const pages = ['Home', 'Shop', 'About', 'Contact']
+const pages = [
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Shop',
+    path: '/shop',
+  },
+  {
+    name: 'About',
+    path: '/about',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
+]
 
 const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
-  const history = useHistory()
-  const handleSwitching = (page) => {
-    switch (page) {
-      case 'Home':
-        history.push('/')
-      // eslint-disable-next-line no-fallthrough
-      case 'Shop':
-        history.push('/shop')
-      // eslint-disable-next-line no-fallthrough
-      case 'About':
-        history.push('/about')
-      // eslint-disable-next-line no-fallthrough
-      case 'Contact':
-        history.push('/contact')
-      // eslint-disable-next-line no-fallthrough
-      default:
-        history.push('/')
-    }
-  }
+  // const history = useHistory()
+  // const handleSwitching = (page) => {
+  //   switch (page) {
+  //     case 'Home':
+  //       history.push('/')
+  //     // eslint-disable-next-line no-fallthrough
+  //     case 'Shop':
+  //       history.push('/shop')
+  //     // eslint-disable-next-line no-fallthrough
+  //     case 'About':
+  //       history.push('/about')
+  //     // eslint-disable-next-line no-fallthrough
+  //     case 'Contact':
+  //       history.push('/contact')
+  //     // eslint-disable-next-line no-fallthrough
+  //     default:
+  //       history.push('/')
+  //   }
+  // }
   // const handleExampleClick = () => {
   //   history.replace('/shop')
   // }
@@ -160,11 +177,11 @@ const NavBar = () => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={() => handleSwitching(page)}>
-                    <Typography textAlign="center">{page}</Typography>
+                {/* {pages.map((page) => (
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
-                ))}
+                ))} */}
               </Menu>
             </Box>
             <Box
@@ -173,11 +190,10 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={() => handleSwitching(page)}
+                  key={page.name}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  {page}
+                  <Link href={page.path}>{page.name}</Link>
                 </Button>
               ))}
             </Box>
