@@ -89,27 +89,6 @@ const NavBar = () => {
   const classes = useStyles()
   const [anchorElNav, setAnchorElNav] = useState(null)
   // const history = useHistory()
-  // const handleSwitching = (page) => {
-  //   switch (page) {
-  //     case 'Home':
-  //       history.push('/')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'Shop':
-  //       history.push('/shop')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'About':
-  //       history.push('/about')
-  //     // eslint-disable-next-line no-fallthrough
-  //     case 'Contact':
-  //       history.push('/contact')
-  //     // eslint-disable-next-line no-fallthrough
-  //     default:
-  //       history.push('/')
-  //   }
-  // }
-  // const handleExampleClick = () => {
-  //   history.replace('/shop')
-  // }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
