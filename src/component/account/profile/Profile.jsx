@@ -3,37 +3,27 @@ import clsx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Drawer from '@material-ui/core/Drawer'
-import Box from '@material-ui/core/Box'
+// import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import List from '@material-ui/core/List'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
-import Badge from '@material-ui/core/Badge'
+import Button from '@material-ui/core/Button'
+// import Badge from '@material-ui/core/Badge'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Link from '@material-ui/core/Link'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import NotificationsIcon from '@material-ui/icons/Notifications'
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
+import Information from './Information'
 import { mainListItems, secondaryListItems } from './ListItems'
 import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
-
-const Copyright = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}.
-    </Typography>
-  )
-}
 
 const drawerWidth = 240
 
@@ -114,6 +104,16 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  button: {
+    backgroundColor: '#fff',
+  },
+  iconButton: {
+    color: '#000',
+  },
+  linkButton: {
+    color: '#000',
+    textDecoration: 'none',
+  },
 }))
 
 const Dashboard = () => {
@@ -156,11 +156,15 @@ const Dashboard = () => {
           >
             Dashboard
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          <Button
+            variant="contained"
+            className={classes.button}
+            endIcon={<HomeOutlinedIcon className={classes.iconButton} />}
+          >
+            <Link href="/" className={classes.linkButton}>
+              Back To Home
+            </Link>
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -184,6 +188,12 @@ const Dashboard = () => {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
+            {/* Information */}
+            <Grid item xs={12}>
+              <Paper className={fixedHeightPaper}>
+                <Information />
+              </Paper>
+            </Grid>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
@@ -203,9 +213,6 @@ const Dashboard = () => {
               </Paper>
             </Grid>
           </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
         </Container>
       </main>
     </div>
