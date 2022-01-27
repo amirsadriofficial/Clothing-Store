@@ -187,14 +187,18 @@ const NavBar = () => {
             />
           </Box>
           <IconButton aria-label="delete">
-            <Badge badgeContent={1} color="primary">
-              <ShoppingCartIcon />
-            </Badge>
+            <Link to="/cart">
+              <Badge badgeContent={1} color="primary">
+                <ShoppingCartIcon />
+              </Badge>
+            </Link>
           </IconButton>
           <IconButton aria-label="delete">
-            <Badge badgeContent={1} color="primary">
-              <FavoriteBorderIcon />
-            </Badge>
+            <Link to="/favorites">
+              <Badge badgeContent={1} color="primary">
+                <FavoriteBorderIcon />
+              </Badge>
+            </Link>
           </IconButton>
         </Toolbar>
       </Container>
