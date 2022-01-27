@@ -3,19 +3,20 @@ import { useParams } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
-// import MenuItem from '@material-ui/core/MenuItem'
-// import { makeStyles } from '@material-ui/core/styles'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import ShareIcon from '@material-ui/icons/Share'
+import { makeStyles } from '@material-ui/core/styles'
 import Product from '../../utils/all-products'
 
 const sizes = [
   {
     value: 'None',
-    label: 'Choose an pption',
+    label: 'Please select your size',
   },
   {
     value: 'Size Small',
@@ -38,7 +39,7 @@ const sizes = [
 const colors = [
   {
     value: 'None',
-    label: 'Choose an option',
+    label: 'Please select your color',
   },
   {
     value: 'Red',
@@ -58,17 +59,34 @@ const colors = [
   },
 ]
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//       width: '25ch',
-//     },
-//   },
-// }))
+const useStyles = makeStyles(() => ({
+  container: {
+    marginTop: '50px',
+    marginBottom: '50px',
+  },
+  flexColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  flexRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  labelStyle: {
+    paddingLeft: '20px',
+  },
+  button: {
+    backgroundColor: '#717fe0',
+    borderRadius: '25px',
+  },
+}))
 
 const SingleProduct = () => {
-  // const classes = useStyles()
+  const classes = useStyles()
   const { id } = useParams()
   const product = Product.find((item) => item.id === id)
   const [size, setSize] = useState('Choose An Option')
@@ -81,62 +99,78 @@ const SingleProduct = () => {
   }
 
   return (
-    <Container>
+    <Container className={classes.container}>
       <Grid container spacing={3}>
-        <Grid item xs={2}>
-          <p>{product.name}</p>
+        <Grid item xs={1}>
+          <Grid item xs={12}>
+            <img src={product.image} alt="" style={{ width: '100%' }} />
+          </Grid>
+          <Grid item xs={12}>
+            <img src={product.image} alt="" style={{ width: '100%' }} />
+          </Grid>
+          <Grid item xs={12}>
+            <img src={product.image} alt="" style={{ width: '100%' }} />
+          </Grid>
         </Grid>
         <Grid item xs={5}>
           <img src={product.image} alt="" style={{ width: '100%' }} />
         </Grid>
         <Grid item xs={5}>
-          <h3>{product.name}</h3>
+          <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>${product.price}</p>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <p>Size:</p>
-              <TextField
-                id="outlined-select-currency-native"
-                select
-                value={size}
-                onChange={handleChangeSize}
-                SelectProps={{
-                  native: true,
-                }}
-                helperText="Please select your size"
-                variant="outlined"
-                fullWidth
-              >
-                {sizes.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
+          <Grid container spacing={5}>
+            <Grid item xs={12} className={classes.flexRow}>
+              <Grid item xs={2}>
+                <p className={classes.labelStyle}>Size:</p>
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-select-currency-native"
+                  select
+                  value={size}
+                  onChange={handleChangeSize}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  // helperText="Please select your size"
+                  variant="outlined"
+                  fullWidth
+                >
+                  {sizes.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </TextField>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <p>Color: </p>
-              <TextField
-                id="outlined-select-color-native"
-                select
-                value={color}
-                onChange={handleChangeColor}
-                SelectProps={{
-                  native: true,
-                }}
-                helperText="Please select your color"
-                variant="outlined"
-                fullWidth
-              >
-                {colors.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
+            <Grid item xs={12} className={classes.flexRow}>
+              <Grid item xs={2}>
+                <p className={classes.labelStyle}>Color: </p>
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-select-color-native"
+                  select
+                  value={color}
+                  onChange={handleChangeColor}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  // helperText="Please select your color"
+                  variant="outlined"
+                  fullWidth
+                >
+                  {colors.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </TextField>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className={classes.flexRow}>
               <ButtonGroup
                 color="primary"
                 aria-label="outlined primary button group"
@@ -157,11 +191,25 @@ const SingleProduct = () => {
                 </IconButton>
               </ButtonGroup>
             </Grid>
-            <Grid item xs={12}>
-              add to cart box
+            <Grid item xs={12} className={classes.flexRow}>
+              <Grid item xs={6}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  fullWidth
+                >
+                  Add To Cart
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              button box
+            <Grid item xs={12} className={classes.flexRow}>
+              <IconButton aria-label="delete">
+                <FavoriteBorderIcon />
+              </IconButton>
+              <IconButton aria-label="delete">
+                <ShareIcon />
+              </IconButton>
             </Grid>
           </Grid>
         </Grid>
