@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
+import Badge from '@material-ui/core/Badge'
 import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
@@ -186,10 +187,14 @@ const NavBar = () => {
             />
           </Box>
           <IconButton aria-label="delete">
-            <ShoppingCartIcon />
+            <Badge badgeContent={1} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
           </IconButton>
           <IconButton aria-label="delete">
-            <FavoriteBorderIcon />
+            <Badge badgeContent={1} color="primary">
+              <FavoriteBorderIcon />
+            </Badge>
           </IconButton>
         </Toolbar>
       </Container>
