@@ -2,8 +2,10 @@ import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import TextField from '@material-ui/core/TextField'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+import InputLabel from '@material-ui/core/InputLabel'
+import IconButton from '@material-ui/core/IconButton'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
@@ -13,6 +15,9 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,7 +45,25 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles()
+  const [values, setValues] = React.useState({
+    amount: '',
+    password: '',
+    weight: '',
+    weightRange: '',
+    showPassword: false,
+  })
 
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value })
+  }
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword })
+  }
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault()
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -52,27 +75,42 @@ const SignIn = () => {
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
-          <TextField
+          <InputLabel htmlFor="outlined-adornment-Email">
+            Email Address
+          </InputLabel>
+          <OutlinedInput
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
+            id="outlined-adornment-Email"
             name="email"
             autoComplete="email"
             autoFocus
+            style={{ marginBottom: '10px' }}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
+          <InputLabel htmlFor="outlined-adornment-password">
+            Password
+          </InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={values.showPassword ? 'text' : 'password'}
+            value={values.password}
+            onChange={handleChange('password')}
             fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            }
+            labelWidth={70}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
