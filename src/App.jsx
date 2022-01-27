@@ -4,6 +4,7 @@ import './App.css'
 import Layout from './container/layout/Layout'
 import Home from './component/home/Home'
 import Shop from './component/shop/Shop'
+import SingleProduct from './component/shop/SingleProduct'
 import About from './component/about/About'
 import Contact from './component/contact/Contact'
 import Cart from './component/cart/Cart'
@@ -26,6 +27,11 @@ function App() {
           <Route path="/shop">
             <Layout>
               <Shop />
+            </Layout>
+          </Route>
+          <Route path="/product/:id">
+            <Layout>
+              <SingleProduct />
             </Layout>
           </Route>
           <Route path="/about">
