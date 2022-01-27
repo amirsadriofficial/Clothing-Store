@@ -77,7 +77,12 @@ const Cart = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="h2">
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="h2"
+                      style={{ fontSize: '24px' }}
+                    >
                       {product.name}
                     </Typography>
                     <Typography
