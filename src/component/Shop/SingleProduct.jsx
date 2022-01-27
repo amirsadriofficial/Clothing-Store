@@ -101,21 +101,21 @@ const SingleProduct = () => {
   return (
     <Container className={classes.container}>
       <Grid container spacing={3}>
-        <Grid item xs={1}>
-          <Grid item xs={12}>
+        <Grid item xs={12} md={1}>
+          <Grid item xs={2} md={12}>
             <img src={product.image} alt="" style={{ width: '100%' }} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={2} md={12}>
             <img src={product.image} alt="" style={{ width: '100%' }} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={2} md={12}>
             <img src={product.image} alt="" style={{ width: '100%' }} />
           </Grid>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} sm={5}>
           <img src={product.image} alt="" style={{ width: '100%' }} />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} md={5}>
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>${product.price}</p>

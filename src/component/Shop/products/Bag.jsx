@@ -64,9 +64,6 @@ const Bag = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              {/* <CardActions>
-              <Link to={`product/${product.id}`} />
-            </CardActions> */}
             </Card>
           </Link>
         </Grid>
