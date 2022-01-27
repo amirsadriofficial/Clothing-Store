@@ -36,7 +36,7 @@ const Bag = () => {
     <Grid container spacing={3}>
       {Products.map((product) => (
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Link href={`/product/${product.id}`}>
+          <Link to={`/product/${product.id}`}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
