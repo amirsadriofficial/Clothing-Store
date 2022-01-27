@@ -21,10 +21,10 @@ const Deposits = () => {
     <>
       <Title>Recent Deposits</Title>
       <Typography component="p" variant="h4">
-        $3,024.00
+        $317.00
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        on 15 March, 2019
+        on 15 February, 2022
       </Typography>
       <div>
         <Link color="primary" href="/#" onClick={preventDefault}>

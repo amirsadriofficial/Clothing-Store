@@ -21,7 +21,7 @@ const MEN_PRODUCTS = [
     name: 'Herschel Supply',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct2,
-    price: 95,
+    price: 130,
   },
   {
     id: 'man_product_3',

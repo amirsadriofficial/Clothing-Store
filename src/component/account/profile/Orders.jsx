@@ -9,50 +9,50 @@ import TableRow from '@material-ui/core/TableRow'
 import Title from './Title'
 
 // Generate Order Data
-const createData = (id, date, name, shipTo, paymentMethod, amount) => {
-  return { id, date, name, shipTo, paymentMethod, amount }
+const createData = (id, date, product, shipTo, paymentMethod, amount) => {
+  return { id, date, product, shipTo, paymentMethod, amount }
 }
 
 const rows = [
   createData(
     0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
+    '11 Mar, 2019',
+    'Celine Micro Belt Bag',
+    'Ahar, East Azerbaijan, Iran',
     'VISA ⠀•••• 3719',
-    312.44
+    70
   ),
   createData(
     1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
+    '07 Aug, 2019',
+    'Herschel Supply',
+    'Ahar, East Azerbaijan, Iran',
     'VISA ⠀•••• 2574',
-    866.99
+    130
   ),
   createData(
     2,
-    '16 Mar, 2019',
-    'Tom Scholz',
-    'Boston, MA',
+    '23 Jun, 2020',
+    'Adidas Black Shoes',
+    'Ahar, East Azerbaijan, Iran',
     'MC ⠀•••• 1253',
-    100.81
+    95
   ),
   createData(
     3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
+    '16 Sep, 2021',
+    'Modern Black Watch',
+    'Ahar, East Azerbaijan, Iran',
     'AMEX ⠀•••• 2000',
-    654.39
+    220
   ),
   createData(
     4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
+    '09 Dec, 2021',
+    'Women Office Wear',
+    'Ahar, East Azerbaijan, Iran',
     'VISA ⠀•••• 5919',
-    212.79
+    200
   ),
 ]
 
@@ -75,7 +75,7 @@ const Orders = () => {
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
+            <TableCell>Product</TableCell>
             <TableCell>Ship To</TableCell>
             <TableCell>Payment Method</TableCell>
             <TableCell align="right">Sale Amount</TableCell>
@@ -85,10 +85,10 @@ const Orders = () => {
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.product}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
               <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell align="right">${row.amount}</TableCell>
             </TableRow>
           ))}
         </TableBody>
