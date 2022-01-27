@@ -138,7 +138,7 @@ const SignUp = () => {
           className={classes.button}
           endIcon={<HomeOutlinedIcon />}
         >
-          <Link to="/" className={classes.linkButton}>
+          <Link href="/" className={classes.linkButton}>
             Back To Home
           </Link>
         </Button>
