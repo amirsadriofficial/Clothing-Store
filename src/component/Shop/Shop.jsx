@@ -15,6 +15,7 @@ import BagProducts from './products/Bag'
 import WomanProducts from './products/Woman'
 import ShoesProducts from './products/Shoes'
 import WatchesProducts from './products/Watches'
+import AllProducts from './products/AllProducts'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
@@ -123,11 +124,7 @@ const ShopHeader = () => {
           onChangeIndex={handleChangeIndex}
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <WomanProducts />
-            <ManProducts />
-            <BagProducts />
-            <ShoesProducts />
-            <WatchesProducts />
+            <AllProducts />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
             <WomanProducts />
