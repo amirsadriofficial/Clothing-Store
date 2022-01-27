@@ -67,7 +67,7 @@ const Cart = () => {
     <Container className={classes.container}>
       <Grid container spacing={4}>
         <Grid item xs={12} md={8}>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginBottom: '10px' }}>
             <Card className={classes.root}>
               <CardActionArea className={classes.cardArea}>
                 <Grid item xs={5} sm={3}>
@@ -149,7 +149,7 @@ const Cart = () => {
               </Grid>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginBottom: '10px' }}>
             <Card className={classes.root}>
               <CardActionArea className={classes.cardArea}>
                 <Grid item xs={5} sm={3}>
@@ -231,7 +231,7 @@ const Cart = () => {
               </Grid>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginBottom: '10px' }}>
             <Card className={classes.root}>
               <CardActionArea className={classes.cardArea}>
                 <Grid item xs={5} sm={3}>
