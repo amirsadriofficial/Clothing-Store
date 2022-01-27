@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
@@ -76,13 +77,23 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  productInfo: {
+    paddingLeft: '10px',
+    paddingBottom: '25px',
+  },
+  productName: {
+    fontSize: '35px',
+    marginTop: '0px',
+    marginBottom: '10px',
+  },
   labelStyle: {
-    paddingLeft: '20px',
+    paddingLeft: '10px',
   },
   button: {
     backgroundColor: '#717fe0',
     borderRadius: '25px',
   },
+  imgGrid: { marginRight: '15px' },
 }))
 
 const SingleProduct = () => {
@@ -101,25 +112,70 @@ const SingleProduct = () => {
   return (
     <Container className={classes.container}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={1}>
-          <Grid item xs={2} md={12}>
-            <img src={product.image} alt="" style={{ width: '100%' }} />
+        <Hidden xsDown>
+          <Grid item xs={12} sm={2} md={1}>
+            <Grid item xs={12} md={12}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={2} md={12}>
-            <img src={product.image} alt="" style={{ width: '100%' }} />
-          </Grid>
-          <Grid item xs={2} md={12}>
-            <img src={product.image} alt="" style={{ width: '100%' }} />
-          </Grid>
+        </Hidden>
+        <Grid item xs={12} sm={9} md={5}>
+          <img
+            src={product.image}
+            alt="product_image"
+            style={{ width: '100%' }}
+          />
         </Grid>
-        <Grid item xs={12} sm={5}>
-          <img src={product.image} alt="" style={{ width: '100%' }} />
-        </Grid>
+        <Hidden smUp>
+          <Grid item xs={12} className={classes.flexRow}>
+            <Grid item xs={3} md={12} className={classes.imgGrid}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
+            <Grid item xs={3} md={12} className={classes.imgGrid}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
+            <Grid item xs={3} md={12} className={classes.imgGrid}>
+              <img
+                src={product.image}
+                alt="product_image"
+                style={{ width: '100%' }}
+              />
+            </Grid>
+          </Grid>
+        </Hidden>
         <Grid item xs={12} md={5}>
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>${product.price}</p>
-          <Grid container spacing={5}>
+          <div className={classes.productInfo}>
+            <h4 className={classes.productName}>{product.name}</h4>
+            <p>{product.description}</p>
+            <p style={{ fontSize: '25px' }}>${product.price}</p>
+          </div>
+          <Grid container spacing={4}>
             <Grid item xs={12} className={classes.flexRow}>
               <Grid item xs={2}>
                 <p className={classes.labelStyle}>Size:</p>
@@ -133,7 +189,6 @@ const SingleProduct = () => {
                   SelectProps={{
                     native: true,
                   }}
-                  // helperText="Please select your size"
                   variant="outlined"
                   fullWidth
                 >
@@ -158,7 +213,6 @@ const SingleProduct = () => {
                   SelectProps={{
                     native: true,
                   }}
-                  // helperText="Please select your color"
                   variant="outlined"
                   fullWidth
                 >
@@ -182,6 +236,7 @@ const SingleProduct = () => {
                   id="standard-number"
                   label="Number"
                   type="number"
+                  value={1}
                   InputLabelProps={{
                     shrink: true,
                   }}
