@@ -119,7 +119,7 @@ const SignUp = () => {
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-password">
-                Password
+                Password *
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
