@@ -89,7 +89,6 @@ const SignUp = () => {
                 autoFocus
                 fullWidth
                 labelWidth={80}
-                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -103,7 +102,6 @@ const SignUp = () => {
                 autoComplete="lname"
                 fullWidth
                 labelWidth={80}
-                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -117,7 +115,6 @@ const SignUp = () => {
                 autoComplete="email"
                 fullWidth
                 labelWidth={110}
-                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12}>
