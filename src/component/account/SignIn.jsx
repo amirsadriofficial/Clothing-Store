@@ -89,7 +89,7 @@ const SignIn = () => {
             style={{ marginBottom: '15px' }}
           />
           <InputLabel htmlFor="outlined-adornment-password">
-            Password
+            Password *
           </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
