@@ -43,8 +43,7 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
   },
   cardAction: {
-    marginTop: '20px',
-    paddingBottom: '20px',
+    padding: '10px',
   },
   cartTotalBox: {
     marginTop: '15px',
@@ -112,8 +111,8 @@ const Cart = () => {
                   </CardContent>
                 </Grid>
               </CardActionArea>
-              <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={12} sm={4}>
+              <Grid container spacing={1} className={classes.cardAction}>
+                <Grid item xs={8} sm={4} lg={5}>
                   <ButtonGroup
                     color="primary"
                     aria-label="outlined primary button group"
@@ -135,25 +134,21 @@ const Cart = () => {
                     </IconButton>
                   </ButtonGroup>
                 </Grid>
-                <Grid item xs={4} sm={3}>
+                <Grid item xs={4} sm={3} lg={2}>
                   <Button
                     variant="contained"
                     color="secondary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<DeleteIcon />}
                   >
                     Delete
                   </Button>
                 </Grid>
-                <Grid item xs={8} sm={5}>
+                <Grid item xs={12} sm={5} lg={3}>
                   <Button
                     variant="contained"
                     color="primary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<FavoriteBorderIcon />}
                   >
                     Add To Favorites
