@@ -106,7 +106,7 @@ const SignUp = () => {
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-email">
-                Email Address
+                Email Address *
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-email"
