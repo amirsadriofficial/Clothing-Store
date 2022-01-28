@@ -55,6 +55,13 @@ const useStyles = makeStyles(() => ({
     borderTop: '1px solid #e6e6e6',
     borderBottom: '1px solid #e6e6e6',
   },
+  pageTitleText: {
+    margin: '0',
+    fontSize: '35px',
+  },
+  pageTitle: {
+    borderBottom: '1px solid #515151;',
+  },
 }))
 
 const Cart = () => {
@@ -64,6 +71,9 @@ const Cart = () => {
   return (
     <Container className={classes.container}>
       <Grid container spacing={4}>
+        <Grid item xs={12} className={classes.pageTitle}>
+          <h2 className={classes.pageTitleText}>Cart</h2>
+        </Grid>
         <Grid item xs={12} md={8}>
           <Grid item xs={12} style={{ marginBottom: '10px' }}>
             <Card className={classes.root}>
