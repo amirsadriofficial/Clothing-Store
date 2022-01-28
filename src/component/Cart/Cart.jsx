@@ -44,6 +44,8 @@ const useStyles = makeStyles(() => ({
   },
   cardAction: {
     padding: '10px',
+    display: 'flex',
+    alignItems: 'center',
   },
   cartTotalBox: {
     marginTop: '15px',
@@ -73,7 +75,7 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={7}>
           <Grid item xs={12} style={{ marginBottom: '10px' }}>
             <Card className={classes.root}>
               <CardActionArea className={classes.cardArea}>
@@ -111,8 +113,8 @@ const Cart = () => {
                   </CardContent>
                 </Grid>
               </CardActionArea>
-              <Grid container spacing={1} className={classes.cardAction}>
-                <Grid item xs={8} sm={4} lg={5}>
+              <Grid container spacing={3} className={classes.cardAction}>
+                <Grid item xs={8} sm={4} lg={4}>
                   <ButtonGroup
                     color="primary"
                     aria-label="outlined primary button group"
@@ -144,7 +146,7 @@ const Cart = () => {
                     Delete
                   </Button>
                 </Grid>
-                <Grid item xs={12} sm={5} lg={3}>
+                <Grid item xs={12} sm={5} lg={4}>
                   <Button
                     variant="contained"
                     color="primary"
@@ -169,7 +171,12 @@ const Cart = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="h2">
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="h2"
+                      style={{ fontSize: '24px' }}
+                    >
                       {product.name}
                     </Typography>
                     <Typography
@@ -190,7 +197,7 @@ const Cart = () => {
                 </Grid>
               </CardActionArea>
               <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={8} sm={4} lg={4}>
                   <ButtonGroup
                     color="primary"
                     aria-label="outlined primary button group"
@@ -212,25 +219,21 @@ const Cart = () => {
                     </IconButton>
                   </ButtonGroup>
                 </Grid>
-                <Grid item xs={4} sm={3}>
+                <Grid item xs={4} sm={3} lg={2}>
                   <Button
                     variant="contained"
                     color="secondary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<DeleteIcon />}
                   >
                     Delete
                   </Button>
                 </Grid>
-                <Grid item xs={8} sm={5}>
+                <Grid item xs={12} sm={5} lg={4}>
                   <Button
                     variant="contained"
                     color="primary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<FavoriteBorderIcon />}
                   >
                     Add To Favorites
@@ -251,7 +254,12 @@ const Cart = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="h2">
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="h2"
+                      style={{ fontSize: '24px' }}
+                    >
                       {product.name}
                     </Typography>
                     <Typography
@@ -272,7 +280,7 @@ const Cart = () => {
                 </Grid>
               </CardActionArea>
               <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={8} sm={4} lg={4}>
                   <ButtonGroup
                     color="primary"
                     aria-label="outlined primary button group"
@@ -294,25 +302,21 @@ const Cart = () => {
                     </IconButton>
                   </ButtonGroup>
                 </Grid>
-                <Grid item xs={4} sm={3}>
+                <Grid item xs={4} sm={3} lg={2}>
                   <Button
                     variant="contained"
                     color="secondary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<DeleteIcon />}
                   >
                     Delete
                   </Button>
                 </Grid>
-                <Grid item xs={8} sm={5}>
+                <Grid item xs={12} sm={5} lg={4}>
                   <Button
                     variant="contained"
                     color="primary"
-                    size="large"
                     fullWidth
-                    className={classes.button}
                     startIcon={<FavoriteBorderIcon />}
                   >
                     Add To Favorites
@@ -322,7 +326,7 @@ const Cart = () => {
             </Card>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} className={classes.cartTotalBox}>
+        <Grid item xs={12} sm={6} md={5} className={classes.cartTotalBox}>
           <h5 style={{ fontSize: '35px', margin: '10px' }}>Cart Totals</h5>
           <div className={classes.cartTotalInfo}>
             <p>
