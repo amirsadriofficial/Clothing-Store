@@ -77,7 +77,7 @@ const SignIn = () => {
         </Typography>
         <form className={classes.form} noValidate>
           <InputLabel htmlFor="outlined-adornment-email">
-            Email Address
+            Email Address *
           </InputLabel>
           <OutlinedInput
             id="outlined-adornment-email"
