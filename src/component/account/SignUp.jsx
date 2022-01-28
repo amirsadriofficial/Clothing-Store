@@ -79,7 +79,7 @@ const SignUp = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <InputLabel htmlFor="outlined-adornment-firstName">
-                First Name
+                First Name *
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-firstName"
