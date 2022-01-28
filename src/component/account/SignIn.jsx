@@ -3,6 +3,7 @@ import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+// import TextField from '@material-ui/core/TextField'
 import InputLabel from '@material-ui/core/InputLabel'
 import IconButton from '@material-ui/core/IconButton'
 import InputAdornment from '@material-ui/core/InputAdornment'
@@ -75,25 +76,24 @@ const SignIn = () => {
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
-          <InputLabel htmlFor="outlined-adornment-Email">
+          <InputLabel htmlFor="outlined-adornment-email">
             Email Address
           </InputLabel>
           <OutlinedInput
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="outlined-adornment-Email"
+            id="outlined-adornment-email"
+            type="email"
             name="email"
-            autoComplete="email"
+            fullWidth
+            labelWidth={110}
             autoFocus
-            style={{ marginBottom: '10px' }}
+            style={{ marginBottom: '15px' }}
           />
           <InputLabel htmlFor="outlined-adornment-password">
             Password
           </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
+            name="password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
             onChange={handleChange('password')}
