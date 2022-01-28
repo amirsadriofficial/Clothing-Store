@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import TextField from '@material-ui/core/TextField'
+import InputLabel from '@material-ui/core/InputLabel'
+import IconButton from '@material-ui/core/IconButton'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
@@ -13,6 +15,9 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,6 +45,25 @@ const useStyles = makeStyles((theme) => ({
 
 const SignUp = () => {
   const classes = useStyles()
+  const [values, setValues] = useState({
+    amount: '',
+    password: '',
+    weight: '',
+    weightRange: '',
+    showPassword: false,
+  })
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value })
+  }
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword })
+  }
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault()
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -54,49 +78,72 @@ const SignUp = () => {
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
+              <InputLabel htmlFor="outlined-adornment-firstName">
+                First Name
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-firstName"
                 name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
+                type="fname"
+                autoComplete="fname"
                 autoFocus
+                fullWidth
+                labelWidth={80}
+                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
+              <InputLabel htmlFor="outlined-adornment-lastName">
+                Last Name
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-lastName"
                 name="lastName"
+                type="lname"
                 autoComplete="lname"
+                fullWidth
+                labelWidth={80}
+                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
+              <InputLabel htmlFor="outlined-adornment-email">
+                Email Address
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-email"
                 name="email"
+                type="email"
                 autoComplete="email"
+                fullWidth
+                labelWidth={110}
+                style={{ marginBottom: '10px' }}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
+              <InputLabel htmlFor="outlined-adornment-password">
+                Password
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
                 name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                type={values.showPassword ? 'text' : 'password'}
+                value={values.password}
+                onChange={handleChange('password')}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                fullWidth
+                labelWidth={70}
               />
             </Grid>
             <Grid item xs={12}>
