@@ -195,7 +195,7 @@ const Favorites = () => {
                   fullWidth
                   endIcon={<ArrowForwardIosIcon />}
                 >
-                  See Products
+                  <Link to={`/product/${product.id}`}>See Product</Link>
                 </Button>
               </Grid>
             </Grid>
@@ -265,7 +265,7 @@ const Favorites = () => {
                   fullWidth
                   endIcon={<ArrowForwardIosIcon />}
                 >
-                  See Products
+                  <Link to={`/product/${product.id}`}>See Product</Link>
                 </Button>
               </Grid>
             </Grid>
