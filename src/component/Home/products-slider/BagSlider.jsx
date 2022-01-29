@@ -78,34 +78,36 @@ const BagSlider = () => {
       <Carousel responsive={responsive} className={classes.carouselStyle}>
         {Products.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={4}>
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={product.image}
-                  title={product.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="h2">
-                    {product.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {product.description}
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    color="textSecondary"
-                    className={classes.priceText}
-                  >
-                    ${product.price}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Link to={`/product/${product.id}`}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={product.image}
+                    title={product.name}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="h2">
+                      {product.name}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {product.description}
+                    </Typography>
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                      className={classes.priceText}
+                    >
+                      ${product.price}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Carousel>
