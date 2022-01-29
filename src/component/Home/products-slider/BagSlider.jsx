@@ -121,4 +121,5 @@ const BagSlider = () => {
     </Grid>
   )
 }
+
 export default BagSlider
