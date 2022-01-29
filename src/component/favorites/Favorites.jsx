@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import { useParams } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -124,7 +125,7 @@ const Favorites = () => {
                   fullWidth
                   endIcon={<ArrowForwardIosIcon />}
                 >
-                  See Products
+                  <Link to={`/product/${product.id}`}>See Product</Link>
                 </Button>
               </Grid>
             </Grid>
