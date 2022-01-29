@@ -55,6 +55,7 @@ const Favorites = () => {
   const classes = useStyles()
   // const { id } = useParams()
   const product = Product.find((item) => item.id === 'bag_product_4')
+
   return (
     <Container className={classes.container}>
       <Grid container spacing={3}>
