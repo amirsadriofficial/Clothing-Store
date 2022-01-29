@@ -60,11 +60,6 @@ const Watches = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              {/* <CardActions>
-              <IconButton aria-label="delete">
-                <FavoriteBorderIcon />
-              </IconButton>
-            </CardActions> */}
             </Card>
           </Link>
         </Grid>
