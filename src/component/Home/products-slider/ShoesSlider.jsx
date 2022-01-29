@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import { makeStyles } from '@material-ui/core/styles'
@@ -111,7 +112,7 @@ const ShoesSlider = () => {
       <Grid item xs={12} className={classes.buttonStyle}>
         <Grid item xs={9} sm={6} md={4} lg={3}>
           <Button variant="contained" color="primary" fullWidth>
-            See All Products
+            <Link to="/shop">See All Products</Link>
           </Button>
         </Grid>
       </Grid>
