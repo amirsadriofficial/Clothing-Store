@@ -70,6 +70,7 @@ const useStyles = makeStyles({
 
 const ShoesSlider = () => {
   const classes = useStyles()
+
   return (
     <Grid className={classes.bodySection}>
       <Grid item xs={6} sm={3} md={2} lg={2}>
@@ -121,4 +122,5 @@ const ShoesSlider = () => {
     </Grid>
   )
 }
+
 export default ShoesSlider
