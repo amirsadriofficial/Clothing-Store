@@ -13,6 +13,7 @@ import Help from './component/help/Help'
 import Profile from './component/account/profile/Profile'
 import SignIn from './component/account/SignIn'
 import SignUp from './component/account/SignUp'
+import NotFound from './component/not-found/NotFound'
 
 function App() {
   return (
@@ -67,6 +68,11 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route>
+            <Layout>
+              <NotFound />
+            </Layout>
           </Route>
         </Switch>
       </BrowserRouter>
