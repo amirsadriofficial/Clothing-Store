@@ -17,7 +17,7 @@ const useStyle = makeStyles({
     margin: '0',
   },
   textStyle: {
-    fontSize: '45px',
+    fontSize: '50px',
   },
 })
 
