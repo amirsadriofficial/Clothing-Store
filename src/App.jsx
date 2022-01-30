@@ -70,9 +70,7 @@ function App() {
             <SignUp />
           </Route>
           <Route>
-            <Layout>
-              <NotFound />
-            </Layout>
+            <NotFound />
           </Route>
         </Switch>
       </BrowserRouter>
