@@ -26,7 +26,7 @@ const NotFound = () => {
 
   return (
     <Container className={classes.container}>
-      <p className={classes.numberStyle}>404</p>
+      <h2 className={classes.numberStyle}>404</h2>
       <p className={classes.textStyle}>Page Not Found</p>
       <Button variant="outlined" color="primary">
         <Link to="/">Back To Home</Link>
