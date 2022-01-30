@@ -15,9 +15,11 @@ const useStyle = makeStyles({
   numberStyle: {
     fontSize: '200px',
     margin: '0',
+    color: '#B71919',
   },
   textStyle: {
     fontSize: '50px',
+    color: '#B71919',
   },
 })
 
@@ -26,9 +28,9 @@ const NotFound = () => {
 
   return (
     <Container className={classes.container}>
-      <h5 className={classes.numberStyle}>404</h5>
+      <h6 className={classes.numberStyle}>404</h6>
       <p className={classes.textStyle}>Page Not Found</p>
-      <Button variant="outlined" color="primary">
+      <Button variant="outlined" color="primary" size="large">
         <Link to="/">Back To Home</Link>
       </Button>
     </Container>
