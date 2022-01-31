@@ -55,7 +55,7 @@ const rows = [
   ),
 ]
 
-function preventDefault(event) {
+const preventDefault = (event) => {
   event.preventDefault()
 }
 
