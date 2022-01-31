@@ -10,7 +10,7 @@ import {
 } from 'recharts'
 import Title from './Title'
 
-function createData(time, amount) {
+const createData = (time, amount) => {
   return { time, amount }
 }
 
