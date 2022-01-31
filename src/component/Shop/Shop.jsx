@@ -146,4 +146,5 @@ const ShopHeader = () => {
     </Container>
   )
 }
+
 export default ShopHeader
