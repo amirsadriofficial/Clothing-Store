@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import './App.css'
+import store from './redux/store'
 import Layout from './container/layout/Layout'
 import Home from './component/home/Home'
 import Shop from './component/shop/Shop'
@@ -20,58 +22,60 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
-            <Layout>
-              <Home />
-            </Layout>
-          </Route>
-          <Route path="/shop">
-            <Layout>
-              <Shop />
-            </Layout>
-          </Route>
-          <Route path="/product/:id">
-            <Layout>
-              <SingleProduct />
-            </Layout>
-          </Route>
-          <Route path="/about">
-            <Layout>
-              <About />
-            </Layout>
-          </Route>
-          <Route path="/contact">
-            <Layout>
-              <Contact />
-            </Layout>
-          </Route>
-          <Route path="/cart">
-            <Layout>
-              <Cart />
-            </Layout>
-          </Route>
-          <Route path="/favorites">
-            <Layout>
-              <Favorites />
-            </Layout>
-          </Route>
-          <Route path="/help">
-            <Layout>
-              <Help />
-            </Layout>
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/signin">
-            <SignIn />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route>
-            <NotFound />
-          </Route>
+          <Provider store={store}>
+            <Route exact path="/">
+              <Layout>
+                <Home />
+              </Layout>
+            </Route>
+            <Route path="/shop">
+              <Layout>
+                <Shop />
+              </Layout>
+            </Route>
+            <Route path="/product/:id">
+              <Layout>
+                <SingleProduct />
+              </Layout>
+            </Route>
+            <Route path="/about">
+              <Layout>
+                <About />
+              </Layout>
+            </Route>
+            <Route path="/contact">
+              <Layout>
+                <Contact />
+              </Layout>
+            </Route>
+            <Route path="/cart">
+              <Layout>
+                <Cart />
+              </Layout>
+            </Route>
+            <Route path="/favorites">
+              <Layout>
+                <Favorites />
+              </Layout>
+            </Route>
+            <Route path="/help">
+              <Layout>
+                <Help />
+              </Layout>
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Provider>
         </Switch>
       </BrowserRouter>
     </div>
