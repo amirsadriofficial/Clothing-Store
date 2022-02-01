@@ -1,20 +1,20 @@
 import Types from './Types'
 
-const favoritesReducer = (state, action) => {
+const cartReducer = (state, action) => {
   switch (action.type) {
-    case Types.ADD_TO_FAVORITES:
+    case Types.ADD_TO_CART:
       return {
         ...state,
-        favoritesList: state.favoritesList + 1,
+        cartList: state.cartList + 1,
       }
-    case Types.REMOVE_FROM_FAVORITES:
+    case Types.REMOVE_FROM_CART:
       return {
         ...state,
-        favoritesList: state.favoritesList + 1,
+        cartList: state.cartList + 1,
       }
     default:
       return state
   }
 }
 
-export default favoritesReducer
+export default cartReducer
