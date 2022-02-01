@@ -1,9 +1,13 @@
 import Types from './Types'
 
-const addToFavorites = () => {
+export const addToFavorites = () => {
   return {
     type: Types.ADD_TO_FAVORITES,
   }
 }
 
-export default addToFavorites
+export const removeFromFavorites = () => {
+  return {
+    type: Types.REMOVE_FROM_FAVORITES,
+  }
+}
