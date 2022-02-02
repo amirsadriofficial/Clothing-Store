@@ -119,10 +119,10 @@ const SignIn = () => {
             }
             fullWidth
             labelWidth={70}
-            onChange={
-              (handleChange('password'),
-              (value) => handleOnChange('password', value))
-            }
+            onChange={(value) => {
+              handleOnChange('password', value)
+              handleChange('password')
+            }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
