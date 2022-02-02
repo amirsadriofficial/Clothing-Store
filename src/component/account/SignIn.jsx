@@ -53,16 +53,13 @@ const SignIn = () => {
     weightRange: '',
     showPassword: false,
   })
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault()
-  }
-  const handleOnChange = (name, value) => {
+  const handleChangeInputs = (name, value) => {
     setFormValue({
       ...formValue,
       [name]: value,
     })
   }
-  const handleChange = (prop) => (event) => {
+  const handleChangePassword = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
   }
   const handleClickShowPassword = () => {
@@ -70,6 +67,9 @@ const SignIn = () => {
   }
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
+  }
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault()
   }
 
   return (
@@ -94,7 +94,7 @@ const SignIn = () => {
             labelWidth={110}
             autoFocus
             style={{ marginBottom: '15px' }}
-            onChange={(value) => handleOnChange('email', value)}
+            onChange={(value) => handleChangeInputs('email', value)}
           />
           <InputLabel htmlFor="outlined-adornment-password">
             Password *
@@ -118,7 +118,7 @@ const SignIn = () => {
             }
             fullWidth
             labelWidth={70}
-            onChange={handleChange('password')}
+            onChange={handleChangePassword('password')}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
