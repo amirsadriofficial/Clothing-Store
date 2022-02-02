@@ -45,6 +45,16 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles()
+  const [formValue, setFormValue] = useState({})
+  const handleSubmit = async (event) => {
+    if (event) event.preventDefault()
+  }
+  const handleOnChange = (name, value) => {
+    setFormValue({
+      ...formValue,
+      [name]: value,
+    })
+  }
   const [values, setValues] = useState({
     amount: '',
     password: '',
@@ -84,6 +94,7 @@ const SignIn = () => {
             labelWidth={110}
             autoFocus
             style={{ marginBottom: '15px' }}
+            onChange={(value) => handleOnChange('email', value)}
           />
           <InputLabel htmlFor="outlined-adornment-password">
             Password *
@@ -93,7 +104,6 @@ const SignIn = () => {
             name="password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
-            onChange={handleChange('password')}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -108,6 +118,10 @@ const SignIn = () => {
             }
             fullWidth
             labelWidth={70}
+            onChange={
+              (handleChange('password'),
+              (value) => handleOnChange('password', value))
+            }
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
