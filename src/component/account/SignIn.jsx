@@ -139,16 +139,16 @@ const SignIn = () => {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            <Link to="/">Sign In</Link>
+            <Link href="/">Sign In</Link>
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link to="/#" variant="body2">
+              <Link href="/#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/signup" variant="body2">
+              <Link href="/signup" variant="body2">
                 Do not have an account? Sign Up
               </Link>
             </Grid>
@@ -169,7 +169,7 @@ const SignIn = () => {
           className={classes.button}
           endIcon={<HomeOutlinedIcon />}
         >
-          <Link to="/" className={classes.linkButton}>
+          <Link href="/" className={classes.linkButton}>
             Back To Home
           </Link>
         </Button>
