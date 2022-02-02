@@ -48,6 +48,7 @@ const SignIn = () => {
   const [formValue, setFormValue] = useState({})
   const handleSubmit = async (event) => {
     if (event) event.preventDefault()
+    console.log('Information: ', formValue)
   }
   const handleOnChange = (name, value) => {
     setFormValue({
