@@ -1,6 +1,6 @@
 import Types from './Types'
 
-const accountReducer = (state, action) => {
+const accountReducer = (state = [], action) => {
   switch (action.type) {
     case Types.SIGN_IN_STARTED:
       return {
