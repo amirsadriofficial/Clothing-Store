@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles()
   const [formValue, setFormValue] = useState({})
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     if (event) event.preventDefault()
     console.log('Information: ', formValue)
   }
