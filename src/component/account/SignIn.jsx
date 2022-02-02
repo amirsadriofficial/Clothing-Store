@@ -95,6 +95,7 @@ const SignIn = () => {
             type="email"
             fullWidth
             labelWidth={110}
+            autoComplete="email"
             autoFocus
             style={{ marginBottom: '15px' }}
             onChange={(value) => handleChangeInputs('email', value)}
@@ -125,6 +126,7 @@ const SignIn = () => {
             }
             fullWidth
             labelWidth={70}
+            autoComplete="password"
             onChange={handleChangePassword('password')}
           />
           <FormControlLabel
