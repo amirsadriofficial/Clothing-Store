@@ -139,7 +139,9 @@ const SignIn = () => {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            <Link href="/">Sign In</Link>
+            <Link href="/" className={classes.linkButton}>
+              Sign In
+            </Link>
           </Button>
           <Grid container>
             <Grid item xs>
