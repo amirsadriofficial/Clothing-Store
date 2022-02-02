@@ -48,13 +48,13 @@ const SignIn = () => {
   const [formValue, setFormValue] = useState({})
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('Information: ', formValue)
   }
   const handleOnChange = (name, value) => {
     setFormValue({
       ...formValue,
       [name]: value,
     })
+    console.log('Email: ', value)
   }
   const [values, setValues] = useState({
     amount: '',
@@ -65,6 +65,7 @@ const SignIn = () => {
   })
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
+    console.log('Email: ', values)
   }
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword })
@@ -119,10 +120,7 @@ const SignIn = () => {
             }
             fullWidth
             labelWidth={70}
-            onChange={(value) => {
-              handleOnChange('password', value)
-              handleChange('password')
-            }}
+            onChange={handleChange('password')}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
