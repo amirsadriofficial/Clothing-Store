@@ -49,14 +49,11 @@ const SignIn = () => {
     email: '',
   })
   const [passwordValue, setPasswordValue] = useState({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   })
   const handleChangeInputs = (name, value) => {
-    setFormValue({ ...passwordValue, [name]: value.target.value })
+    setFormValue({ ...formValue, [name]: value.target.value })
   }
   const handleChangePassword = (prop) => (event) => {
     setPasswordValue({ ...passwordValue, [prop]: event.target.value })
