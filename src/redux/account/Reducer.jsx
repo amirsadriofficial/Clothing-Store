@@ -1,20 +1,50 @@
 import Types from './Types'
 
-const cartReducer = (state, action) => {
+const accountReducer = (state, action) => {
   switch (action.type) {
-    case Types.ADD_TO_CART:
+    case Types.SIGN_IN_STARTED:
       return {
         ...state,
-        cartList: state.cartList + 1,
+        logged: false,
+        loading: true,
       }
-    case Types.REMOVE_FROM_CART:
+    case Types.SIGN_IN_SUCCESS:
       return {
         ...state,
-        cartList: state.cartList + 1,
+        logged: true,
+        loading: false,
+        response: 'You have successfully entered!',
+      }
+    case Types.SIGN_IN_FAILED:
+      return {
+        ...state,
+        logged: false,
+        loading: false,
+        response: 'Your request is invalid, please try again!',
+      }
+    case Types.SIGN_UP_STARTED:
+      return {
+        ...state,
+        logged: false,
+        loading: true,
+      }
+    case Types.SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        logged: true,
+        loading: false,
+        response: 'You have successfully registered!',
+      }
+    case Types.SIGN_UP_FAILED:
+      return {
+        ...state,
+        logged: false,
+        loading: false,
+        response: 'Your request is invalid, please try again!',
       }
     default:
       return state
   }
 }
 
-export default cartReducer
+export default accountReducer
