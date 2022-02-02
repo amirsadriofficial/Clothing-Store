@@ -55,11 +55,8 @@ const SignIn = () => {
     weightRange: '',
     showPassword: false,
   })
-  const handleChangeInputs = (name, value) => {
-    setFormValue({
-      ...formValue,
-      [name]: value,
-    })
+  const handleChangeInputs = (name, event) => {
+    setFormValue({ ...passwordValue, [name]: event.target.value })
   }
   const handleChangePassword = (prop) => (event) => {
     setPasswordValue({ ...passwordValue, [prop]: event.target.value })
