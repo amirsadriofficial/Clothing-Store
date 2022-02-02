@@ -46,6 +46,13 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles()
   const [formValue, setFormValue] = useState({})
+  const [values, setValues] = useState({
+    amount: '',
+    password: '',
+    weight: '',
+    weightRange: '',
+    showPassword: false,
+  })
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
   }
@@ -56,13 +63,7 @@ const SignIn = () => {
     })
     console.log('Email: ', value)
   }
-  const [values, setValues] = useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  })
+
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
     console.log('Email: ', values)
