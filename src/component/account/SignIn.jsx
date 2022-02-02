@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles()
   const [formValue, setFormValue] = useState({})
-  const [values, setValues] = useState({
+  const [passwordValue, setPasswordValue] = useState({
     amount: '',
     password: '',
     weight: '',
@@ -60,10 +60,13 @@ const SignIn = () => {
     })
   }
   const handleChangePassword = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value })
+    setPasswordValue({ ...passwordValue, [prop]: event.target.value })
   }
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword })
+    setPasswordValue({
+      ...passwordValue,
+      showPassword: !passwordValue.showPassword,
+    })
   }
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
@@ -102,8 +105,8 @@ const SignIn = () => {
           <OutlinedInput
             id="outlined-adornment-password"
             name="password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
+            type={passwordValue.showPassword ? 'text' : 'password'}
+            value={passwordValue.password}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -112,7 +115,11 @@ const SignIn = () => {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  {passwordValue.showPassword ? (
+                    <Visibility />
+                  ) : (
+                    <VisibilityOff />
+                  )}
                 </IconButton>
               </InputAdornment>
             }
