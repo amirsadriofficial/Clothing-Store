@@ -61,12 +61,9 @@ const SignIn = () => {
       ...formValue,
       [name]: value,
     })
-    console.log('Email: ', value)
   }
-
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
-    console.log('Email: ', values)
   }
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword })
