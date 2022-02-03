@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
-import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -73,7 +72,7 @@ const SignUp = () => {
   }
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('FormInfo: ', formValue)
+    console.log('Form Info: ', formValue)
     console.log('Password: ', passwordValue)
     history.push('/')
   }
@@ -182,7 +181,7 @@ const SignUp = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/signin" variant="body2">
+              <Link to="/signin" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
@@ -203,7 +202,7 @@ const SignUp = () => {
           className={classes.button}
           endIcon={<HomeOutlinedIcon />}
         >
-          <Link href="/" className={classes.linkButton}>
+          <Link to="/" className={classes.linkButton}>
             Back To Home
           </Link>
         </Button>

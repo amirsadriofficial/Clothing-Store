@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -8,7 +8,6 @@ import InputLabel from '@material-ui/core/InputLabel'
 import IconButton from '@material-ui/core/IconButton'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Checkbox from '@material-ui/core/Checkbox'
-import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -146,12 +145,12 @@ const SignIn = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="/#" variant="body2">
+              <Link to="/#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/signup" variant="body2">
+              <Link to="/signup" variant="body2">
                 Do not have an account? Sign Up
               </Link>
             </Grid>
@@ -172,7 +171,7 @@ const SignIn = () => {
           className={classes.button}
           endIcon={<HomeOutlinedIcon />}
         >
-          <Link href="/" className={classes.linkButton}>
+          <Link to="/" className={classes.linkButton}>
             Back To Home
           </Link>
         </Button>
