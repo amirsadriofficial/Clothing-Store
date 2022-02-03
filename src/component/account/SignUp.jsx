@@ -19,6 +19,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
+import { SIGN_UP_SUCCESS_ACTION } from '../../redux/account/Action'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -74,17 +75,9 @@ const SignUp = () => {
   }
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('Form Info: ', formValue)
-    console.log('Password: ', passwordValue)
-    dispatch({
-      type: SIGN_IN_SUCCESS,
-      fName: formValue.firstName,
-      lName: formValue.lastName,
-      email: formValue.email,
-      logged: true,
-      loading: false,
-      response: 'You have successfully entered!',
-    })
+    // console.log('Form Info: ', formValue)
+    // console.log('Password: ', passwordValue)
+    dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
     history.push('/')
   }
 
