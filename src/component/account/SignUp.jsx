@@ -71,7 +71,7 @@ const SignUp = () => {
   }
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('Form: ', formValue)
+    console.log('FormInfo: ', formValue)
     console.log('Password: ', passwordValue)
   }
 
