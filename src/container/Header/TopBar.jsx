@@ -49,8 +49,9 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = () => {
   const classes = useStyles()
-  const signin = useSelector((state) => state.accountReducer)
-  console.log(signin)
+  const signup = useSelector((state) => state.accountReducer)
+  console.log(signup)
+
   return (
     <Box className={classes.box}>
       <Hidden smDown>
@@ -60,11 +61,17 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
-              <Link to="/signin">
-                <Button className={classes.TextColor} href="/signin">
-                  My Account
-                </Button>
-              </Link>
+              {signup && signup.logged ? (
+                <Link to="/profile">
+                  <Button className={classes.TextColor}>
+                    {signup.firstName} {signup.lastName}
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/signin">
+                  <Button className={classes.TextColor}>My Account</Button>
+                </Link>
+              )}
             </Grid>
             <Grid className={classes.border}>
               <Button className={classes.TextColor}>USD</Button>

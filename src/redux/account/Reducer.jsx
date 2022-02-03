@@ -11,9 +11,9 @@ const accountReducer = (state = [], action) => {
     case Types.SIGN_IN_SUCCESS:
       return {
         ...state,
-        // firstName: action.fName,
-        // lastName: action.lName,
-        // email: action.email,
+        firstName: action.fName,
+        lastName: action.lName,
+        email: action.email,
         logged: action.logged,
         loading: action.loading,
         response: action.response,
@@ -34,6 +34,9 @@ const accountReducer = (state = [], action) => {
     case Types.SIGN_UP_SUCCESS:
       return {
         ...state,
+        // firstName: action.fName,
+        // lastName: action.lName,
+        // email: action.email,
         logged: action.logged,
         loading: action.loading,
         response: action.response,

@@ -35,12 +35,12 @@ const SIGN_UP_STARTED_ACTION = () => {
 const SIGN_UP_SUCCESS_ACTION = (formValue) => {
   return {
     type: Types.SIGN_UP_SUCCESS,
+    fName: formValue.firstName,
+    lName: formValue.lastName,
+    email: formValue.email,
     logged: true,
     loading: false,
     response: 'You have successfully registered!',
-    firstName: formValue.firstName,
-    lastName: formValue.lastName,
-    email: formValue.email,
   }
 }
 const SIGN_UP_FAILED_ACTION = () => {
