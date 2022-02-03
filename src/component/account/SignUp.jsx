@@ -75,6 +75,7 @@ const SignUp = () => {
     if (event) event.preventDefault()
     console.log('FormInfo: ', formValue)
     console.log('Password: ', passwordValue)
+    history.push('/')
   }
 
   return (
