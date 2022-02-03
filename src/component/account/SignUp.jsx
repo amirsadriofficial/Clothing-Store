@@ -85,7 +85,7 @@ const SignUp = () => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <InputLabel htmlFor="outlined-adornment-firstName">
@@ -173,7 +173,7 @@ const SignUp = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
           >
             Sign Up
           </Button>

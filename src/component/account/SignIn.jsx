@@ -83,7 +83,7 @@ const SignIn = () => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <InputLabel htmlFor="outlined-adornment-email">
             Email Address *
           </InputLabel>
@@ -137,7 +137,7 @@ const SignIn = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
           >
             <Link href="/" className={classes.linkButton}>
               Sign In
