@@ -45,22 +45,27 @@ const useStyles = makeStyles((theme) => ({
 
 const SignUp = () => {
   const classes = useStyles()
-  const [values, setValues] = useState({
-    amount: '',
+  const [formValue, setFormValue] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  })
+  const [passwordValue, setPasswordValue] = useState({
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   })
-
+  const handleChangeInputs = (name, value) => {
+    setFormValue({ ...formValue, [name]: value.target.value })
+  }
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value })
+    setPasswordValue({ ...passwordValue, [prop]: event.target.value })
   }
-
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword })
+    setPasswordValue({
+      ...passwordValue,
+      showPassword: !passwordValue.showPassword,
+    })
   }
-
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
@@ -124,8 +129,8 @@ const SignUp = () => {
               <OutlinedInput
                 id="outlined-adornment-password"
                 name="password"
-                type={values.showPassword ? 'text' : 'password'}
-                value={values.password}
+                type={passwordValue.showPassword ? 'text' : 'password'}
+                value={passwordValue.password}
                 onChange={handleChange('password')}
                 endAdornment={
                   <InputAdornment position="end">
@@ -135,7 +140,11 @@ const SignUp = () => {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                      {passwordValue.showPassword ? (
+                        <Visibility />
+                      ) : (
+                        <VisibilityOff />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 }
