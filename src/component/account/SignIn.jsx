@@ -140,11 +140,11 @@ const SignIn = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
           >
-            <Link href="/" className={classes.linkButton}>
-              Sign In
-            </Link>
+            {/* <Link href="/" className={classes.linkButton}> */}
+            Sign In
+            {/* </Link> */}
           </Button>
           <Grid container>
             <Grid item xs>
