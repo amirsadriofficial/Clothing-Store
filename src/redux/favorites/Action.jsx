@@ -1,12 +1,12 @@
 import Types from './Types'
 
-export const addToFavorites = () => {
+export const ADD_TO_FAVORITES_ACTION = () => {
   return {
     type: Types.ADD_TO_FAVORITES,
   }
 }
 
-export const removeFromFavorites = () => {
+export const REMOVE_FROM_FAVORITES_ACTION = () => {
   return {
     type: Types.REMOVE_FROM_FAVORITES,
   }

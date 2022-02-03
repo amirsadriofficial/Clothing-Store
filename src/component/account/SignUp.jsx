@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = () => {
   const classes = useStyles()
   const history = useHistory()
+  const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({
     firstName: '',
     lastName: '',
@@ -74,6 +76,15 @@ const SignUp = () => {
     if (event) event.preventDefault()
     console.log('Form Info: ', formValue)
     console.log('Password: ', passwordValue)
+    dispatch({
+      type: SIGN_IN_SUCCESS,
+      fName: formValue.firstName,
+      lName: formValue.lastName,
+      email: formValue.email,
+      logged: true,
+      loading: false,
+      response: 'You have successfully entered!',
+    })
     history.push('/')
   }
 
