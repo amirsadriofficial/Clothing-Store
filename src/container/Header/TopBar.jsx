@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -57,17 +58,21 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
-              <Button className={classes.TextColor} href="/signin">
-                My Account
-              </Button>
+              <Link to="/signin">
+                <Button className={classes.TextColor} href="/signin">
+                  My Account
+                </Button>
+              </Link>
             </Grid>
             <Grid className={classes.border}>
               <Button className={classes.TextColor}>USD</Button>
             </Grid>
             <Grid className={clsx(classes.border, classes.aloneBorder)}>
-              <Button className={classes.TextColor} href="/help">
-                Help & FAQs
-              </Button>
+              <Link to="/help">
+                <Button className={classes.TextColor} href="/help">
+                  Help & FAQs
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>
@@ -82,9 +87,11 @@ const TopBar = () => {
         <Divider className={classes.dividerStyle} />
         <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
           <Grid className={classes.border}>
-            <Button className={classes.TextColor} size="small" href="/signin">
-              My Account
-            </Button>
+            <Link to="/signin">
+              <Button className={classes.TextColor} size="small">
+                My Account
+              </Button>
+            </Link>
           </Grid>
           <Grid className={classes.border}>
             <Button className={classes.TextColor} size="small">
@@ -92,9 +99,11 @@ const TopBar = () => {
             </Button>
           </Grid>
           <Grid className={clsx(classes.border, classes.aloneBorder)}>
-            <Button className={classes.TextColor} size="small" href="/help">
-              Help & FAQs
-            </Button>
+            <Link to="/help">
+              <Button className={classes.TextColor} size="small">
+                Help & FAQs
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Hidden>
