@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles()
+  const history = useHistory()
   const [formValue, setFormValue] = useState({
     email: '',
   })
@@ -71,6 +73,7 @@ const SignIn = () => {
     if (event) event.preventDefault()
     console.log('Email: ', formValue)
     console.log('Password: ', passwordValue)
+    history.push('/')
   }
 
   return (
