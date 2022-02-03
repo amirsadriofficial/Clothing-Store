@@ -69,6 +69,11 @@ const SignUp = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault()
+    console.log('Form: ', formValue)
+    console.log('Password: ', passwordValue)
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -94,6 +99,7 @@ const SignUp = () => {
                 autoFocus
                 fullWidth
                 labelWidth={80}
+                onChange={(value) => handleChangeInputs('firstName', value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -107,6 +113,7 @@ const SignUp = () => {
                 autoComplete="lname"
                 fullWidth
                 labelWidth={80}
+                onChange={(value) => handleChangeInputs('lastName', value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -120,6 +127,7 @@ const SignUp = () => {
                 autoComplete="email"
                 fullWidth
                 labelWidth={110}
+                onChange={(value) => handleChangeInputs('email', value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -165,6 +173,7 @@ const SignUp = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSubmit}
           >
             Sign Up
           </Button>
