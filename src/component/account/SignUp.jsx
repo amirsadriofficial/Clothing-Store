@@ -175,7 +175,9 @@ const SignUp = () => {
             className={classes.submit}
             // onClick={handleSubmit}
           >
-            Sign Up
+            <Link href="/" className={classes.linkButton}>
+              Sign Up
+            </Link>
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
