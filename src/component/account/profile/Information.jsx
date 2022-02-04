@@ -27,11 +27,11 @@ const Information = () => {
     lastName: 'Sadri',
     age: '18',
     phoneNumber: '09384248024',
-    emailAddress: 'amirsadriofficial@gmail.com',
+    emailAddress: 'Amirsadriofficial@gmail.com',
     location: 'Ahar, East Azerbaijan, Iran',
   })
-  const handleChange = (name, event) => {
-    setPersonalInfo({ ...personalInfo, [name]: event.target.value })
+  const handleChange = (name, value) => {
+    setPersonalInfo({ ...personalInfo, [name]: value.target.value })
   }
 
   return (
@@ -43,7 +43,7 @@ const Information = () => {
             id="outlined-name"
             label="First Name"
             value={personalInfo.firstName}
-            onChange={handleChange}
+            onChange={(value) => handleChange('firstName', value)}
             variant="outlined"
             fullWidth
           />
@@ -53,7 +53,7 @@ const Information = () => {
             id="outlined-name"
             label="Last Name"
             value={personalInfo.lastName}
-            onChange={handleChange}
+            onChange={(value) => handleChange('lastName', value)}
             variant="outlined"
             fullWidth
           />
@@ -63,7 +63,7 @@ const Information = () => {
             id="outlined-name"
             label="Age"
             value={personalInfo.age}
-            onChange={handleChange}
+            onChange={(value) => handleChange('age', value)}
             variant="outlined"
             fullWidth
           />
@@ -73,7 +73,7 @@ const Information = () => {
             id="outlined-name"
             label="Phone Number"
             value={personalInfo.phoneNumber}
-            onChange={handleChange}
+            onChange={(value) => handleChange('phoneNumber', value)}
             variant="outlined"
             fullWidth
           />
@@ -83,7 +83,7 @@ const Information = () => {
             id="outlined-name"
             label="Email Address"
             value={personalInfo.emailAddress}
-            onChange={handleChange}
+            onChange={(value) => handleChange('emailAddress', value)}
             variant="outlined"
             fullWidth
           />
@@ -94,7 +94,7 @@ const Information = () => {
             id="outlined-name"
             label="Location"
             value={personalInfo.location}
-            onChange={handleChange}
+            onChange={(value) => handleChange('location', value)}
             variant="outlined"
             fullWidth
           />

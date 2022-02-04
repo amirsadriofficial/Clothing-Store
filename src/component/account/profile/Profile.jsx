@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 310,
+    height: 280,
   },
   button: {
     backgroundColor: '#fff',
