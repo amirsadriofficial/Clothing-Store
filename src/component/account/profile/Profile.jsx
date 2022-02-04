@@ -17,9 +17,9 @@ import Paper from '@material-ui/core/Paper'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+// import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Information from './Information'
-import { mainListItems, secondaryListItems } from './ListItems'
+import { mainListItems, secondaryListItems, signoutButton } from './ListItems'
 import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
@@ -186,7 +186,8 @@ const Profile = () => {
         <Divider />
         <List>{secondaryListItems}</List>
         <List>
-          <a href="/">
+          {signoutButton}
+          {/* <a href="/">
             <Button
               variant="contained"
               color="secondary"
@@ -195,7 +196,7 @@ const Profile = () => {
             >
               Sign Out
             </Button>
-          </a>
+          </a> */}
         </List>
       </Drawer>
       <main className={classes.content}>

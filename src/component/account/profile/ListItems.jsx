@@ -7,6 +7,8 @@ import DashboardIcon from '@material-ui/icons/Dashboard'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import BarChartIcon from '@material-ui/icons/BarChart'
 import AssignmentIcon from '@material-ui/icons/Assignment'
+import Button from '@material-ui/core/Button'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 export const mainListItems = (
   <div>
@@ -51,6 +53,26 @@ export const secondaryListItems = (
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Last Quarter" />
+    </ListItem>
+  </div>
+)
+
+export const signoutButton = (
+  <div>
+    <ListItem button>
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <a href="/">
+        <Button
+          variant="contained"
+          color="secondary"
+          fullWidth
+          // startIcon={<ExitToAppIcon />}
+        >
+          Sign Out
+        </Button>
+      </a>
     </ListItem>
   </div>
 )
