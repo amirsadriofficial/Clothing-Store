@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -18,6 +19,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
+import { SIGN_IN_SUCCESS_ACTION } from '../../redux/account/Action'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles()
   const history = useHistory()
+  const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({
     email: '',
   })
@@ -70,8 +73,9 @@ const SignIn = () => {
   }
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('Email: ', formValue)
-    console.log('Password: ', passwordValue)
+    // console.log('Email: ', formValue)
+    // console.log('Password: ', passwordValue)
+    dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
     history.push('/')
   }
 
