@@ -64,12 +64,7 @@ export const signoutButton = (
         <ExitToAppIcon />
       </ListItemIcon>
       <a href="/">
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          // startIcon={<ExitToAppIcon />}
-        >
+        <Button color="secondary" fullWidth>
           Sign Out
         </Button>
       </a>

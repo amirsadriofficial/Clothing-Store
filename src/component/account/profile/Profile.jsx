@@ -17,7 +17,6 @@ import Paper from '@material-ui/core/Paper'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
-// import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Information from './Information'
 import { mainListItems, secondaryListItems, signoutButton } from './ListItems'
 import Chart from './Chart'
@@ -185,19 +184,8 @@ const Profile = () => {
         <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
-        <List>
-          {signoutButton}
-          {/* <a href="/">
-            <Button
-              variant="contained"
-              color="secondary"
-              fullWidth
-              startIcon={<ExitToAppIcon />}
-            >
-              Sign Out
-            </Button>
-          </a> */}
-        </List>
+        <Divider />
+        <List>{signoutButton}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
