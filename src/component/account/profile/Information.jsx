@@ -8,12 +8,6 @@ const useStyles = makeStyles(() => ({
   itemInfoTitle: {
     marginTop: '0px',
   },
-  itemInfoBox: {
-    border: '1px solid #000',
-  },
-  itemInfoText: {
-    paddingLeft: '10px',
-  },
   editInfoBox: {
     display: 'flex',
     justifyContent: 'center',
