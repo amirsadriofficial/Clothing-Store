@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Profile = () => {
   const classes = useStyles()
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = useState(true)
   const handleDrawerOpen = () => {
     setOpen(true)
   }
@@ -185,7 +185,6 @@ const Profile = () => {
         <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
-        <Divider />
         <List>
           <a href="/">
             <Button
