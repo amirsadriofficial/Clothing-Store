@@ -22,14 +22,16 @@ const useStyles = makeStyles(() => ({
 
 const Information = () => {
   const classes = useStyles()
-  const [name, setName] = useState('Amir')
-  const [family, setFamily] = useState('Amir')
-  const [name, setName] = useState('Amir')
-  const [name, setName] = useState('Amir')
-  const [name, setName] = useState('Amir')
-  const [name, setName] = useState('Amir')
-  const handleChange = (event) => {
-    setName(event.target.value)
+  const [personalInfo, setPersonalInfo] = useState({
+    firstName: 'Amir',
+    lastName: 'Sadri',
+    age: '18',
+    phoneNumber: '09384248024',
+    emailAddress: 'amirsadriofficial@gmail.com',
+    location: 'Ahar, East Azerbaijan, Iran',
+  })
+  const handleChange = (name, event) => {
+    setPersonalInfo({ ...personalInfo, [name]: event.target.value })
   }
 
   return (
@@ -39,8 +41,8 @@ const Information = () => {
         <Grid item xs={12} md={4}>
           <TextField
             id="outlined-name"
-            label="Name"
-            value={name}
+            label="First Name"
+            value={personalInfo.firstName}
             onChange={handleChange}
             variant="outlined"
             fullWidth
@@ -49,18 +51,28 @@ const Information = () => {
         <Grid item xs={12} md={4}>
           <TextField
             id="outlined-name"
-            label="Family"
-            value={name}
+            label="Last Name"
+            value={personalInfo.lastName}
             onChange={handleChange}
             variant="outlined"
             fullWidth
           />
         </Grid>
         <Grid item xs={12} md={4}>
-        <TextField
+          <TextField
             id="outlined-name"
             label="Age"
-            value={name}
+            value={personalInfo.age}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <TextField
+            id="outlined-name"
+            label="Phone Number"
+            value={personalInfo.phoneNumber}
             onChange={handleChange}
             variant="outlined"
             fullWidth
@@ -70,27 +82,18 @@ const Information = () => {
           <TextField
             id="outlined-name"
             label="Email Address"
-            value={name}
+            value={personalInfo.emailAddress}
             onChange={handleChange}
             variant="outlined"
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={4}>
-        <TextField
-            id="outlined-name"
-            label="Phone Number"
-            value={name}
-            onChange={handleChange}
-            variant="outlined"
-            fullWidth
-          />
-        </Grid>
+
         <Grid item xs={12} md={4}>
           <TextField
             id="outlined-name"
             label="Location"
-            value={name}
+            value={personalInfo.location}
             onChange={handleChange}
             variant="outlined"
             fullWidth
