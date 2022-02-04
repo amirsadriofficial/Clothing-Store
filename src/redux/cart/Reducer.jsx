@@ -1,11 +1,16 @@
 import Types from './Types'
 
-const cartReducer = (state = [], action) => {
+const cartReducer = (state = { carts: [] }, action) => {
   switch (action.type) {
     case Types.ADD_TO_CART:
       return {
         ...state,
-        carts: [...state, action.id],
+        carts: [...state.carts, action.id],
+        id: action.id,
+        name: action.name,
+        description: action.description,
+        image: action.Image,
+        price: action.price,
       }
     case Types.REMOVE_FROM_CART: {
       const newCarts = state.carts
