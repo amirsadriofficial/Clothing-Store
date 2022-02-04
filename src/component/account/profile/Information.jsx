@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => ({
@@ -21,46 +22,79 @@ const useStyles = makeStyles(() => ({
 
 const Information = () => {
   const classes = useStyles()
+  const [name, setName] = useState('Amir')
+  const [family, setFamily] = useState('Amir')
+  const [name, setName] = useState('Amir')
+  const [name, setName] = useState('Amir')
+  const [name, setName] = useState('Amir')
+  const [name, setName] = useState('Amir')
+  const handleChange = (event) => {
+    setName(event.target.value)
+  }
 
   return (
     <>
       <h2 className={classes.itemInfoTitle}>Personal Information</h2>
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
-          Name:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>Amir</p>
-          </div>
+          <TextField
+            id="outlined-name"
+            label="Name"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          Family:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>Sadri</p>
-          </div>
+          <TextField
+            id="outlined-name"
+            label="Family"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          Phone Number:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>09384248024</p>
-          </div>
+        <TextField
+            id="outlined-name"
+            label="Age"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          Email Address:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>amirsadriofficial@gmail.com</p>
-          </div>
+          <TextField
+            id="outlined-name"
+            label="Email Address"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          Age:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>18 Years Old</p>
-          </div>
+        <TextField
+            id="outlined-name"
+            label="Phone Number"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          Location:
-          <div className={classes.itemInfoBox}>
-            <p className={classes.itemInfoText}>Ahar, East Azerbaijan, Iran</p>
-          </div>
+          <TextField
+            id="outlined-name"
+            label="Location"
+            value={name}
+            onChange={handleChange}
+            variant="outlined"
+            fullWidth
+          />
         </Grid>
         <Grid item md={12} className={classes.editInfoBox}>
           <Grid item md={4}>
