@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -16,6 +17,9 @@ const useStyles = makeStyles(() => ({
 
 const Information = () => {
   const classes = useStyles()
+  const account = useSelector((state) => state.accountReducer)
+  console.log(account)
+
   const [personalInfo, setPersonalInfo] = useState({
     firstName: 'Amir',
     lastName: 'Sadri',
@@ -36,7 +40,7 @@ const Information = () => {
           <TextField
             id="outlined-name"
             label="First Name"
-            value={personalInfo.firstName}
+            value={account.firstName}
             onChange={(value) => handleChange('firstName', value)}
             variant="outlined"
             fullWidth
@@ -46,7 +50,7 @@ const Information = () => {
           <TextField
             id="outlined-name"
             label="Last Name"
-            value={personalInfo.lastName}
+            value={account.lastName}
             onChange={(value) => handleChange('lastName', value)}
             variant="outlined"
             fullWidth
@@ -76,7 +80,7 @@ const Information = () => {
           <TextField
             id="outlined-name"
             label="Email Address"
-            value={personalInfo.emailAddress}
+            value={account.email}
             onChange={(value) => handleChange('emailAddress', value)}
             variant="outlined"
             fullWidth
