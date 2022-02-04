@@ -3,19 +3,19 @@ import { useSelector } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardActionArea from '@material-ui/core/CardActionArea'
+// import Card from '@material-ui/core/Card'
+// import CardContent from '@material-ui/core/CardContent'
+// import CardMedia from '@material-ui/core/CardMedia'
+// import CardActionArea from '@material-ui/core/CardActionArea'
 import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import TextField from '@material-ui/core/TextField'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
-import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
-import RemoveIcon from '@material-ui/icons/Remove'
-import DeleteIcon from '@material-ui/icons/Delete'
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+// import Typography from '@material-ui/core/Typography'
+// import TextField from '@material-ui/core/TextField'
+// import ButtonGroup from '@material-ui/core/ButtonGroup'
+// import IconButton from '@material-ui/core/IconButton'
+// import AddIcon from '@material-ui/icons/Add'
+// import RemoveIcon from '@material-ui/icons/Remove'
+// import DeleteIcon from '@material-ui/icons/Delete'
+// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -67,7 +67,7 @@ const useStyles = makeStyles(() => ({
 const Cart = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
-  console.log('carts', carts)
+  // console.log('carts', carts)
   // const product = Product.find((item) => item.id === 'bag_product_2')
 
   return (
@@ -76,103 +76,102 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        {carts ? (
-          <Grid item xs={12} md={7}>
-            {carts.map((product) => (
-              <Grid
-                item
-                xs={12}
-                style={{ marginBottom: '10px' }}
-                key={product.id}
-              >
-                <Card className={classes.root}>
-                  <CardActionArea className={classes.cardArea}>
-                    <Grid item xs={5} sm={3}>
-                      <CardMedia
-                        className={classes.media}
-                        image={product.image}
-                        title={product.name}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h6"
-                          component="h2"
-                          style={{ fontSize: '24px' }}
-                        >
-                          {product.name}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                        >
-                          {product.description}
-                        </Typography>
-                        <Typography
-                          variant="h6"
-                          color="textSecondary"
-                          className={classes.priceText}
-                        >
-                          ${product.price}
-                        </Typography>
-                      </CardContent>
-                    </Grid>
-                  </CardActionArea>
-                  <Grid container spacing={3} className={classes.cardAction}>
-                    <Grid item xs={8} sm={4} lg={4}>
-                      <ButtonGroup
-                        color="primary"
-                        aria-label="outlined primary button group"
-                      >
-                        <IconButton aria-label="delete">
-                          <RemoveIcon />
-                        </IconButton>
-                        <TextField
-                          id="standard-number"
-                          label="Number"
-                          type="number"
-                          value={1}
-                          InputLabelProps={{
-                            shrink: true,
-                          }}
-                        />
-                        <IconButton aria-label="delete">
-                          <AddIcon />
-                        </IconButton>
-                      </ButtonGroup>
-                    </Grid>
-                    <Grid item xs={4} sm={3} lg={2}>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        fullWidth
-                        startIcon={<DeleteIcon />}
-                      >
-                        Delete
-                      </Button>
-                    </Grid>
-                    <Grid item xs={12} sm={5} lg={4}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        fullWidth
-                        startIcon={<FavoriteBorderIcon />}
-                      >
-                        Add To Favorites
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Card>
-              </Grid>
-            ))}
-            cart is full but dont work
-          </Grid>
-        ) : (
-          'Cart is Empty'
-        )}
+        {carts
+          ? console.log(carts)
+          : // <Grid item xs={12} md={7}>
+            //   {carts.map((product) => (
+            //     <Grid
+            //       item
+            //       xs={12}
+            //       style={{ marginBottom: '10px' }}
+            //       key={product.id}
+            //     >
+            //       <Card className={classes.root}>
+            //         <CardActionArea className={classes.cardArea}>
+            //           <Grid item xs={5} sm={3}>
+            //             <CardMedia
+            //               className={classes.media}
+            //               image={product.image}
+            //               title={product.name}
+            //             />
+            //           </Grid>
+            //           <Grid item xs={12}>
+            //             <CardContent>
+            //               <Typography
+            //                 gutterBottom
+            //                 variant="h6"
+            //                 component="h2"
+            //                 style={{ fontSize: '24px' }}
+            //               >
+            //                 {product.name}
+            //               </Typography>
+            //               <Typography
+            //                 variant="body2"
+            //                 color="textSecondary"
+            //                 component="p"
+            //               >
+            //                 {product.description}
+            //               </Typography>
+            //               <Typography
+            //                 variant="h6"
+            //                 color="textSecondary"
+            //                 className={classes.priceText}
+            //               >
+            //                 ${product.price}
+            //               </Typography>
+            //             </CardContent>
+            //           </Grid>
+            //         </CardActionArea>
+            //         <Grid container spacing={3} className={classes.cardAction}>
+            //           <Grid item xs={8} sm={4} lg={4}>
+            //             <ButtonGroup
+            //               color="primary"
+            //               aria-label="outlined primary button group"
+            //             >
+            //               <IconButton aria-label="delete">
+            //                 <RemoveIcon />
+            //               </IconButton>
+            //               <TextField
+            //                 id="standard-number"
+            //                 label="Number"
+            //                 type="number"
+            //                 value={1}
+            //                 InputLabelProps={{
+            //                   shrink: true,
+            //                 }}
+            //               />
+            //               <IconButton aria-label="delete">
+            //                 <AddIcon />
+            //               </IconButton>
+            //             </ButtonGroup>
+            //           </Grid>
+            //           <Grid item xs={4} sm={3} lg={2}>
+            //             <Button
+            //               variant="contained"
+            //               color="secondary"
+            //               fullWidth
+            //               startIcon={<DeleteIcon />}
+            //             >
+            //               Delete
+            //             </Button>
+            //           </Grid>
+            //           <Grid item xs={12} sm={5} lg={4}>
+            //             <Button
+            //               variant="contained"
+            //               color="primary"
+            //               fullWidth
+            //               startIcon={<FavoriteBorderIcon />}
+            //             >
+            //               Add To Favorites
+            //             </Button>
+            //           </Grid>
+            //         </Grid>
+            //       </Card>
+            //     </Grid>
+            //   ))}
+            //   cart is full but dont work
+            // </Grid>
+            'Cart is Empty'}
         {/* <Grid item xs={12} style={{ marginBottom: '10px' }}>
           <Card className={classes.root}>
             <CardActionArea className={classes.cardArea}>
