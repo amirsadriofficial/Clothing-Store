@@ -45,6 +45,9 @@ const useStyles = makeStyles(() => ({
     width: '100% !importent',
     backgroundColor: 'rgba(255,255,255,0.05)',
   },
+  account: {
+    color: '#44C0D8',
+  },
 }))
 
 const TopBar = () => {
@@ -63,7 +66,7 @@ const TopBar = () => {
             <Grid className={classes.border}>
               {account && account.logged ? (
                 <Link to="/profile">
-                  <Button className={classes.TextColor}>
+                  <Button className={classes.account}>
                     {account.firstName} {account.lastName}
                   </Button>
                 </Link>
@@ -96,11 +99,19 @@ const TopBar = () => {
         <Divider className={classes.dividerStyle} />
         <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
           <Grid className={classes.border}>
-            <Link to="/signin">
-              <Button className={classes.TextColor} size="small">
-                My Account
-              </Button>
-            </Link>
+            {account && account.logged ? (
+              <Link to="/profile">
+                <Button className={classes.account}>
+                  {account.firstName} {account.lastName}
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/signin">
+                <Button className={classes.TextColor} size="small">
+                  My Account
+                </Button>
+              </Link>
+            )}
           </Grid>
           <Grid className={classes.border}>
             <Button className={classes.TextColor} size="small">
