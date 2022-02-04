@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core'
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 
 const useStyle = makeStyles({
   container: {
@@ -30,9 +31,17 @@ const NotFound = () => {
     <Container className={classes.container}>
       <h6 className={classes.numberStyle}>404</h6>
       <p className={classes.textStyle}>Page Not Found</p>
-      <Button variant="outlined" color="primary" size="large">
-        <Link to="/">Back To Home</Link>
-      </Button>
+      <Link to="/">
+        <Button
+          variant="outlined"
+          color="primary"
+          startIcon={<HomeOutlinedIcon />}
+          size="large"
+          fullWidth
+        >
+          Back To Home
+        </Button>
+      </Link>
     </Container>
   )
 }

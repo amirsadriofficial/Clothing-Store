@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'red',
   },
   form: {
     width: '100%',
@@ -39,9 +39,8 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-  linkButton: {
-    color: '#fff',
-    textDecoration: 'none',
+  linkText: {
+    color: 'blue',
   },
 }))
 
@@ -149,12 +148,12 @@ const SignIn = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link to="/#" variant="body2">
+              <Link to="/404" variant="body2" className={classes.linkText}>
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/signup" variant="body2">
+              <Link to="/signup" variant="body2" className={classes.linkText}>
                 Do not have an account? Sign Up
               </Link>
             </Grid>
@@ -169,16 +168,16 @@ const SignIn = () => {
           alignItems: 'center',
         }}
       >
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          endIcon={<HomeOutlinedIcon />}
-        >
-          <Link to="/" className={classes.linkButton}>
+        <Link to="/">
+          <Button
+            variant="outlined"
+            color="primary"
+            startIcon={<HomeOutlinedIcon />}
+            fullWidth
+          >
             Back To Home
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Box>
     </Container>
   )
