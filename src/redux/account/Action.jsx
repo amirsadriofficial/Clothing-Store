@@ -8,9 +8,12 @@ const SIGN_IN_STARTED_ACTION = () => {
     loading: true,
   }
 }
-const SIGN_IN_SUCCESS_ACTION = () => {
+const SIGN_IN_SUCCESS_ACTION = (formValue) => {
   return {
     type: Types.SIGN_IN_SUCCESS,
+    fName: 'Amir',
+    lName: 'Sadri',
+    email: formValue.email,
     logged: true,
     loading: false,
     response: 'You have successfully entered!',
