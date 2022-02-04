@@ -49,8 +49,8 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = () => {
   const classes = useStyles()
-  const signup = useSelector((state) => state.accountReducer)
-  console.log(signup)
+  const account = useSelector((state) => state.accountReducer)
+  console.log(account)
 
   return (
     <Box className={classes.box}>
@@ -61,10 +61,10 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
-              {signup && signup.logged ? (
+              {account && account.logged ? (
                 <Link to="/profile">
                   <Button className={classes.TextColor}>
-                    {signup.firstName} {signup.lastName}
+                    {account.firstName} {account.lastName}
                   </Button>
                 </Link>
               ) : (
