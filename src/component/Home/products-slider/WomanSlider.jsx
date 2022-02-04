@@ -117,9 +117,11 @@ const WomanSlider = () => {
       </Carousel>
       <Grid item xs={12} className={classes.buttonStyle}>
         <Grid item xs={9} sm={6} md={4} lg={3}>
-          <Button variant="contained" color="primary" fullWidth>
-            <Link to="/shop">See All Products</Link>
-          </Button>
+          <Link to="/shop">
+            <Button variant="contained" color="primary" fullWidth>
+              See All Products
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Grid>

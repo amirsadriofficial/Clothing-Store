@@ -99,18 +99,22 @@ const NavBar = () => {
       <Container>
         <Toolbar disableGutters>
           <Hidden smDown>
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ width: '150px', height: '50px' }}
-            />
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: '150px', height: '50px' }}
+              />
+            </Link>
           </Hidden>
           <Hidden mdUp>
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ width: '75px', height: '25px' }}
-            />
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: '75px', height: '25px' }}
+              />
+            </Link>
           </Hidden>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -154,9 +158,9 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name}>
-                  <Link to={page.path}>{page.name}</Link>
-                </MenuItem>
+                <Link to={page.path}>
+                  <MenuItem key={page.name}>{page.name}</MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -165,12 +169,14 @@ const NavBar = () => {
             className={classes.menuStyle}
           >
             {pages.map((page) => (
-              <Button
-                key={page.name}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <Link to={page.path}>{page.name}</Link>
-              </Button>
+              <Link to={page.path}>
+                <Button
+                  key={page.name}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
           <Box className={classes.search}>
@@ -186,20 +192,20 @@ const NavBar = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Box>
-          <IconButton aria-label="delete">
-            <Link to="/cart">
+          <Link to="/cart">
+            <IconButton aria-label="delete">
               <Badge badgeContent={1} color="primary">
                 <ShoppingCartIcon />
               </Badge>
-            </Link>
-          </IconButton>
-          <IconButton aria-label="delete">
-            <Link to="/favorites">
+            </IconButton>
+          </Link>
+          <Link to="/favorites">
+            <IconButton aria-label="delete">
               <Badge badgeContent={1} color="primary">
                 <FavoriteBorderIcon />
               </Badge>
-            </Link>
-          </IconButton>
+            </IconButton>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
