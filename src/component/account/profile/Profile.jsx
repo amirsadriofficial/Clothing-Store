@@ -103,14 +103,7 @@ const useStyles = makeStyles((theme) => ({
     height: 280,
   },
   button: {
-    backgroundColor: '#fff',
-  },
-  iconButton: {
-    color: '#000',
-  },
-  linkButton: {
-    color: '#000',
-    textDecoration: 'none',
+    color: '#fff',
   },
 }))
 
@@ -155,16 +148,15 @@ const Profile = () => {
             My Account
           </Typography>
           <Grid item xs={12} sm={4} lg={2}>
-            <Button
-              variant="contained"
-              className={classes.button}
-              fullWidth
-              endIcon={<HomeOutlinedIcon className={classes.iconButton} />}
-            >
-              <Link to="/" className={classes.linkButton}>
+            <Link to="/" className={classes.linkButton}>
+              <Button
+                className={classes.button}
+                fullWidth
+                startIcon={<HomeOutlinedIcon />}
+              >
                 Back To Home
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
