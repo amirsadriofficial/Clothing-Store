@@ -5,13 +5,19 @@ const cartReducer = (state = [], action) => {
     case Types.ADD_TO_CART:
       return {
         ...state,
-        cartList: state.cartList + 1,
+        carts: [...state, action.id],
       }
-    case Types.REMOVE_FROM_CART:
+    case Types.REMOVE_FROM_CART: {
+      const newCarts = state.carts
+      newCarts.splice(
+        state.carts.findIndex((id) => id === action.id),
+        1
+      )
       return {
         ...state,
-        cartList: state.cartList + 1,
+        carts: newCarts,
       }
+    }
     default:
       return state
   }

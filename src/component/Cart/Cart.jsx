@@ -1,5 +1,5 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -16,7 +16,6 @@ import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
-import Product from '../../utils/all-products'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -67,265 +66,195 @@ const useStyles = makeStyles(() => ({
 
 const Cart = () => {
   const classes = useStyles()
-  // const { id } = useParams()
-  const product = Product.find((item) => item.id === 'bag_product_2')
+  const carts = useSelector((state) => state.cartReducer)
+  console.log('carts', carts)
+  // const product = Product.find((item) => item.id === 'bag_product_2')
   return (
     <Container className={classes.container}>
       <Grid container spacing={4}>
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        <Grid item xs={12} md={7}>
-          <Grid item xs={12} style={{ marginBottom: '10px' }}>
-            <Card className={classes.root}>
-              <CardActionArea className={classes.cardArea}>
-                <Grid item xs={5} sm={3}>
-                  <CardMedia
-                    className={classes.media}
-                    image={product.image}
-                    title={product.name}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="h2"
-                      style={{ fontSize: '24px' }}
-                    >
-                      {product.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {product.description}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      className={classes.priceText}
-                    >
-                      ${product.price}
-                    </Typography>
-                  </CardContent>
-                </Grid>
-              </CardActionArea>
-              <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={8} sm={4} lg={4}>
-                  <ButtonGroup
-                    color="primary"
-                    aria-label="outlined primary button group"
-                  >
-                    <IconButton aria-label="delete">
-                      <RemoveIcon />
-                    </IconButton>
-                    <TextField
-                      id="standard-number"
-                      label="Number"
-                      type="number"
-                      value={1}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                    <IconButton aria-label="delete">
-                      <AddIcon />
-                    </IconButton>
-                  </ButtonGroup>
-                </Grid>
-                <Grid item xs={4} sm={3} lg={2}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    fullWidth
-                    startIcon={<DeleteIcon />}
-                  >
-                    Delete
-                  </Button>
-                </Grid>
-                <Grid item xs={12} sm={5} lg={4}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    fullWidth
-                    startIcon={<FavoriteBorderIcon />}
-                  >
-                    Add To Favorites
-                  </Button>
-                </Grid>
+        {carts.id ? (
+          <Grid item xs={12} md={7}>
+            {carts.map((product) => (
+              <Grid
+                item
+                xs={12}
+                style={{ marginBottom: '10px' }}
+                key={product.id}
+              >
+                <Card className={classes.root}>
+                  <CardActionArea className={classes.cardArea}>
+                    <Grid item xs={5} sm={3}>
+                      <CardMedia
+                        className={classes.media}
+                        image={product.image}
+                        title={product.name}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h6"
+                          component="h2"
+                          style={{ fontSize: '24px' }}
+                        >
+                          {product.name}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {product.description}
+                        </Typography>
+                        <Typography
+                          variant="h6"
+                          color="textSecondary"
+                          className={classes.priceText}
+                        >
+                          ${product.price}
+                        </Typography>
+                      </CardContent>
+                    </Grid>
+                  </CardActionArea>
+                  <Grid container spacing={3} className={classes.cardAction}>
+                    <Grid item xs={8} sm={4} lg={4}>
+                      <ButtonGroup
+                        color="primary"
+                        aria-label="outlined primary button group"
+                      >
+                        <IconButton aria-label="delete">
+                          <RemoveIcon />
+                        </IconButton>
+                        <TextField
+                          id="standard-number"
+                          label="Number"
+                          type="number"
+                          value={1}
+                          InputLabelProps={{
+                            shrink: true,
+                          }}
+                        />
+                        <IconButton aria-label="delete">
+                          <AddIcon />
+                        </IconButton>
+                      </ButtonGroup>
+                    </Grid>
+                    <Grid item xs={4} sm={3} lg={2}>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        fullWidth
+                        startIcon={<DeleteIcon />}
+                      >
+                        Delete
+                      </Button>
+                    </Grid>
+                    <Grid item xs={12} sm={5} lg={4}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        startIcon={<FavoriteBorderIcon />}
+                      >
+                        Add To Favorites
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Card>
               </Grid>
-            </Card>
+            ))}
+            cart is full but dont work
           </Grid>
-          <Grid item xs={12} style={{ marginBottom: '10px' }}>
-            <Card className={classes.root}>
-              <CardActionArea className={classes.cardArea}>
-                <Grid item xs={5} sm={3}>
-                  <CardMedia
-                    className={classes.media}
-                    image={product.image}
-                    title={product.name}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="h2"
-                      style={{ fontSize: '24px' }}
-                    >
-                      {product.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {product.description}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      className={classes.priceText}
-                    >
-                      ${product.price}
-                    </Typography>
-                  </CardContent>
-                </Grid>
-              </CardActionArea>
-              <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={8} sm={4} lg={4}>
-                  <ButtonGroup
-                    color="primary"
-                    aria-label="outlined primary button group"
-                  >
-                    <IconButton aria-label="delete">
-                      <RemoveIcon />
-                    </IconButton>
-                    <TextField
-                      id="standard-number"
-                      label="Number"
-                      type="number"
-                      value={1}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                    <IconButton aria-label="delete">
-                      <AddIcon />
-                    </IconButton>
-                  </ButtonGroup>
-                </Grid>
-                <Grid item xs={4} sm={3} lg={2}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    fullWidth
-                    startIcon={<DeleteIcon />}
-                  >
-                    Delete
-                  </Button>
-                </Grid>
-                <Grid item xs={12} sm={5} lg={4}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    fullWidth
-                    startIcon={<FavoriteBorderIcon />}
-                  >
-                    Add To Favorites
-                  </Button>
-                </Grid>
+        ) : (
+          'Cart is Empty'
+        )}
+        {/* <Grid item xs={12} style={{ marginBottom: '10px' }}>
+          <Card className={classes.root}>
+            <CardActionArea className={classes.cardArea}>
+              <Grid item xs={5} sm={3}>
+                <CardMedia
+                  className={classes.media}
+                  image={product.image}
+                  title={product.name}
+                />
               </Grid>
-            </Card>
-          </Grid>
-          <Grid item xs={12} style={{ marginBottom: '10px' }}>
-            <Card className={classes.root}>
-              <CardActionArea className={classes.cardArea}>
-                <Grid item xs={5} sm={3}>
-                  <CardMedia
-                    className={classes.media}
-                    image={product.image}
-                    title={product.name}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="h2"
-                      style={{ fontSize: '24px' }}
-                    >
-                      {product.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {product.description}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      className={classes.priceText}
-                    >
-                      ${product.price}
-                    </Typography>
-                  </CardContent>
-                </Grid>
-              </CardActionArea>
-              <Grid container spacing={3} className={classes.cardAction}>
-                <Grid item xs={8} sm={4} lg={4}>
-                  <ButtonGroup
-                    color="primary"
-                    aria-label="outlined primary button group"
+              <Grid item xs={12}>
+                <CardContent>
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="h2"
+                    style={{ fontSize: '24px' }}
                   >
-                    <IconButton aria-label="delete">
-                      <RemoveIcon />
-                    </IconButton>
-                    <TextField
-                      id="standard-number"
-                      label="Number"
-                      type="number"
-                      value={1}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                    <IconButton aria-label="delete">
-                      <AddIcon />
-                    </IconButton>
-                  </ButtonGroup>
-                </Grid>
-                <Grid item xs={4} sm={3} lg={2}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    fullWidth
-                    startIcon={<DeleteIcon />}
+                    {product.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
                   >
-                    Delete
-                  </Button>
-                </Grid>
-                <Grid item xs={12} sm={5} lg={4}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    fullWidth
-                    startIcon={<FavoriteBorderIcon />}
+                    {product.description}
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    color="textSecondary"
+                    className={classes.priceText}
                   >
-                    Add To Favorites
-                  </Button>
-                </Grid>
+                    ${product.price}
+                  </Typography>
+                </CardContent>
               </Grid>
-            </Card>
-          </Grid>
-        </Grid>
+            </CardActionArea>
+            <Grid container spacing={3} className={classes.cardAction}>
+              <Grid item xs={8} sm={4} lg={4}>
+                <ButtonGroup
+                  color="primary"
+                  aria-label="outlined primary button group"
+                >
+                  <IconButton aria-label="delete">
+                    <RemoveIcon />
+                  </IconButton>
+                  <TextField
+                    id="standard-number"
+                    label="Number"
+                    type="number"
+                    value={1}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
+                  <IconButton aria-label="delete">
+                    <AddIcon />
+                  </IconButton>
+                </ButtonGroup>
+              </Grid>
+              <Grid item xs={4} sm={3} lg={2}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  fullWidth
+                  startIcon={<DeleteIcon />}
+                >
+                  Delete
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={5} lg={4}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  startIcon={<FavoriteBorderIcon />}
+                >
+                  Add To Favorites
+                </Button>
+              </Grid>
+            </Grid>
+          </Card>
+        </Grid> */}
         <Grid item xs={12} sm={6} md={5} className={classes.cartTotalBox}>
           <h5 style={{ fontSize: '35px', margin: '10px' }}>Cart Totals</h5>
           <div className={classes.cartTotalInfo}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
@@ -13,6 +14,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
 import Product from '../../utils/all-products'
+import { ADD_TO_CART_ACTION } from '../../redux/cart/Action'
 
 const sizes = [
   {
@@ -99,6 +101,7 @@ const useStyles = makeStyles(() => ({
 const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
+  const dispatch = useDispatch()
   const product = Product.find((item) => item.id === id)
   const [size, setSize] = useState('Choose An Option')
   const [color, setColor] = useState('Choose An Option')
@@ -107,6 +110,9 @@ const SingleProduct = () => {
   }
   const handleChangeColor = (event) => {
     setColor(event.target.value)
+  }
+  const handleAddToCart = () => {
+    dispatch(ADD_TO_CART_ACTION(product))
   }
 
   return (
@@ -253,6 +259,7 @@ const SingleProduct = () => {
                   color="primary"
                   className={classes.button}
                   fullWidth
+                  onClick={handleAddToCart}
                 >
                   Add To Cart
                 </Button>
