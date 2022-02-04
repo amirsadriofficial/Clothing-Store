@@ -69,6 +69,7 @@ const Cart = () => {
   const carts = useSelector((state) => state.cartReducer)
   console.log('carts', carts)
   // const product = Product.find((item) => item.id === 'bag_product_2')
+
   return (
     <Container className={classes.container}>
       <Grid container spacing={4}>
