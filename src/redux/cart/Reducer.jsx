@@ -5,12 +5,13 @@ const cartReducer = (state = { carts: [] }, action) => {
     case Types.ADD_TO_CART:
       return {
         ...state,
-        carts: [...state.carts, action.id],
-        id: action.id,
-        name: action.name,
-        description: action.description,
-        image: action.Image,
-        price: action.price,
+        product: action.cart,
+        carts: [...state.carts, action.cart],
+        // id: action.id,
+        // name: action.name,
+        // description: action.description,
+        // image: action.Image,
+        // price: action.price,
       }
     case Types.REMOVE_FROM_CART: {
       const newCarts = state.carts
