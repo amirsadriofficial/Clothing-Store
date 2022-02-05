@@ -5,7 +5,7 @@ const cartReducer = (state = { carts: [] }, action) => {
     case Types.ADD_TO_CART:
       return {
         ...state,
-        product: action.cart,
+        // product: action.cart,
         carts: [...state.carts, action.cart],
         // id: action.id,
         // name: action.name,

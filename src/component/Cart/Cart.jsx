@@ -69,7 +69,7 @@ const Cart = () => {
   const carts = useSelector((state) => state.cartReducer)
   // console.log('carts', carts)
   // const product = Product.find((item) => item.id === 'bag_product_2')
-  console.log('product:', carts.product)
+  console.log('product:', carts)
 
   return (
     <Container className={classes.container}>
@@ -79,7 +79,7 @@ const Cart = () => {
         </Grid>
         {carts.product ? (
           <Grid item xs={12} md={7}>
-            {carts.product.map((product) => (
+            {carts.map((product) => (
               <Grid
                 item
                 xs={12}
