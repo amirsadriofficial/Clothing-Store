@@ -95,9 +95,11 @@ const Cart = () => {
       setNum(num - 1)
     }
   }
-  // const handleChangeNumber = () => {
-  //   setNum(num - 1)
-  // }
+  let totalPrice = 0
+  carts.carts.map((product) => {
+    totalPrice += product.price
+    return totalPrice
+  })
 
   return (
     <Container className={classes.container}>
@@ -211,14 +213,14 @@ const Cart = () => {
               <h5 style={{ fontSize: '35px', margin: '10px' }}>Cart Totals</h5>
               <div className={classes.cartTotalInfo}>
                 <p>
-                  Subtotal: <span>$300</span>
+                  Subtotal: <span>${totalPrice}</span>
                 </p>
                 <p>
                   Product Discounts: <span style={{ color: 'red' }}>$0</span>
                 </p>
               </div>
               <p style={{ fontSize: '25px' }}>
-                Total: <span>$300</span>
+                Total: <span>${totalPrice}</span>
               </p>
               <Button
                 variant="contained"
