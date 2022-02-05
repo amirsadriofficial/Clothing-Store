@@ -140,7 +140,8 @@ const SingleProduct = () => {
     if (content === favoritesContent) {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteIcon />)
-    } else {
+    }
+    if (content === <FavoriteIcon />) {
       dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteBorderIcon />)
     }
