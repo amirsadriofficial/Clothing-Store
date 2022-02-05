@@ -163,7 +163,7 @@ const Favorites = () => {
             </p>
             <Link to="/shop">
               <Button variant="outlined" color="primary" size="large" fullWidth>
-                Go To Favorites
+                Go to Products
               </Button>
             </Link>
           </Grid>

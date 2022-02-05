@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
@@ -77,6 +77,7 @@ const useStyles = makeStyles(() => ({
 
 const Cart = () => {
   const classes = useStyles()
+  const [num, setNum] = useState(1)
   const carts = useSelector((state) => state.cartReducer)
   // console.log('carts:', carts)
   const dispatch = useDispatch()
@@ -86,6 +87,17 @@ const Cart = () => {
   const handleAddToFavorites = (product) => {
     dispatch(ADD_TO_FAVORITES_ACTION(product))
   }
+  const handleChangeNumber = (type) => {
+    if (type === 'more' && num < 10) {
+      setNum(num + 1)
+    }
+    if (type === 'low' && num > 0) {
+      setNum(num - 1)
+    }
+  }
+  // const handleChangeNumber = () => {
+  //   setNum(num - 1)
+  // }
 
   return (
     <Container className={classes.container}>
@@ -145,19 +157,25 @@ const Cart = () => {
                           color="primary"
                           aria-label="outlined primary button group"
                         >
-                          <IconButton aria-label="delete">
+                          <IconButton
+                            aria-label="delete"
+                            onClick={() => handleChangeNumber('low')}
+                          >
                             <RemoveIcon />
                           </IconButton>
                           <TextField
                             id="standard-number"
                             label="Number"
                             type="number"
-                            value={1}
+                            value={num}
                             InputLabelProps={{
                               shrink: true,
                             }}
                           />
-                          <IconButton aria-label="delete">
+                          <IconButton
+                            aria-label="delete"
+                            onClick={() => handleChangeNumber('more')}
+                          >
                             <AddIcon />
                           </IconButton>
                         </ButtonGroup>
@@ -221,7 +239,7 @@ const Cart = () => {
             <p style={{ fontSize: '25px', marginTop: '50px' }}>Cart is Empty</p>
             <Link to="/shop">
               <Button variant="outlined" color="primary" size="large" fullWidth>
-                Go To Shop
+                Go to Products
               </Button>
             </Link>
           </Grid>
