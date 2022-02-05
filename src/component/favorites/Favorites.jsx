@@ -63,7 +63,6 @@ const useStyles = makeStyles(() => ({
 const Favorites = () => {
   const classes = useStyles()
   const favorites = useSelector((state) => state.favoritesReducer)
-  // console.log('carts:', carts)
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
     dispatch(REMOVE_FROM_FAVORITES_ACTION(product.id))
