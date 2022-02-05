@@ -11,11 +11,18 @@ import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
 import Product from '../../utils/all-products'
-import { ADD_TO_CART_ACTION } from '../../redux/cart/Action'
-import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
+import {
+  ADD_TO_CART_ACTION,
+  REMOVE_FROM_CART_ACTION,
+} from '../../redux/cart/Action'
+import {
+  ADD_TO_FAVORITES_ACTION,
+  REMOVE_FROM_FAVORITES_ACTION,
+} from '../../redux/favorites/Action'
 
 const sizes = [
   {
@@ -103,8 +110,14 @@ const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
   const dispatch = useDispatch()
+  // const favorites = useSelector((state) => state.favoritesReducer)
+  // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
   const [num, setNum] = useState(1)
+  const [cartContent, setCartContent] = useState('Add To Cart')
+  const [favoritesContent, setFavoritesContent] = useState(
+    <FavoriteBorderIcon />
+  )
   const [size, setSize] = useState('Choose An Option')
   const [color, setColor] = useState('Choose An Option')
   const handleChangeSize = (event) => {
@@ -113,11 +126,25 @@ const SingleProduct = () => {
   const handleChangeColor = (event) => {
     setColor(event.target.value)
   }
-  const handleAddToCart = () => {
-    dispatch(ADD_TO_CART_ACTION(product))
+  const handleCart = (content) => {
+    if (content === 'Add To Cart') {
+      dispatch(ADD_TO_CART_ACTION(product))
+      setCartContent('Remove From Cart')
+    }
+    if (content === 'Remove From Cart') {
+      dispatch(REMOVE_FROM_CART_ACTION(product))
+      setCartContent('Add To Cart')
+    }
   }
-  const handleAddToFavorites = () => {
-    dispatch(ADD_TO_FAVORITES_ACTION(product))
+  const handleFavorites = (content) => {
+    if (content === favoritesContent) {
+      dispatch(ADD_TO_FAVORITES_ACTION(product))
+      setFavoritesContent(<FavoriteIcon />)
+    }
+    if (content === <FavoriteIcon />) {
+      dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
+      setFavoritesContent(<FavoriteBorderIcon />)
+    }
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
@@ -278,15 +305,18 @@ const SingleProduct = () => {
                   color="primary"
                   className={classes.button}
                   fullWidth
-                  onClick={handleAddToCart}
+                  onClick={() => handleCart(cartContent)}
                 >
-                  Add To Cart
+                  {cartContent}
                 </Button>
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
-              <IconButton aria-label="delete" onClick={handleAddToFavorites}>
-                <FavoriteBorderIcon />
+              <IconButton
+                aria-label="delete"
+                onClick={() => handleFavorites(favoritesContent)}
+              >
+                {favoritesContent}
               </IconButton>
               <IconButton aria-label="delete">
                 <ShareIcon />
