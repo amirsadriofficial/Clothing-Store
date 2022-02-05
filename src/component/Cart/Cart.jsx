@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -18,6 +18,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
+import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -77,6 +78,10 @@ const Cart = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
   // console.log('carts:', carts)
+  const dispatch = useDispatch()
+  const handleRemoveFromCart = (product) => {
+    dispatch(REMOVE_FROM_CART_ACTION(product.id))
+  }
 
   return (
     <Container className={classes.container}>
@@ -159,6 +164,7 @@ const Cart = () => {
                           color="secondary"
                           fullWidth
                           startIcon={<DeleteIcon />}
+                          onClick={handleRemoveFromCart}
                         >
                           Delete
                         </Button>
