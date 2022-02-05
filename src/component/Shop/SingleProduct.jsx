@@ -104,6 +104,7 @@ const SingleProduct = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
   const product = Product.find((item) => item.id === id)
+  const [num, setNum] = useState(1)
   const [size, setSize] = useState('Choose An Option')
   const [color, setColor] = useState('Choose An Option')
   const handleChangeSize = (event) => {
@@ -117,6 +118,14 @@ const SingleProduct = () => {
   }
   const handleAddToFavorites = () => {
     dispatch(ADD_TO_FAVORITES_ACTION(product))
+  }
+  const handleChangeNumber = (type) => {
+    if (type === 'more' && num < 10) {
+      setNum(num + 1)
+    }
+    if (type === 'low' && num > 0) {
+      setNum(num - 1)
+    }
   }
 
   return (
@@ -239,19 +248,25 @@ const SingleProduct = () => {
                 color="primary"
                 aria-label="outlined primary button group"
               >
-                <IconButton aria-label="delete">
+                <IconButton
+                  aria-label="delete"
+                  onClick={() => handleChangeNumber('low')}
+                >
                   <RemoveIcon />
                 </IconButton>
                 <TextField
                   id="standard-number"
                   label="Number"
                   type="number"
-                  value={1}
+                  value={num}
                   InputLabelProps={{
                     shrink: true,
                   }}
                 />
-                <IconButton aria-label="delete">
+                <IconButton
+                  aria-label="delete"
+                  onClick={() => handleChangeNumber('more')}
+                >
                   <AddIcon />
                 </IconButton>
               </ButtonGroup>
