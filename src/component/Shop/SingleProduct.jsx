@@ -15,6 +15,7 @@ import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
 import Product from '../../utils/all-products'
 import { ADD_TO_CART_ACTION } from '../../redux/cart/Action'
+import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
 
 const sizes = [
   {
@@ -113,6 +114,9 @@ const SingleProduct = () => {
   }
   const handleAddToCart = () => {
     dispatch(ADD_TO_CART_ACTION(product))
+  }
+  const handleAddToFavorites = () => {
+    dispatch(ADD_TO_FAVORITES_ACTION(product))
   }
 
   return (
@@ -266,7 +270,7 @@ const SingleProduct = () => {
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
-              <IconButton aria-label="delete">
+              <IconButton aria-label="delete" onClick={handleAddToFavorites}>
                 <FavoriteBorderIcon />
               </IconButton>
               <IconButton aria-label="delete">

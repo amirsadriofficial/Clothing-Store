@@ -19,6 +19,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
+import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -81,6 +82,9 @@ const Cart = () => {
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
     dispatch(REMOVE_FROM_CART_ACTION(product.id))
+  }
+  const handleAddToFavorites = (product) => {
+    dispatch(ADD_TO_FAVORITES_ACTION(product))
   }
 
   return (
@@ -175,6 +179,7 @@ const Cart = () => {
                           color="primary"
                           fullWidth
                           startIcon={<FavoriteBorderIcon />}
+                          onClick={handleAddToFavorites}
                         >
                           Add To Favorites
                         </Button>
@@ -216,7 +221,7 @@ const Cart = () => {
             <p style={{ fontSize: '25px', marginTop: '50px' }}>Cart is Empty</p>
             <Link to="/shop">
               <Button variant="outlined" color="primary" size="large" fullWidth>
-                Go Shopping
+                Go To Shop
               </Button>
             </Link>
           </Grid>

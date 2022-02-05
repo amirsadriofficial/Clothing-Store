@@ -88,6 +88,7 @@ const pages = [
 const NavBar = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
+  const favorites = useSelector((state) => state.favoritesReducer)
   const [anchorElNav, setAnchorElNav] = useState(null)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -203,7 +204,7 @@ const NavBar = () => {
           </Link>
           <Link to="/favorites">
             <IconButton aria-label="delete">
-              <Badge badgeContent={1} color="primary">
+              <Badge badgeContent={favorites.favorites.length} color="primary">
                 <FavoriteBorderIcon />
               </Badge>
             </IconButton>
