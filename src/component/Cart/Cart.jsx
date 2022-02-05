@@ -69,7 +69,7 @@ const Cart = () => {
   const carts = useSelector((state) => state.cartReducer)
   // console.log('carts', carts)
   // const product = Product.find((item) => item.id === 'bag_product_2')
-  console.log('product:', carts)
+  console.log('carts:', carts)
 
   return (
     <Container className={classes.container}>

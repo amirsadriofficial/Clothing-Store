@@ -3,7 +3,7 @@ import Types from './Types'
 export const ADD_TO_CART_ACTION = (product) => {
   return {
     type: Types.ADD_TO_CART,
-    cart: product,
+    product,
     // name: product.name,
     // description: product.description,
     // image: product.Image,
