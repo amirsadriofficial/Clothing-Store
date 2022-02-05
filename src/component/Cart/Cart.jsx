@@ -67,7 +67,6 @@ const useStyles = makeStyles(() => ({
 const Cart = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
-  // console.log('carts', carts)
   // const product = Product.find((item) => item.id === 'bag_product_2')
   console.log('carts:', carts)
 
