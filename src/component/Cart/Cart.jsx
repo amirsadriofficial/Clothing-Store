@@ -77,7 +77,7 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        {carts.product ? (
+        {carts ? (
           <Grid item xs={12} md={7}>
             {carts.map((product) => (
               <Grid
