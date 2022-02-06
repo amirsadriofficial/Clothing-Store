@@ -13,7 +13,7 @@ const favoritesReducer = (state = { favorites: [] }, action) => {
     case Types.REMOVE_FROM_FAVORITES: {
       newFavorites = state.favorites
       newFavorites.splice(
-        state.favorites.findIndex((product) => product === action.id),
+        state.favorites.findIndex((product) => product === action.product),
         1
       )
       localStorage.setItem('Favorites', JSON.stringify(newFavorites))
