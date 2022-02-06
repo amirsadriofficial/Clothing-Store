@@ -13,7 +13,7 @@ const cartReducer = (state = { carts: [] }, action) => {
     case Types.REMOVE_FROM_CART: {
       newCarts = state.carts
       newCarts.splice(
-        state.carts.findIndex((product) => product === action.id),
+        state.carts.findIndex((product) => product === action.product),
         1
       )
       localStorage.setItem('Carts', JSON.stringify(newCarts))
