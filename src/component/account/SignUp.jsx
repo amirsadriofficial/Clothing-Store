@@ -61,7 +61,6 @@ const SignUp = () => {
     password: '',
     showPassword: false,
   })
-  // const [err, setErr] = useState('no')
   const handleChangeInputs = (name, value) => {
     setFormValue({ ...formValue, [name]: value.target.value })
   }

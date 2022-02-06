@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { useForm } from 'react-hook-form'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -42,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   linkText: {
     color: 'blue',
   },
+  errorText: {
+    color: 'red',
+  },
 }))
 
 const SignIn = () => {
@@ -70,12 +74,19 @@ const SignIn = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault()
-    // console.log('Email: ', formValue)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+  const onSubmit = () => {
+    // if (event) event.preventDefault()
+    // console.log('Form Info: ', formValue)
     // console.log('Password: ', passwordValue)
-    dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
-    history.push('/')
+    if (formValue !== '' && passwordValue !== '') {
+      dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
+      history.push('/')
+    }
   }
 
   return (
@@ -88,13 +99,14 @@ const SignIn = () => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
           <InputLabel htmlFor="outlined-adornment-email">
             Email Address *
           </InputLabel>
           <OutlinedInput
             id="outlined-adornment-email"
-            name="email"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...register('email', { required: true })}
             type="email"
             fullWidth
             labelWidth={110}
@@ -103,12 +115,18 @@ const SignIn = () => {
             style={{ marginBottom: '15px' }}
             onChange={(value) => handleChangeInputs('email', value)}
           />
+          {errors.email ? (
+            <p className={classes.errorText}>Email is required.</p>
+          ) : (
+            ''
+          )}
           <InputLabel htmlFor="outlined-adornment-password">
             Password *
           </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
-            name="password"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...register('password', { required: true })}
             type={passwordValue.showPassword ? 'text' : 'password'}
             value={passwordValue.password}
             endAdornment={
@@ -132,6 +150,11 @@ const SignIn = () => {
             autoComplete="password"
             onChange={handleChangePassword('password')}
           />
+          {errors.password ? (
+            <p className={classes.errorText}>Password is required.</p>
+          ) : (
+            ''
+          )}
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
@@ -142,7 +165,7 @@ const SignIn = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleSubmit}
+            onClick={handleSubmit(onSubmit)}
           >
             Sign In
           </Button>
