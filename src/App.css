@@ -1,3 +1,9 @@
+#loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .MuiButton-label a {
   text-decoration: none;
 }
