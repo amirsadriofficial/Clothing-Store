@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { useForm } from 'react-hook-form'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -42,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   linkText: {
     color: 'blue',
   },
+  errorText: {
+    color: 'red',
+  },
 }))
 
 const SignUp = () => {
@@ -57,6 +61,7 @@ const SignUp = () => {
     password: '',
     showPassword: false,
   })
+  const [err, setErr] = useState('no')
   const handleChangeInputs = (name, value) => {
     setFormValue({ ...formValue, [name]: value.target.value })
   }
@@ -72,12 +77,19 @@ const SignUp = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+  const onSubmit = () => {
+    // if (event) event.preventDefault()
     // console.log('Form Info: ', formValue)
     // console.log('Password: ', passwordValue)
-    dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
-    history.push('/')
+    if (err === 'no') {
+      dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
+      history.push('/')
+    }
   }
 
   return (
@@ -90,7 +102,7 @@ const SignUp = () => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <InputLabel htmlFor="outlined-adornment-firstName">
@@ -98,7 +110,8 @@ const SignUp = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-firstName"
-                name="firstName"
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...register('firstName', { required: true })}
                 type="fname"
                 autoComplete="fname"
                 autoFocus
@@ -106,6 +119,10 @@ const SignUp = () => {
                 labelWidth={80}
                 onChange={(value) => handleChangeInputs('firstName', value)}
               />
+              {errors.firstName && (
+                  <p className={classes.errorText}>First name is required.</p>
+                ) &&
+                setErr('yes')}
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel htmlFor="outlined-adornment-lastName">
@@ -113,13 +130,18 @@ const SignUp = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-lastName"
-                name="lastName"
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...register('lastName', { required: true })}
                 type="lname"
                 autoComplete="lname"
                 fullWidth
                 labelWidth={80}
                 onChange={(value) => handleChangeInputs('lastName', value)}
               />
+              {errors.lastName && (
+                  <p className={classes.errorText}>Last name is required.</p>
+                ) &&
+                setErr('yes')}
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-email">
@@ -127,13 +149,18 @@ const SignUp = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-email"
-                name="email"
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...register('email', { required: true })}
                 type="email"
                 autoComplete="email"
                 fullWidth
                 labelWidth={110}
                 onChange={(value) => handleChangeInputs('email', value)}
               />
+              {errors.email && (
+                  <p className={classes.errorText}>Email is required.</p>
+                ) &&
+                setErr('yes')}
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-password">
@@ -141,7 +168,8 @@ const SignUp = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
-                name="password"
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...register('password', { required: true })}
                 type={passwordValue.showPassword ? 'text' : 'password'}
                 value={passwordValue.password}
                 onChange={handleChange('password')}
@@ -164,6 +192,10 @@ const SignUp = () => {
                 fullWidth
                 labelWidth={70}
               />
+              {errors.password && (
+                  <p className={classes.errorText}>Password is required.</p>
+                ) &&
+                setErr('yes')}
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -178,7 +210,7 @@ const SignUp = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleSubmit}
+            onClick={handleSubmit(onSubmit)}
           >
             Sign Up
           </Button>
