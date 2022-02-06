@@ -82,7 +82,7 @@ const Cart = () => {
   // console.log('carts:', carts)
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
-    dispatch(REMOVE_FROM_CART_ACTION(product.id))
+    dispatch(REMOVE_FROM_CART_ACTION(product))
   }
   const handleAddToFavorites = (product) => {
     dispatch(ADD_TO_FAVORITES_ACTION(product))
