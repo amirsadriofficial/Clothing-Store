@@ -199,7 +199,10 @@ const NavBar = () => {
           </Box>
           <Link to="/cart">
             <IconButton aria-label="delete">
-              <Badge badgeContent={carts ? carts.length : 0} color="primary">
+              <Badge
+                badgeContent={carts === null ? 0 : carts.length}
+                color="primary"
+              >
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
@@ -207,7 +210,7 @@ const NavBar = () => {
           <Link to="/favorites">
             <IconButton aria-label="delete">
               <Badge
-                badgeContent={favorites ? favorites.length : 0}
+                badgeContent={favorites === null ? 0 : favorites.length}
                 color="primary"
               >
                 <FavoriteBorderIcon />
