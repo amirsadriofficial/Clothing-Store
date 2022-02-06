@@ -39,7 +39,7 @@ const NotFound = () => {
           size="large"
           fullWidth
         >
-          Back To Home
+          Back Home
         </Button>
       </Link>
     </Container>

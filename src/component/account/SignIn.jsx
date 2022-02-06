@@ -175,7 +175,7 @@ const SignIn = () => {
             startIcon={<HomeOutlinedIcon />}
             fullWidth
           >
-            Back To Home
+            Back Home
           </Button>
         </Link>
       </Box>

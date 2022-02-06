@@ -154,7 +154,7 @@ const Profile = () => {
                 fullWidth
                 startIcon={<HomeOutlinedIcon />}
               >
-                Back To Home
+                Back Home
               </Button>
             </Link>
           </Grid>
