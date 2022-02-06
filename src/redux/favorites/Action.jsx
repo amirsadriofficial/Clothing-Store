@@ -7,9 +7,9 @@ export const ADD_TO_FAVORITES_ACTION = (product) => {
   }
 }
 
-export const REMOVE_FROM_FAVORITES_ACTION = (id) => {
+export const REMOVE_FROM_FAVORITES_ACTION = (product) => {
   return {
     type: Types.REMOVE_FROM_FAVORITES,
-    id,
+    product,
   }
 }
