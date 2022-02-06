@@ -61,7 +61,7 @@ const SignUp = () => {
     password: '',
     showPassword: false,
   })
-  const [err, setErr] = useState('no')
+  // const [err, setErr] = useState('no')
   const handleChangeInputs = (name, value) => {
     setFormValue({ ...formValue, [name]: value.target.value })
   }
@@ -86,7 +86,7 @@ const SignUp = () => {
     // if (event) event.preventDefault()
     // console.log('Form Info: ', formValue)
     // console.log('Password: ', passwordValue)
-    if (err === 'no') {
+    if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
       history.push('/')
     }
@@ -119,10 +119,11 @@ const SignUp = () => {
                 labelWidth={80}
                 onChange={(value) => handleChangeInputs('firstName', value)}
               />
-              {errors.firstName && (
-                  <p className={classes.errorText}>First name is required.</p>
-                ) &&
-                setErr('yes')}
+              {errors.firstName ? (
+                <p className={classes.errorText}>First name is required.</p>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel htmlFor="outlined-adornment-lastName">
@@ -138,10 +139,11 @@ const SignUp = () => {
                 labelWidth={80}
                 onChange={(value) => handleChangeInputs('lastName', value)}
               />
-              {errors.lastName && (
-                  <p className={classes.errorText}>Last name is required.</p>
-                ) &&
-                setErr('yes')}
+              {errors.lastName ? (
+                <p className={classes.errorText}>Last name is required.</p>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-email">
@@ -157,10 +159,11 @@ const SignUp = () => {
                 labelWidth={110}
                 onChange={(value) => handleChangeInputs('email', value)}
               />
-              {errors.email && (
-                  <p className={classes.errorText}>Email is required.</p>
-                ) &&
-                setErr('yes')}
+              {errors.email ? (
+                <p className={classes.errorText}>Email is required.</p>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item xs={12}>
               <InputLabel htmlFor="outlined-adornment-password">
@@ -192,10 +195,11 @@ const SignUp = () => {
                 fullWidth
                 labelWidth={70}
               />
-              {errors.password && (
-                  <p className={classes.errorText}>Password is required.</p>
-                ) &&
-                setErr('yes')}
+              {errors.password ? (
+                <p className={classes.errorText}>Password is required.</p>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
