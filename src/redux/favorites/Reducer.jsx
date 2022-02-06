@@ -1,18 +1,22 @@
 import Types from './Types'
 
 const favoritesReducer = (state = { favorites: [] }, action) => {
+  let newFavorites = []
   switch (action.type) {
     case Types.ADD_TO_FAVORITES:
+      newFavorites = [...state.favorites, action.product]
+      localStorage.setItem('Favorites', JSON.stringify(newFavorites))
       return {
         ...state,
-        favorites: [...state.favorites, action.product],
+        favorites: newFavorites,
       }
     case Types.REMOVE_FROM_FAVORITES: {
-      const newFavorites = state.favorites
+      newFavorites = state.favorites
       newFavorites.splice(
         state.favorites.findIndex((product) => product === action.id),
         1
       )
+      localStorage.setItem('Favorites', JSON.stringify(newFavorites))
       return {
         ...state,
         favorites: newFavorites,

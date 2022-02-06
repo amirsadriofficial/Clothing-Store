@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -87,8 +87,10 @@ const pages = [
 
 const NavBar = () => {
   const classes = useStyles()
-  const carts = useSelector((state) => state.cartReducer)
-  const favorites = useSelector((state) => state.favoritesReducer)
+  // const carts = useSelector((state) => state.cartReducer)
+  // const favorites = useSelector((state) => state.favoritesReducer)
+  const carts = JSON.parse(localStorage.getItem('Carts'))
+  const favorites = JSON.parse(localStorage.getItem('Favorites'))
   const [anchorElNav, setAnchorElNav] = useState(null)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -197,14 +199,17 @@ const NavBar = () => {
           </Box>
           <Link to="/cart">
             <IconButton aria-label="delete">
-              <Badge badgeContent={carts.carts.length} color="primary">
+              <Badge badgeContent={carts ? carts.length : 0} color="primary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
           </Link>
           <Link to="/favorites">
             <IconButton aria-label="delete">
-              <Badge badgeContent={favorites.favorites.length} color="primary">
+              <Badge
+                badgeContent={favorites ? favorites.length : 0}
+                color="primary"
+              >
                 <FavoriteBorderIcon />
               </Badge>
             </IconButton>
