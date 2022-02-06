@@ -65,7 +65,7 @@ const Favorites = () => {
   const favorites = useSelector((state) => state.favoritesReducer)
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
-    dispatch(REMOVE_FROM_FAVORITES_ACTION(product.id))
+    dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
   }
   const handleAddToCart = (product) => {
     dispatch(ADD_TO_CART_ACTION(product))
