@@ -57,12 +57,15 @@ const a11yProps = (index) => {
     'aria-controls': `full-width-tabpanel-${index}`,
   }
 }
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
   filterButton: {
     marginRight: '15px',
+  },
+  typography: {
+    padding: theme.spacing(2),
   },
 }))
 
