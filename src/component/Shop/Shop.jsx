@@ -67,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
   paperStyle: {
     display: 'flex',
     justifyContent: 'space-around',
-    // alignItems: 'center',
   },
   typography: {
     padding: theme.spacing(2),
