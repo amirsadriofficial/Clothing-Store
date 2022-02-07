@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import './App.css'
 import store from './redux/store'
@@ -72,11 +72,10 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
-            <Route path="/404">
+            <Route>
               <NotFound />
             </Route>
           </Provider>
-          <Redirect to="/404" />
         </Switch>
       </BrowserRouter>
     </div>
