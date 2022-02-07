@@ -27,6 +27,7 @@ const SIGN_IN_FAILED_ACTION = () => {
     response: 'Your request is invalid, please try again!',
   }
 }
+
 // SIGN UP
 const SIGN_UP_STARTED_ACTION = () => {
   return {
