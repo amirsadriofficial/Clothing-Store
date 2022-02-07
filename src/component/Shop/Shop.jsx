@@ -104,6 +104,7 @@ const ShopHeader = () => {
     <Container>
       <div className={classes.root}>
         <AppBar
+          ref={refAppBar}
           position="static"
           color="inherit"
           style={{
@@ -114,7 +115,6 @@ const ShopHeader = () => {
             marginTop: '50px',
           }}
           className=""
-          ref={refAppBar}
         >
           <Tabs
             value={value}
@@ -137,19 +137,11 @@ const ShopHeader = () => {
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Tab label="Watches" {...a11yProps(5)} />
           </Tabs>
-          {/* <Button
-            // variant="outlined"
-            color="primary"
-            onClick={handlePopperSpacing}
-          >
-            FilterBut
-          </Button> */}
           <div className={classes.filterButton}>
             <PopupState variant="popper" popupId="demo-popup-popper">
               {(popupState) => (
                 <div>
                   <Button
-                    // variant="outlined"
                     color="primary"
                     startIcon={<FilterListIcon />}
                     // eslint-disable-next-line react/jsx-props-no-spreading
