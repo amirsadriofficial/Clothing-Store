@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import SwipeableViews from 'react-swipeable-views'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
@@ -64,19 +64,23 @@ const useStyles = makeStyles((theme) => ({
   filterButton: {
     paddingRight: '30px',
   },
-  typography: {
-    padding: theme.spacing(2),
-    // width: '100%',
-  },
   paperStyle: {
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'center',
+    // alignItems: 'center',
+  },
+  typography: {
+    padding: theme.spacing(2),
+  },
+  buttonStyle: {
+    margin: '5px',
   },
 }))
 
 const ShopHeader = () => {
   const classes = useStyles()
+  const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
+  const refAppBar = useRef()
   const theme = useTheme()
   const [value, setValue] = React.useState(0)
   const handleChange = (event, newValue) => {
@@ -85,7 +89,18 @@ const ShopHeader = () => {
   const handleChangeIndex = (index) => {
     setValue(index)
   }
-
+  const handlePopperSpacing = () => {
+    setTimeout(() => {
+      if (activeAppBarClass === 'inactive') {
+        refAppBar.current.classList.add('shop-app-bar')
+        setActiveAppBarClass('active')
+      }
+      if (activeAppBarClass === 'active') {
+        refAppBar.current.classList.remove('shop-app-bar')
+        setActiveAppBarClass('inactive')
+      }
+    }, 750)
+  }
   return (
     <Container>
       <div className={classes.root}>
@@ -98,8 +113,10 @@ const ShopHeader = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             marginTop: '50px',
-            marginBottom: '50px',
+            // marginBottom: '110px',
           }}
+          className=""
+          ref={refAppBar}
         >
           <Tabs
             value={value}
@@ -122,6 +139,13 @@ const ShopHeader = () => {
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Tab label="Watches" {...a11yProps(5)} />
           </Tabs>
+          {/* <Button
+            // variant="outlined"
+            color="primary"
+            onClick={handlePopperSpacing}
+          >
+            FilterBut
+          </Button> */}
           <div className={classes.filterButton}>
             <PopupState variant="popper" popupId="demo-popup-popper">
               {(popupState) => (
@@ -132,6 +156,7 @@ const ShopHeader = () => {
                     startIcon={<FilterListIcon />}
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindToggle(popupState)}
+                    onMouseEnter={handlePopperSpacing}
                   >
                     Filter
                   </Button>
@@ -150,61 +175,79 @@ const ShopHeader = () => {
                       <Fade {...TransitionProps} timeout={500}>
                         <Paper className={classes.paperStyle}>
                           <div className={classes.typography}>
-                            Sort By:
-                            <Button variant="outlined" color="primary">
+                            <Typography className={classes.buttonStyle}>
+                              Sort By:
+                            </Typography>
+                            <Button
+                              variant="outlined"
+                              color="primary"
+                              className={classes.buttonStyle}
+                            >
                               Default
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               Popularity
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               Newness
                             </Button>
                           </div>
                           <div className={classes.typography}>
-                            Price:
-                            <Button variant="outlined" color="primary">
+                            <Typography className={classes.buttonStyle}>
+                              Price:
+                            </Typography>
+                            <Button
+                              variant="outlined"
+                              color="primary"
+                              className={classes.buttonStyle}
+                            >
                               All
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               $0.00 - $100.00
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               + $100.00
                             </Button>
                           </div>
                           <div className={classes.typography}>
-                            Brand:
-                            <Button variant="outlined" color="primary">
+                            <Typography className={classes.buttonStyle}>
+                              Brand:
+                            </Typography>
+                            <Button
+                              variant="outlined"
+                              color="primary"
+                              className={classes.buttonStyle}
+                            >
                               All
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               GUCCI
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               Nike
                             </Button>
                             <Button
                               variant="outlined"
-                              // color="primary"
+                              className={classes.buttonStyle}
                             >
                               Adidas
                             </Button>
