@@ -112,7 +112,6 @@ const ShopHeader = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             marginTop: '50px',
-            // marginBottom: '110px',
           }}
           className=""
           ref={refAppBar}
