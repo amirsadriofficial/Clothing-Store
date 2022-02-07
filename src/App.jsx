@@ -72,10 +72,10 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
           </Provider>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
