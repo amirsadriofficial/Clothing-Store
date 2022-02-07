@@ -61,12 +61,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
-  // filterButton: {
-  //   marginRight: '15px',
-  // },
+  filterButton: {
+    paddingRight: '30px',
+  },
   typography: {
     padding: theme.spacing(2),
     // width: '100%',
+  },
+  paperStyle: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 }))
 
@@ -120,9 +125,9 @@ const ShopHeader = () => {
           <div className={classes.filterButton}>
             <PopupState variant="popper" popupId="demo-popup-popper">
               {(popupState) => (
-                <Container>
+                <div>
                   <Button
-                    variant="outlined"
+                    // variant="outlined"
                     color="primary"
                     startIcon={<FilterListIcon />}
                     // eslint-disable-next-line react/jsx-props-no-spreading
@@ -130,26 +135,85 @@ const ShopHeader = () => {
                   >
                     Filter
                   </Button>
-                  {/* <Container> */}
                   <Popper
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindPopper(popupState)}
                     transition
-                    style={{ width: '100%', marginTop: '15px' }}
+                    style={{
+                      width: '100%',
+                      marginTop: '15px',
+                      paddingRight: '30px !importent',
+                    }}
                   >
                     {({ TransitionProps }) => (
                       // eslint-disable-next-line react/jsx-props-no-spreading
                       <Fade {...TransitionProps} timeout={500}>
-                        <Paper>
-                          <Typography className={classes.typography}>
-                            The content of the Popper.
-                          </Typography>
+                        <Paper className={classes.paperStyle}>
+                          <div className={classes.typography}>
+                            Sort By:
+                            <Button variant="outlined" color="primary">
+                              Default
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              Popularity
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              Newness
+                            </Button>
+                          </div>
+                          <div className={classes.typography}>
+                            Price:
+                            <Button variant="outlined" color="primary">
+                              All
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              $0.00 - $100.00
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              + $100.00
+                            </Button>
+                          </div>
+                          <div className={classes.typography}>
+                            Brand:
+                            <Button variant="outlined" color="primary">
+                              All
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              GUCCI
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              Nike
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              // color="primary"
+                            >
+                              Adidas
+                            </Button>
+                          </div>
                         </Paper>
                       </Fade>
                     )}
                   </Popper>
-                  {/* </Container> */}
-                </Container>
+                </div>
               )}
             </PopupState>
           </div>
