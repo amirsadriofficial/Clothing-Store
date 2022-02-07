@@ -72,7 +72,7 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
-            <Route>
+            <Route path="*">
               <NotFound />
             </Route>
           </Provider>
