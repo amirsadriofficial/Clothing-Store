@@ -61,11 +61,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
-  filterButton: {
-    marginRight: '15px',
-  },
+  // filterButton: {
+  //   marginRight: '15px',
+  // },
   typography: {
     padding: theme.spacing(2),
+    // width: '100%',
   },
 }))
 
@@ -92,6 +93,7 @@ const ShopHeader = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             marginTop: '50px',
+            marginBottom: '50px',
           }}
         >
           <Tabs
@@ -118,7 +120,7 @@ const ShopHeader = () => {
           <div className={classes.filterButton}>
             <PopupState variant="popper" popupId="demo-popup-popper">
               {(popupState) => (
-                <div>
+                <Container>
                   <Button
                     variant="outlined"
                     color="primary"
@@ -128,11 +130,16 @@ const ShopHeader = () => {
                   >
                     Filter
                   </Button>
-                  {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <Popper {...bindPopper(popupState)} transition>
+                  {/* <Container> */}
+                  <Popper
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...bindPopper(popupState)}
+                    transition
+                    style={{ width: '100%', marginTop: '15px' }}
+                  >
                     {({ TransitionProps }) => (
                       // eslint-disable-next-line react/jsx-props-no-spreading
-                      <Fade {...TransitionProps} timeout={350}>
+                      <Fade {...TransitionProps} timeout={500}>
                         <Paper>
                           <Typography className={classes.typography}>
                             The content of the Popper.
@@ -141,7 +148,8 @@ const ShopHeader = () => {
                       </Fade>
                     )}
                   </Popper>
-                </div>
+                  {/* </Container> */}
+                </Container>
               )}
             </PopupState>
           </div>
