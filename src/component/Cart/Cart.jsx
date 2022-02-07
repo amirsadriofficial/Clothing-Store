@@ -79,7 +79,6 @@ const Cart = () => {
   const classes = useStyles()
   const [num, setNum] = useState(1)
   const carts = useSelector((state) => state.cartReducer)
-  // console.log('carts:', carts)
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
     dispatch(REMOVE_FROM_CART_ACTION(product))
