@@ -120,12 +120,15 @@ const ShopHeader = () => {
                     variant="outlined"
                     color="primary"
                     startIcon={<FilterListIcon />}
+                    // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindToggle(popupState)}
                   >
                     Filter
                   </Button>
+                  {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                   <Popper {...bindPopper(popupState)} transition>
                     {({ TransitionProps }) => (
+                      // eslint-disable-next-line react/jsx-props-no-spreading
                       <Fade {...TransitionProps} timeout={350}>
                         <Paper>
                           <Typography className={classes.typography}>
