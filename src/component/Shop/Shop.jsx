@@ -10,6 +10,10 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import FilterListIcon from '@material-ui/icons/FilterList'
+import Popper from '@material-ui/core/Popper'
+import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state'
+import Fade from '@material-ui/core/Fade'
+import Paper from '@material-ui/core/Paper'
 import ManProducts from './products/Man'
 import BagProducts from './products/Bag'
 import WomanProducts from './products/Woman'
@@ -109,13 +113,31 @@ const ShopHeader = () => {
             <Tab label="Watches" {...a11yProps(5)} />
           </Tabs>
           <div className={classes.filterButton}>
-            <Button
-              variant="outlined"
-              color="primary"
-              startIcon={<FilterListIcon />}
-            >
-              Filter
-            </Button>
+            <PopupState variant="popper" popupId="demo-popup-popper">
+              {(popupState) => (
+                <div>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    startIcon={<FilterListIcon />}
+                    {...bindToggle(popupState)}
+                  >
+                    Filter
+                  </Button>
+                  <Popper {...bindPopper(popupState)} transition>
+                    {({ TransitionProps }) => (
+                      <Fade {...TransitionProps} timeout={350}>
+                        <Paper>
+                          <Typography className={classes.typography}>
+                            The content of the Popper.
+                          </Typography>
+                        </Paper>
+                      </Fade>
+                    )}
+                  </Popper>
+                </div>
+              )}
+            </PopupState>
           </div>
         </AppBar>
         <SwipeableViews
