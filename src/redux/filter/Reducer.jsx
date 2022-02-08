@@ -1,6 +1,6 @@
 import Types from './Types'
 
-const filterReducer = (state, action) => {
+const filterReducer = (state = { filter: '' }, action) => {
   switch (action.type) {
     case Types.UP_TO_ONE_HUNDRED_PRICE:
       return {
