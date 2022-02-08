@@ -105,9 +105,11 @@ const ShopHeader = () => {
       }
     }, 750)
   }
-  // const handleAllPriceFilter = () => {}
-  // const upToOneHundred = 'Up To One Hundred Price'
-  // const aboveOneHundred = 'Above One Hundred Price'
+  const handleAllPriceFilter = () => {
+    // dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
+    setFilter('All Price')
+    console.log('clicked:', filter)
+  }
   const handleUpToOneHundredPriceFilter = () => {
     // dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
     setFilter('Up To One Hundred Price')
@@ -215,7 +217,7 @@ const ShopHeader = () => {
                               variant="outlined"
                               color="primary"
                               className={classes.buttonStyle}
-                              // onClick={handleAllPriceFilter}
+                              onClick={handleAllPriceFilter}
                             >
                               All
                             </Button>
