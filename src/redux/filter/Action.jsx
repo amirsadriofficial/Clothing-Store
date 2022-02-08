@@ -1,15 +1,22 @@
 import Types from './Types'
 
-export const ADD_TO_CART_ACTION = (product) => {
+export const UP_TO_ONE_HUNDRED_PRICE_ACTION = (product) => {
   return {
-    type: Types.ADD_TO_CART,
+    type: Types.UP_TO_ONE_HUNDRED_PRICE,
     product,
   }
 }
 
-export const REMOVE_FROM_CART_ACTION = (product) => {
+export const ABOVE_ONE_HUNDRED_PRICE_ACTION = (product) => {
   return {
-    type: Types.REMOVE_FROM_CART,
+    type: Types.ABOVE_ONE_HUNDRED_PRICE,
+    product,
+  }
+}
+
+export const ALL_PRICE_ACTION = (product) => {
+  return {
+    type: Types.ALL_PRICE,
     product,
   }
 }

@@ -100,6 +100,7 @@ const ShopHeader = () => {
       }
     }, 750)
   }
+  const handleAllPriceFilter = () => {}
   const handleUpToOneHundredPriceFilter = () => {}
   const handleAboveOneHundredPriceFilter = () => {}
 
@@ -199,6 +200,7 @@ const ShopHeader = () => {
                               variant="outlined"
                               color="primary"
                               className={classes.buttonStyle}
+                              onClick={handleAllPriceFilter}
                             >
                               All
                             </Button>

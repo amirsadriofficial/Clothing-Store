@@ -1,25 +1,18 @@
 import Types from './Types'
 
 const cartReducer = (state = { carts: [] }, action) => {
-  let newCarts = []
   switch (action.type) {
-    case Types.ADD_TO_CART:
-      newCarts = [...state.carts, action.product]
-      localStorage.setItem('Carts', JSON.stringify(newCarts))
+    case Types.ALL_PRICE:
       return {
         ...state,
-        carts: newCarts,
       }
-    case Types.REMOVE_FROM_CART: {
-      newCarts = state.carts
-      newCarts.splice(
-        state.carts.findIndex((product) => product === action.product),
-        1
-      )
-      localStorage.setItem('Carts', JSON.stringify(newCarts))
+    case Types.UP_TO_ONE_HUNDRED_PRICE:
       return {
         ...state,
-        carts: newCarts,
+      }
+    case Types.ABOVE_ONE_HUNDRED_PRICE: {
+      return {
+        ...state,
       }
     }
     default:
