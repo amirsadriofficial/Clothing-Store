@@ -13,10 +13,3 @@ export const ABOVE_ONE_HUNDRED_PRICE_ACTION = (status) => {
     price: status,
   }
 }
-
-// export const ALL_PRICE_ACTION = (product) => {
-//   return {
-//     type: Types.ALL_PRICE,
-//     product,
-//   }
-// }

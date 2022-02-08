@@ -1,11 +1,7 @@
 import Types from './Types'
 
-const filterReducer = (state = { carts: [] }, action) => {
+const filterReducer = (state, action) => {
   switch (action.type) {
-    // case Types.ALL_PRICE:
-    //   return {
-    //     ...state,
-    //   }
     case Types.UP_TO_ONE_HUNDRED_PRICE:
       return {
         ...state,
