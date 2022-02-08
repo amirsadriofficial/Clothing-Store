@@ -35,7 +35,7 @@ const AllProducts = (filter) => {
     <>
       {/* eslint-disable-next-line eqeqeq */}
       {/* eslint-disable-next-line prettier/prettier */}
-      {filter === "All Price" ? (
+      {filter === "Above One Hundred Price" ? (
         <Grid container spacing={3}>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -76,43 +76,6 @@ const AllProducts = (filter) => {
         'is not valid'
       )}
     </>
-
-    // <Grid container spacing={3}>
-    //   {Products.map((product) => (
-    //     <Grid item xs={12} sm={6} md={4} lg={3}>
-    //       <Link to={`/product/${product.id}`}>
-    //         <Card className={classes.root}>
-    //           <CardActionArea>
-    //             <CardMedia
-    //               className={classes.media}
-    //               image={product.image}
-    //               title={product.name}
-    //             />
-    //             <CardContent>
-    //               <Typography gutterBottom variant="h6" component="h2">
-    //                 {product.name}
-    //               </Typography>
-    //               <Typography
-    //                 variant="body2"
-    //                 color="textSecondary"
-    //                 component="p"
-    //               >
-    //                 {product.description}
-    //               </Typography>
-    //               <Typography
-    //                 variant="h6"
-    //                 color="textSecondary"
-    //                 className={classes.priceText}
-    //               >
-    //                 ${product.price}
-    //               </Typography>
-    //             </CardContent>
-    //           </CardActionArea>
-    //         </Card>
-    //       </Link>
-    //     </Grid>
-    //   ))}
-    // </Grid>
   )
 }
 

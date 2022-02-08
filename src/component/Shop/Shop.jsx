@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-// import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import SwipeableViews from 'react-swipeable-views'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
@@ -21,10 +20,6 @@ import WomanProducts from './products/Woman'
 import ShoesProducts from './products/Shoes'
 import WatchesProducts from './products/Watches'
 import AllProducts from './products/AllProducts'
-// import {
-//   ABOVE_ONE_HUNDRED_PRICE_ACTION,
-//   UP_TO_ONE_HUNDRED_PRICE_ACTION,
-// } from '../../redux/filter/Action'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
@@ -84,7 +79,6 @@ const ShopHeader = () => {
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAppBar = useRef()
   const theme = useTheme()
-  // const dispatch = useDispatch()
   const [filter, setFilter] = useState('All Price')
   const [value, setValue] = useState(0)
   const handleChange = (event, newValue) => {
@@ -106,17 +100,14 @@ const ShopHeader = () => {
     }, 750)
   }
   const handleAllPriceFilter = () => {
-    // dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
     setFilter('All Price')
     console.log('clicked:', filter)
   }
   const handleUpToOneHundredPriceFilter = () => {
-    // dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
     setFilter('Up To One Hundred Price')
     console.log('clicked:', filter)
   }
   const handleAboveOneHundredPriceFilter = () => {
-    // dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION(aboveOneHundred))
     setFilter('Above One Hundred Price')
     console.log('clicked:', filter)
   }
