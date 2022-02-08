@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import SwipeableViews from 'react-swipeable-views'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
@@ -21,10 +21,10 @@ import WomanProducts from './products/Woman'
 import ShoesProducts from './products/Shoes'
 import WatchesProducts from './products/Watches'
 import AllProducts from './products/AllProducts'
-import {
-  ABOVE_ONE_HUNDRED_PRICE_ACTION,
-  UP_TO_ONE_HUNDRED_PRICE_ACTION,
-} from '../../redux/filter/Action'
+// import {
+//   ABOVE_ONE_HUNDRED_PRICE_ACTION,
+//   UP_TO_ONE_HUNDRED_PRICE_ACTION,
+// } from '../../redux/filter/Action'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
@@ -46,7 +46,6 @@ const TabPanel = (props) => {
     </div>
   )
 }
-
 TabPanel.propTypes = {
   // eslint-disable-next-line react/require-default-props
   children: PropTypes.node,
@@ -55,7 +54,6 @@ TabPanel.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any.isRequired,
 }
-
 const a11yProps = (index) => {
   return {
     id: `full-width-tab-${index}`,
@@ -86,8 +84,9 @@ const ShopHeader = () => {
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAppBar = useRef()
   const theme = useTheme()
-  const dispatch = useDispatch()
-  const [value, setValue] = React.useState(0)
+  // const dispatch = useDispatch()
+  const [filter, setFilter] = useState('All Price')
+  const [value, setValue] = useState(0)
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
@@ -107,15 +106,17 @@ const ShopHeader = () => {
     }, 750)
   }
   // const handleAllPriceFilter = () => {}
-  const upToOneHundred = 'Up To One Hundred Price'
-  const aboveOneHundred = 'Above One Hundred Price'
+  // const upToOneHundred = 'Up To One Hundred Price'
+  // const aboveOneHundred = 'Above One Hundred Price'
   const handleUpToOneHundredPriceFilter = () => {
-    dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
-    console.log('clicked:', upToOneHundred)
+    // dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
+    setFilter('Up To One Hundred Price')
+    console.log('clicked:', filter)
   }
   const handleAboveOneHundredPriceFilter = () => {
-    dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION(aboveOneHundred))
-    console.log('clicked:', aboveOneHundred)
+    // dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION(aboveOneHundred))
+    setFilter('Above One Hundred Price')
+    console.log('clicked:', filter)
   }
 
   return (
@@ -278,7 +279,7 @@ const ShopHeader = () => {
           onChangeIndex={handleChangeIndex}
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <AllProducts />
+            <AllProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
             <WomanProducts />
