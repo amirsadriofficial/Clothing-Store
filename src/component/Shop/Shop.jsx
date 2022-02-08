@@ -100,7 +100,8 @@ const ShopHeader = () => {
       }
     }, 750)
   }
-  const handle100PriceFilter = () => {}
+  const handleUpToOneHundredPriceFilter = () => {}
+  const handleAboveOneHundredPriceFilter = () => {}
 
   return (
     <Container>
@@ -204,13 +205,14 @@ const ShopHeader = () => {
                             <Button
                               variant="outlined"
                               className={classes.buttonStyle}
-                              onClick={handle100PriceFilter}
+                              onClick={handleUpToOneHundredPriceFilter}
                             >
                               $0.00 - $100.00
                             </Button>
                             <Button
                               variant="outlined"
                               className={classes.buttonStyle}
+                              onClick={handleAboveOneHundredPriceFilter}
                             >
                               + $100.00
                             </Button>
