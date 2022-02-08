@@ -111,9 +111,11 @@ const ShopHeader = () => {
   const aboveOneHundred = 'Above One Hundred Price'
   const handleUpToOneHundredPriceFilter = () => {
     dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION(upToOneHundred))
+    console.log('Up To One Hundred Price')
   }
   const handleAboveOneHundredPriceFilter = () => {
     dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION(aboveOneHundred))
+    console.log('Above One Hundred Price')
   }
 
   return (

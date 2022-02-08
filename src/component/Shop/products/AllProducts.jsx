@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 const AllProducts = () => {
   const classes = useStyles()
   const filter = useSelector((state) => state.filterReducer)
-  console.log('filter', filter)
+  console.log('filter:', filter)
 
   return (
     <Grid container spacing={3}>
