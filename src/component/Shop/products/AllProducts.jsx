@@ -1,5 +1,4 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -28,14 +27,12 @@ const useStyles = makeStyles({
 
 const AllProducts = (filter) => {
   const classes = useStyles()
-  // const filter = useSelector((state) => state.filterReducer)
   console.log('filter:', filter)
 
   return (
-    <div>
-      {/* eslint-disable-next-line prettier/prettier */}
-      {filter === "Above One Hundred Price" ? (
-        <Grid container spacing={3}>
+    <Grid container spacing={3}>
+      {filter === 'Above One Hundred Price' ? (
+        <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <Link to={`/product/${product.id}`}>
@@ -70,11 +67,11 @@ const AllProducts = (filter) => {
               </Link>
             </Grid>
           ))}
-        </Grid>
+        </>
       ) : (
         'is not valid'
       )}
-    </div>
+    </Grid>
   )
 }
 
