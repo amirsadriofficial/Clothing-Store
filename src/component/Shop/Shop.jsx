@@ -108,10 +108,10 @@ const ShopHeader = () => {
   }
   // const handleAllPriceFilter = () => {}
   const handleUpToOneHundredPriceFilter = () => {
-    dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION())
+    dispatch(UP_TO_ONE_HUNDRED_PRICE_ACTION('Up To One Hundred Price'))
   }
   const handleAboveOneHundredPriceFilter = () => {
-    dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION())
+    dispatch(ABOVE_ONE_HUNDRED_PRICE_ACTION('Above One Hundred Price'))
   }
 
   return (
