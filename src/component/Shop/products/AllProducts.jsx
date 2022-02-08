@@ -32,8 +32,7 @@ const AllProducts = (filter) => {
   console.log('filter:', filter)
 
   return (
-    <>
-      {/* eslint-disable-next-line eqeqeq */}
+    <div>
       {/* eslint-disable-next-line prettier/prettier */}
       {filter === "Above One Hundred Price" ? (
         <Grid container spacing={3}>
@@ -75,7 +74,7 @@ const AllProducts = (filter) => {
       ) : (
         'is not valid'
       )}
-    </>
+    </div>
   )
 }
 
