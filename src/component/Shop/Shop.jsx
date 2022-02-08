@@ -173,7 +173,7 @@ const ShopHeader = () => {
                               color="primary"
                               className={classes.buttonStyle}
                             >
-                              Default
+                              All
                             </Button>
                             <Button
                               variant="outlined"
