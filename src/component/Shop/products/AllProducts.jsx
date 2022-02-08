@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -27,6 +28,8 @@ const useStyles = makeStyles({
 
 const AllProducts = () => {
   const classes = useStyles()
+  const filter = useSelector((state) => state.filterReducer)
+  console.log('filter', filter)
 
   return (
     <Grid container spacing={3}>

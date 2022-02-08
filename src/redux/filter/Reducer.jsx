@@ -1,18 +1,20 @@
 import Types from './Types'
 
-const cartReducer = (state = { carts: [] }, action) => {
+const filterReducer = (state = { carts: [] }, action) => {
   switch (action.type) {
-    case Types.ALL_PRICE:
-      return {
-        ...state,
-      }
+    // case Types.ALL_PRICE:
+    //   return {
+    //     ...state,
+    //   }
     case Types.UP_TO_ONE_HUNDRED_PRICE:
       return {
         ...state,
+        filter: action.price,
       }
     case Types.ABOVE_ONE_HUNDRED_PRICE: {
       return {
         ...state,
+        filter: action.price,
       }
     }
     default:
@@ -20,4 +22,4 @@ const cartReducer = (state = { carts: [] }, action) => {
   }
 }
 
-export default cartReducer
+export default filterReducer
