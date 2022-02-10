@@ -76,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ShopHeader = () => {
   const classes = useStyles()
+  // const all = 'All Price'
+  // const up = 'All Price'
+  // const above = 'All Price'
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAppBar = useRef()
   const theme = useTheme()
@@ -100,15 +103,21 @@ const ShopHeader = () => {
     }, 750)
   }
   const handleAllPriceFilter = () => {
-    setFilter('All Price')
+    if (filter !== 'All Price') {
+      setFilter('All Price')
+    }
     console.log('clicked:', filter)
   }
   const handleUpToOneHundredPriceFilter = () => {
-    setFilter('Up To One Hundred Price')
+    if (filter !== 'Up To One Hundred Price') {
+      setFilter('Up To One Hundred Price')
+    }
     console.log('clicked:', filter)
   }
   const handleAboveOneHundredPriceFilter = () => {
-    setFilter('Above One Hundred Price')
+    if (filter !== 'Above One Hundred Price') {
+      setFilter('Above One Hundred Price')
+    }
     console.log('clicked:', filter)
   }
 
