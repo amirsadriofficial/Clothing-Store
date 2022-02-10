@@ -31,7 +31,7 @@ const AllProducts = (filter) => {
 
   return (
     <Grid container spacing={3}>
-      {filter === 'All Price' ? (
+      {filter ? (
         <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -71,7 +71,7 @@ const AllProducts = (filter) => {
       ) : (
         'All is not valid'
       )}
-      {filter === 'Up To One Hundred Price' ? (
+      {filter ? (
         <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -111,7 +111,7 @@ const AllProducts = (filter) => {
       ) : (
         'Up To is not valid'
       )}
-      {filter === 'Above One Hundred Price' ? (
+      {filter ? (
         <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
