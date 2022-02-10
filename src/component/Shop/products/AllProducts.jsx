@@ -69,7 +69,87 @@ const AllProducts = (filter) => {
           ))}
         </>
       ) : (
-        'is not valid'
+        'All is not valid'
+      )}
+      {filter === 'Up To One Hundred Price' ? (
+        <>
+          {Products.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Link to={`/product/${product.id}`}>
+                <Card className={classes.root}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={product.image}
+                      title={product.name}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="h2">
+                        {product.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {product.description}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        color="textSecondary"
+                        className={classes.priceText}
+                      >
+                        ${product.price}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
+            </Grid>
+          ))}
+        </>
+      ) : (
+        'Up To is not valid'
+      )}
+      {filter === 'Above One Hundred Price' ? (
+        <>
+          {Products.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Link to={`/product/${product.id}`}>
+                <Card className={classes.root}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={product.image}
+                      title={product.name}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="h2">
+                        {product.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {product.description}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        color="textSecondary"
+                        className={classes.priceText}
+                      >
+                        ${product.price}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
+            </Grid>
+          ))}
+        </>
+      ) : (
+        'Above is not valid'
       )}
     </Grid>
   )
