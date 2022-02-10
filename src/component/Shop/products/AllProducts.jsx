@@ -71,7 +71,7 @@ const AllProducts = (filter) => {
       ) : (
         'All is not valid'
       )}
-      {filter ? (
+      {/* {filter ? (
         <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -150,7 +150,7 @@ const AllProducts = (filter) => {
         </>
       ) : (
         'Above is not valid'
-      )}
+      )} */}
     </Grid>
   )
 }
