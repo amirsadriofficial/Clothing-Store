@@ -27,11 +27,12 @@ const useStyles = makeStyles({
 
 const AllProducts = (filter) => {
   const classes = useStyles()
+  const above = 'Above One Hundred Price'
   console.log('filter:', filter)
 
   return (
     <Grid container spacing={3}>
-      {filter === 'Above One Hundred Price' ? (
+      {filter === above ? (
         <>
           {Products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
