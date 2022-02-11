@@ -216,8 +216,15 @@ const NavBar = () => {
                       vertical: 'top',
                       horizontal: 'center',
                     }}
+                    style={{ width: '100%' }}
                   >
-                    <Grid container spacing={3}>
+                    <Grid
+                      container
+                      spacing={3}
+                      direction="column"
+                      // justifyContent="center"
+                      // alignItems="center"
+                    >
                       <Grid item>
                         <img src="" alt="" />
                         <Typography>The content of the Popover.</Typography>
