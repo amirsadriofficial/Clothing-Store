@@ -17,6 +17,7 @@ import Hidden from '@material-ui/core/Hidden'
 import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
+import Typography from '@material-ui/core/Typography'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../images/icons/logo.png'
@@ -187,6 +188,36 @@ const NavBar = () => {
             ))}
           </Box>
           <Box className={classes.search}>
+            <PopupState variant="popover" popupId="demo-popup-popover">
+              {(popupState) => (
+                <div>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...bindTrigger(popupState)}
+                  >
+                    Open Popover
+                  </Button>
+                  <Popover
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...bindPopover(popupState)}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                  >
+                    <Box p={2}>
+                      <Typography>The content of the Popover.</Typography>
+                    </Box>
+                  </Popover>
+                </div>
+              )}
+            </PopupState>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
