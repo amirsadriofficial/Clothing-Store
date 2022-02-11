@@ -17,7 +17,7 @@ import Hidden from '@material-ui/core/Hidden'
 import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
-// import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
 import Popover from '@material-ui/core/Popover'
@@ -69,6 +69,14 @@ const useStyles = makeStyles((theme) => ({
   },
   menuStyle: {
     marginLeft: '10px',
+  },
+  productImage: {
+    width: '50px',
+    padding: '10px',
+  },
+  productName: {
+    fontSize: '15px',
+    padding: '10px',
   },
 }))
 
@@ -218,7 +226,6 @@ const NavBar = () => {
                       vertical: 'top',
                       horizontal: 'center',
                     }}
-                    style={{ width: '100%' }}
                   >
                     {Products.map((product) => (
                       <>
@@ -226,11 +233,11 @@ const NavBar = () => {
                           <img
                             src={product.image}
                             alt="PRODUCT_IMAGE"
-                            style={{ width: '50px', padding: '10px' }}
+                            className={classes.productImage}
                           />
-                          <p style={{ fontSize: '20px', padding: '10px' }}>
+                          <Typography className={classes.productName}>
                             {product.name}
-                          </p>
+                          </Typography>
                         </Grid>
                         <Divider />
                       </>
