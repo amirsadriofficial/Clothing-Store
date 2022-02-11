@@ -18,6 +18,7 @@ import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
 import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../images/icons/logo.png'
@@ -216,16 +217,20 @@ const NavBar = () => {
                       horizontal: 'center',
                     }}
                   >
-                    <Box p={2}>
-                      <img src="" alt="" />
-                      <Typography>The content of the Popover.</Typography>
-                    </Box>
-                    <Box p={2}>
-                      <Typography>The content of the Popover.</Typography>
-                    </Box>
-                    <Box p={2}>
-                      <Typography>The content of the Popover.</Typography>
-                    </Box>
+                    <Grid container spacing={3}>
+                      <Grid item>
+                        <img src="" alt="" />
+                        <Typography>The content of the Popover.</Typography>
+                      </Grid>
+                      <Grid item>
+                        <img src="" alt="" />
+                        <Typography>The content of the Popover.</Typography>
+                      </Grid>
+                      <Grid item>
+                        <img src="" alt="" />
+                        <Typography>The content of the Popover.</Typography>
+                      </Grid>
+                    </Grid>
                   </Popover>
                 </div>
               )}
