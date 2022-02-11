@@ -15,5 +15,5 @@
 }
 
 .active-filter-button {
-  background-color: red;
+  background-color: red !important;
 }

@@ -114,7 +114,6 @@ const ShopHeader = () => {
     console.log('Change Color')
     console.log('Change State:', filter)
   }
-
   const handleUpToOneHundredPriceFilter = () => {
     if (filter !== 'Up To One Hundred Price') {
       setFilter('Up To One Hundred Price')
@@ -123,7 +122,6 @@ const ShopHeader = () => {
     console.log('Change Color')
     console.log('Change State:', filter)
   }
-
   const handleAboveOneHundredPriceFilter = () => {
     if (filter !== 'Above One Hundred Price') {
       setFilter('Above One Hundred Price')
@@ -228,7 +226,7 @@ const ShopHeader = () => {
                             <Button
                               variant="outlined"
                               // color="primary"
-                              className=""
+                              className={classes.buttonStyle}
                               onClick={handleAllPriceFilter}
                               ref={refAllFilterButton}
                             >
@@ -236,7 +234,7 @@ const ShopHeader = () => {
                             </Button>
                             <Button
                               variant="outlined"
-                              className=""
+                              className={classes.buttonStyle}
                               onClick={handleUpToOneHundredPriceFilter}
                               ref={refUpTo100FilterButton}
                             >
@@ -244,7 +242,7 @@ const ShopHeader = () => {
                             </Button>
                             <Button
                               variant="outlined"
-                              className=""
+                              className={classes.buttonStyle}
                               onClick={handleAboveOneHundredPriceFilter}
                               ref={refAbove100FilterButton}
                             >
