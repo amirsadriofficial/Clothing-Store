@@ -17,7 +17,7 @@ import Hidden from '@material-ui/core/Hidden'
 import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
-import Typography from '@material-ui/core/Typography'
+// import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
@@ -227,24 +227,20 @@ const NavBar = () => {
                       // alignItems="center"
                     >
                       {Products.map((product) => (
-                        <Grid item>
+                        <Grid
+                          container
+                          direction="row"
+                          justifyContent="center"
+                          alignItems="center"
+                        >
                           <img
                             src={product.image}
                             alt="I"
-                            style={{ width: '100%' }}
+                            style={{ width: '50px' }}
                           />
-                          <Typography>{product.name}</Typography>
+                          <p style={{ fontSize: '10px' }}>{product.name}</p>
                         </Grid>
                       ))}
-
-                      {/* <Grid item>
-                        <img src="" alt="" />
-                        <Typography>The content of the Popover.</Typography>
-                      </Grid>
-                      <Grid item>
-                        <img src="" alt="" />
-                        <Typography>The content of the Popover.</Typography>
-                      </Grid> */}
                     </Grid>
                   </Popover>
                 </div>
