@@ -13,3 +13,7 @@
 .shop-app-bar {
   margin-bottom: 110px;
 }
+
+.active-filter-button {
+  color: #3f51b5;
+}

@@ -81,6 +81,9 @@ const ShopHeader = () => {
   // const above = 'All Price'
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAppBar = useRef()
+  const refAllFilterButton = useRef()
+  const refUpTo100FilterButton = useRef()
+  const refAbove100FilterButton = useRef()
   const theme = useTheme()
   const [filter, setFilter] = useState('All Price')
   const [value, setValue] = useState(0)
@@ -105,18 +108,21 @@ const ShopHeader = () => {
   const handleAllPriceFilter = () => {
     if (filter !== 'All Price') {
       setFilter('All Price')
+      refAllFilterButton.current.classList.add('active-filter-button')
     }
     console.log('clicked:', filter)
   }
   const handleUpToOneHundredPriceFilter = () => {
     if (filter !== 'Up To One Hundred Price') {
       setFilter('Up To One Hundred Price')
+      refUpTo100FilterButton.current.classList.add('active-filter-button')
     }
     console.log('clicked:', filter)
   }
   const handleAboveOneHundredPriceFilter = () => {
     if (filter !== 'Above One Hundred Price') {
       setFilter('Above One Hundred Price')
+      refAbove100FilterButton.current.classList.add('active-filter-button')
     }
     console.log('clicked:', filter)
   }
@@ -218,6 +224,7 @@ const ShopHeader = () => {
                               // color="primary"
                               className={classes.buttonStyle}
                               onClick={handleAllPriceFilter}
+                              ref={refAllFilterButton}
                             >
                               All
                             </Button>
@@ -225,6 +232,7 @@ const ShopHeader = () => {
                               variant="outlined"
                               className={classes.buttonStyle}
                               onClick={handleUpToOneHundredPriceFilter}
+                              ref={refUpTo100FilterButton}
                             >
                               $0.00 - $100.00
                             </Button>
@@ -232,6 +240,7 @@ const ShopHeader = () => {
                               variant="outlined"
                               className={classes.buttonStyle}
                               onClick={handleAboveOneHundredPriceFilter}
+                              ref={refAbove100FilterButton}
                             >
                               + $100.00
                             </Button>
