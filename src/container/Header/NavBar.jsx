@@ -223,17 +223,6 @@ const NavBar = () => {
                 </div>
               )}
             </PopupState>
-            {/* <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            /> */}
           </Box>
           <Link to="/cart">
             <IconButton aria-label="delete">
