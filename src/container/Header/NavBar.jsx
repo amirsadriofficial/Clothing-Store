@@ -22,6 +22,7 @@ import Grid from '@material-ui/core/Grid'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../images/icons/logo.png'
+import Products from '../../utils/watches-products'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -225,18 +226,25 @@ const NavBar = () => {
                       // justifyContent="center"
                       // alignItems="center"
                     >
-                      <Grid item>
+                      {Products.map((product) => (
+                        <Grid item>
+                          <img
+                            src={product.image}
+                            alt="I"
+                            style={{ width: '100%' }}
+                          />
+                          <Typography>{product.name}</Typography>
+                        </Grid>
+                      ))}
+
+                      {/* <Grid item>
                         <img src="" alt="" />
                         <Typography>The content of the Popover.</Typography>
                       </Grid>
                       <Grid item>
                         <img src="" alt="" />
                         <Typography>The content of the Popover.</Typography>
-                      </Grid>
-                      <Grid item>
-                        <img src="" alt="" />
-                        <Typography>The content of the Popover.</Typography>
-                      </Grid>
+                      </Grid> */}
                     </Grid>
                   </Popover>
                 </div>
