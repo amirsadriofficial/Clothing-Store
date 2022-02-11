@@ -191,22 +191,19 @@ const NavBar = () => {
             <PopupState variant="popover" popupId="demo-popup-popover">
               {(popupState) => (
                 <div>
-                  <div>
-                    <div className={classes.searchIcon}>
-                      <SearchIcon />
-                    </div>
-                    <InputBase
-                      placeholder="Search…"
-                      classes={{
-                        root: classes.inputRoot,
-                        input: classes.inputInput,
-                      }}
-                      inputProps={{ 'aria-label': 'search' }}
-                      // // eslint-disable-next-line react/jsx-props-no-spreading
-                      // {...bindTrigger(popupState)}
-                    />
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
                   </div>
-
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput,
+                    }}
+                    inputProps={{ 'aria-label': 'search' }}
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...bindTrigger(popupState)}
+                  />
                   <Popover
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindPopover(popupState)}
