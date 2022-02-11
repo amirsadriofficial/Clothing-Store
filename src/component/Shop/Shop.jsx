@@ -191,7 +191,7 @@ const ShopHeader = () => {
                             </Typography>
                             <Button
                               variant="outlined"
-                              color="primary"
+                              // color="primary"
                               className={classes.buttonStyle}
                             >
                               All
