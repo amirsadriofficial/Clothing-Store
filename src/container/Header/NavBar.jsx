@@ -191,14 +191,22 @@ const NavBar = () => {
             <PopupState variant="popover" popupId="demo-popup-popover">
               {(popupState) => (
                 <div>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...bindTrigger(popupState)}
-                  >
-                    Open Popover
-                  </Button>
+                  <div>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search…"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput,
+                      }}
+                      inputProps={{ 'aria-label': 'search' }}
+                      // // eslint-disable-next-line react/jsx-props-no-spreading
+                      // {...bindTrigger(popupState)}
+                    />
+                  </div>
+
                   <Popover
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindPopover(popupState)}
@@ -218,7 +226,7 @@ const NavBar = () => {
                 </div>
               )}
             </PopupState>
-            <div className={classes.searchIcon}>
+            {/* <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
@@ -228,7 +236,7 @@ const NavBar = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-            />
+            /> */}
           </Box>
           <Link to="/cart">
             <IconButton aria-label="delete">
