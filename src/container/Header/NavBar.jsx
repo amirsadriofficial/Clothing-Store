@@ -80,8 +80,8 @@ const useStyles = makeStyles((theme) => ({
   },
   searchBoxTitle: {
     fontSize: '15px',
-    // marginTop: '15px',
     paddingTop: '15px',
+    paddingLeft: '15px',
   },
 }))
 
