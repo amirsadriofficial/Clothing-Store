@@ -78,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '15px',
     padding: '10px',
   },
+  searchBoxTitle: {
+    fontSize: '15px',
+    // marginTop: '15px',
+    paddingTop: '15px',
+  },
 }))
 
 const pages = [
@@ -227,6 +232,15 @@ const NavBar = () => {
                       horizontal: 'center',
                     }}
                   >
+                    <Typography
+                      variant="h6"
+                      component="h2"
+                      color="primary"
+                      className={classes.searchBoxTitle}
+                    >
+                      Recent Searches:
+                    </Typography>
+                    {/* <Divider /> */}
                     {Products.map((product) => (
                       <>
                         <Grid container direction="row" alignItems="center">
