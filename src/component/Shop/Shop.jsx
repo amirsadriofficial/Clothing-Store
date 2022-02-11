@@ -108,23 +108,32 @@ const ShopHeader = () => {
   const handleAllPriceFilter = () => {
     if (filter !== 'All Price') {
       setFilter('All Price')
-      refAllFilterButton.current.classList.add('active-filter-button')
     }
-    console.log('clicked:', filter)
+    // if (filter === 'All Price') {
+    refAllFilterButton.current.classList.add('active-filter-button')
+    console.log('Change Color')
+    // }
+    console.log('Change State:', filter)
   }
   const handleUpToOneHundredPriceFilter = () => {
     if (filter !== 'Up To One Hundred Price') {
       setFilter('Up To One Hundred Price')
-      refUpTo100FilterButton.current.classList.add('active-filter-button')
     }
-    console.log('clicked:', filter)
+    // if (filter === 'Up To One Hundred Price') {
+    refUpTo100FilterButton.current.classList.add('active-filter-button')
+    console.log('Change Color')
+    // }
+    console.log('Change State:', filter)
   }
   const handleAboveOneHundredPriceFilter = () => {
     if (filter !== 'Above One Hundred Price') {
       setFilter('Above One Hundred Price')
-      refAbove100FilterButton.current.classList.add('active-filter-button')
     }
-    console.log('clicked:', filter)
+    // if (filter === 'Above One Hundred Price') {
+    refAbove100FilterButton.current.classList.add('active-filter-button')
+    console.log('Change Color')
+    // }
+    console.log('Change State:', filter)
   }
 
   return (
@@ -222,7 +231,7 @@ const ShopHeader = () => {
                             <Button
                               variant="outlined"
                               // color="primary"
-                              className={classes.buttonStyle}
+                              className=""
                               onClick={handleAllPriceFilter}
                               ref={refAllFilterButton}
                             >
@@ -230,7 +239,7 @@ const ShopHeader = () => {
                             </Button>
                             <Button
                               variant="outlined"
-                              className={classes.buttonStyle}
+                              className=""
                               onClick={handleUpToOneHundredPriceFilter}
                               ref={refUpTo100FilterButton}
                             >
@@ -238,7 +247,7 @@ const ShopHeader = () => {
                             </Button>
                             <Button
                               variant="outlined"
-                              className={classes.buttonStyle}
+                              className=""
                               onClick={handleAboveOneHundredPriceFilter}
                               ref={refAbove100FilterButton}
                             >
