@@ -217,6 +217,13 @@ const NavBar = () => {
                     }}
                   >
                     <Box p={2}>
+                      <img src="" alt="" />
+                      <Typography>The content of the Popover.</Typography>
+                    </Box>
+                    <Box p={2}>
+                      <Typography>The content of the Popover.</Typography>
+                    </Box>
+                    <Box p={2}>
                       <Typography>The content of the Popover.</Typography>
                     </Box>
                   </Popover>
