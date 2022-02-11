@@ -105,34 +105,31 @@ const ShopHeader = () => {
       }
     }, 750)
   }
+
   const handleAllPriceFilter = () => {
     if (filter !== 'All Price') {
       setFilter('All Price')
     }
-    // if (filter === 'All Price') {
     refAllFilterButton.current.classList.add('active-filter-button')
     console.log('Change Color')
-    // }
     console.log('Change State:', filter)
   }
+
   const handleUpToOneHundredPriceFilter = () => {
     if (filter !== 'Up To One Hundred Price') {
       setFilter('Up To One Hundred Price')
     }
-    // if (filter === 'Up To One Hundred Price') {
     refUpTo100FilterButton.current.classList.add('active-filter-button')
     console.log('Change Color')
-    // }
     console.log('Change State:', filter)
   }
+
   const handleAboveOneHundredPriceFilter = () => {
     if (filter !== 'Above One Hundred Price') {
       setFilter('Above One Hundred Price')
     }
-    // if (filter === 'Above One Hundred Price') {
     refAbove100FilterButton.current.classList.add('active-filter-button')
     console.log('Change Color')
-    // }
     console.log('Change State:', filter)
   }
 
