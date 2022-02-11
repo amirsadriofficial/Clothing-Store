@@ -15,5 +15,6 @@
 }
 
 .active-filter-button {
-  background-color: red !important;
+  color: #3f51b5 !important;
+  border-color: #3f51b5 !important;
 }

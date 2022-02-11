@@ -111,24 +111,24 @@ const ShopHeader = () => {
       setFilter('All Price')
     }
     refAllFilterButton.current.classList.add('active-filter-button')
-    console.log('Change Color')
-    console.log('Change State:', filter)
+    refUpTo100FilterButton.current.classList.remove('active-filter-button')
+    refAbove100FilterButton.current.classList.remove('active-filter-button')
   }
   const handleUpToOneHundredPriceFilter = () => {
     if (filter !== 'Up To One Hundred Price') {
       setFilter('Up To One Hundred Price')
     }
     refUpTo100FilterButton.current.classList.add('active-filter-button')
-    console.log('Change Color')
-    console.log('Change State:', filter)
+    refAllFilterButton.current.classList.remove('active-filter-button')
+    refAbove100FilterButton.current.classList.remove('active-filter-button')
   }
   const handleAboveOneHundredPriceFilter = () => {
     if (filter !== 'Above One Hundred Price') {
       setFilter('Above One Hundred Price')
     }
     refAbove100FilterButton.current.classList.add('active-filter-button')
-    console.log('Change Color')
-    console.log('Change State:', filter)
+    refAllFilterButton.current.classList.remove('active-filter-button')
+    refUpTo100FilterButton.current.classList.remove('active-filter-button')
   }
 
   return (
