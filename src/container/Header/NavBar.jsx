@@ -17,6 +17,8 @@ import Hidden from '@material-ui/core/Hidden'
 import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
+import Popover from '@material-ui/core/Popover'
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../images/icons/logo.png'
 
 const useStyles = makeStyles((theme) => ({
