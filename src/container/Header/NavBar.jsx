@@ -19,6 +19,7 @@ import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
 // import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../images/icons/logo.png'
@@ -219,29 +220,21 @@ const NavBar = () => {
                     }}
                     style={{ width: '100%' }}
                   >
-                    <Grid
-                      container
-                      spacing={3}
-                      direction="column"
-                      // justifyContent="center"
-                      // alignItems="center"
-                    >
-                      {Products.map((product) => (
-                        <Grid
-                          container
-                          direction="row"
-                          justifyContent="center"
-                          alignItems="center"
-                        >
+                    {Products.map((product) => (
+                      <>
+                        <Grid container direction="row" alignItems="center">
                           <img
                             src={product.image}
-                            alt="I"
-                            style={{ width: '50px' }}
+                            alt="PRODUCT_IMAGE"
+                            style={{ width: '50px', padding: '10px' }}
                           />
-                          <p style={{ fontSize: '10px' }}>{product.name}</p>
+                          <p style={{ fontSize: '20px', padding: '10px' }}>
+                            {product.name}
+                          </p>
                         </Grid>
-                      ))}
-                    </Grid>
+                        <Divider />
+                      </>
+                    ))}
                   </Popover>
                 </div>
               )}
