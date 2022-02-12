@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useLocation, Navlink } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 // import { useSelector } from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
@@ -198,17 +198,14 @@ const NavBar = () => {
             className={classes.menuStyle}
           >
             {pages.map((page) => (
-              <Navlink
-                to={page.path}
-                className={isActive && 'active-app-bar-button'}
-              >
+              <Link to={page.path}>
                 <Button
                   key={page.name}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page.name}
                 </Button>
-              </Navlink>
+              </Link>
             ))}
           </Box>
           <Box className={classes.search}>
