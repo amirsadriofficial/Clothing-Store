@@ -76,9 +76,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ShopHeader = () => {
   const classes = useStyles()
-  // const all = 'All Price'
-  // const up = 'All Price'
-  // const above = 'All Price'
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAppBar = useRef()
   const refAllFilterButton = useRef()
