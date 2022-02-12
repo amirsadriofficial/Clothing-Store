@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, Navlink } from 'react-router-dom'
 // import { useSelector } from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
@@ -106,6 +106,7 @@ const pages = [
 
 const NavBar = () => {
   const classes = useStyles()
+  const location = useLocation()
   // const carts = useSelector((state) => state.cartReducer)
   // const favorites = useSelector((state) => state.favoritesReducer)
   const carts = JSON.parse(localStorage.getItem('Carts'))
@@ -120,6 +121,10 @@ const NavBar = () => {
 
   return (
     <AppBar position="static" color="inherit">
+      {location.pathname === '/' && console.log('Home')}
+      {location.pathname === '/shop' && console.log('Shop')}
+      {location.pathname === '/about' && console.log('About')}
+      {location.pathname === '/contact' && console.log('Contact')}
       <Container>
         <Toolbar disableGutters>
           <Hidden smDown>
@@ -193,14 +198,17 @@ const NavBar = () => {
             className={classes.menuStyle}
           >
             {pages.map((page) => (
-              <Link to={page.path}>
+              <Navlink
+                to={page.path}
+                className={isActive && 'active-app-bar-button'}
+              >
                 <Button
                   key={page.name}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page.name}
                 </Button>
-              </Link>
+              </Navlink>
             ))}
           </Box>
           <Box className={classes.search}>
@@ -240,7 +248,6 @@ const NavBar = () => {
                     >
                       Recent Searches:
                     </Typography>
-                    {/* <Divider /> */}
                     {Products.map((product) => (
                       <>
                         <Grid container direction="row" alignItems="center">
