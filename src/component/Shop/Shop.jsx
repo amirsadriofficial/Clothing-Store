@@ -98,6 +98,7 @@ const ShopHeader = () => {
       if (activeAppBarClass === 'inactive') {
         refAppBar.current.classList.add('shop-app-bar')
         setActiveAppBarClass('active')
+        refAllFilterButton.current.classList.add('active-filter-button')
       }
       if (activeAppBarClass === 'active') {
         refAppBar.current.classList.remove('shop-app-bar')
