@@ -98,7 +98,6 @@ const ShopHeader = () => {
       if (activeAppBarClass === 'inactive') {
         refAppBar.current.classList.add('shop-app-bar')
         setActiveAppBarClass('active')
-        refAllFilterButton.current.classList.add('active-filter-button')
       }
       if (activeAppBarClass === 'active') {
         refAppBar.current.classList.remove('shop-app-bar')
@@ -106,7 +105,6 @@ const ShopHeader = () => {
       }
     }, 750)
   }
-
   const handleAllPriceFilter = () => {
     if (filter !== 'All Price') {
       setFilter('All Price')
