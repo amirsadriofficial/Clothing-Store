@@ -14,6 +14,7 @@ import Popper from '@material-ui/core/Popper'
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state'
 import Fade from '@material-ui/core/Fade'
 import Paper from '@material-ui/core/Paper'
+import clsx from 'clsx'
 import ManProducts from './products/Man'
 import BagProducts from './products/Bag'
 import WomanProducts from './products/Woman'
@@ -225,7 +226,10 @@ const ShopHeader = () => {
                             </Typography>
                             <Button
                               variant="outlined"
-                              className={classes.buttonStyle}
+                              className={
+                                (clsx =
+                                  ('active-filter-button', {classes.buttonStyle}))
+                              }
                               onClick={handleAllPriceFilter}
                               ref={refAllFilterButton}
                             >
