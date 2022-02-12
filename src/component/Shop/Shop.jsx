@@ -227,6 +227,7 @@ const ShopHeader = () => {
                               variant="outlined"
                               // color="primary"
                               className={classes.buttonStyle}
+                              className="active-filter-button"
                               onClick={handleAllPriceFilter}
                               ref={refAllFilterButton}
                             >
