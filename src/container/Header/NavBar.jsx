@@ -201,6 +201,9 @@ const NavBar = () => {
               <Link to={page.path}>
                 <Button
                   key={page.name}
+                  className={
+                    location.pathname === page.path && 'active-app-bar-button'
+                  }
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page.name}
