@@ -27,7 +27,6 @@ const SIGN_IN_FAILED_ACTION = () => {
     response: 'Your request is invalid, please try again!',
   }
 }
-
 // Sign Up
 const SIGN_UP_STARTED_ACTION = () => {
   return {
@@ -55,7 +54,6 @@ const SIGN_UP_FAILED_ACTION = () => {
     response: 'Your request is invalid, please try again!',
   }
 }
-
 // Sign Out
 const SIGN_OUT_STARTED_ACTION = () => {
   return {
@@ -83,6 +81,7 @@ const SIGN_OUT_FAILED_ACTION = () => {
     response: 'Your request is invalid, please try again!',
   }
 }
+
 export {
   SIGN_IN_STARTED_ACTION,
   SIGN_IN_SUCCESS_ACTION,
