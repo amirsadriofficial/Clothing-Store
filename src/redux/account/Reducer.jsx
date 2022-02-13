@@ -46,14 +46,21 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_UP_SUCCESS:
-      signupStorage = action.logged
+      signupStorage = [
+        {
+          firstName: action.fName,
+          lastName: action.lName,
+          email: action.email,
+          logged: action.logged,
+        },
+      ]
       localStorage.setItem('Account', JSON.stringify(signupStorage))
       return {
         ...state,
-        firstName: action.fName,
-        lastName: action.lName,
-        email: action.email,
-        logged: action.logged,
+        firstName: signupStorage.firstName,
+        lastName: signupStorage.lastName,
+        email: signupStorage.email,
+        logged: signupStorage.logged,
         loading: action.loading,
         response: action.response,
       }
