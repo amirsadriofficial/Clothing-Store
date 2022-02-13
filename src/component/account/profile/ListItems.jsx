@@ -60,7 +60,7 @@ export const secondaryListItems = (
   </div>
 )
 
-export const signoutButton = () => {
+const signoutButton = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const handleSubmit = () => {
@@ -81,3 +81,5 @@ export const signoutButton = () => {
     </div>
   )
 }
+
+export default signoutButton
