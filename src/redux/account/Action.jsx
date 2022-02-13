@@ -58,17 +58,14 @@ const SIGN_UP_FAILED_ACTION = () => {
 const SIGN_OUT_STARTED_ACTION = () => {
   return {
     type: Types.SIGN_IN_STARTED,
-    logged: false,
+    logged: true,
     loading: true,
   }
 }
-const SIGN_OUT_SUCCESS_ACTION = (formValue) => {
+const SIGN_OUT_SUCCESS_ACTION = () => {
   return {
     type: Types.SIGN_IN_SUCCESS,
-    fName: 'Amir',
-    lName: 'Sadri',
-    email: formValue.email,
-    logged: true,
+    logged: false,
     loading: false,
     response: 'You have successfully signed out!',
   }
@@ -76,7 +73,7 @@ const SIGN_OUT_SUCCESS_ACTION = (formValue) => {
 const SIGN_OUT_FAILED_ACTION = () => {
   return {
     type: Types.SIGN_IN_FAILED,
-    logged: false,
+    logged: true,
     loading: false,
     response: 'Your request is invalid, please try again!',
   }
