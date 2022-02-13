@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import clsx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -17,11 +17,16 @@ import Paper from '@material-ui/core/Paper'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { useDispatch } from 'react-redux'
 import Information from './Information'
-import signoutButton, { mainListItems, secondaryListItems } from './ListItems'
+import { mainListItems, secondaryListItems } from './ListItems'
 import Chart from './Chart'
 import Deposits from './Deposits'
 import Orders from './Orders'
+import { SIGN_OUT_SUCCESS_ACTION } from '../../../redux/account/Action'
 
 const drawerWidth = 240
 
@@ -109,6 +114,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Profile = () => {
   const classes = useStyles()
+  const history = useHistory()
+  const dispatch = useDispatch()
+  const handleSubmit = () => {
+    dispatch(SIGN_OUT_SUCCESS_ACTION)
+    history.push('/')
+  }
   const [open, setOpen] = useState(true)
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -177,7 +188,16 @@ const Profile = () => {
         <Divider />
         <List>{secondaryListItems}</List>
         <Divider />
-        <List>{signoutButton}</List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <ExitToAppIcon />
+            </ListItemIcon>
+            <Button color="secondary" onClick={handleSubmit} fullWidth>
+              Sign Out
+            </Button>
+          </ListItem>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
