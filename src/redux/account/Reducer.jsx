@@ -79,11 +79,11 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_OUT_SUCCESS:
-      signoutStorage = action.logged
+      signoutStorage = [{ logged: action.logged }]
       localStorage.setItem('Account', JSON.stringify(signoutStorage))
       return {
         ...state,
-        logged: action.logged,
+        logged: signoutStorage.logged,
         loading: action.loading,
         response: action.response,
       }
