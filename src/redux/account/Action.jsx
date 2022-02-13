@@ -57,14 +57,14 @@ const SIGN_UP_FAILED_ACTION = () => {
 // Sign Out
 const SIGN_OUT_STARTED_ACTION = () => {
   return {
-    type: Types.SIGN_IN_STARTED,
+    type: Types.SIGN_OUT_STARTED,
     logged: true,
     loading: true,
   }
 }
 const SIGN_OUT_SUCCESS_ACTION = () => {
   return {
-    type: Types.SIGN_IN_SUCCESS,
+    type: Types.SIGN_OUT_SUCCESS,
     logged: false,
     loading: false,
     response: 'You have successfully signed out!',
@@ -72,7 +72,7 @@ const SIGN_OUT_SUCCESS_ACTION = () => {
 }
 const SIGN_OUT_FAILED_ACTION = () => {
   return {
-    type: Types.SIGN_IN_FAILED,
+    type: Types.SIGN_OUT_FAILED,
     logged: true,
     loading: false,
     response: 'Your request is invalid, please try again!',
