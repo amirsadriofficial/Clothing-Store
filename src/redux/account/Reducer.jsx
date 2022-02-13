@@ -60,9 +60,6 @@ const accountReducer = (state = [], action) => {
     case Types.SIGN_OUT_SUCCESS:
       return {
         ...state,
-        firstName: action.fName,
-        lastName: action.lName,
-        email: action.email,
         logged: action.logged,
         loading: action.loading,
         response: action.response,
