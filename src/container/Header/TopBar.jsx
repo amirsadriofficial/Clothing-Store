@@ -54,7 +54,7 @@ const TopBar = () => {
   const classes = useStyles()
   // const account = useSelector((state) => state.accountReducer)
   // console.log(account)
-  const account = JSON.parse(localStorage.getItem('logged'))
+  const account = JSON.parse(localStorage.getItem('Account'))
 
   return (
     <Box className={classes.box}>
@@ -65,10 +65,10 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.flexGrid}>
             <Grid className={classes.border}>
-              {account && account.logged ? (
+              {account && account[0].logged ? (
                 <Link to="/profile">
                   <Button className={classes.account}>
-                    {account.firstName} {account.lastName}
+                    {account[0].firstName} {account[0].lastName}
                   </Button>
                 </Link>
               ) : (
@@ -100,10 +100,10 @@ const TopBar = () => {
         <Divider className={classes.dividerStyle} />
         <Grid className={clsx(classes.flexGrid, classes.sectionSpacing)}>
           <Grid className={classes.border}>
-            {account && account.logged ? (
+            {account && account[0].logged ? (
               <Link to="/profile">
                 <Button className={classes.account}>
-                  {account.firstName} {account.lastName}
+                  {account[0].firstName} {account[0].lastName}
                 </Button>
               </Link>
             ) : (

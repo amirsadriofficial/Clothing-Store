@@ -13,14 +13,21 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_IN_SUCCESS:
-      signinStorage = []
+      signinStorage = [
+        {
+          firstName: action.fName,
+          lastName: action.lName,
+          email: action.email,
+          logged: action.logged,
+        },
+      ]
       localStorage.setItem('Account', JSON.stringify(signinStorage))
       return {
         ...state,
-        firstName: action.fName,
-        lastName: action.lName,
-        email: action.email,
-        logged: action.logged,
+        firstName: signinStorage.firstName,
+        lastName: signinStorage.lastName,
+        email: signinStorage.email,
+        logged: signinStorage.logged,
         loading: action.loading,
         response: action.response,
       }
