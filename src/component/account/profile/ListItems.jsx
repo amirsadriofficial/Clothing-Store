@@ -54,27 +54,3 @@ export const secondaryListItems = (
     </ListItem>
   </div>
 )
-
-// const signoutButton = () => {
-//   const history = useHistory()
-//   const dispatch = useDispatch()
-//   const handleSubmit = () => {
-//     dispatch(SIGN_OUT_SUCCESS_ACTION)
-//     history.push('/')
-//   }
-
-//   return (
-//     <div>
-//       <ListItem button>
-//         <ListItemIcon>
-//           <ExitToAppIcon />
-//         </ListItemIcon>
-//         <Button color="secondary" onClick={handleSubmit} fullWidth>
-//           Sign Out
-//         </Button>
-//       </ListItem>
-//     </div>
-//   )
-// }
-
-// export default signoutButton
