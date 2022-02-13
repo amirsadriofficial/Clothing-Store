@@ -20,7 +20,7 @@ const accountReducer = (state = [], action) => {
         firstName: action.fName,
         lastName: action.lName,
         email: action.email,
-        logged: action.logged,
+        logged: signinLogged,
         loading: action.loading,
         response: action.response,
       }
