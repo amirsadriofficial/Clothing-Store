@@ -117,7 +117,7 @@ const Profile = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const handleSubmit = () => {
-    dispatch(SIGN_OUT_SUCCESS_ACTION)
+    dispatch(SIGN_OUT_SUCCESS_ACTION())
     history.push('/')
   }
   const [open, setOpen] = useState(true)

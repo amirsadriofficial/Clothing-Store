@@ -1,6 +1,4 @@
 import React from 'react'
-// import { useHistory } from 'react-router-dom'
-// import { useDispatch } from 'react-redux'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -9,9 +7,6 @@ import DashboardIcon from '@material-ui/icons/Dashboard'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import BarChartIcon from '@material-ui/icons/BarChart'
 import AssignmentIcon from '@material-ui/icons/Assignment'
-// import Button from '@material-ui/core/Button'
-// import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-// import { SIGN_OUT_SUCCESS_ACTION } from '../../../redux/account/Action'
 
 export const mainListItems = (
   <div>
