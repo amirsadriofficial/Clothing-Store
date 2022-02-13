@@ -1,9 +1,9 @@
 import Types from './Types'
 
 const accountReducer = (state = [], action) => {
-  let signinLogged = null
-  let signupLogged = null
-  let signoutLogged = null
+  let signinStorage = []
+  let signupStorage = []
+  let signoutStorage = []
   switch (action.type) {
     // Sign In
     case Types.SIGN_IN_STARTED:
@@ -13,14 +13,14 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_IN_SUCCESS:
-      signinLogged = action.logged
-      localStorage.setItem('Logged', JSON.stringify(signinLogged))
+      signinStorage = []
+      localStorage.setItem('Account', JSON.stringify(signinStorage))
       return {
         ...state,
         firstName: action.fName,
         lastName: action.lName,
         email: action.email,
-        logged: signinLogged,
+        logged: action.logged,
         loading: action.loading,
         response: action.response,
       }
@@ -39,14 +39,14 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_UP_SUCCESS:
-      signupLogged = action.logged
-      localStorage.setItem('Logged', JSON.stringify(signupLogged))
+      signupStorage = action.logged
+      localStorage.setItem('Account', JSON.stringify(signupStorage))
       return {
         ...state,
         firstName: action.fName,
         lastName: action.lName,
         email: action.email,
-        logged: signupLogged,
+        logged: action.logged,
         loading: action.loading,
         response: action.response,
       }
@@ -65,11 +65,11 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
       }
     case Types.SIGN_OUT_SUCCESS:
-      signoutLogged = action.logged
-      localStorage.setItem('Logged', JSON.stringify(signoutLogged))
+      signoutStorage = action.logged
+      localStorage.setItem('Account', JSON.stringify(signoutStorage))
       return {
         ...state,
-        logged: signoutLogged,
+        logged: action.logged,
         loading: action.loading,
         response: action.response,
       }

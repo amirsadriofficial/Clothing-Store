@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -52,8 +52,9 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = () => {
   const classes = useStyles()
-  const account = useSelector((state) => state.accountReducer)
-  console.log(account)
+  // const account = useSelector((state) => state.accountReducer)
+  // console.log(account)
+  const account = JSON.parse(localStorage.getItem('logged'))
 
   return (
     <Box className={classes.box}>
