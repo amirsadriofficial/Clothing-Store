@@ -121,10 +121,6 @@ const NavBar = () => {
 
   return (
     <AppBar position="static" color="inherit">
-      {location.pathname === '/' && console.log('Home')}
-      {location.pathname === '/shop' && console.log('Shop')}
-      {location.pathname === '/about' && console.log('About')}
-      {location.pathname === '/contact' && console.log('Contact')}
       <Container>
         <Toolbar disableGutters>
           <Hidden smDown>
@@ -160,7 +156,6 @@ const NavBar = () => {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              // elevation={0}
               marginThreshold={0}
               getContentAnchorEl={null}
               anchorOrigin={{
