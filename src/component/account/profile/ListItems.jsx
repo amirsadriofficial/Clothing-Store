@@ -1,4 +1,6 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -9,6 +11,14 @@ import BarChartIcon from '@material-ui/icons/BarChart'
 import AssignmentIcon from '@material-ui/icons/Assignment'
 import Button from '@material-ui/core/Button'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { SIGN_OUT_SUCCESS_ACTION } from '../../../redux/account/Action'
+
+const history = useHistory()
+const dispatch = useDispatch()
+const handleSubmit = () => {
+  dispatch(SIGN_OUT_SUCCESS_ACTION)
+  history.push('/')
+}
 
 export const mainListItems = (
   <div>
@@ -63,11 +73,9 @@ export const signoutButton = (
       <ListItemIcon>
         <ExitToAppIcon />
       </ListItemIcon>
-      <a href="/">
-        <Button color="secondary" fullWidth>
-          Sign Out
-        </Button>
-      </a>
+      <Button color="secondary" onClick={handleSubmit} fullWidth>
+        Sign Out
+      </Button>
     </ListItem>
   </div>
 )
