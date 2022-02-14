@@ -30,19 +30,19 @@ const AllProducts = (filter) => {
   const [filteredProducts, setFilteredProducts] = useState(Products)
   console.log('filter:', filter)
   // const handleFilter = () => {
+  const UpTo100 = Products.filter((product) => product.price < 100)
+  const Above100 = Products.filter((product) => product.price > 100)
   if (filter === 'All Price') {
     setFilteredProducts(Products)
-    console.log('all:', filter)
+    console.log('All:', filteredProducts)
   }
-  const UpTo100 = Products.filter((product) => product.price < 100)
   if (filter === 'Up To One Hundred Price') {
     setFilteredProducts(UpTo100)
-    console.log('up to:', filter)
+    console.log('Up To 100:', filteredProducts)
   }
-  const Above100 = Products.filter((product) => product.price > 100)
   if (filter === 'Above One Hundred Price') {
     setFilteredProducts(Above100)
-    console.log('above:', filter)
+    console.log('Above 100:', filteredProducts)
   }
   // }
 
