@@ -28,19 +28,19 @@ const useStyles = makeStyles({
 const AllProducts = (filter) => {
   const classes = useStyles()
   const [filteredProducts, setFilteredProducts] = useState(Products)
-  console.log('filter:', filter)
+  console.log('Filter:', filter)
   // const handleFilter = () => {
   const UpTo100 = Products.filter((product) => product.price < 100)
   const Above100 = Products.filter((product) => product.price > 100)
-  if (filter === 'All Price') {
+  if (filter === 'ALL') {
     setFilteredProducts(Products)
-    console.log('All:', filteredProducts)
+    console.log('ALL:', filteredProducts)
   }
-  if (filter === 'Up To One Hundred Price') {
+  if (filter === 'UPTO100') {
     setFilteredProducts(UpTo100)
     console.log('Up To 100:', filteredProducts)
   }
-  if (filter === 'Above One Hundred Price') {
+  if (filter === 'ABOVE100') {
     setFilteredProducts(Above100)
     console.log('Above 100:', filteredProducts)
   }
@@ -48,8 +48,6 @@ const AllProducts = (filter) => {
 
   return (
     <Grid container spacing={3}>
-      {/* {filter ? (
-        <> */}
       {filteredProducts.map((product) => (
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <Link to={`/product/${product.id}`}>
@@ -84,90 +82,6 @@ const AllProducts = (filter) => {
           </Link>
         </Grid>
       ))}
-      {/* </>
-      ) : (
-        'All is not valid'
-      )} */}
-      {/* {filter ? (
-        <>
-          {Products.map((product) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Link to={`/product/${product.id}`}>
-                <Card className={classes.root}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image={product.image}
-                      title={product.name}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h6" component="h2">
-                        {product.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {product.description}
-                      </Typography>
-                      <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        className={classes.priceText}
-                      >
-                        ${product.price}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Link>
-            </Grid>
-          ))}
-        </>
-      ) : (
-        'Up To is not valid'
-      )}
-      {filter ? (
-        <>
-          {Products.map((product) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Link to={`/product/${product.id}`}>
-                <Card className={classes.root}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image={product.image}
-                      title={product.name}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h6" component="h2">
-                        {product.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {product.description}
-                      </Typography>
-                      <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        className={classes.priceText}
-                      >
-                        ${product.price}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Link>
-            </Grid>
-          ))}
-        </>
-      ) : (
-        'Above is not valid'
-      )} */}
     </Grid>
   )
 }

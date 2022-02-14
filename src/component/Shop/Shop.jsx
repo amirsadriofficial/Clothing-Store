@@ -82,7 +82,7 @@ const ShopHeader = () => {
   const refUpTo100FilterButton = useRef()
   const refAbove100FilterButton = useRef()
   const theme = useTheme()
-  const [filter, setFilter] = useState('All Price')
+  const [filter, setFilter] = useState('ALL')
   const [value, setValue] = useState(0)
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -103,24 +103,24 @@ const ShopHeader = () => {
     }, 750)
   }
   const handleAllPriceFilter = () => {
-    if (filter !== 'All Price') {
-      setFilter('All Price')
+    if (filter !== 'ALL') {
+      setFilter('ALL')
     }
     refAllFilterButton.current.classList.add('active-filter-button')
     refUpTo100FilterButton.current.classList.remove('active-filter-button')
     refAbove100FilterButton.current.classList.remove('active-filter-button')
   }
   const handleUpToOneHundredPriceFilter = () => {
-    if (filter !== 'Up To One Hundred Price') {
-      setFilter('Up To One Hundred Price')
+    if (filter !== 'UP_TO_100') {
+      setFilter('UP_TO_100')
     }
     refUpTo100FilterButton.current.classList.add('active-filter-button')
     refAllFilterButton.current.classList.remove('active-filter-button')
     refAbove100FilterButton.current.classList.remove('active-filter-button')
   }
   const handleAboveOneHundredPriceFilter = () => {
-    if (filter !== 'Above One Hundred Price') {
-      setFilter('Above One Hundred Price')
+    if (filter !== 'ABOVE_100') {
+      setFilter('ABOVE_100')
     }
     refAbove100FilterButton.current.classList.add('active-filter-button')
     refAllFilterButton.current.classList.remove('active-filter-button')
