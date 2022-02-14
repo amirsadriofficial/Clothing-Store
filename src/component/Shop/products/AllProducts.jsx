@@ -32,14 +32,17 @@ const AllProducts = (filter) => {
   // const handleFilter = () => {
   if (filter === 'All Price') {
     setFilteredProducts(Products)
+    console.log('all:', filter)
   }
   const UpTo100 = Products.filter((product) => product.price < 100)
   if (filter === 'Up To One Hundred Price') {
     setFilteredProducts(UpTo100)
+    console.log('up to:', filter)
   }
   const Above100 = Products.filter((product) => product.price > 100)
   if (filter === 'Above One Hundred Price') {
     setFilteredProducts(Above100)
+    console.log('above:', filter)
   }
   // }
 
