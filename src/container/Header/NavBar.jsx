@@ -114,6 +114,7 @@ const NavBar = () => {
   // const favorites = useSelector((state) => state.favoritesReducer)
   const carts = JSON.parse(localStorage.getItem('Carts'))
   const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  const [searchTerm, setSearchTerm] = useState('')
   const [anchorElNav, setAnchorElNav] = useState(null)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -232,6 +233,7 @@ const NavBar = () => {
                     inputProps={{ 'aria-label': 'search' }}
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...bindTrigger(popupState)}
+                    onChange={(event) => setSearchTerm(event.target.value)}
                   />
                   <Popover
                     // eslint-disable-next-line react/jsx-props-no-spreading
@@ -253,7 +255,19 @@ const NavBar = () => {
                     >
                       Recent Searches:
                     </Typography>
-                    {Products.map((product) => (
+                    {Products.filter((product) => {
+                      if (searchTerm === '') {
+                        return product
+                      }
+                      if (
+                        product.name
+                          .toLowerCase()
+                          .includes(searchTerm.toLowerCase())
+                      ) {
+                        return product
+                      }
+                      return product
+                    }).map((product) => (
                       <>
                         <Grid container direction="row" alignItems="center">
                           <img
