@@ -256,10 +256,8 @@ const NavBar = () => {
                       Recent Searches:
                     </Typography>
                     {Products.filter((product) => {
-                      if (searchTerm === '') {
-                        return product
-                      }
                       if (
+                        searchTerm === '' &&
                         product.name
                           .toLowerCase()
                           .includes(searchTerm.toLowerCase())
