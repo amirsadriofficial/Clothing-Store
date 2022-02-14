@@ -58,14 +58,14 @@ const useStyles = makeStyles((theme) => ({
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
+    // transition: theme.transitions.create('width'),
+    // [theme.breakpoints.up('sm')]: {
+    //   width: '12ch',
+    //   '&:focus': {
+    //     width: '20ch',
+    //   },
+    // },
   },
   menuStyle: {
     marginLeft: '10px',
@@ -82,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '15px',
     paddingTop: '15px',
     paddingLeft: '15px',
+  },
+  iconButtonStyle: {
+    padding: '0',
   },
 }))
 
@@ -270,16 +273,33 @@ const NavBar = () => {
               )}
             </PopupState>
           </Box>
-          <Link to="/cart">
-            <IconButton aria-label="delete">
-              <Badge
-                badgeContent={carts === null ? 0 : carts.length}
-                color="primary"
+          <Hidden xsDown>
+            <Link to="/cart">
+              <IconButton aria-label="delete">
+                <Badge
+                  badgeContent={carts === null ? 0 : carts.length}
+                  color="primary"
+                >
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
+          </Hidden>
+          <Hidden smUp>
+            <Link to="/cart">
+              <IconButton
+                aria-label="delete"
+                className={classes.iconButtonStyle}
               >
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
-          </Link>
+                <Badge
+                  badgeContent={carts === null ? 0 : carts.length}
+                  color="primary"
+                >
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
+          </Hidden>
           <Link to="/favorites">
             <IconButton aria-label="delete">
               <Badge
