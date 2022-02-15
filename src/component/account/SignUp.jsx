@@ -83,9 +83,6 @@ const SignUp = () => {
     formState: { errors },
   } = useForm()
   const onSubmit = () => {
-    // if (event) event.preventDefault()
-    // console.log('Form Info: ', formValue)
-    // console.log('Password: ', passwordValue)
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
       history.push('/')
