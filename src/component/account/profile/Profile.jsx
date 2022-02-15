@@ -20,7 +20,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
 import Information from './Information'
 import { mainListItems, secondaryListItems } from './ListItems'
@@ -117,11 +117,15 @@ const Profile = () => {
   const classes = useStyles()
   const history = useHistory()
   const dispatch = useDispatch()
-  const account = useSelector((state) => state.accountReducer)
+  const account = JSON.parse(localStorage.getItem('Account'))
   const handleSubmit = () => {
     dispatch(SIGN_OUT_SUCCESS_ACTION())
     history.push('/')
-    Swal.fire('Good Bye!', account.response, 'success')
+    Swal.fire(
+      `Good Bye ${account[0].firstName}!`,
+      'You have successfully signed out!',
+      'success'
+    )
   }
   const [open, setOpen] = useState(true)
   const handleDrawerOpen = () => {
