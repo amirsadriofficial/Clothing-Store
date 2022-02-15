@@ -17,7 +17,6 @@ const useStyles = makeStyles(() => ({
 const Information = () => {
   const classes = useStyles()
   const account = JSON.parse(localStorage.getItem('Account'))
-
   const [personalInfo, setPersonalInfo] = useState({
     firstName: 'Amir',
     lastName: 'Sadri',
