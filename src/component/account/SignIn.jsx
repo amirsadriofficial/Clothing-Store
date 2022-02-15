@@ -20,6 +20,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
+import Swal from 'sweetalert2'
 import { SIGN_IN_SUCCESS_ACTION } from '../../redux/account/Action'
 
 const useStyles = makeStyles((theme) => ({
@@ -86,6 +87,7 @@ const SignIn = () => {
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
       history.push('/')
+      Swal.fire('Welcome!', 'You clicked the button!', 'success')
     }
   }
 
