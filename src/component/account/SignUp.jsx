@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -53,6 +53,7 @@ const SignUp = () => {
   const classes = useStyles()
   const history = useHistory()
   const dispatch = useDispatch()
+  const account = useSelector((state) => state.accountReducer)
   const [formValue, setFormValue] = useState({
     firstName: '',
     lastName: '',
@@ -89,7 +90,7 @@ const SignUp = () => {
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
       history.push('/')
-      Swal.fire('Welcome!', 'You have successfully signed up!', 'success')
+      Swal.fire('Welcome!', account.response, 'success')
     }
   }
 
