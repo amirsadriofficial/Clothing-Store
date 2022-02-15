@@ -89,7 +89,11 @@ const SignUp = () => {
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
       history.push('/')
-      Swal.fire('Welcome!', 'You have successfully signed up!', 'success')
+      Swal.fire(
+        `Welcome ${formValue.firstName}!`,
+        'You have successfully signed up!',
+        'success'
+      )
     }
   }
 
