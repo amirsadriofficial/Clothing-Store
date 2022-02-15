@@ -14,6 +14,8 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
+// import Snackbar from '@material-ui/core/Snackbar'
+// import MuiAlert from '@material-ui/lab/Alert'
 import Product from '../../utils/all-products'
 import {
   ADD_TO_CART_ACTION,
