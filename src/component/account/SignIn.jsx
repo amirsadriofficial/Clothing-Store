@@ -54,6 +54,7 @@ const SignIn = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const account = useSelector((state) => state.accountReducer)
+  const accountInfo = JSON.parse(localStorage.getItem('Account'))
   const [formValue, setFormValue] = useState({
     email: '',
   })
@@ -88,7 +89,11 @@ const SignIn = () => {
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
       history.push('/')
-      Swal.fire('Welcome!', account.response, 'success')
+      Swal.fire(
+        `Welcome ${accountInfo[0].firstName}!`,
+        account.response,
+        'success'
+      )
     }
   }
 
