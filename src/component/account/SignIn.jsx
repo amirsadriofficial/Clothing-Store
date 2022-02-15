@@ -87,7 +87,7 @@ const SignIn = () => {
     if (formValue !== '' && passwordValue !== '') {
       dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
       history.push('/')
-      Swal.fire('Welcome!', 'You clicked the button!', 'success')
+      Swal.fire('Welcome!', 'You have successfully signed in!', 'success')
     }
   }
 
