@@ -18,6 +18,7 @@ const accountReducer = (state = [], action) => {
           firstName: action.fName,
           lastName: action.lName,
           email: action.email,
+          deposit: action.deposit,
           logged: action.logged,
         },
       ]
@@ -27,6 +28,7 @@ const accountReducer = (state = [], action) => {
         firstName: signinStorage.firstName,
         lastName: signinStorage.lastName,
         email: signinStorage.email,
+        deposit: signinStorage.deposit,
         logged: signinStorage.logged,
         loading: action.loading,
         response: action.response,
@@ -51,6 +53,7 @@ const accountReducer = (state = [], action) => {
           firstName: action.fName,
           lastName: action.lName,
           email: action.email,
+          deposit: action.deposit,
           logged: action.logged,
         },
       ]
@@ -60,6 +63,7 @@ const accountReducer = (state = [], action) => {
         firstName: signupStorage.firstName,
         lastName: signupStorage.lastName,
         email: signupStorage.email,
+        deposit: signupStorage.deposit,
         logged: signupStorage.logged,
         loading: action.loading,
         response: action.response,

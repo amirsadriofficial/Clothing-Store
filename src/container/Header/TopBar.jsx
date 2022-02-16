@@ -112,9 +112,16 @@ const TopBar = () => {
             )}
           </Grid>
           <Grid className={classes.border}>
-            <Button className={classes.TextColor} size="small">
+            {account && account[0].logged ? (
+              <Button className={classes.account}>{account[0].deposit}</Button>
+            ) : (
+              <Button className={classes.TextColor} size="small">
+                USD
+              </Button>
+            )}
+            {/* <Button className={classes.TextColor} size="small">
               USD
-            </Button>
+            </Button> */}
           </Grid>
           <Grid className={clsx(classes.border, classes.aloneBorder)}>
             <Link to="/help">

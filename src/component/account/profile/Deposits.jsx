@@ -16,12 +16,13 @@ const useStyles = makeStyles({
 
 const Deposits = () => {
   const classes = useStyles()
+  const account = JSON.parse(localStorage.getItem('Account'))
 
   return (
     <>
       <Title>Recent Deposits</Title>
       <Typography component="p" variant="h4">
-        $317.00
+        ${account[0].deposit}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
         on 15 February, 2022
