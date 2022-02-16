@@ -14,7 +14,6 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import Visibility from '@material-ui/icons/Visibility'
@@ -22,32 +21,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Swal from 'sweetalert2'
 import { SIGN_UP_SUCCESS_ACTION } from '../../../redux/account/Action'
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: 'red',
-  },
-  form: {
-    width: '100%',
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-  linkText: {
-    color: 'blue',
-  },
-  errorText: {
-    color: 'red',
-  },
-}))
+import useStyles from './Styles'
 
 const SignUp = () => {
   const classes = useStyles()

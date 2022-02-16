@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
@@ -20,60 +19,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
 import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
-
-const useStyles = makeStyles(() => ({
-  container: {
-    marginTop: '50px',
-    marginBottom: '50px',
-  },
-  root: {
-    width: '100%',
-    height: '100%',
-  },
-  media: {
-    width: '140px',
-    height: '140px',
-  },
-  priceText: {
-    paddingTop: '10px',
-    color: '#000',
-    fontSize: '16px',
-  },
-  cardArea: {
-    display: ' flex',
-    flexDirection: 'row',
-    justifyContent: 'start',
-    alignItems: 'center',
-  },
-  cardAction: {
-    padding: '10px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  cartTotalBox: {
-    marginTop: '15px',
-    border: '1px solid #e6e6e6',
-    maxHeight: '300px',
-  },
-  cartTotalInfo: {
-    borderTop: '1px solid #e6e6e6',
-    borderBottom: '1px solid #e6e6e6',
-  },
-  pageTitleText: {
-    margin: '0',
-    fontSize: '35px',
-  },
-  pageTitle: {
-    borderBottom: '1px solid #515151;',
-  },
-  EmptySection: {
-    height: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}))
+import useStyles from './Styles'
 
 const Cart = () => {
   const classes = useStyles()

@@ -3,83 +3,11 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
-import Background from '../../assets/images/background/contact-bg.jpg'
-
-const useStyles = makeStyles({
-  background: {
-    width: '100%',
-    height: '240px',
-    backgroundImage: `url(${Background})`,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: '50px',
-    color: '#fff',
-  },
-  container: {
-    marginBottom: '75px',
-    marginTop: '75px',
-  },
-  sectionStyle: {
-    border: '1px solid #e6e6e6',
-  },
-  firstSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  firstSectionStyle: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  secondSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'start',
-  },
-  secondSubSection: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'start',
-    paddingLeft: '20px',
-    paddingRight: '20px',
-    marginTop: '30px',
-  },
-  flexSubSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'start',
-  },
-  titleSection: {
-    fontSize: '25px',
-    marginBottom: '25px',
-  },
-  objectSubSection: {
-    marginBottom: '20px',
-  },
-  titleSubSection: {
-    marginTop: '0px',
-    fontSize: '18px',
-    marginBottom: '0px',
-    paddingLeft: '10px',
-  },
-  textSubSection: {
-    color: '#717fe0',
-    cursor: 'pointer',
-  },
-})
+import useStyles from './Styles'
 
 const Contact = () => {
   const classes = useStyles()
