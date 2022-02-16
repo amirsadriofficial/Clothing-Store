@@ -84,6 +84,10 @@ const SingleProduct = () => {
       dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteBorderIcon />)
     }
+    toastMixin.fire({
+      animation: true,
+      title: 'Product added to favorites',
+    })
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
