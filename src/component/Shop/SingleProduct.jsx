@@ -349,13 +349,12 @@ const SingleProduct = () => {
               Top-Center
             </Button>
             <Snackbar
-              anchorOrigin={{ vertical, horizontal }}
               open={open}
+              autoHideDuration={6000}
               onClose={handleClose}
-              message="I love snacks"
+              anchorOrigin={{ vertical, horizontal }}
               key={vertical + horizontal}
-            />
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            >
               <Alert onClose={handleClose} severity="success">
                 This is a success message!
               </Alert>
