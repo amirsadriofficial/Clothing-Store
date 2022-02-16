@@ -75,7 +75,15 @@ const TopBar = () => {
               )}
             </Grid>
             <Grid className={classes.border}>
-              <Button className={classes.TextColor}>USD</Button>
+              {account && account[0].logged ? (
+                <Button className={classes.account}>
+                  {account[0].deposit}
+                </Button>
+              ) : (
+                <Button className={classes.TextColor} size="small">
+                  USD
+                </Button>
+              )}
             </Grid>
             <Grid className={clsx(classes.border, classes.aloneBorder)}>
               <Link to="/help">
@@ -119,9 +127,6 @@ const TopBar = () => {
                 USD
               </Button>
             )}
-            {/* <Button className={classes.TextColor} size="small">
-              USD
-            </Button> */}
           </Grid>
           <Grid className={clsx(classes.border, classes.aloneBorder)}>
             <Link to="/help">
