@@ -21,7 +21,7 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Swal from 'sweetalert2'
-import { SIGN_IN_SUCCESS_ACTION } from '../../redux/account/Action'
+import { SIGN_IN_SUCCESS_ACTION } from '../../../redux/account/Action'
 
 const useStyles = makeStyles((theme) => ({
   paper: {

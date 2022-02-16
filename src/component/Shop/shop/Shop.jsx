@@ -14,12 +14,12 @@ import Popper from '@material-ui/core/Popper'
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state'
 import Fade from '@material-ui/core/Fade'
 import Paper from '@material-ui/core/Paper'
-import ManProducts from './products/Man'
-import BagProducts from './products/Bag'
-import WomanProducts from './products/Woman'
-import ShoesProducts from './products/Shoes'
-import WatchesProducts from './products/Watches'
-import AllProducts from './products/AllProducts'
+import ManProducts from '../products/Man'
+import BagProducts from '../products/Bag'
+import WomanProducts from '../products/Woman'
+import ShoesProducts from '../products/Shoes'
+import WatchesProducts from '../products/Watches'
+import AllProducts from '../products/AllProducts'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
