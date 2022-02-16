@@ -339,6 +339,18 @@ const SingleProduct = () => {
                 <ShareIcon />
               </IconButton>
             </Grid>
+            <Button
+              onClick={handleClick({ vertical: 'top', horizontal: 'center' })}
+            >
+              Top-Center
+            </Button>
+            <Snackbar
+              anchorOrigin={{ vertical, horizontal }}
+              open={open}
+              onClose={handleClose}
+              message="I love snacks"
+              key={vertical + horizontal}
+            />
           </Grid>
         </Grid>
       </Grid>
