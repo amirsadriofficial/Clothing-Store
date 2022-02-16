@@ -112,6 +112,25 @@ const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
   const dispatch = useDispatch()
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  })
+
+  const { vertical, horizontal, open } = state
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState })
+  }
+
+  const handleClose = () => {
+    setState({ ...state, open: false })
+  }
+  function Alert(props) {
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <MuiAlert elevation={6} variant="filled" {...props} />
+  }
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
@@ -148,32 +167,17 @@ const SingleProduct = () => {
       setFavoritesContent(<FavoriteBorderIcon />)
     }
   }
+  const combineHandleFavorites = (Content) => {
+    handleFavorites(Content)
+    handleClick({ vertical: 'top', horizontal: 'center' })
+  }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
       setNum(num + 1)
     }
-    if (type === 'low' && num > 0) {
+    if (type === 'low' && num > 1) {
       setNum(num - 1)
     }
-  }
-  const [state, setState] = React.useState({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center',
-  })
-
-  const { vertical, horizontal, open } = state
-
-  const handleClick = (newState) => () => {
-    setState({ open: true, ...newState })
-  }
-
-  const handleClose = () => {
-    setState({ ...state, open: false })
-  }
-  function Alert(props) {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
 
   return (
@@ -335,10 +339,7 @@ const SingleProduct = () => {
             <Grid item xs={12} className={classes.flexRow}>
               <IconButton
                 aria-label="delete"
-                onClick={
-                  (() => handleFavorites(favoritesContent),
-                  handleClick({ vertical: 'top', horizontal: 'center' }))
-                }
+                onClick={() => combineHandleFavorites(favoritesContent)}
               >
                 {favoritesContent}
               </IconButton>

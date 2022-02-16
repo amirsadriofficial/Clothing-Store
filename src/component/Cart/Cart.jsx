@@ -90,7 +90,7 @@ const Cart = () => {
     if (type === 'more' && num < 10) {
       setNum(num + 1)
     }
-    if (type === 'low' && num > 0) {
+    if (type === 'low' && num > 1) {
       setNum(num - 1)
     }
   }
