@@ -14,7 +14,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
-// import Snackbar from '@material-ui/core/Snackbar'
+import Snackbar from '@material-ui/core/Snackbar'
 // import MuiAlert from '@material-ui/lab/Alert'
 import Product from '../../utils/all-products'
 import {
@@ -155,6 +155,21 @@ const SingleProduct = () => {
     if (type === 'low' && num > 0) {
       setNum(num - 1)
     }
+  }
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  })
+
+  const { vertical, horizontal, open } = state
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState })
+  }
+
+  const handleClose = () => {
+    setState({ ...state, open: false })
   }
 
   return (
