@@ -335,12 +335,20 @@ const SingleProduct = () => {
             <Grid item xs={12} className={classes.flexRow}>
               <IconButton
                 aria-label="delete"
-                onClick={() => handleFavorites(favoritesContent)}
+                onClick={
+                  (() => handleFavorites(favoritesContent),
+                  handleClick({ vertical: 'top', horizontal: 'center' }))
+                }
               >
                 {favoritesContent}
               </IconButton>
               <IconButton aria-label="delete">
-                <ShareIcon />
+                <ShareIcon
+                  onClick={handleClick({
+                    vertical: 'top',
+                    horizontal: 'center',
+                  })}
+                />
               </IconButton>
             </Grid>
             <Button
