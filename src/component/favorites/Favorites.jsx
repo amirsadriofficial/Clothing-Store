@@ -90,7 +90,7 @@ const Favorites = () => {
                         color="primary"
                         fullWidth
                         startIcon={<ShoppingCartIcon />}
-                        onClick={handleAddToCart}
+                        onClick={() => handleAddToCart(product)}
                       >
                         Add To Cart
                       </Button>
@@ -101,7 +101,7 @@ const Favorites = () => {
                         color="secondary"
                         fullWidth
                         startIcon={<DeleteIcon />}
-                        onClick={handleRemoveFromFavorites}
+                        onClick={() => handleRemoveFromFavorites(product)}
                       >
                         Remove
                       </Button>
