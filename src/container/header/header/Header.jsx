@@ -1,6 +1,6 @@
 import React from 'react'
-import TopBar from './TopBar'
-import NavBar from './NavBar'
+import TopBar from '../top-bar/TopBar'
+import NavBar from '../NavBar'
 
 const Header = () => {
   return (
