@@ -13,8 +13,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
-import Snackbar from '@material-ui/core/Snackbar'
-import MuiAlert from '@material-ui/lab/Alert'
+import Swal from 'sweetalert2'
 import Product from '../../../utils/all-products'
 import { sizes, colors } from './Options'
 import useStyles from './Styles'
@@ -27,29 +26,29 @@ import {
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../../redux/favorites/Action'
 
+const toastMixin = Swal.mixin({
+  toast: true,
+  icon: 'success',
+  title: 'General Title',
+  animation: false,
+  position: 'top',
+  width: '550px',
+  color: '#000',
+  background: '#5DD140',
+  iconColor: '#006600',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  },
+})
+
 const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
   const dispatch = useDispatch()
-  const [state, setState] = React.useState({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center',
-  })
-
-  const { vertical, horizontal, open } = state
-
-  const handleClick = (newState) => () => {
-    setState({ open: true, ...newState })
-  }
-
-  const handleClose = () => {
-    setState({ ...state, open: false })
-  }
-  function Alert(props) {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <MuiAlert elevation={6} variant="filled" {...props} />
-  }
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
@@ -85,10 +84,6 @@ const SingleProduct = () => {
       dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteBorderIcon />)
     }
-  }
-  const combineHandleFavorites = (Content) => {
-    handleFavorites(Content)
-    handleClick({ vertical: 'top', horizontal: 'center' })
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
@@ -258,35 +253,21 @@ const SingleProduct = () => {
             <Grid item xs={12} className={classes.flexRow}>
               <IconButton
                 aria-label="delete"
-                onClick={() => combineHandleFavorites(favoritesContent)}
+                onClick={() => handleFavorites(favoritesContent)}
               >
                 {favoritesContent}
               </IconButton>
               <IconButton aria-label="delete">
                 <ShareIcon
-                  onClick={handleClick({
-                    vertical: 'top',
-                    horizontal: 'center',
-                  })}
+                  onClick={() => {
+                    toastMixin.fire({
+                      animation: true,
+                      title: 'Product Shared',
+                    })
+                  }}
                 />
               </IconButton>
             </Grid>
-            <Button
-              onClick={handleClick({ vertical: 'top', horizontal: 'center' })}
-            >
-              Top-Center
-            </Button>
-            <Snackbar
-              open={open}
-              autoHideDuration={6000}
-              onClose={handleClose}
-              anchorOrigin={{ vertical, horizontal }}
-              key={vertical + horizontal}
-            >
-              <Alert onClose={handleClose} severity="success">
-                This is a success message!
-              </Alert>
-            </Snackbar>
           </Grid>
         </Grid>
       </Grid>
