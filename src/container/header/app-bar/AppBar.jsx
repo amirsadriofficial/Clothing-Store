@@ -14,7 +14,6 @@ import MenuItem from '@material-ui/core/MenuItem'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
-import { alpha, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
 import Typography from '@material-ui/core/Typography'
@@ -24,88 +23,8 @@ import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../../assets/images/icons/logo.png'
 import Products from '../../../utils/watches-products'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    width: '100%',
-    // transition: theme.transitions.create('width'),
-    // [theme.breakpoints.up('sm')]: {
-    //   width: '12ch',
-    //   '&:focus': {
-    //     width: '20ch',
-    //   },
-    // },
-  },
-  menuStyle: {
-    marginLeft: '10px',
-  },
-  productImage: {
-    width: '50px',
-    padding: '10px',
-  },
-  productName: {
-    fontSize: '15px',
-    padding: '10px',
-  },
-  searchBoxTitle: {
-    fontSize: '15px',
-    paddingTop: '15px',
-    paddingLeft: '15px',
-  },
-  iconButtonStyle: {
-    padding: '0',
-  },
-}))
-
-const pages = [
-  {
-    name: 'Home',
-    path: '/',
-  },
-  {
-    name: 'Shop',
-    path: '/shop',
-  },
-  {
-    name: 'About',
-    path: '/about',
-  },
-  {
-    name: 'Contact',
-    path: '/contact',
-  },
-]
+import useStyles from './Styles'
+import pages from './Pages'
 
 const NavBar = () => {
   const classes = useStyles()
