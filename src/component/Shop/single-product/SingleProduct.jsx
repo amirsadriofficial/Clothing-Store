@@ -13,10 +13,11 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
-import { makeStyles } from '@material-ui/core/styles'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import Product from '../../../utils/all-products'
+import { sizes, colors } from './Options'
+import useStyles from './Styles'
 import {
   ADD_TO_CART_ACTION,
   REMOVE_FROM_CART_ACTION,
@@ -25,88 +26,6 @@ import {
   ADD_TO_FAVORITES_ACTION,
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../../redux/favorites/Action'
-
-const sizes = [
-  {
-    value: 'None',
-    label: 'Please select your size',
-  },
-  {
-    value: 'Size Small',
-    label: 'Size S',
-  },
-  {
-    value: 'Size Medium',
-    label: 'Size M',
-  },
-  {
-    value: 'Size Large',
-    label: 'Size L',
-  },
-  {
-    value: 'Size XLarge',
-    label: 'Size XL',
-  },
-]
-
-const colors = [
-  {
-    value: 'None',
-    label: 'Please select your color',
-  },
-  {
-    value: 'Red',
-    label: 'Red',
-  },
-  {
-    value: 'Blue',
-    label: 'Blue',
-  },
-  {
-    value: 'White',
-    label: 'White',
-  },
-  {
-    value: 'Gray',
-    label: 'Gray',
-  },
-]
-
-const useStyles = makeStyles(() => ({
-  container: {
-    marginTop: '50px',
-    marginBottom: '50px',
-  },
-  flexColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  flexRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  productInfo: {
-    paddingLeft: '10px',
-    paddingBottom: '25px',
-  },
-  productName: {
-    fontSize: '35px',
-    marginTop: '0px',
-    marginBottom: '10px',
-  },
-  labelStyle: {
-    paddingLeft: '10px',
-  },
-  button: {
-    backgroundColor: '#717fe0',
-    borderRadius: '25px',
-  },
-  imgGrid: { marginRight: '15px' },
-}))
 
 const SingleProduct = () => {
   const classes = useStyles()

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -8,22 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Products from '../../../utils/bags-products'
-
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    height: '100%',
-  },
-  media: {
-    width: '100%',
-    height: '335px',
-  },
-  priceText: {
-    paddingTop: '10px',
-    color: '#000',
-    fontSize: '16px',
-  },
-})
+import useStyles from './Styles'
 
 const Bag = () => {
   const classes = useStyles()

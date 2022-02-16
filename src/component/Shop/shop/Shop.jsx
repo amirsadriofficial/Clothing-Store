@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import SwipeableViews from 'react-swipeable-views'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
+import { useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
@@ -20,6 +20,7 @@ import WomanProducts from '../products/Woman'
 import ShoesProducts from '../products/Shoes'
 import WatchesProducts from '../products/Watches'
 import AllProducts from '../products/AllProducts'
+import useStyles from './Styles'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
@@ -55,24 +56,6 @@ const a11yProps = (index) => {
     'aria-controls': `full-width-tabpanel-${index}`,
   }
 }
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  filterButton: {
-    paddingRight: '30px',
-  },
-  paperStyle: {
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
-  typography: {
-    padding: theme.spacing(2),
-  },
-  buttonStyle: {
-    margin: '5px',
-  },
-}))
 
 const ShopHeader = () => {
   const classes = useStyles()
