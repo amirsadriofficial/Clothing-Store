@@ -13,7 +13,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
-import Swal from 'sweetalert2'
+import Toast from '../../toast/Toast'
 import Product from '../../../utils/all-products'
 import { sizes, colors } from './Options'
 import useStyles from './Styles'
@@ -25,25 +25,6 @@ import {
   ADD_TO_FAVORITES_ACTION,
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../../redux/favorites/Action'
-
-const toastMixin = Swal.mixin({
-  toast: true,
-  icon: 'success',
-  title: 'General Title',
-  animation: false,
-  position: 'top',
-  width: '550px',
-  color: '#000',
-  background: '#5DD140',
-  iconColor: '#006600',
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-  },
-})
 
 const SingleProduct = () => {
   const classes = useStyles()
@@ -69,25 +50,37 @@ const SingleProduct = () => {
     if (content === 'Add To Cart') {
       dispatch(ADD_TO_CART_ACTION(product))
       setCartContent('Remove From Cart')
+      Toast.fire({
+        animation: true,
+        title: 'Product Added To Cart',
+      })
     }
     if (content === 'Remove From Cart') {
       dispatch(REMOVE_FROM_CART_ACTION(product))
       setCartContent('Add To Cart')
+      Toast.fire({
+        animation: true,
+        title: 'Product Removed From Cart',
+      })
     }
   }
   const handleFavorites = (content) => {
     if (content === favoritesContent) {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteIcon />)
+      Toast.fire({
+        animation: true,
+        title: 'Product Added To Favorites',
+      })
     }
     if (content === <FavoriteIcon />) {
       dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
       setFavoritesContent(<FavoriteBorderIcon />)
+      Toast.fire({
+        animation: true,
+        title: 'Product Removed From Favorites',
+      })
     }
-    toastMixin.fire({
-      animation: true,
-      title: 'Product added to favorites',
-    })
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
@@ -262,14 +255,7 @@ const SingleProduct = () => {
                 {favoritesContent}
               </IconButton>
               <IconButton aria-label="delete">
-                <ShareIcon
-                  onClick={() => {
-                    toastMixin.fire({
-                      animation: true,
-                      title: 'Product Shared',
-                    })
-                  }}
-                />
+                <ShareIcon />
               </IconButton>
             </Grid>
           </Grid>
