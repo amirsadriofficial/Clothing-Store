@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/core/styles'
 import Snackbar from '@material-ui/core/Snackbar'
-// import MuiAlert from '@material-ui/lab/Alert'
+import MuiAlert from '@material-ui/lab/Alert'
 import Product from '../../utils/all-products'
 import {
   ADD_TO_CART_ACTION,
@@ -170,6 +170,10 @@ const SingleProduct = () => {
 
   const handleClose = () => {
     setState({ ...state, open: false })
+  }
+  function Alert(props) {
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
 
   return (
@@ -351,6 +355,11 @@ const SingleProduct = () => {
               message="I love snacks"
               key={vertical + horizontal}
             />
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="success">
+                This is a success message!
+              </Alert>
+            </Snackbar>
           </Grid>
         </Grid>
       </Grid>
