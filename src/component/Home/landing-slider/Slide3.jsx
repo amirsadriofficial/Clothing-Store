@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import SlideThree from '../../../images/slide/slide-03.jpg'
+import SlideThree from '../../../assets/images/slide/slide-03.jpg'
 
 const useStyles = makeStyles(() => ({
   responsive: {

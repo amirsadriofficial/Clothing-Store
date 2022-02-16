@@ -1,9 +1,9 @@
-import watchProduct1 from '../images/products/watches/watch-product-01.jpg'
-import watchProduct2 from '../images/products/watches/watch-product-02.jpg'
-import watchProduct3 from '../images/products/watches/watch-product-03.webp'
-import watchProduct4 from '../images/products/watches/watch-product-04.webp'
-import watchProduct5 from '../images/products/watches/watch-product-05.webp'
-import watchProduct6 from '../images/products/watches/watch-product-06.webp'
+import watchProduct1 from '../assets/images/products/watches/watch-product-01.jpg'
+import watchProduct2 from '../assets/images/products/watches/watch-product-02.jpg'
+import watchProduct3 from '../assets/images/products/watches/watch-product-03.webp'
+import watchProduct4 from '../assets/images/products/watches/watch-product-04.webp'
+import watchProduct5 from '../assets/images/products/watches/watch-product-05.webp'
+import watchProduct6 from '../assets/images/products/watches/watch-product-06.webp'
 
 const WATCHES_PRODUCTS = [
   {

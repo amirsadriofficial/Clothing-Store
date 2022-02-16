@@ -3,9 +3,9 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles'
-import Background from '../../images/background/about-bg.jpg'
-import Gallery1 from '../../images/gallery/about-01.jpg'
-import Gallery2 from '../../images/gallery/about-02.jpg'
+import Background from '../../assets/images/background/about-bg.jpg'
+import Gallery1 from '../../assets/images/gallery/about-01.jpg'
+import Gallery2 from '../../assets/images/gallery/about-02.jpg'
 
 const useStyles = makeStyles({
   background: {

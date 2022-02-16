@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
-import Background from '../../images/background/contact-bg.jpg'
+import Background from '../../assets/images/background/contact-bg.jpg'
 
 const useStyles = makeStyles({
   background: {

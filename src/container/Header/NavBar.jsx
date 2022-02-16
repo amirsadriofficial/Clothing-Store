@@ -22,7 +22,7 @@ import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
 import Popover from '@material-ui/core/Popover'
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
-import Logo from '../../images/icons/logo.png'
+import Logo from '../../assets/images/icons/logo.png'
 import Products from '../../utils/watches-products'
 
 const useStyles = makeStyles((theme) => ({

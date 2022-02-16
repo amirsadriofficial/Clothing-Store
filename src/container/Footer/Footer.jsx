@@ -13,11 +13,11 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import iconPayOne from '../../images/icons/icon-pay-01.png'
-import iconPayTwo from '../../images/icons/icon-pay-02.png'
-import iconPayThree from '../../images/icons/icon-pay-03.png'
-import iconPayFour from '../../images/icons/icon-pay-04.png'
-import iconPayFive from '../../images/icons/icon-pay-05.png'
+import iconPayOne from '../../assets/images/icons/icon-pay-01.png'
+import iconPayTwo from '../../assets/images/icons/icon-pay-02.png'
+import iconPayThree from '../../assets/images/icons/icon-pay-03.png'
+import iconPayFour from '../../assets/images/icons/icon-pay-04.png'
+import iconPayFive from '../../assets/images/icons/icon-pay-05.png'
 
 const useStyles = makeStyles(() => ({
   box: {

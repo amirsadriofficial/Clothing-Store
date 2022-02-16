@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import banner1 from '../../../images/banner/banner1-1.jpg'
-import banner2 from '../../../images/banner/banner1-2.jpg'
-import banner3 from '../../../images/banner/banner1-3.jpg'
+import banner1 from '../../../assets/images/banner/banner1-1.jpg'
+import banner2 from '../../../assets/images/banner/banner1-2.jpg'
+import banner3 from '../../../assets/images/banner/banner1-3.jpg'
 
 const useStyles = makeStyles(() => ({
   containerSpacing: {

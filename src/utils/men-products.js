@@ -1,12 +1,12 @@
-import manProduct1 from '../images/products/men/man-product-01.jpg'
-import manProduct2 from '../images/products/men/man-product-02.jpg'
-import manProduct3 from '../images/products/men/man-product-03.jpg'
-import manProduct4 from '../images/products/men/man-product-04.jpg'
-import manProduct5 from '../images/products/men/man-product-05.png'
-import manProduct6 from '../images/products/men/man-product-06.webp'
-import manProduct7 from '../images/products/men/man-product-07.jpg'
-import manProduct8 from '../images/products/men/man-product-08.jpg'
-import manProduct9 from '../images/products/men/man-product-09.jpg'
+import manProduct1 from '../assets/images/products/men/man-product-01.jpg'
+import manProduct2 from '../assets/images/products/men/man-product-02.jpg'
+import manProduct3 from '../assets/images/products/men/man-product-03.jpg'
+import manProduct4 from '../assets/images/products/men/man-product-04.jpg'
+import manProduct5 from '../assets/images/products/men/man-product-05.png'
+import manProduct6 from '../assets/images/products/men/man-product-06.webp'
+import manProduct7 from '../assets/images/products/men/man-product-07.jpg'
+import manProduct8 from '../assets/images/products/men/man-product-08.jpg'
+import manProduct9 from '../assets/images/products/men/man-product-09.jpg'
 
 const MEN_PRODUCTS = [
   {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import banner from '../../../images/banner/banner4.jpg'
+import banner from '../../../assets/images/banner/banner4.jpg'
 
 const Banner4 = () => {
   return (
