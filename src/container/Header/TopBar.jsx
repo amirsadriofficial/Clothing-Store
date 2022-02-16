@@ -77,7 +77,7 @@ const TopBar = () => {
             <Grid className={classes.border}>
               {account && account[0].logged ? (
                 <Button className={classes.account}>
-                  {account[0].deposit}
+                  ${account[0].deposit}.00
                 </Button>
               ) : (
                 <Button className={classes.TextColor} size="small">
@@ -121,7 +121,9 @@ const TopBar = () => {
           </Grid>
           <Grid className={classes.border}>
             {account && account[0].logged ? (
-              <Button className={classes.account}>{account[0].deposit}</Button>
+              <Button className={classes.account}>
+                ${account[0].deposit}.00
+              </Button>
             ) : (
               <Button className={classes.TextColor} size="small">
                 USD
