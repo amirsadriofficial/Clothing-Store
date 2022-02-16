@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -13,19 +13,28 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import Toast from '../toast/Toast'
 import { REMOVE_FROM_FAVORITES_ACTION } from '../../redux/favorites/Action'
 import { ADD_TO_CART_ACTION } from '../../redux/cart/Action'
 import useStyles from './Styles'
 
 const Favorites = () => {
   const classes = useStyles()
-  const favorites = useSelector((state) => state.favoritesReducer)
+  const favorites = JSON.parse(localStorage.getItem('Favorites'))
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
     dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
+    Toast.fire({
+      animation: true,
+      title: 'Product Removed From Favorites List',
+    })
   }
   const handleAddToCart = (product) => {
     dispatch(ADD_TO_CART_ACTION(product))
+    Toast.fire({
+      animation: true,
+      title: 'Product Added To Cart',
+    })
   }
 
   return (
@@ -34,9 +43,9 @@ const Favorites = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Favorites</h2>
         </Grid>
-        {favorites.favorites.length > 0 ? (
+        {favorites.length > 0 ? (
           <>
-            {favorites.favorites.map((product) => (
+            {favorites.map((product) => (
               <Grid item xs={12} md={6}>
                 <Card className={classes.root}>
                   <CardActionArea className={classes.cardArea}>
@@ -94,7 +103,7 @@ const Favorites = () => {
                         startIcon={<DeleteIcon />}
                         onClick={handleRemoveFromFavorites}
                       >
-                        Delete
+                        Remove
                       </Button>
                     </Grid>
                     <Grid item xs={12} sm={4}>

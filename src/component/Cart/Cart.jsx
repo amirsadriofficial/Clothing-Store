@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -17,6 +17,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
+import Toast from '../toast/Toast'
 import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
 import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
 import useStyles from './Styles'
@@ -24,13 +25,21 @@ import useStyles from './Styles'
 const Cart = () => {
   const classes = useStyles()
   const [num, setNum] = useState(1)
-  const carts = useSelector((state) => state.cartReducer)
+  const carts = JSON.parse(localStorage.getItem('Carts'))
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
     dispatch(REMOVE_FROM_CART_ACTION(product))
+    Toast.fire({
+      animation: true,
+      title: 'Product Removed From Cart List',
+    })
   }
   const handleAddToFavorites = (product) => {
     dispatch(ADD_TO_FAVORITES_ACTION(product))
+    Toast.fire({
+      animation: true,
+      title: 'Product Added To Favorites',
+    })
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
@@ -41,7 +50,7 @@ const Cart = () => {
     }
   }
   let totalPrice = 0
-  carts.carts.map((product) => {
+  carts.map((product) => {
     totalPrice += product.price
     return totalPrice
   })
@@ -52,10 +61,10 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        {carts.carts.length > 0 ? (
+        {carts.length > 0 ? (
           <>
             <Grid item xs={12} md={7}>
-              {carts.carts.map((product) => (
+              {carts.map((product) => (
                 <Grid
                   item
                   xs={12}
@@ -135,7 +144,7 @@ const Cart = () => {
                           startIcon={<DeleteIcon />}
                           onClick={handleRemoveFromCart}
                         >
-                          Delete
+                          Remove
                         </Button>
                       </Grid>
                       <Grid item xs={12} sm={5} lg={4}>
