@@ -2,30 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
-import { makeStyles } from '@material-ui/core'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
-
-const useStyle = makeStyles({
-  container: {
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  numberStyle: {
-    fontSize: '200px',
-    margin: '0',
-    color: '#B71919',
-  },
-  textStyle: {
-    fontSize: '50px',
-    color: '#B71919',
-  },
-})
+import useStyles from './Styles'
 
 const NotFound = () => {
-  const classes = useStyle()
+  const classes = useStyles()
 
   return (
     <Container className={classes.container}>

@@ -2,38 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import banner1 from '../../../assets/images/banner/banner1-1.jpg'
 import banner2 from '../../../assets/images/banner/banner1-2.jpg'
 import banner3 from '../../../assets/images/banner/banner1-3.jpg'
-
-const useStyles = makeStyles(() => ({
-  containerSpacing: {
-    marginTop: '80px',
-    marginBottom: '80px',
-  },
-  flexGrid: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  singleGrid: {
-    position: 'relative',
-  },
-  singleGridStyle: {
-    border: '1px solid #e6e6e6',
-  },
-  img: {
-    width: '100%',
-    height: '100%',
-  },
-  descriptionPosition: {
-    position: 'absolute',
-    top: '20px',
-    left: '50px',
-    fontSize: '18px',
-  },
-}))
+import useStyles from './Styles'
 
 const Banner1 = () => {
   const classes = useStyles()
