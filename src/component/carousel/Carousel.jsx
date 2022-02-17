@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-import Card from '../cart/Cart'
+import Card from '../card/Card'
 import useStyles from './Styles'
 
 const responsive = {
