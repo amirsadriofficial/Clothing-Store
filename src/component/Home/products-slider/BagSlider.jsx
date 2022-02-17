@@ -3,13 +3,9 @@ import { Link } from 'react-router-dom'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Products from '../../../utils/bags-products'
+import Card from '../../card/Card'
 import useStyles from './Styles'
 
 const responsive = {
@@ -40,38 +36,7 @@ const BagSlider = () => {
       </Grid>
       <Carousel responsive={responsive} className={classes.carouselStyle}>
         {Products.map((product) => (
-          <Grid item xs={12} sm={6} md={4} lg={4}>
-            <Link to={`/product/${product.id}`}>
-              <Card className={classes.root}>
-                <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
-                    image={product.image}
-                    title={product.name}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      {product.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {product.description}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      className={classes.priceText}
-                    >
-                      ${product.price}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Link>
-          </Grid>
+          <Card data={product} />
         ))}
       </Carousel>
       <Grid item xs={12} className={classes.buttonStyle}>
