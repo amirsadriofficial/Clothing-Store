@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import Slider from '../landing-slider/Slider'
 import Banner1 from '../banner/Banner1'
 import ProductOverview from '../product-overview/ProductOverview'
@@ -13,7 +12,5 @@ const Home = () => {
     </>
   )
 }
-
-// Home.propTypes = { settings: PropTypes.node.isRequired }
 
 export default Home

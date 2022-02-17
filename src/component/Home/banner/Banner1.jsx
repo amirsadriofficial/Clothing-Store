@@ -7,45 +7,48 @@ import banner2 from '../../../assets/images/banner/banner1-2.jpg'
 import banner3 from '../../../assets/images/banner/banner1-3.jpg'
 import useStyles from './Styles'
 
+const BannerComponent = (data) => {
+  const classes = useStyles()
+  const { image } = data
+  const { title } = data
+  const { description } = data
+
+  return (
+    <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
+      <Grid className={classes.singleGridStyle}>
+        <Link href="/">
+          <img src={image} alt="bannerOne" className={classes.img} />
+          <div className={classes.descriptionPosition}>
+            <h4>{title}</h4>
+            <p>{description}</p>
+          </div>
+        </Link>
+      </Grid>
+    </Grid>
+  )
+}
+
 const Banner1 = () => {
   const classes = useStyles()
 
   return (
     <Container className={classes.containerSpacing}>
       <Grid container spacing={2} className={classes.flexGrid}>
-        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
-          <Grid className={classes.singleGridStyle}>
-            <Link href="/">
-              <img src={banner1} alt="bannerOne" className={classes.img} />
-              <div className={classes.descriptionPosition}>
-                <h4>Woman</h4>
-                <p>Spring 2022</p>
-              </div>
-            </Link>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
-          <Grid className={classes.singleGridStyle}>
-            <Link href="/">
-              <img src={banner2} alt="bannerTwo" className={classes.img} />
-              <div className={classes.descriptionPosition}>
-                <h4>Man</h4>
-                <p>Spring 2022</p>
-              </div>
-            </Link>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
-          <Grid className={classes.singleGridStyle}>
-            <Link href="/">
-              <img src={banner3} alt="bannerThree" className={classes.img} />
-              <div className={classes.descriptionPosition}>
-                <h4>Accessories</h4>
-                <p>New Trend</p>
-              </div>
-            </Link>
-          </Grid>
-        </Grid>
+        <BannerComponent
+          image={banner1}
+          title="Woman"
+          description="Spring 2022"
+        />
+        <BannerComponent
+          image={banner2}
+          title="Man"
+          description="Spring 2022"
+        />
+        <BannerComponent
+          image={banner3}
+          title="Accessories"
+          description="New Trend"
+        />
       </Grid>
     </Container>
   )
