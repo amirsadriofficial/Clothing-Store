@@ -14,7 +14,7 @@ const CardComponent = (product) => {
 
   return (
     <>
-      <Grid item xs={12} sm={6} md={4} lg={4}>
+      <Grid item xs={12} sm={6} md={4} lg={3}>
         <Link to={`/product/${Product.data.id}`}>
           <Card className={classes.root}>
             <CardActionArea>
