@@ -14,7 +14,6 @@ const CardComponent = (product) => {
 
   return (
     <>
-      {/* {Products.data.map((product) => ( */}
       <Grid item xs={12} sm={6} md={4} lg={4}>
         <Link to={`/product/${Product.data.id}`}>
           <Card className={classes.root}>
@@ -43,7 +42,6 @@ const CardComponent = (product) => {
           </Card>
         </Link>
       </Grid>
-      {/* ))} */}
     </>
   )
 }
