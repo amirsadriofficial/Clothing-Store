@@ -60,6 +60,12 @@ const useStyles = makeStyles({
   objectSubSection: {
     marginBottom: '20px',
   },
+  buttonSubSection: {
+    marginBottom: '20px',
+    '&:hover': {
+      background: '#000',
+    },
+  },
   titleSubSection: {
     marginTop: '0px',
     fontSize: '18px',

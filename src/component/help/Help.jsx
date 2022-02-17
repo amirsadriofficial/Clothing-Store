@@ -12,7 +12,7 @@ const AccordionComponent = (data) => {
   const { title } = data
 
   return (
-    <Accordion>
+    <Accordion className={classes.accordionStyle}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"

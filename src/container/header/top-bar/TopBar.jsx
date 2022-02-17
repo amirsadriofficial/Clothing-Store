@@ -17,7 +17,7 @@ const TopBar = () => {
     <Box className={classes.box}>
       <Hidden smDown>
         <Container className={classes.flex}>
-          <Grid className={classes.TextColor}>
+          <Grid className={classes.TextDifferentColor}>
             Free shipping for standard order over $100
           </Grid>
           <Grid className={classes.flexGrid}>
@@ -57,7 +57,7 @@ const TopBar = () => {
       </Hidden>
       <Hidden mdUp>
         <Grid
-          className={clsx(classes.TextColor, classes.sectionSpacing)}
+          className={clsx(classes.TextDifferentColor, classes.sectionSpacing)}
           style={{ textAlign: 'center' }}
         >
           Free shipping for standard order over $100

@@ -16,7 +16,7 @@ const BannerComponent = (data) => {
   return (
     <Grid item xs={12} sm={6} lg={4} className={classes.singleGrid}>
       <Grid className={classes.singleGridStyle}>
-        <Link href="/">
+        <Link to="/shop">
           <img src={image} alt="bannerOne" className={classes.img} />
           <div className={classes.descriptionPosition}>
             <h4>{title}</h4>

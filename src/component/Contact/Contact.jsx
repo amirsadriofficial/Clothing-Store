@@ -50,7 +50,7 @@ const Contact = () => {
                 variant="contained"
                 color="primary"
                 fullWidth
-                className={classes.objectSubSection}
+                className={classes.buttonSubSection}
                 style={{ borderRadius: '25px' }}
               >
                 Submit

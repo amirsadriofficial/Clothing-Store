@@ -39,6 +39,11 @@ const useStyles = makeStyles({
     alignItems: 'center',
     paddingBottom: '20px',
   },
+  buttonHover: {
+    '&:hover': {
+      background: '#000',
+    },
+  },
 })
 
 export default useStyles

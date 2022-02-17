@@ -136,7 +136,7 @@ const Cart = () => {
                           </IconButton>
                         </ButtonGroup>
                       </Grid>
-                      <Grid item xs={4} sm={3} lg={2}>
+                      <Grid item xs={4} sm={3} lg={3}>
                         <Button
                           variant="contained"
                           color="secondary"
@@ -181,7 +181,7 @@ const Cart = () => {
                 color="primary"
                 size="large"
                 fullWidth
-                className={classes.button}
+                className={classes.checkoutButton}
               >
                 Proceed To Checkout
               </Button>

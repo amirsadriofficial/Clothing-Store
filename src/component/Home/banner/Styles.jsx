@@ -12,9 +12,15 @@ const useStyles = makeStyles(() => ({
   },
   singleGrid: {
     position: 'relative',
+    '&:hover': {
+      color: '#6c7ae0',
+    },
   },
   singleGridStyle: {
     border: '1px solid #e6e6e6',
+    '&:hover': {
+      background: '#6c7ae0',
+    },
   },
   img: {
     width: '100%',

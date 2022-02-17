@@ -52,6 +52,11 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  checkoutButton: {
+    '&:hover': {
+      background: '#000',
+    },
+  },
 }))
 
 export default useStyles

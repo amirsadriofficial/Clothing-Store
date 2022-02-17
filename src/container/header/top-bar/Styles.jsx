@@ -18,6 +18,13 @@ const useStyles = makeStyles(() => ({
   },
   TextColor: {
     color: '#b2b2b2',
+    '&:hover': {
+      color: '#6c7ae0',
+    },
+  },
+  TextDifferentColor: {
+    color: '#b2b2b2',
+    cursor: 'pointer',
   },
   border: {
     paddingRight: '15px',

@@ -36,6 +36,14 @@ const useStyles = makeStyles(() => ({
   TextColor: {
     color: '#b2b2b2',
     textDecoration: 'none',
+    '&:hover': {
+      color: '#6c7ae0',
+    },
+  },
+  TextDifferentColor: {
+    color: '#b2b2b2',
+    textDecoration: 'none',
+    cursor: 'pointer',
   },
   footerItem: {
     marginTop: '10px',

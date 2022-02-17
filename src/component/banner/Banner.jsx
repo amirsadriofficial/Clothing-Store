@@ -11,6 +11,7 @@ const Banner2 = (data) => {
       style={{
         display: 'flex',
         justifyContent: 'center',
+        cursor: 'pointer',
       }}
     >
       <Grid item xl={12}>

@@ -14,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '25px',
     marginBottom: '50px',
   },
+  accordionStyle: {
+    '&:hover': {
+      background: '#6c7ae0',
+      color: '#fff',
+    },
+  },
 }))
 
 export default useStyles

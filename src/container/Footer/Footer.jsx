@@ -78,7 +78,7 @@ const Footer = () => {
           </Grid>
           <Grid item xs={7} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>GET IN TOUCH</h4>
-            <p className={classes.TextColor}>
+            <p className={classes.TextDifferentColor}>
               Any questions? Let us know in store at 8th floor, 379 Hudson St,
               New York, NY 10018 or call us on (+1) 96 716 6879
             </p>
@@ -166,7 +166,7 @@ const Footer = () => {
           <Grid
             item
             xs={12}
-            className={classes.TextColor}
+            className={classes.TextDifferentColor}
             style={{ textAlign: 'center', paddingTop: '20px' }}
           >
             Copyright ©2022 All rights reserved | Developed By
