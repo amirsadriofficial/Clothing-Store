@@ -14,13 +14,11 @@ import MenuItem from '@material-ui/core/MenuItem'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
-import InputBase from '@material-ui/core/InputBase'
-import SearchIcon from '@material-ui/icons/Search'
-import CloseIcon from '@material-ui/icons/Close'
 import Logo from '../../../assets/images/icons/logo.png'
 import useStyles from './Styles'
 import pages from './Pages'
 import SearchProducts from './SearchProducts'
+import SearchInput from './SearchInput'
 
 const NavBar = () => {
   const classes = useStyles()
@@ -135,21 +133,11 @@ const NavBar = () => {
                 </Link>
               ))}
             </Box>
-            <Box className={classes.search}>
-              <div className={classes.searchIcon}>
-                {searchTerm === '' ? <SearchIcon /> : <CloseIcon />}
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-                onChange={(event) => setSearchTerm(event.target.value)}
-                onClick={() => setIsOpen(true)}
-              />
-            </Box>
+            <SearchInput
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              setIsOpen={setIsOpen}
+            />
             <Hidden xsDown>
               <Link to="/cart">
                 <IconButton aria-label="delete">
