@@ -62,6 +62,12 @@ const useStyles = makeStyles((theme) => ({
   iconButtonStyle: {
     padding: '0',
   },
+  searchCard: {
+    display: 'flex',
+    flexGrow: '1',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   searchProducts: {
     width: '200px',
     position: 'relative',

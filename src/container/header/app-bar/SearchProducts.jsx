@@ -39,17 +39,21 @@ const SearchProducts = ({ data, open, onClose }) => {
         <>
           <Link to={`/product/${product.id}`}>
             <Grid container direction="row" alignItems="center">
-              <Card className={classes.root}>
+              <Card className={classes.searchCard}>
                 <CardActionArea className={classes.cardArea}>
-                  <Grid item xs={5} sm={3}>
+                  <Grid
+                    xs={5}
+                    sm={3}
+                    container
+                    direction="row"
+                    alignItems="center"
+                  >
                     <CardMedia
                       // className={classes.media}
                       image={product.image}
                       title={product.name}
                       className={classes.productImage}
                     />
-                  </Grid>
-                  <Grid item xs={12}>
                     <CardContent>
                       <Typography
                         gutterBottom
@@ -61,6 +65,8 @@ const SearchProducts = ({ data, open, onClose }) => {
                       </Typography>
                     </CardContent>
                   </Grid>
+                  {/* <Grid item xs={12}> */}
+                  {/* </Grid> */}
                 </CardActionArea>
               </Card>
             </Grid>
