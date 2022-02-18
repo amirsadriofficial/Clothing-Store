@@ -16,15 +16,16 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Divider from '@material-ui/core/Divider'
-import Popover from '@material-ui/core/Popover'
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
+// import Typography from '@material-ui/core/Typography'
+// import Grid from '@material-ui/core/Grid'
+// import Divider from '@material-ui/core/Divider'
+// import Popover from '@material-ui/core/Popover'
+// import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import Logo from '../../../assets/images/icons/logo.png'
-import Products from '../../../utils/watches-products'
+// import Products from '../../../utils/watches-products'
 import useStyles from './Styles'
 import pages from './Pages'
+import SearchProducts from './SearchProducts'
 
 const NavBar = () => {
   const classes = useStyles()
@@ -34,6 +35,7 @@ const NavBar = () => {
   const carts = JSON.parse(localStorage.getItem('Carts'))
   const favorites = JSON.parse(localStorage.getItem('Favorites'))
   const [searchTerm, setSearchTerm] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
   const [anchorElNav, setAnchorElNav] = useState(null)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -43,207 +45,162 @@ const NavBar = () => {
   }
 
   return (
-    <AppBar position="static" color="inherit">
-      <Container>
-        <Toolbar disableGutters>
-          <Hidden smDown>
-            <Link to="/">
-              <img
-                src={Logo}
-                alt="Logo"
-                style={{ width: '150px', height: '50px' }}
-              />
-            </Link>
-          </Hidden>
-          <Hidden mdUp>
-            <Link to="/">
-              <img
-                src={Logo}
-                alt="Logo"
-                style={{ width: '75px', height: '25px' }}
-              />
-            </Link>
-          </Hidden>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+    <>
+      <AppBar position="static" color="inherit">
+        <Container>
+          <Toolbar disableGutters>
+            <Hidden smDown>
+              <Link to="/">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  style={{ width: '150px', height: '50px' }}
+                />
+              </Link>
+            </Hidden>
+            <Hidden mdUp>
+              <Link to="/">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  style={{ width: '75px', height: '25px' }}
+                />
+              </Link>
+            </Hidden>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <IconButton
+                className={classes.menuStyle}
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                marginThreshold={0}
+                getContentAnchorEl={null}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                PaperProps={{
+                  style: {
+                    width: '100%',
+                    maxWidth: '100%',
+                    left: 0,
+                    right: 0,
+                  },
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                }}
+              >
+                {pages.map((page) => (
+                  <Link to={page.path}>
+                    <MenuItem
+                      key={page.name}
+                      className={
+                        location.pathname === page.path &&
+                        'active-app-bar-button'
+                      }
+                    >
+                      {page.name}
+                    </MenuItem>
+                  </Link>
+                ))}
+              </Menu>
+            </Box>
+            <Box
+              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
               className={classes.menuStyle}
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              marginThreshold={0}
-              getContentAnchorEl={null}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-              }}
-              PaperProps={{
-                style: {
-                  width: '100%',
-                  maxWidth: '100%',
-                  left: 0,
-                  right: 0,
-                },
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
             >
               {pages.map((page) => (
                 <Link to={page.path}>
-                  <MenuItem
+                  <Button
                     key={page.name}
                     className={
                       location.pathname === page.path && 'active-app-bar-button'
                     }
+                    sx={{ my: 2, color: 'white', display: 'block' }}
                   >
                     {page.name}
-                  </MenuItem>
+                  </Button>
                 </Link>
               ))}
-            </Menu>
-          </Box>
-          <Box
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
-            className={classes.menuStyle}
-          >
-            {pages.map((page) => (
-              <Link to={page.path}>
-                <Button
-                  key={page.name}
-                  className={
-                    location.pathname === page.path && 'active-app-bar-button'
-                  }
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page.name}
-                </Button>
-              </Link>
-            ))}
-          </Box>
-          <Box className={classes.search}>
-            <PopupState variant="popover" popupId="demo-popup-popover">
-              {(popupState) => (
-                <div>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon />
-                  </div>
-                  <InputBase
-                    placeholder="Search…"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                    }}
-                    inputProps={{ 'aria-label': 'search' }}
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...bindTrigger(popupState)}
-                    onChange={(event) => setSearchTerm(event.target.value)}
-                  />
-                  <Popover
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...bindPopover(popupState)}
-                    anchorOrigin={{
-                      vertical: 'bottom',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}
+            </Box>
+            <Box className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                onClick={() => setIsOpen(true)}
+              />
+            </Box>
+            <Hidden xsDown>
+              <Link to="/cart">
+                <IconButton aria-label="delete">
+                  <Badge
+                    badgeContent={carts === null ? 0 : carts.length}
+                    color="primary"
                   >
-                    <Typography
-                      variant="h6"
-                      component="h2"
-                      color="primary"
-                      className={classes.searchBoxTitle}
-                    >
-                      Recent Searches:
-                    </Typography>
-                    {Products.filter((product) => {
-                      if (
-                        searchTerm === '' &&
-                        product.name
-                          .toLowerCase()
-                          .includes(searchTerm.toLowerCase())
-                      ) {
-                        return product
-                      }
-                      return product
-                    }).map((product) => (
-                      <>
-                        <Grid container direction="row" alignItems="center">
-                          <img
-                            src={product.image}
-                            alt="PRODUCT_IMAGE"
-                            className={classes.productImage}
-                          />
-                          <Typography className={classes.productName}>
-                            {product.name}
-                          </Typography>
-                        </Grid>
-                        <Divider />
-                      </>
-                    ))}
-                  </Popover>
-                </div>
-              )}
-            </PopupState>
-          </Box>
-          <Hidden xsDown>
-            <Link to="/cart">
+                    <ShoppingCartIcon />
+                  </Badge>
+                </IconButton>
+              </Link>
+            </Hidden>
+            <Hidden smUp>
+              <Link to="/cart">
+                <IconButton
+                  aria-label="delete"
+                  className={classes.iconButtonStyle}
+                >
+                  <Badge
+                    badgeContent={carts === null ? 0 : carts.length}
+                    color="primary"
+                  >
+                    <ShoppingCartIcon />
+                  </Badge>
+                </IconButton>
+              </Link>
+            </Hidden>
+            <Link to="/favorites">
               <IconButton aria-label="delete">
                 <Badge
-                  badgeContent={carts === null ? 0 : carts.length}
+                  badgeContent={favorites === null ? 0 : favorites.length}
                   color="primary"
                 >
-                  <ShoppingCartIcon />
+                  <FavoriteBorderIcon />
                 </Badge>
               </IconButton>
             </Link>
-          </Hidden>
-          <Hidden smUp>
-            <Link to="/cart">
-              <IconButton
-                aria-label="delete"
-                className={classes.iconButtonStyle}
-              >
-                <Badge
-                  badgeContent={carts === null ? 0 : carts.length}
-                  color="primary"
-                >
-                  <ShoppingCartIcon />
-                </Badge>
-              </IconButton>
-            </Link>
-          </Hidden>
-          <Link to="/favorites">
-            <IconButton aria-label="delete">
-              <Badge
-                badgeContent={favorites === null ? 0 : favorites.length}
-                color="primary"
-              >
-                <FavoriteBorderIcon />
-              </Badge>
-            </IconButton>
-          </Link>
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <SearchProducts
+        open={isOpen}
+        data={searchTerm}
+        onClose={() => setIsOpen(false)}
+      />
+    </>
   )
 }
 
