@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
@@ -33,16 +34,19 @@ const SearchProducts = ({ data, open, onClose }) => {
         return null
       }).map((product) => (
         <>
-          <Grid container direction="row" alignItems="center">
-            <img
-              src={product.image}
-              alt="PRODUCT_IMAGE"
-              className={classes.productImage}
-            />
-            <Typography className={classes.productName}>
-              {product.name}
-            </Typography>
-          </Grid>
+          <Link to={`/product/${product.id}`}>
+            <Grid container direction="row" alignItems="center">
+              <img
+                src={product.image}
+                alt="PRODUCT_IMAGE"
+                className={classes.productImage}
+              />
+              <Typography className={classes.productName}>
+                {product.name}
+              </Typography>
+            </Grid>
+          </Link>
+
           <Divider />
         </>
       ))}
