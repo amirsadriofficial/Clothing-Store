@@ -51,7 +51,7 @@ const Cart = () => {
   }
   let totalPrice = 0
   carts.map((product) => {
-    totalPrice += product.price
+    totalPrice += product.price * num
     return totalPrice
   })
 
