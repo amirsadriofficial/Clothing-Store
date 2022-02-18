@@ -126,12 +126,12 @@ const NavBar = () => {
                 </Link>
               ))}
             </Box>
-            <IconItems />
             <SearchInput
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               setIsOpen={setIsOpen}
             />
+            <IconItems />
           </Toolbar>
         </Container>
       </AppBar>
