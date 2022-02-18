@@ -19,13 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   searchIcon: {
-    // padding: theme.spacing(0, 2),
-    // height: '100%',
-    // position: 'absolute',
-    // pointerEvents: 'none',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    paddingRight: '8px',
   },
   inputRoot: {
     color: 'inherit',
@@ -75,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     display: 'flex',
     alignItems: 'center',
-    paddingBottom: '8px !important',
+    paddingBottom: '15px !important',
   },
 }))
 
