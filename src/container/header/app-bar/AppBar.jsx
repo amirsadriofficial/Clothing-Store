@@ -1,32 +1,25 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
-import Badge from '@material-ui/core/Badge'
 import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
 import Logo from '../../../assets/images/icons/logo.png'
 import useStyles from './Styles'
 import pages from './Pages'
 import SearchProducts from './SearchProducts'
 import SearchInput from './SearchInput'
+import IconItems from './IconItems'
 
 const NavBar = () => {
   const classes = useStyles()
   const location = useLocation()
-  // const carts = useSelector((state) => state.cartReducer)
-  // const favorites = useSelector((state) => state.favoritesReducer)
-  const carts = JSON.parse(localStorage.getItem('Carts'))
-  const favorites = JSON.parse(localStorage.getItem('Favorites'))
   const [searchTerm, setSearchTerm] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [anchorElNav, setAnchorElNav] = useState(null)
@@ -133,48 +126,12 @@ const NavBar = () => {
                 </Link>
               ))}
             </Box>
+            <IconItems />
             <SearchInput
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               setIsOpen={setIsOpen}
             />
-            <Hidden xsDown>
-              <Link to="/cart">
-                <IconButton aria-label="delete">
-                  <Badge
-                    badgeContent={carts === null ? 0 : carts.length}
-                    color="primary"
-                  >
-                    <ShoppingCartIcon />
-                  </Badge>
-                </IconButton>
-              </Link>
-            </Hidden>
-            <Hidden smUp>
-              <Link to="/cart">
-                <IconButton
-                  aria-label="delete"
-                  className={classes.iconButtonStyle}
-                >
-                  <Badge
-                    badgeContent={carts === null ? 0 : carts.length}
-                    color="primary"
-                  >
-                    <ShoppingCartIcon />
-                  </Badge>
-                </IconButton>
-              </Link>
-            </Hidden>
-            <Link to="/favorites">
-              <IconButton aria-label="delete">
-                <Badge
-                  badgeContent={favorites === null ? 0 : favorites.length}
-                  color="primary"
-                >
-                  <FavoriteBorderIcon />
-                </Badge>
-              </IconButton>
-            </Link>
           </Toolbar>
         </Container>
       </AppBar>
