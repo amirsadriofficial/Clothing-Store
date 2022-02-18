@@ -48,11 +48,9 @@ const useStyles = makeStyles((theme) => ({
   productImage: {
     width: '50px',
     height: '50px',
-    // padding: '10px',
   },
   productName: {
-    fontSize: '15px',
-    // padding: '10px',
+    fontSize: '10px',
   },
   searchBoxTitle: {
     fontSize: '15px',
@@ -73,6 +71,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     left: '1000px',
     zIndex: '2',
+  },
+  cardContent: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingBottom: '8px !important',
   },
 }))
 
