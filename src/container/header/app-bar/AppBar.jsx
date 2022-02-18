@@ -9,13 +9,12 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
-import Hidden from '@material-ui/core/Hidden'
-import Logo from '../../../assets/images/icons/logo.png'
-import useStyles from './Styles'
 import pages from './Pages'
+import LogoSection from './LogoSection'
 import SearchProducts from './SearchProducts'
 import SearchInput from './SearchInput'
 import IconItems from './IconItems'
+import useStyles from './Styles'
 
 const NavBar = () => {
   const classes = useStyles()
@@ -31,28 +30,11 @@ const NavBar = () => {
   }
 
   return (
-    <div className={classes.appbarWrapper}>
+    <>
       <AppBar position="static" color="inherit">
         <Container>
           <Toolbar disableGutters>
-            <Hidden smDown>
-              <Link to="/">
-                <img
-                  src={Logo}
-                  alt="Logo"
-                  style={{ width: '150px', height: '50px' }}
-                />
-              </Link>
-            </Hidden>
-            <Hidden mdUp>
-              <Link to="/">
-                <img
-                  src={Logo}
-                  alt="Logo"
-                  style={{ width: '75px', height: '25px' }}
-                />
-              </Link>
-            </Hidden>
+            <LogoSection />
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 className={classes.menuStyle}
@@ -136,7 +118,7 @@ const NavBar = () => {
         </Container>
       </AppBar>
       <SearchProducts open={isOpen} data={searchTerm} />
-    </div>
+    </>
   )
 }
 
