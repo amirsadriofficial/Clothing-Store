@@ -47,11 +47,12 @@ const useStyles = makeStyles((theme) => ({
   },
   productImage: {
     width: '50px',
-    padding: '10px',
+    height: '50px',
+    // padding: '10px',
   },
   productName: {
     fontSize: '15px',
-    padding: '10px',
+    // padding: '10px',
   },
   searchBoxTitle: {
     fontSize: '15px',
