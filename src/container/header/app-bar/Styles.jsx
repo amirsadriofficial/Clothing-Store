@@ -1,11 +1,6 @@
 import { alpha, makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
-  appbarWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-  },
   root: {
     flexGrow: 1,
   },
