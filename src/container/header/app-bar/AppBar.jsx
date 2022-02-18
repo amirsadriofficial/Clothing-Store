@@ -190,11 +190,7 @@ const NavBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <SearchProducts
-        open={isOpen}
-        data={searchTerm}
-        onClose={() => setIsOpen(false)}
-      />
+      <SearchProducts open={isOpen} data={searchTerm} />
     </div>
   )
 }
