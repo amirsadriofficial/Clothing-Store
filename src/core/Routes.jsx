@@ -9,16 +9,13 @@ import Help from '../component/help/Help'
 
 const Routes = [
   { path: '/', component: Home },
-  { path: '/', component: Shop },
-  { path: '/', component: SingleProduct },
-  { path: '/', component: About },
-  { path: '/', component: Contact },
-  { path: '/', component: Cart },
-  { path: '/', component: Favorites },
-  { path: '/', component: Help },
-  { path: '/', component: Home },
-  { path: '/', component: Home },
-  { path: '/', component: Home },
+  { path: '/shop', component: Shop },
+  { path: '/product/:id', component: SingleProduct },
+  { path: '/about', component: About },
+  { path: '/contact', component: Contact },
+  { path: '/cart', component: Cart },
+  { path: '/favorites', component: Favorites },
+  { path: '/help', component: Help },
 ]
 
 export default Routes
