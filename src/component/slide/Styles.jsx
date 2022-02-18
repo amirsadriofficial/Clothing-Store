@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => ({
+  wrapper: {
+    position: 'relative',
+    zIndex: '2',
+  },
   responsive: {
     width: '100%',
     height: 'auto',

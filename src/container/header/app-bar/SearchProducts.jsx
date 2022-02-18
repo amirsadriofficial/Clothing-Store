@@ -12,7 +12,7 @@ const SearchProducts = ({ open, onClose }) => {
   if (!open) return null
 
   return (
-    <div>
+    <div className={classes.searchProducts}>
       <Button onClick={onClose}>Close</Button>
       <Typography
         variant="h6"

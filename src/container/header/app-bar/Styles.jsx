@@ -1,6 +1,11 @@
 import { alpha, makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
+  appbarWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
   root: {
     flexGrow: 1,
   },
@@ -60,6 +65,12 @@ const useStyles = makeStyles((theme) => ({
   },
   iconButtonStyle: {
     padding: '0',
+  },
+  searchProducts: {
+    width: '200px',
+    position: 'relative',
+    left: '1000px',
+    zIndex: '2',
   },
 }))
 

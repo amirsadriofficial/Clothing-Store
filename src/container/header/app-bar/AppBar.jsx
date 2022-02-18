@@ -45,7 +45,7 @@ const NavBar = () => {
   }
 
   return (
-    <>
+    <div className={classes.appbarWrapper}>
       <AppBar position="static" color="inherit">
         <Container>
           <Toolbar disableGutters>
@@ -200,7 +200,7 @@ const NavBar = () => {
         data={searchTerm}
         onClose={() => setIsOpen(false)}
       />
-    </>
+    </div>
   )
 }
 

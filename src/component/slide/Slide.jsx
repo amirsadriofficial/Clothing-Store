@@ -12,7 +12,7 @@ const Slide = (data) => {
   const { description } = data
 
   return (
-    <>
+    <div className={classes.wrapper}>
       <img src={image} alt="SlideOne" className={classes.responsive} />
       <Hidden mdDown>
         <Grid className={classes.descriptionPosition}>
@@ -78,7 +78,7 @@ const Slide = (data) => {
           </Link>
         </Grid>
       </Hidden>
-    </>
+    </div>
   )
 }
 
