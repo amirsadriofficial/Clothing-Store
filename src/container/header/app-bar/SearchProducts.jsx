@@ -1,14 +1,15 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-// import Grid from '@material-ui/core/Grid'
-// import Divider from '@material-ui/core/Divider'
-// import Products from '../../../utils/watches-products'
+import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
+import Products from '../../../utils/all-products'
 import useStyles from './Styles'
 
-const SearchProducts = ({ open, onClose }) => {
+const SearchProducts = ({ data, open, onClose }) => {
   const classes = useStyles()
-  // const { searchTerm } = data
+  const searchTerm = data
+  console.log('search:', searchTerm)
   if (!open) return null
 
   return (
@@ -22,14 +23,14 @@ const SearchProducts = ({ open, onClose }) => {
       >
         Recent Searches:
       </Typography>
-      {/* {Products.filter((product) => {
+      {Products.filter((product) => {
         if (
-          searchTerm === '' &&
+          searchTerm !== '' &&
           product.name.toLowerCase().includes(searchTerm.toLowerCase())
         ) {
           return product
         }
-        return product
+        return null
       }).map((product) => (
         <>
           <Grid container direction="row" alignItems="center">
@@ -44,7 +45,7 @@ const SearchProducts = ({ open, onClose }) => {
           </Grid>
           <Divider />
         </>
-      ))} */}
+      ))}
     </>
   )
 }
