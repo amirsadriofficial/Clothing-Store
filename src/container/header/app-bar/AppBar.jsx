@@ -16,6 +16,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import Hidden from '@material-ui/core/Hidden'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
+import CloseIcon from '@material-ui/icons/Close'
 import Logo from '../../../assets/images/icons/logo.png'
 import useStyles from './Styles'
 import pages from './Pages'
@@ -136,7 +137,11 @@ const NavBar = () => {
             </Box>
             <Box className={classes.search}>
               <div className={classes.searchIcon}>
-                <SearchIcon />
+                {searchTerm === '' ? (
+                  <SearchIcon />
+                ) : (
+                  <CloseIcon onClick={() => searchTerm} />
+                )}
               </div>
               <InputBase
                 placeholder="Search…"
