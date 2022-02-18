@@ -137,11 +137,7 @@ const NavBar = () => {
             </Box>
             <Box className={classes.search}>
               <div className={classes.searchIcon}>
-                {searchTerm === '' ? (
-                  <SearchIcon />
-                ) : (
-                  <CloseIcon onClick={() => searchTerm} />
-                )}
+                {searchTerm === '' ? <SearchIcon /> : <CloseIcon />}
               </div>
               <InputBase
                 placeholder="Search…"
