@@ -102,7 +102,7 @@ const ShopHeader = () => {
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Tab label="Watches" {...a11yProps(5)} />
           </Tabs>
-          <FilterSection setFilter={setFilter} />
+          <FilterSection setFilter={setFilter} refAppBar={refAppBar} />
         </AppBar>
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 import FilterListIcon from '@material-ui/icons/FilterList'
 import Popper from '@material-ui/core/Popper'
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state'
@@ -7,7 +8,17 @@ import Fade from '@material-ui/core/Fade'
 import Paper from '@material-ui/core/Paper'
 import useStyles from './Styles'
 
-const FilterSection = () => {
+const FilterItemButton = ({ title, color }) => {
+  const classes = useStyles()
+
+  return (
+    <Button variant="outlined" color={color} className={classes.buttonStyle}>
+      {title}
+    </Button>
+  )
+}
+
+const FilterSection = ({ filter, setFilter, refAppBar }) => {
   const classes = useStyles()
   const [activeAppBarClass, setActiveAppBarClass] = useState('inactive')
   const refAllFilterButton = useRef()
@@ -68,11 +79,7 @@ const FilterSection = () => {
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...bindPopper(popupState)}
               transition
-              style={{
-                width: '100%',
-                marginTop: '15px',
-                paddingRight: '30px !importent',
-              }}
+              className={classes.poperStyle}
             >
               {({ TransitionProps }) => (
                 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -82,25 +89,9 @@ const FilterSection = () => {
                       <Typography className={classes.buttonStyle}>
                         Sort By:
                       </Typography>
-                      <Button
-                        variant="outlined"
-                        color="primary"
-                        className={classes.buttonStyle}
-                      >
-                        All
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        className={classes.buttonStyle}
-                      >
-                        Popularity
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        className={classes.buttonStyle}
-                      >
-                        Newness
-                      </Button>
+                      <FilterItemButton title="All" color="primary" />
+                      <FilterItemButton title="Popularity" />
+                      <FilterItemButton title="Newness" />
                     </div>
                     <div className={classes.typography}>
                       <Typography className={classes.buttonStyle}>
@@ -135,31 +126,10 @@ const FilterSection = () => {
                       <Typography className={classes.buttonStyle}>
                         Brand:
                       </Typography>
-                      <Button
-                        variant="outlined"
-                        color="primary"
-                        className={classes.buttonStyle}
-                      >
-                        All
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        className={classes.buttonStyle}
-                      >
-                        GUCCI
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        className={classes.buttonStyle}
-                      >
-                        Nike
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        className={classes.buttonStyle}
-                      >
-                        Adidas
-                      </Button>
+                      <FilterItemButton title="All" color="primary" />
+                      <FilterItemButton title="GUCCI" />
+                      <FilterItemButton title="Nike" />
+                      <FilterItemButton title="Adidas" />
                     </div>
                   </Paper>
                 </Fade>

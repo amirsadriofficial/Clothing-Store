@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
   buttonStyle: {
     margin: '5px',
   },
+  poperStyle: {
+    width: '100%',
+    marginTop: '15px',
+    paddingRight: '30px !importent',
+  },
 }))
 
 export default useStyles
