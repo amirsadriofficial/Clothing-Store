@@ -235,7 +235,7 @@ const SingleProduct = () => {
               </ButtonGroup>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
-              <Grid item xs={6}>
+              <Grid item xs={8}>
                 <Button
                   variant="contained"
                   color="primary"
