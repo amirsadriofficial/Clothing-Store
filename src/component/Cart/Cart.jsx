@@ -108,7 +108,7 @@ const Cart = () => {
                       </Grid>
                     </CardActionArea>
                     <Grid container spacing={3} className={classes.cardAction}>
-                      <Grid item xs={8} sm={4} lg={4}>
+                      <Grid item xs={7} sm={4} lg={4}>
                         <ButtonGroup
                           color="primary"
                           aria-label="outlined primary button group"
@@ -136,7 +136,7 @@ const Cart = () => {
                           </IconButton>
                         </ButtonGroup>
                       </Grid>
-                      <Grid item xs={4} sm={3} lg={3}>
+                      <Grid item xs={5} sm={3} lg={3}>
                         <Button
                           variant="contained"
                           color="secondary"
