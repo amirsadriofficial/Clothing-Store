@@ -84,7 +84,7 @@ const Favorites = () => {
                     </Grid>
                   </CardActionArea>
                   <Grid container spacing={3} className={classes.cardAction}>
-                    <Grid item xs={8} sm={4}>
+                    <Grid item xs={7} sm={4}>
                       <Button
                         variant="contained"
                         color="primary"
@@ -95,7 +95,7 @@ const Favorites = () => {
                         Add To Cart
                       </Button>
                     </Grid>
-                    <Grid item xs={4} sm={4}>
+                    <Grid item xs={5} sm={4}>
                       <Button
                         variant="contained"
                         color="secondary"
