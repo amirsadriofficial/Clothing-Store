@@ -10,6 +10,8 @@ import ButtonGroup from '@material-ui/core/ButtonGroup'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
@@ -33,8 +35,20 @@ const SingleProduct = () => {
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
+  const [hasProduct, setHasProduct] = useState()
+  const carts = JSON.parse(localStorage.getItem('Carts'))
+  carts.map((cartList) => {
+    if (cartList.id === product.id) {
+      setHasProduct(true)
+    } else {
+      setHasProduct(false)
+    }
+    return hasProduct
+  })
+  console.log('hasProduct', hasProduct)
+  console.log('carts', carts.id)
   const [num, setNum] = useState(1)
-  const [cartContent, setCartContent] = useState('Add To Cart')
+  const [cartStatus, setCartStatus] = useState('Removed')
   const [favoritesContent, setFavoritesContent] = useState(
     <FavoriteBorderIcon />
   )
@@ -46,18 +60,18 @@ const SingleProduct = () => {
   const handleChangeColor = (event) => {
     setColor(event.target.value)
   }
-  const handleCart = (content) => {
-    if (content === 'Add To Cart') {
+  const handleCart = () => {
+    if (cartStatus === 'Removed') {
       dispatch(ADD_TO_CART_ACTION(product))
-      setCartContent('Remove From Cart')
+      setCartStatus('Added')
       Toast.fire({
         animation: true,
         title: 'Product Added To Cart',
       })
     }
-    if (content === 'Remove From Cart') {
+    if (cartStatus === 'Added') {
       dispatch(REMOVE_FROM_CART_ACTION(product))
-      setCartContent('Add To Cart')
+      setCartStatus('Removed')
       Toast.fire({
         animation: true,
         title: 'Product Removed From Cart',
@@ -236,7 +250,30 @@ const SingleProduct = () => {
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
               <Grid item xs={8}>
-                <Button
+                {cartStatus === 'Removed' && cartStatus ? (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    fullWidth
+                    startIcon={<ShoppingCartIcon />}
+                    onClick={handleCart}
+                  >
+                    Add To Cart
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    fullWidth
+                    startIcon={<RemoveShoppingCartIcon />}
+                    onClick={handleCart}
+                  >
+                    Remove From Cart
+                  </Button>
+                )}
+                {/* <Button
                   variant="contained"
                   color="primary"
                   className={classes.button}
@@ -244,7 +281,7 @@ const SingleProduct = () => {
                   onClick={() => handleCart(cartContent)}
                 >
                   {cartContent}
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
