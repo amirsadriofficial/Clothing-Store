@@ -56,8 +56,9 @@ const SingleProduct = () => {
   }
   const handleCart = () => {
     if (
-      cartStatus === 'Removed' &&
-      (hasCart === false || hasCart.length === 0)
+      cartStatus === 'Removed'
+      // &&
+      // (hasCart === false || hasCart.length === 0)
     ) {
       dispatch(ADD_TO_CART_ACTION(product))
       setCartStatus('Added')
@@ -66,7 +67,7 @@ const SingleProduct = () => {
         title: 'Product Added To Cart',
       })
     }
-    if (cartStatus === 'Added' && hasCart === true) {
+    if (cartStatus === 'Added') {
       dispatch(REMOVE_FROM_CART_ACTION(product))
       setCartStatus('Removed')
       Toast.fire({
@@ -77,8 +78,9 @@ const SingleProduct = () => {
   }
   const handleFavorites = () => {
     if (
-      favoritesStatus === 'Removed' &&
-      (hasCart === false || hasCart.length === 0)
+      favoritesStatus === 'Removed'
+      // &&
+      // (hasFavorite === false || hasFavorite.length === 0)
     ) {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
       setFavoritesStatus('Added')
