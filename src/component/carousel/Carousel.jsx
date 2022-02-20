@@ -34,7 +34,7 @@ const CarouselComponent = ({ Products, title }) => {
         <h3 className={classes.titleText}>{title}</h3>
       </Grid>
       <Carousel responsive={responsive} className={classes.carouselStyle}>
-        {Products.data.map((product) => (
+        {Products.map((product) => (
           <Card data={product} />
         ))}
       </Carousel>
