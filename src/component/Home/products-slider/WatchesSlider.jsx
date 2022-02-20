@@ -3,7 +3,7 @@ import Carousel from '../../carousel/Carousel'
 import Product from '../../../utils/watches-products'
 
 const WatchesSlider = () => {
-  return <Carousel data={Product} title="Watches" />
+  return <Carousel Products={Product} title="Watches" />
 }
 
 export default WatchesSlider
