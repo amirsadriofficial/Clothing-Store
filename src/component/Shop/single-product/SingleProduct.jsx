@@ -36,13 +36,16 @@ const SingleProduct = () => {
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
   const carts = JSON.parse(localStorage.getItem('Carts'))
-  const hasProduct = carts.map((cartList) => cartList.id === product.id)
-  console.log('hasProduct: ', hasProduct)
+  const hasCart = carts.map((cartList) => cartList.id === product.id)
+  const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  const hasFavorite = favorites.map(
+    (favoriteList) => favoriteList.id === product.id
+  )
+  console.log('hasProduct: ', hasCart)
+  console.log('hasFavorite: ', hasFavorite)
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
-  const [favoritesContent, setFavoritesContent] = useState(
-    <FavoriteBorderIcon />
-  )
+  const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const [size, setSize] = useState('Choose An Option')
   const [color, setColor] = useState('Choose An Option')
   const handleChangeSize = (event) => {
@@ -54,7 +57,7 @@ const SingleProduct = () => {
   const handleCart = () => {
     if (
       cartStatus === 'Removed' &&
-      (hasProduct === false || hasProduct.length === 0)
+      (hasCart === false || hasCart.length === 0)
     ) {
       dispatch(ADD_TO_CART_ACTION(product))
       setCartStatus('Added')
@@ -63,7 +66,7 @@ const SingleProduct = () => {
         title: 'Product Added To Cart',
       })
     }
-    if (cartStatus === 'Added' && hasProduct === true) {
+    if (cartStatus === 'Added' && hasCart === true) {
       dispatch(REMOVE_FROM_CART_ACTION(product))
       setCartStatus('Removed')
       Toast.fire({
@@ -72,18 +75,21 @@ const SingleProduct = () => {
       })
     }
   }
-  const handleFavorites = (content) => {
-    if (content === favoritesContent) {
+  const handleFavorites = () => {
+    if (
+      favoritesStatus === 'Removed' &&
+      (hasCart === false || hasCart.length === 0)
+    ) {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
-      setFavoritesContent(<FavoriteIcon />)
+      setFavoritesStatus('Added')
       Toast.fire({
         animation: true,
         title: 'Product Added To Favorites',
       })
     }
-    if (content === <FavoriteIcon />) {
+    if (favoritesStatus === 'Added') {
       dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
-      setFavoritesContent(<FavoriteBorderIcon />)
+      setFavoritesStatus('Removed')
       Toast.fire({
         animation: true,
         title: 'Product Removed From Favorites',
@@ -246,7 +252,7 @@ const SingleProduct = () => {
             <Grid item xs={12} className={classes.flexRow}>
               <Grid item xs={8}>
                 {cartStatus === 'Removed' &&
-                (hasProduct === false || hasProduct.length === 0) ? (
+                (hasCart === false || hasCart.length === 0) ? (
                   <Button
                     variant="contained"
                     color="primary"
@@ -272,12 +278,16 @@ const SingleProduct = () => {
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
-              <IconButton
-                aria-label="delete"
-                onClick={() => handleFavorites(favoritesContent)}
-              >
-                {favoritesContent}
-              </IconButton>
+              {favoritesStatus === 'Removed' &&
+              (hasFavorite === false || hasFavorite.length === 0) ? (
+                <IconButton aria-label="delete" onClick={handleFavorites}>
+                  <FavoriteBorderIcon />
+                </IconButton>
+              ) : (
+                <IconButton aria-label="delete" onClick={handleFavorites}>
+                  <FavoriteIcon />
+                </IconButton>
+              )}
               <IconButton aria-label="delete">
                 <ShareIcon />
               </IconButton>
