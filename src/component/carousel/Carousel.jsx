@@ -25,11 +25,8 @@ const responsive = {
   },
 }
 
-const CarouselComponent = (data) => {
+const CarouselComponent = ({ Products, title }) => {
   const classes = useStyles()
-  const { Products } = data
-  const { title } = data
-  console.log('data', data)
 
   return (
     <Grid className={classes.bodySection}>
