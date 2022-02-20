@@ -35,18 +35,9 @@ const SingleProduct = () => {
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
-  const [hasProduct, setHasProduct] = useState()
   const carts = JSON.parse(localStorage.getItem('Carts'))
-  carts.map((cartList) => {
-    if (cartList.id === product.id) {
-      setHasProduct(true)
-    } else {
-      setHasProduct(false)
-    }
-    return hasProduct
-  })
-  console.log('hasProduct', hasProduct)
-  console.log('carts', carts.id)
+  const hasProduct = carts.map((cartList) => cartList.id === product.id)
+  console.log('hasProduct: ', hasProduct)
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
   const [favoritesContent, setFavoritesContent] = useState(
@@ -61,7 +52,10 @@ const SingleProduct = () => {
     setColor(event.target.value)
   }
   const handleCart = () => {
-    if (cartStatus === 'Removed') {
+    if (
+      cartStatus === 'Removed' &&
+      (hasProduct === false || hasProduct.length === 0)
+    ) {
       dispatch(ADD_TO_CART_ACTION(product))
       setCartStatus('Added')
       Toast.fire({
@@ -69,7 +63,7 @@ const SingleProduct = () => {
         title: 'Product Added To Cart',
       })
     }
-    if (cartStatus === 'Added') {
+    if (cartStatus === 'Added' && hasProduct === true) {
       dispatch(REMOVE_FROM_CART_ACTION(product))
       setCartStatus('Removed')
       Toast.fire({
@@ -104,6 +98,7 @@ const SingleProduct = () => {
       setNum(num - 1)
     }
   }
+  console.log('cartStatus: ', cartStatus)
 
   return (
     <Container className={classes.container}>
@@ -250,7 +245,8 @@ const SingleProduct = () => {
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
               <Grid item xs={8}>
-                {cartStatus === 'Removed' && cartStatus ? (
+                {cartStatus === 'Removed' &&
+                (hasProduct === false || hasProduct.length === 0) ? (
                   <Button
                     variant="contained"
                     color="primary"
@@ -273,15 +269,6 @@ const SingleProduct = () => {
                     Remove From Cart
                   </Button>
                 )}
-                {/* <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.button}
-                  fullWidth
-                  onClick={() => handleCart(cartContent)}
-                >
-                  {cartContent}
-                </Button> */}
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
