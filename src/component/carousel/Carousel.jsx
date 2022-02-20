@@ -25,17 +25,16 @@ const responsive = {
   },
 }
 
-const CarouselComponent = (Product, title) => {
+const CarouselComponent = (data) => {
   const classes = useStyles()
-  const Products = Product
-  const { Title } = title
-  console.log('title', title)
-  console.log('Title', Title)
+  const { Products } = data
+  const { title } = data
+  console.log('data', data)
 
   return (
     <Grid className={classes.bodySection}>
       <Grid item xs={6} sm={3} md={2} lg={2}>
-        <h3 className={classes.titleText}>{Title}</h3>
+        <h3 className={classes.titleText}>{title}</h3>
       </Grid>
       <Carousel responsive={responsive} className={classes.carouselStyle}>
         {Products.data.map((product) => (
