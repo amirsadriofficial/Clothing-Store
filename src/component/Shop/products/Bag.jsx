@@ -13,7 +13,7 @@ const Bag = () => {
   }
   setTimeout(() => {
     setPlaceholder(true)
-  }, 1000)
+  }, 500)
 
   return (
     <Grid container spacing={3}>
