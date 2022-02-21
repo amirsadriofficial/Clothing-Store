@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     height: '50px',
   },
   productName: {
-    fontSize: '10px',
+    fontSize: '15px',
   },
   searchBoxTitle: {
     fontSize: '15px',

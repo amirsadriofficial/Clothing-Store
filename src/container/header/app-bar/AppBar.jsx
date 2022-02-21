@@ -81,7 +81,7 @@ const NavBar = () => {
                       key={page.name}
                       className={
                         location.pathname === page.path &&
-                        'active-app-bar-button'
+                        'active-app-bar-menu-item'
                       }
                     >
                       {page.name}
@@ -95,7 +95,12 @@ const NavBar = () => {
               className={classes.menuStyle}
             >
               {pages.map((page) => (
-                <Link to={page.path}>
+                <Link
+                  to={page.path}
+                  className={
+                    location.pathname === page.path && 'active-app-bar-link'
+                  }
+                >
                   <Button
                     key={page.name}
                     className={

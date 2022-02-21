@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
@@ -13,15 +13,19 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart'
 import Toast from '../toast/Toast'
 import { REMOVE_FROM_FAVORITES_ACTION } from '../../redux/favorites/Action'
-import { ADD_TO_CART_ACTION } from '../../redux/cart/Action'
+import {
+  ADD_TO_CART_ACTION,
+  REMOVE_FROM_CART_ACTION,
+} from '../../redux/cart/Action'
 import useStyles from './Styles'
 
 const Favorites = () => {
   const classes = useStyles()
   const favorites = JSON.parse(localStorage.getItem('Favorites'))
-  // const [cartStatus, setCartStatus] = useState('Removed')
+  const [cartStatus, setCartStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
     dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
@@ -31,11 +35,22 @@ const Favorites = () => {
     })
   }
   const handleAddToCart = (product) => {
-    dispatch(ADD_TO_CART_ACTION(product))
-    Toast.fire({
-      animation: true,
-      title: 'Product Added To Cart',
-    })
+    if (cartStatus === 'Removed') {
+      dispatch(ADD_TO_CART_ACTION(product))
+      setCartStatus('Added')
+      Toast.fire({
+        animation: true,
+        title: 'Product Added To Cart',
+      })
+    }
+    if (cartStatus === 'Added') {
+      dispatch(REMOVE_FROM_CART_ACTION(product))
+      setCartStatus('Removed')
+      Toast.fire({
+        animation: true,
+        title: 'Product Removed From Cart',
+      })
+    }
   }
 
   return (
@@ -85,18 +100,32 @@ const Favorites = () => {
                     </Grid>
                   </CardActionArea>
                   <Grid container spacing={3} className={classes.cardAction}>
-                    <Grid item xs={7} sm={4}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        fullWidth
-                        startIcon={<ShoppingCartIcon />}
-                        onClick={() => handleAddToCart(product)}
-                      >
-                        Add To Cart
-                      </Button>
+                    <Grid item xs={7} sm={5}>
+                      {cartStatus === 'Removed' ? (
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.button}
+                          fullWidth
+                          startIcon={<ShoppingCartIcon />}
+                          onClick={() => handleAddToCart(product)}
+                        >
+                          Add To Cart
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.button}
+                          fullWidth
+                          startIcon={<RemoveShoppingCartIcon />}
+                          onClick={() => handleAddToCart(product)}
+                        >
+                          Remove From Cart
+                        </Button>
+                      )}
                     </Grid>
-                    <Grid item xs={5} sm={4}>
+                    <Grid item xs={5} sm={3}>
                       <Button
                         variant="contained"
                         color="secondary"

@@ -30,10 +30,6 @@ const Cart = () => {
   const classes = useStyles()
   const [num, setNum] = useState(1)
   const carts = JSON.parse(localStorage.getItem('Carts'))
-  const favorites = JSON.parse(localStorage.getItem('Favorites'))
-  const hasFavorite = favorites.map(
-    (favoriteList) => favoriteList.id === product.id
-  )
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
@@ -44,11 +40,7 @@ const Cart = () => {
     })
   }
   const handleAddToFavorites = (product) => {
-    if (
-      favoritesStatus === 'Removed'
-      // &&
-      // (hasFavorite === false || hasFavorite.length === 0)
-    ) {
+    if (favoritesStatus === 'Removed') {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
       setFavoritesStatus('Added')
       Toast.fire({
@@ -96,41 +88,43 @@ const Cart = () => {
                   key={product.id}
                 >
                   <Card className={classes.root}>
-                    <CardActionArea className={classes.cardArea}>
-                      <Grid item xs={5} sm={3}>
-                        <CardMedia
-                          className={classes.media}
-                          image={product.image}
-                          title={product.name}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            variant="h6"
-                            component="h2"
-                            style={{ fontSize: '24px' }}
-                          >
-                            {product.name}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                          >
-                            {product.description}
-                          </Typography>
-                          <Typography
-                            variant="h6"
-                            color="textSecondary"
-                            className={classes.priceText}
-                          >
-                            ${product.price}
-                          </Typography>
-                        </CardContent>
-                      </Grid>
-                    </CardActionArea>
+                    <Link to={`/product/${product.id}`}>
+                      <CardActionArea className={classes.cardArea}>
+                        <Grid item xs={5} sm={3}>
+                          <CardMedia
+                            className={classes.media}
+                            image={product.image}
+                            title={product.name}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <CardContent>
+                            <Typography
+                              gutterBottom
+                              variant="h6"
+                              component="h2"
+                              style={{ fontSize: '24px' }}
+                            >
+                              {product.name}
+                            </Typography>
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
+                              component="p"
+                            >
+                              {product.description}
+                            </Typography>
+                            <Typography
+                              variant="h6"
+                              color="textSecondary"
+                              className={classes.priceText}
+                            >
+                              ${product.price}
+                            </Typography>
+                          </CardContent>
+                        </Grid>
+                      </CardActionArea>
+                    </Link>
                     <Grid container spacing={3} className={classes.cardAction}>
                       <Grid item xs={7} sm={4} lg={4}>
                         <ButtonGroup
@@ -171,9 +165,8 @@ const Cart = () => {
                           Remove
                         </Button>
                       </Grid>
-                      <Grid item xs={12} sm={5} lg={4}>
-                        {favoritesStatus === 'Removed' &&
-                        (hasFavorite === false || hasFavorite.length === 0) ? (
+                      <Grid item xs={12} sm={5} lg={5}>
+                        {favoritesStatus === 'Removed' ? (
                           <Button
                             variant="contained"
                             color="primary"

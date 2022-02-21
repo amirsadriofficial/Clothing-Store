@@ -35,14 +35,14 @@ const SingleProduct = () => {
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
-  const carts = JSON.parse(localStorage.getItem('Carts'))
-  const hasCart = carts.map((cartList) => cartList.id === product.id)
-  const favorites = JSON.parse(localStorage.getItem('Favorites'))
-  const hasFavorite = favorites.map(
-    (favoriteList) => favoriteList.id === product.id
-  )
-  console.log('hasProduct: ', hasCart)
-  console.log('hasFavorite: ', hasFavorite)
+  // const carts = JSON.parse(localStorage.getItem('Carts'))
+  // const hasCart = carts.map((cartList) => cartList.id === product.id)
+  // const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  // const hasFavorite = favorites.map(
+  //   (favoriteList) => favoriteList.id === product.id
+  // )
+  // console.log('hasProduct: ', hasCart)
+  // console.log('hasFavorite: ', hasFavorite)
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
@@ -253,8 +253,7 @@ const SingleProduct = () => {
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
               <Grid item xs={8}>
-                {cartStatus === 'Removed' &&
-                (hasCart === false || hasCart.length === 0) ? (
+                {cartStatus === 'Removed' ? (
                   <Button
                     variant="contained"
                     color="primary"
@@ -280,8 +279,7 @@ const SingleProduct = () => {
               </Grid>
             </Grid>
             <Grid item xs={12} className={classes.flexRow}>
-              {favoritesStatus === 'Removed' &&
-              (hasFavorite === false || hasFavorite.length === 0) ? (
+              {favoritesStatus === 'Removed' ? (
                 <IconButton aria-label="delete" onClick={handleFavorites}>
                   <FavoriteBorderIcon />
                 </IconButton>

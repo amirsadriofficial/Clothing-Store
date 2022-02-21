@@ -1,16 +1,16 @@
-.loading {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .MuiButton-label a {
   text-decoration: none;
 }
 
+.active-app-bar-link {
+  border-bottom: 2px solid #3f51b5 !important;
+}
+
 .active-app-bar-button {
+  color: #3f51b5 !important;
+}
+
+.active-app-bar-menu-item {
   color: #3f51b5 !important;
   border-bottom: 2px solid #3f51b5 !important;
 }
