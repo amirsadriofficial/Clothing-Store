@@ -1,28 +1,7 @@
 import React, { useState } from 'react'
-import ReactPlaceholder from 'react-placeholder'
-import 'react-placeholder/lib/reactPlaceholder.css'
-import {
-  TextBlock,
-  TextRow,
-  RectShape,
-} from 'react-placeholder/lib/placeholders'
 import Grid from '@material-ui/core/Grid'
 // import Card from '../../card/Card'
 import Products from '../../../utils/all-products'
-
-const Placeholder = () => {
-  return (
-    <div className="my-awesome-placeholder">
-      <RectShape color="#E0E0E0" style={{ width: 270, height: 335 }} />
-      <TextRow rows={1} />
-      <TextBlock rows={1} color="#E0E0E0" />
-      <TextRow rows={1} />
-      <TextBlock rows={2} color="#E0E0E0" />
-      <TextRow rows={1} />
-      <TextBlock rows={1} color="#E0E0E0" />
-    </div>
-  )
-}
 
 const AllProducts = (filter) => {
   // const [placeholder, setPlaceholder] = useState(false)
@@ -48,10 +27,6 @@ const AllProducts = (filter) => {
       {/* {filteredProducts.map((product) => (
         <Card data={product} />
       ))} */}
-      <ReactPlaceholder customPlaceholder={<Placeholder />} />
-      <ReactPlaceholder customPlaceholder={<Placeholder />} />
-      <ReactPlaceholder customPlaceholder={<Placeholder />} />
-      <ReactPlaceholder customPlaceholder={<Placeholder />} />
     </Grid>
   )
 }
