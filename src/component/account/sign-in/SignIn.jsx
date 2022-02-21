@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import Avatar from '@material-ui/core/Avatar'
@@ -26,7 +26,7 @@ import useStyles from './Styles'
 
 const SignIn = () => {
   const classes = useStyles()
-  // const history = useHistory()
+  const history = useHistory()
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
   const [formValue, setFormValue] = useState({
@@ -61,7 +61,7 @@ const SignIn = () => {
       setLoading(true)
       setTimeout(() => {
         dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
-        // history.push('/')
+        history.push('/')
         Swal.fire(
           `Welcome Amir!`,
           'You have successfully signed in!',
