@@ -15,18 +15,18 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
-import Toast from '../../toast/Toast'
-import Product from '../../../utils/all-products'
+import Toast from '../toast/Toast'
+import Product from '../../utils/all-products'
 import { sizes, colors } from './Options'
 import useStyles from './Styles'
 import {
   ADD_TO_CART_ACTION,
   REMOVE_FROM_CART_ACTION,
-} from '../../../redux/cart/Action'
+} from '../../redux/cart/Action'
 import {
   ADD_TO_FAVORITES_ACTION,
   REMOVE_FROM_FAVORITES_ACTION,
-} from '../../../redux/favorites/Action'
+} from '../../redux/favorites/Action'
 
 const SingleProduct = () => {
   const classes = useStyles()

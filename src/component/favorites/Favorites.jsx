@@ -21,6 +21,7 @@ import useStyles from './Styles'
 const Favorites = () => {
   const classes = useStyles()
   const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  // const [cartStatus, setCartStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
     dispatch(REMOVE_FROM_FAVORITES_ACTION(product))

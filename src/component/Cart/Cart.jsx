@@ -16,16 +16,25 @@ import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import Toast from '../toast/Toast'
 import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
-import { ADD_TO_FAVORITES_ACTION } from '../../redux/favorites/Action'
+import {
+  ADD_TO_FAVORITES_ACTION,
+  REMOVE_FROM_FAVORITES_ACTION,
+} from '../../redux/favorites/Action'
 import useStyles from './Styles'
 
 const Cart = () => {
   const classes = useStyles()
   const [num, setNum] = useState(1)
   const carts = JSON.parse(localStorage.getItem('Carts'))
+  const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  const hasFavorite = favorites.map(
+    (favoriteList) => favoriteList.id === product.id
+  )
+  const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
     dispatch(REMOVE_FROM_CART_ACTION(product))
@@ -35,11 +44,26 @@ const Cart = () => {
     })
   }
   const handleAddToFavorites = (product) => {
-    dispatch(ADD_TO_FAVORITES_ACTION(product))
-    Toast.fire({
-      animation: true,
-      title: 'Product Added To Favorites',
-    })
+    if (
+      favoritesStatus === 'Removed'
+      // &&
+      // (hasFavorite === false || hasFavorite.length === 0)
+    ) {
+      dispatch(ADD_TO_FAVORITES_ACTION(product))
+      setFavoritesStatus('Added')
+      Toast.fire({
+        animation: true,
+        title: 'Product Added To Favorites',
+      })
+    }
+    if (favoritesStatus === 'Added') {
+      dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
+      setFavoritesStatus('Removed')
+      Toast.fire({
+        animation: true,
+        title: 'Product Removed From Favorites',
+      })
+    }
   }
   const handleChangeNumber = (type) => {
     if (type === 'more' && num < 10) {
@@ -148,15 +172,28 @@ const Cart = () => {
                         </Button>
                       </Grid>
                       <Grid item xs={12} sm={5} lg={4}>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          fullWidth
-                          startIcon={<FavoriteBorderIcon />}
-                          onClick={() => handleAddToFavorites(product)}
-                        >
-                          Add To Favorites
-                        </Button>
+                        {favoritesStatus === 'Removed' &&
+                        (hasFavorite === false || hasFavorite.length === 0) ? (
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            startIcon={<FavoriteBorderIcon />}
+                            onClick={() => handleAddToFavorites(product)}
+                          >
+                            Add To Favorites
+                          </Button>
+                        ) : (
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            startIcon={<FavoriteIcon />}
+                            onClick={() => handleAddToFavorites(product)}
+                          >
+                            Remove From Favorites
+                          </Button>
+                        )}
                       </Grid>
                     </Grid>
                   </Card>
