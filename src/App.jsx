@@ -4,15 +4,15 @@ import { Provider } from 'react-redux'
 import './App.css'
 import store from './redux/store'
 import Layout from './container/layout/Layout'
-// import Home from './component/home/home/Home'
-// import Shop from './component/shop/shop/Shop'
-// import SingleProduct from './component/shop/single-product/SingleProduct'
-// import About from './component/about/About'
-// import Contact from './component/contact/Contact'
-// import Cart from './component/cart/Cart'
-// import Favorites from './component/favorites/Favorites'
-// import Help from './component/help/Help'
-import Routes from './core/Routes'
+import Home from './component/home/home/Home'
+import Shop from './component/shop/shop/Shop'
+import SingleProduct from './component/shop/single-product/SingleProduct'
+import About from './component/about/About'
+import Contact from './component/contact/Contact'
+import Cart from './component/cart/Cart'
+import Favorites from './component/favorites/Favorites'
+import Help from './component/help/Help'
+// import Routes from './core/Routes'
 import Profile from './component/account/profile/Profile'
 import SignIn from './component/account/sign-in/SignIn'
 import SignUp from './component/account/sign-up/SignUp'
@@ -24,12 +24,12 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Provider store={store}>
-            <Layout>
+            {/* <Layout>
               {Routes.map((route) => (
                 <Route exact path={route.path} component={route.component} />
               ))}
-            </Layout>
-            {/* <Route exact path="/">
+            </Layout> */}
+            <Route exact path="/">
               <Layout>
                 <Home />
               </Layout>
@@ -68,7 +68,7 @@ function App() {
               <Layout>
                 <Help />
               </Layout>
-            </Route> */}
+            </Route>
             <Route path="/profile">
               <Profile />
             </Route>
