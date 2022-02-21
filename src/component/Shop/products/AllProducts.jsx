@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
-// import Card from '../../card/Card'
+import Card from '../../card/Card'
 import Products from '../../../utils/all-products'
 import Placeholder from '../../placeholder/Placeholder'
 
 const AllProducts = (filter) => {
-  // const [placeholder, setPlaceholder] = useState(false)
+  const [placeholder, setPlaceholder] = useState(false)
   const [filteredProducts, setFilteredProducts] = useState(Products)
-  console.log('Filter:', filter)
   const UpTo100 = Products.filter((product) => product.price < 100)
   const Above100 = Products.filter((product) => product.price > 100)
+  console.log('Filter:', filter)
   if (filter === 'ALL') {
     setFilteredProducts(Products)
     console.log('ALL:', filteredProducts)
@@ -22,16 +22,20 @@ const AllProducts = (filter) => {
     setFilteredProducts(Above100)
     console.log('Above 100:', filteredProducts)
   }
+  const numOfPlaceholder = []
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < filteredProducts.length; i++) {
+    numOfPlaceholder.push(<Placeholder />)
+  }
+  setTimeout(() => {
+    setPlaceholder(true)
+  }, 1000)
 
   return (
     <Grid container spacing={3}>
-      {/* {filteredProducts.map((product) => (
-        <Card data={product} />
-      ))} */}
-      <Placeholder />
-      <Placeholder />
-      <Placeholder />
-      <Placeholder />
+      {placeholder
+        ? filteredProducts.map((product) => <Card data={product} />)
+        : numOfPlaceholder.map((PlaceholderItems) => PlaceholderItems)}
     </Grid>
   )
 }
