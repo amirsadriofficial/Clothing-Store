@@ -21,6 +21,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import clsx from 'clsx'
 import Swal from 'sweetalert2'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import Information from './Information'
 import { mainListItems, secondaryListItems } from './ListItems'
 import Chart from './Chart'
@@ -33,15 +34,20 @@ const Profile = () => {
   const classes = useStyles()
   const history = useHistory()
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
   const account = JSON.parse(localStorage.getItem('Account'))
   const handleSubmit = () => {
-    dispatch(SIGN_OUT_SUCCESS_ACTION())
-    history.push('/')
-    Swal.fire(
-      `Good Bye ${account[0].firstName}!`,
-      'You have successfully signed out!',
-      'success'
-    )
+    setLoading(true)
+    setTimeout(() => {
+      dispatch(SIGN_OUT_SUCCESS_ACTION())
+      history.push('/')
+      Swal.fire(
+        `Good Bye ${account[0].firstName}!`,
+        'You have successfully signed out!',
+        'success'
+      )
+      setLoading(false)
+    }, 2000)
   }
   const [open, setOpen] = useState(true)
   const handleDrawerOpen = () => {
@@ -116,9 +122,24 @@ const Profile = () => {
             <ListItemIcon>
               <ExitToAppIcon />
             </ListItemIcon>
-            <Button color="secondary" onClick={handleSubmit} fullWidth>
-              Sign Out
-            </Button>
+            {loading === false ? (
+              <Button color="secondary" onClick={handleSubmit} fullWidth>
+                Sign Out
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                disabled
+                onClick={handleSubmit}
+                fullWidth
+              >
+                <CircularProgress
+                  size={30}
+                  className={classes.circularProgress}
+                />
+                Loading...
+              </Button>
+            )}
           </ListItem>
         </List>
       </Drawer>

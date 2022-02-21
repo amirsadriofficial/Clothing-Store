@@ -82,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
   button: {
     color: '#fff',
   },
+  circularProgress: {
+    color: 'red',
+    marginRight: '10px',
+  },
 }))
 
 export default useStyles
