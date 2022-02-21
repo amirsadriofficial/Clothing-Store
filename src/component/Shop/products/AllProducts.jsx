@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Card from '../../card/Card'
-import Products from '../../../utils/all-products'
 import Placeholder from '../../placeholder/Placeholder'
+import Products from '../../../utils/all-products'
 
 const AllProducts = (filter) => {
   const [placeholder, setPlaceholder] = useState(false)
