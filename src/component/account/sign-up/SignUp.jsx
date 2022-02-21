@@ -20,6 +20,7 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Swal from 'sweetalert2'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import { SIGN_UP_SUCCESS_ACTION } from '../../../redux/account/Action'
 import useStyles from './Styles'
 
@@ -27,6 +28,7 @@ const SignUp = () => {
   const classes = useStyles()
   const history = useHistory()
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
   const [formValue, setFormValue] = useState({
     firstName: '',
     lastName: '',
@@ -58,13 +60,17 @@ const SignUp = () => {
   } = useForm()
   const onSubmit = () => {
     if (formValue !== '' && passwordValue !== '') {
-      dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
-      history.push('/')
-      Swal.fire(
-        `Welcome ${formValue.firstName}!`,
-        'You have successfully signed up!',
-        'success'
-      )
+      setLoading(true)
+      setTimeout(() => {
+        dispatch(SIGN_UP_SUCCESS_ACTION(formValue))
+        history.push('/')
+        Swal.fire(
+          `Welcome ${formValue.firstName}!`,
+          'You have successfully signed up!',
+          'success'
+        )
+        setLoading(false)
+      }, 2000)
     }
   }
 
@@ -184,16 +190,33 @@ const SignUp = () => {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={handleSubmit(onSubmit)}
-          >
-            Sign Up
-          </Button>
+          {loading === false ? (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={handleSubmit(onSubmit)}
+            >
+              Sign Up
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              disabled
+              className={classes.submitLoading}
+              onClick={handleSubmit(onSubmit)}
+            >
+              <CircularProgress
+                size={30}
+                className={classes.circularProgress}
+              />
+              Loading...
+            </Button>
+          )}
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link to="/signin" variant="body2" className={classes.linkText}>
