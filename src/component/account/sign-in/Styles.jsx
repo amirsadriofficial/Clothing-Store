@@ -21,11 +21,18 @@ const useStyles = makeStyles((theme) => ({
       background: '#000',
     },
   },
+  submitLoading: {
+    margin: theme.spacing(3, 0, 2),
+  },
   linkText: {
     color: 'blue',
   },
   errorText: {
     color: 'red',
+  },
+  circularProgress: {
+    color: 'red',
+    marginRight: '10px',
   },
 }))
 

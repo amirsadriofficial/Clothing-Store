@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import Avatar from '@material-ui/core/Avatar'
@@ -20,13 +20,15 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Swal from 'sweetalert2'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import { SIGN_IN_SUCCESS_ACTION } from '../../../redux/account/Action'
 import useStyles from './Styles'
 
 const SignIn = () => {
   const classes = useStyles()
-  const history = useHistory()
+  // const history = useHistory()
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
   const [formValue, setFormValue] = useState({
     email: '',
   })
@@ -56,9 +58,17 @@ const SignIn = () => {
   } = useForm()
   const onSubmit = () => {
     if (formValue !== '' && passwordValue !== '') {
-      dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
-      history.push('/')
-      Swal.fire(`Welcome Amir!`, 'You have successfully signed in!', 'success')
+      setLoading(true)
+      setTimeout(() => {
+        dispatch(SIGN_IN_SUCCESS_ACTION(formValue))
+        // history.push('/')
+        Swal.fire(
+          `Welcome Amir!`,
+          'You have successfully signed in!',
+          'success'
+        )
+        setLoading(false)
+      }, 2000)
     }
   }
 
@@ -132,16 +142,33 @@ const SignIn = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={handleSubmit(onSubmit)}
-          >
-            Sign In
-          </Button>
+          {loading === false ? (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={handleSubmit(onSubmit)}
+            >
+              Sign In
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              disabled
+              className={classes.submitLoading}
+              onClick={handleSubmit(onSubmit)}
+            >
+              <CircularProgress
+                size={30}
+                className={classes.circularProgress}
+              />
+              Loading...
+            </Button>
+          )}
           <Grid container>
             <Grid item xs>
               <Link to="/404" variant="body2" className={classes.linkText}>
