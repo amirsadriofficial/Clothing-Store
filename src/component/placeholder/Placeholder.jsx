@@ -12,14 +12,15 @@ const CustomPlaceholder = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes}>
-      <RectShape color="#E0E0E0" style={{ width: 270, height: 335 }} />
-      <TextRow rows={1} />
-      <TextBlock rows={1} color="#E0E0E0" />
-      <TextRow rows={1} />
-      <TextBlock rows={2} color="#E0E0E0" />
-      <TextRow rows={1} />
-      <TextBlock rows={1} color="#E0E0E0" />
+    <div className={classes.customPlaceholder}>
+      <RectShape className={classes.imagePlaceholder} color="#E0E0E0" />
+      <TextRow className={classes.namePlaceholder} color="#E0E0E0" rows={1} />
+      <TextBlock
+        className={classes.descriptionPlaceholder}
+        color="#E0E0E0"
+        rows={2}
+      />
+      <TextRow className={classes.pricePlaceholder} color="#E0E0E0" rows={1} />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 // import Card from '../../card/Card'
 import Products from '../../../utils/all-products'
+import Placeholder from '../../placeholder/Placeholder'
 
 const AllProducts = (filter) => {
   // const [placeholder, setPlaceholder] = useState(false)
@@ -27,6 +28,10 @@ const AllProducts = (filter) => {
       {/* {filteredProducts.map((product) => (
         <Card data={product} />
       ))} */}
+      <Placeholder />
+      <Placeholder />
+      <Placeholder />
+      <Placeholder />
     </Grid>
   )
 }
