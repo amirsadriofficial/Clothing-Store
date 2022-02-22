@@ -12,7 +12,7 @@ const About = () => {
   return (
     <>
       <div className={classes.background}>
-        <h2 className={classes.title}>About</h2>
+        <h2 className={`title-animation ${classes.title}`}>About</h2>
       </div>
       <Container className={classes.container}>
         <Grid container spacing={3}>
