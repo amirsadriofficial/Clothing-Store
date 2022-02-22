@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <>
       <div className={classes.background}>
-        <h2 className={classes.title}>Contact</h2>
+        <h2 className={`title-animation ${classes.title}`}>Contact</h2>
       </div>
       <Container className={classes.container}>
         <Grid container spacing={1}>
