@@ -16,7 +16,9 @@ const Slide = (data) => {
       <img src={image} alt="SlideOne" className={classes.responsive} />
       <Hidden mdDown>
         <Grid className={classes.descriptionPosition}>
-          <h2 className={classes.descriptionFont}>{title}</h2>
+          <h2 className={`text-animation ${classes.descriptionFont}`}>
+            {title}
+          </h2>
           <p className={classes.descriptionFont}>{description}</p>
           <Link to="/shop">
             <Button

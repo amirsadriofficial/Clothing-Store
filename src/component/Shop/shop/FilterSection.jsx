@@ -99,7 +99,7 @@ const FilterSection = ({ filter, setFilter, refAppBar }) => {
                       </Typography>
                       <Button
                         variant="outlined"
-                        className={`'active-filter-button' ${classes.buttonStyle}`}
+                        className={`active-filter-button ${classes.buttonStyle}`}
                         onClick={handleAllPriceFilter}
                         ref={refAllFilterButton}
                       >
