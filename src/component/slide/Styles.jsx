@@ -41,7 +41,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#717fe0',
     borderRadius: '25px',
   },
-  textAnimation: {},
+  textAnimation: {
+    webkitAnimation:
+      'tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both',
+    animation:
+      'tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both',
+  },
 }))
 
 export default useStyles
