@@ -152,7 +152,10 @@ const Favorites = () => {
           </>
         ) : (
           <Grid item xs={12} className={classes.EmptySection}>
-            <FavoriteBorderIcon style={{ fontSize: '200px', color: 'green' }} />
+            <FavoriteBorderIcon
+              className="logo-animation"
+              style={{ fontSize: '200px', color: 'green' }}
+            />
             <p style={{ fontSize: '25px', marginTop: '50px' }}>
               Favorites is Empty
             </p>

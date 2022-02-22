@@ -10,7 +10,7 @@ const NotFound = () => {
 
   return (
     <Container className={classes.container}>
-      <h6 className={classes.numberStyle}>404</h6>
+      <h6 className={`logo-animation ${classes.numberStyle}`}>404</h6>
       <p className={classes.textStyle}>Page Not Found</p>
       <Link to="/">
         <Button

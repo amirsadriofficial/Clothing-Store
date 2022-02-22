@@ -220,6 +220,7 @@ const Cart = () => {
         ) : (
           <Grid item xs={12} className={classes.EmptySection}>
             <AddShoppingCartIcon
+              className="logo-animation"
               style={{ fontSize: '200px', color: 'green' }}
             />
             <p style={{ fontSize: '25px', marginTop: '50px' }}>Cart is Empty</p>
