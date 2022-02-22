@@ -24,7 +24,7 @@ const Slide = (data) => {
           </p>
           <Link to="/shop">
             <Button
-              className={classes.buttonStyle}
+              className={`button-animation ${classes.buttonStyle}`}
               style={{ width: '200px', height: '50px', fontSize: '20px' }}
               variant="contained"
               color="primary"
@@ -44,7 +44,7 @@ const Slide = (data) => {
           </p>
           <Link to="/shop">
             <Button
-              className={classes.buttonStyle}
+              className={`button-animation ${classes.buttonStyle}`}
               size="large"
               variant="contained"
               color="primary"
@@ -64,7 +64,7 @@ const Slide = (data) => {
           </p>
           <Link to="/shop">
             <Button
-              className={classes.buttonStyle}
+              className={`button-animation ${classes.buttonStyle}`}
               variant="contained"
               color="primary"
             >
@@ -83,7 +83,7 @@ const Slide = (data) => {
           </p>
           <Link to="/shop">
             <Button
-              className={classes.buttonStyle}
+              className={`button-animation ${classes.buttonStyle}`}
               style={{ fontSize: '8px' }}
               size="small"
               variant="contained"
