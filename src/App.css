@@ -238,6 +238,7 @@
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes logo-animation {
   from {
     -webkit-transform: scale(1);
