@@ -74,6 +74,7 @@
     transform: scale(1) rotateZ(360deg);
   }
 }
+
 @keyframes button-animation {
   0% {
     -webkit-transform: scale(1) rotateZ(0);
@@ -146,6 +147,7 @@
     opacity: 1;
   }
 }
+
 @keyframes title-animation {
   0% {
     -webkit-transform: translateY(-45px);
