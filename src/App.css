@@ -42,6 +42,7 @@
     opacity: 1;
   }
 }
+
 @keyframes text-animation {
   0% {
     letter-spacing: -0.5em;
