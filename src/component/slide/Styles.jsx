@@ -41,6 +41,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#717fe0',
     borderRadius: '25px',
   },
+  textAnimation: {},
 }))
 
 export default useStyles
