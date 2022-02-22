@@ -19,7 +19,9 @@ const Slide = (data) => {
           <h2 className={`text-animation ${classes.descriptionFont}`}>
             {title}
           </h2>
-          <p className={classes.descriptionFont}>{description}</p>
+          <p className={`text-animation ${classes.descriptionFont}`}>
+            {description}
+          </p>
           <Link to="/shop">
             <Button
               className={classes.buttonStyle}
@@ -34,8 +36,12 @@ const Slide = (data) => {
       </Hidden>
       <Hidden lgUp smDown>
         <Grid className={classes.descriptionPositionLg}>
-          <h2 className={classes.descriptionFontLg}>{title}</h2>
-          <p className={classes.descriptionFontLg}>{description}</p>
+          <h2 className={`text-animation ${classes.descriptionFontLg}`}>
+            {title}
+          </h2>
+          <p className={`text-animation ${classes.descriptionFontLg}`}>
+            {description}
+          </p>
           <Link to="/shop">
             <Button
               className={classes.buttonStyle}
@@ -50,8 +56,12 @@ const Slide = (data) => {
       </Hidden>
       <Hidden mdUp xsDown>
         <Grid className={classes.descriptionPositionMd}>
-          <h2 className={classes.descriptionFontMd}>{title}</h2>
-          <p className={classes.descriptionFontMd}>{description}</p>
+          <h2 className={`text-animation ${classes.descriptionFontMd}`}>
+            {title}
+          </h2>
+          <p className={`text-animation ${classes.descriptionFontMd}`}>
+            {description}
+          </p>
           <Link to="/shop">
             <Button
               className={classes.buttonStyle}
@@ -65,8 +75,12 @@ const Slide = (data) => {
       </Hidden>
       <Hidden smUp>
         <Grid className={classes.descriptionPositionSm}>
-          <h2 className={classes.descriptionFontSm}>{title}</h2>
-          <p className={classes.descriptionFontSm}>{description}</p>
+          <h2 className={`text-animation ${classes.descriptionFontSm}`}>
+            {title}
+          </h2>
+          <p className={`text-animation ${classes.descriptionFontSm}`}>
+            {description}
+          </p>
           <Link to="/shop">
             <Button
               className={classes.buttonStyle}
