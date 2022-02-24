@@ -12,14 +12,13 @@ const cartReducer = (state = { carts: [] }, action) => {
       }
     case Types.REMOVE_FROM_CART: {
       newCarts = state.carts
-      newCarts.splice(
-        state.carts.findIndex((product) => product === action.product),
-        1
+      const afterRemovedList = newCarts.filter(
+        (product) => product === action.product.id
       )
-      localStorage.setItem('Carts', JSON.stringify(newCarts))
+      localStorage.setItem('Carts', JSON.stringify(afterRemovedList))
       return {
         ...state,
-        carts: newCarts,
+        carts: afterRemovedList,
       }
     }
     default:
