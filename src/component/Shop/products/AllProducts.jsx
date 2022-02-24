@@ -11,11 +11,11 @@ const AllProducts = ({ filter }) => {
     if (filter === 'ALL') {
       setFilteredProducts(Products)
       console.log('ALL:', filteredProducts)
-    } else if (filter === 'UPTO100') {
+    } else if (filter === 'UP_TO_100') {
       const UpTo100 = Products.filter((product) => product.price < 100)
       setFilteredProducts(UpTo100)
       console.log('Up To 100:', filteredProducts)
-    } else if (filter === 'ABOVE100') {
+    } else if (filter === 'ABOVE_100') {
       const Above100 = Products.filter((product) => product.price > 100)
       setFilteredProducts(Above100)
       console.log('Above 100:', filteredProducts)
