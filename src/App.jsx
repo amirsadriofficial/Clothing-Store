@@ -12,7 +12,6 @@ import Contact from './component/contact/Contact'
 import Cart from './component/cart/Cart'
 import Favorites from './component/favorites/Favorites'
 import Help from './component/help/Help'
-// import Routes from './core/Routes'
 import Profile from './component/account/profile/Profile'
 import SignIn from './component/account/sign-in/SignIn'
 import SignUp from './component/account/sign-up/SignUp'
@@ -24,11 +23,6 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Provider store={store}>
-            {/* <Layout>
-              {Routes.map((route) => (
-                <Route exact path={route.path} component={route.component} />
-              ))}
-            </Layout> */}
             <Route exact path="/">
               <Layout>
                 <Home />
