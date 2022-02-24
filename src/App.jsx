@@ -24,11 +24,9 @@ function App() {
         <Switch>
           <Provider store={store}>
             <Route exact path="/">
-              <Suspense fallback={<h1>Loading profile...</h1>}>
-                <Layout>
-                  <Home />
-                </Layout>
-              </Suspense>
+              <Layout>
+                <Home />
+              </Layout>
             </Route>
             <Route path="/shop">
               <Layout>
