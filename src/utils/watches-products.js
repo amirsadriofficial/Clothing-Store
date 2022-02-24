@@ -11,14 +11,14 @@ const WATCHES_PRODUCTS = [
     name: 'Watch With Jelly Strap ',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: watchProduct1,
-    price: 175,
+    price: 90,
   },
   {
     id: 'watch_product_2',
     name: 'Watch With Fabric Strap ',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: watchProduct2,
-    price: 160,
+    price: 85,
   },
   {
     id: 'watch_product_3',
@@ -32,7 +32,7 @@ const WATCHES_PRODUCTS = [
     name: 'Beautiful White Watch',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: watchProduct4,
-    price: 210,
+    price: 95,
   },
   {
     id: 'watch_product_5',
