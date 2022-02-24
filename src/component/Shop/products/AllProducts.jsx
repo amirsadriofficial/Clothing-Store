@@ -18,7 +18,6 @@ const AllProducts = ({ filter }) => {
       setFilteredProducts(Above100)
     }
   }, [filter])
-
   const numOfPlaceholder = []
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < filteredProducts.length; i++) {

@@ -113,19 +113,19 @@ const ShopHeader = () => {
             <AllProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <WomanProducts />
+            <WomanProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={2} dir={theme.direction}>
-            <ManProducts />
+            <ManProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={3} dir={theme.direction}>
-            <BagProducts />
+            <BagProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={4} dir={theme.direction}>
-            <ShoesProducts />
+            <ShoesProducts filter={filter} />
           </TabPanel>
           <TabPanel value={value} index={5} dir={theme.direction}>
-            <WatchesProducts />
+            <WatchesProducts filter={filter} />
           </TabPanel>
         </SwipeableViews>
       </div>
