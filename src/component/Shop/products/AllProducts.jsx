@@ -1,25 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Card from '../../card/Card'
 import Placeholder from '../../placeholder/Placeholder'
 import Products from '../../../utils/all-products'
 
-const AllProducts = (filter) => {
+const AllProducts = ({ filter }) => {
   const [placeholder, setPlaceholder] = useState(false)
   const [filteredProducts, setFilteredProducts] = useState(Products)
+  useEffect(() => {
+    if (filter === 'ALL') {
+      setFilteredProducts(Products)
+      console.log('ALL:', filteredProducts)
+    } else if (filter === 'UPTO100') {
+      const UpTo100 = Products.filter((product) => product.price < 100)
+      setFilteredProducts(UpTo100)
+      console.log('Up To 100:', filteredProducts)
+    } else if (filter === 'ABOVE100') {
+      const Above100 = Products.filter((product) => product.price > 100)
+      setFilteredProducts(Above100)
+      console.log('Above 100:', filteredProducts)
+    }
+  }, [filter])
   console.log('Filter:', filter)
-  if (filter === 'ALL') {
-    setFilteredProducts(Products)
-    console.log('ALL:', filteredProducts)
-  } else if (filter === 'UPTO100') {
-    const UpTo100 = Products.filter((product) => product.price < 100)
-    setFilteredProducts(UpTo100)
-    console.log('Up To 100:', filteredProducts)
-  } else if (filter === 'ABOVE100') {
-    const Above100 = Products.filter((product) => product.price > 100)
-    setFilteredProducts(Above100)
-    console.log('Above 100:', filteredProducts)
-  }
+
   const numOfPlaceholder = []
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < filteredProducts.length; i++) {
