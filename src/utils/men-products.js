@@ -21,7 +21,7 @@ const MEN_PRODUCTS = [
     name: 'Herschel Supply',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct2,
-    price: 130,
+    price: 95,
   },
   {
     id: 'man_product_3',
@@ -42,7 +42,7 @@ const MEN_PRODUCTS = [
     name: 'Lee White Pants',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct5,
-    price: 125,
+    price: 80,
   },
   {
     id: 'man_product_6',
@@ -56,7 +56,7 @@ const MEN_PRODUCTS = [
     name: 'Regular Fit T-shirt',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct7,
-    price: 185,
+    price: 75,
   },
   {
     id: 'man_product_8',
@@ -70,7 +70,7 @@ const MEN_PRODUCTS = [
     name: 'Classic T-Shirt Mens',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image: manProduct9,
-    price: 190,
+    price: 90,
   },
 ]
 
