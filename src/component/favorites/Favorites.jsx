@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -24,7 +24,7 @@ import useStyles from './Styles'
 
 const Favorites = () => {
   const classes = useStyles()
-  const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  const favorites = useSelector((state) => state.favoritesReducer)
   const [cartStatus, setCartStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromFavorites = (product) => {
@@ -59,9 +59,9 @@ const Favorites = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Favorites</h2>
         </Grid>
-        {favorites.length > 0 ? (
+        {favorites.favorites.length > 0 ? (
           <>
-            {favorites.map((product) => (
+            {favorites.favorites.map((product) => (
               <Grid item xs={12} md={6}>
                 <Card className={classes.root}>
                   <CardActionArea className={classes.cardArea}>
