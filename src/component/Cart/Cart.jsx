@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -29,7 +29,7 @@ import useStyles from './Styles'
 const Cart = () => {
   const classes = useStyles()
   const [num, setNum] = useState(1)
-  const carts = JSON.parse(localStorage.getItem('Carts'))
+  const carts = useSelector((state) => state.cartReducer)
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
@@ -66,7 +66,7 @@ const Cart = () => {
     }
   }
   let totalPrice = 0
-  carts.map((product) => {
+  carts.carts.map((product) => {
     totalPrice += product.price * num
     return totalPrice
   })
@@ -77,10 +77,10 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        {carts.length > 0 ? (
+        {carts.carts.length > 0 ? (
           <>
             <Grid item xs={12} md={7}>
-              {carts.map((product) => (
+              {carts.carts.map((product) => (
                 <Grid
                   item
                   xs={12}
