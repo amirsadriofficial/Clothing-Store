@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
 import Hidden from '@material-ui/core/Hidden'
@@ -9,10 +10,11 @@ import useStyles from './Styles'
 
 const IconItems = () => {
   const classes = useStyles()
-  // const carts = useSelector((state) => state.cartReducer)
-  // const favorites = useSelector((state) => state.favoritesReducer)
-  const carts = JSON.parse(localStorage.getItem('Carts'))
-  const favorites = JSON.parse(localStorage.getItem('Favorites'))
+  const carts = useSelector((state) => state.cartReducer)
+  const favorites = useSelector((state) => state.favoritesReducer)
+  console.log('carts', carts)
+  // const carts = JSON.parse(localStorage.getItem('Carts'))
+  // const favorites = JSON.parse(localStorage.getItem('Favorites'))
 
   return (
     <>
@@ -20,7 +22,7 @@ const IconItems = () => {
         <Link to="/cart">
           <IconButton aria-label="delete">
             <Badge
-              badgeContent={carts === null ? 0 : carts.length}
+              badgeContent={carts === null ? 0 : carts.carts.length}
               color="primary"
             >
               <ShoppingCartIcon />
@@ -32,7 +34,7 @@ const IconItems = () => {
         <Link to="/cart">
           <IconButton aria-label="delete" className={classes.iconButtonStyle}>
             <Badge
-              badgeContent={carts === null ? 0 : carts.length}
+              badgeContent={carts === null ? 0 : carts.carts.length}
               color="primary"
             >
               <ShoppingCartIcon />
@@ -43,7 +45,7 @@ const IconItems = () => {
       <Link to="/favorites">
         <IconButton aria-label="delete">
           <Badge
-            badgeContent={favorites === null ? 0 : favorites.length}
+            badgeContent={favorites === null ? 0 : favorites.favorites.length}
             color="primary"
           >
             <FavoriteBorderIcon />
