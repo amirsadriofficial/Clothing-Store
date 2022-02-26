@@ -65,6 +65,7 @@ const Cart = () => {
       setNum(num - 1)
     }
   }
+  console.log('carts:', carts)
   let totalPrice = 0
   carts.carts.map((product) => {
     totalPrice += product.price * num

@@ -9,7 +9,7 @@ const cartReducer = (state = { carts: [] }, action) => {
       return {
         ...state,
         carts: newCarts,
-        qty: action.qty + 1,
+        // qty: action.qty + 1,
       }
     case Types.REMOVE_FROM_CART: {
       newCarts = state.carts
