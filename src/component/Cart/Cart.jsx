@@ -16,21 +16,21 @@ import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
-// import FavoriteIcon from '@material-ui/icons/Favorite'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import Toast from '../toast/Toast'
 import { REMOVE_FROM_CART_ACTION } from '../../redux/cart/Action'
-// import {
-//   ADD_TO_FAVORITES_ACTION,
-//   REMOVE_FROM_FAVORITES_ACTION,
-// } from '../../redux/favorites/Action'
+import {
+  ADD_TO_FAVORITES_ACTION,
+  REMOVE_FROM_FAVORITES_ACTION,
+} from '../../redux/favorites/Action'
 import useStyles from './Styles'
 import AllProducts from '../../utils/all-products'
 
 const Cart = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
-  // const [favoritesStatus, setFavoritesStatus] = useState('Removed')
+  const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const dispatch = useDispatch()
   const handleRemoveFromCart = (product) => {
     dispatch(REMOVE_FROM_CART_ACTION(product))
@@ -39,23 +39,23 @@ const Cart = () => {
       title: 'Product Removed From Cart List',
     })
   }
-  // const handleAddToFavorites = (product) => {
-  //   if (favoritesStatus === 'Removed') {
-  //     dispatch(ADD_TO_FAVORITES_ACTION(product))
-  //     setFavoritesStatus('Added')
-  //     Toast.fire({
-  //       animation: true,
-  //       title: 'Product Added To Favorites',
-  //     })
-  //   } else if (favoritesStatus === 'Added') {
-  //     dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
-  //     setFavoritesStatus('Removed')
-  //     Toast.fire({
-  //       animation: true,
-  //       title: 'Product Removed From Favorites',
-  //     })
-  //   }
-  // }
+  const handleAddToFavorites = (product) => {
+    if (favoritesStatus === 'Removed') {
+      dispatch(ADD_TO_FAVORITES_ACTION(product))
+      setFavoritesStatus('Added')
+      Toast.fire({
+        animation: true,
+        title: 'Product Added To Favorites',
+      })
+    } else if (favoritesStatus === 'Added') {
+      dispatch(REMOVE_FROM_FAVORITES_ACTION(product))
+      setFavoritesStatus('Removed')
+      Toast.fire({
+        animation: true,
+        title: 'Product Removed From Favorites',
+      })
+    }
+  }
   const [state, setState] = useState({ currentProducts: [] })
   useEffect(() => {
     const SelectedProductsID = carts.carts
@@ -191,18 +191,18 @@ const Cart = () => {
                         </Button>
                       </Grid>
                       <Grid item xs={12} sm={5} lg={5}>
-                        {/* {favoritesStatus === 'Removed' ? ( */}
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          fullWidth
-                          startIcon={<FavoriteBorderIcon />}
-                          disabled
-                          // onClick={() => handleAddToFavorites(product)}
-                        >
-                          Add To Favorites
-                        </Button>
-                        {/* ) : (
+                        {favoritesStatus === 'Removed' ? (
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            startIcon={<FavoriteBorderIcon />}
+                            disabled
+                            onClick={() => handleAddToFavorites(product)}
+                          >
+                            Add To Favorites
+                          </Button>
+                        ) : (
                           <Button
                             variant="contained"
                             color="primary"
@@ -212,7 +212,7 @@ const Cart = () => {
                           >
                             Remove From Favorites
                           </Button>
-                        )} */}
+                        )}
                       </Grid>
                     </Grid>
                   </Card>
