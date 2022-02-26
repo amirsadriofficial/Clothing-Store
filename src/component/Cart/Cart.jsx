@@ -57,7 +57,7 @@ const Cart = () => {
       })
     }
   }
-  const [state, setState] = useState({ isloaded: false, currentProducts: [] })
+  const [state, setState] = useState({ currentProducts: [] })
   useEffect(() => {
     const SelectedProductsID = carts.carts
     if (Array.isArray(SelectedProductsID) && SelectedProductsID.length > 0) {
