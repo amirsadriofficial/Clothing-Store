@@ -89,7 +89,6 @@ const Cart = () => {
       setState({ ...state, isloaded: true })
     }
   }, [])
-
   const onHandleQuantity = (product, action) => {
     const s = state.currentProducts
     console.log('s', s)
