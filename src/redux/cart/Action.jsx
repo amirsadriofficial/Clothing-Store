@@ -11,6 +11,5 @@ export const REMOVE_FROM_CART_ACTION = (product) => {
   return {
     type: Types.REMOVE_FROM_CART,
     product,
-    // qty: 1,
   }
 }
