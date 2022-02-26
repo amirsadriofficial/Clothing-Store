@@ -73,7 +73,7 @@ const Cart = () => {
   ]
   useEffect(() => {
     const SelectedProductsID = carts.carts
-    console.log('SelectedProductsID:', SelectedProductsID)
+    console.log('SelectedProductsID :', SelectedProductsID)
     if (Array.isArray(SelectedProductsID) && SelectedProductsID.length > 0) {
       const SelectedProducts = []
       SelectedProductsID.filter((id) =>
@@ -83,7 +83,7 @@ const Cart = () => {
             SelectedProducts.push({ ...obj, ...{ quantity: 1 } })
         )
       )
-      console.log('SelectedProducts:', SelectedProducts)
+      console.log('SelectedProducts :', SelectedProducts)
       setState({ ...state, isloaded: true, currentProducts: SelectedProducts })
     } else {
       setState({ ...state, isloaded: true })
