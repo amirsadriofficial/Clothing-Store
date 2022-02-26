@@ -83,7 +83,7 @@ const Cart = () => {
             SelectedProducts.push({ ...obj, ...{ quantity: 1 } })
         )
       )
-      console.log('SelectedProducts', SelectedProducts)
+      console.log('SelectedProducts:', SelectedProducts)
       setState({ ...state, isloaded: true, currentProducts: SelectedProducts })
     } else {
       setState({ ...state, isloaded: true })
