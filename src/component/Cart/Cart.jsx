@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container'
@@ -25,10 +25,15 @@ import {
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../redux/favorites/Action'
 import useStyles from './Styles'
+import AllProducts from '../../utils/all-products'
+import ManProducts from '../../utils/men-products'
+import BagProducts from '../../utils/bags-products'
+import WomanProducts from '../../utils/women-products'
+import ShoesProducts from '../../utils/shoes-products'
+import WatchesProducts from '../../utils/watches-products'
 
 const Cart = () => {
   const classes = useStyles()
-  const [num, setNum] = useState(1)
   const carts = useSelector((state) => state.cartReducer)
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
   const dispatch = useDispatch()
@@ -57,20 +62,64 @@ const Cart = () => {
       })
     }
   }
-  const handleChangeNumber = (type) => {
-    if (type === 'more' && num < 10) {
-      setNum(num + 1)
+  const [state, setState] = useState({ isloaded: false, currentProducts: [] })
+  const ProductsData = [
+    ...AllProducts,
+    ...ManProducts,
+    ...BagProducts,
+    ...WomanProducts,
+    ...ShoesProducts,
+    ...WatchesProducts,
+  ]
+  useEffect(() => {
+    const SelectedProductsID = carts.carts
+    console.log('SelectedProductsID', SelectedProductsID)
+    if (Array.isArray(SelectedProductsID) && SelectedProductsID.length > 0) {
+      const SelectedProducts = []
+      SelectedProductsID.filter((id) =>
+        ProductsData.filter(
+          (obj) =>
+            obj.id === id &&
+            SelectedProducts.push({ ...obj, ...{ quantity: 1 } })
+        )
+      )
+      console.log('SelectedProducts', SelectedProducts)
+      setState({ ...state, isloaded: true, currentProducts: SelectedProducts })
+    } else {
+      setState({ ...state, isloaded: true })
     }
-    if (type === 'low' && num > 1) {
-      setNum(num - 1)
+  }, [])
+
+  const onHandleQuantity = (product, action) => {
+    const s = state.currentProducts
+    console.log('s', s)
+    const i = product
+    console.log('i', i)
+    switch (action) {
+      case 'increase':
+        i.quantity += 1
+        console.log('quantity', i.quantity)
+        break
+      case 'decrease':
+        i.quantity -= 1
+        break
+      default:
+        break
     }
+    s.filter((obj) =>
+      obj.id === i.id ? Object.assign(obj, { quantity: i.quantity }) : null
+    )
+    setState({ ...state, currentProducts: s })
   }
-  console.log('carts:', carts)
-  let totalPrice = 0
-  carts.carts.map((product) => {
-    totalPrice += product.price * num
-    return totalPrice
-  })
+  if (!state.isloaded) {
+    return <h1>Loading...</h1>
+  }
+  const { currentProducts } = state
+  let total = 0
+  // eslint-disable-next-line no-return-assign
+  currentProducts.filter((obj) => (total += obj.quantity * obj.price))
+  console.log('total', total)
+  console.log('currentProducts', currentProducts)
 
   return (
     <Container className={classes.container}>
@@ -78,10 +127,10 @@ const Cart = () => {
         <Grid item xs={12} className={classes.pageTitle}>
           <h2 className={classes.pageTitleText}>Cart</h2>
         </Grid>
-        {carts.carts.length > 0 ? (
+        {currentProducts.length > 0 ? (
           <>
             <Grid item xs={12} md={7}>
-              {carts.carts.map((product) => (
+              {currentProducts.map((product) => (
                 <Grid
                   item
                   xs={12}
@@ -134,7 +183,9 @@ const Cart = () => {
                         >
                           <IconButton
                             aria-label="delete"
-                            onClick={() => handleChangeNumber('low')}
+                            onClick={() =>
+                              onHandleQuantity(product, 'decrease')
+                            }
                           >
                             <RemoveIcon />
                           </IconButton>
@@ -142,14 +193,16 @@ const Cart = () => {
                             id="standard-number"
                             label="Number"
                             type="number"
-                            value={num}
+                            value={product.quantity}
                             InputLabelProps={{
                               shrink: true,
                             }}
                           />
                           <IconButton
                             aria-label="delete"
-                            onClick={() => handleChangeNumber('more')}
+                            onClick={() =>
+                              onHandleQuantity(product, 'increase')
+                            }
                           >
                             <AddIcon />
                           </IconButton>
@@ -198,14 +251,14 @@ const Cart = () => {
               <h5 style={{ fontSize: '35px', margin: '10px' }}>Cart Totals</h5>
               <div className={classes.cartTotalInfo}>
                 <p>
-                  Subtotal: <span>${totalPrice}</span>
+                  Subtotal: <span>${total}</span>
                 </p>
                 <p>
                   Product Discounts: <span style={{ color: 'red' }}>$0</span>
                 </p>
               </div>
               <p style={{ fontSize: '25px' }}>
-                Total: <span>${totalPrice}</span>
+                Total: <span>${total}</span>
               </p>
               <Button
                 variant="contained"
