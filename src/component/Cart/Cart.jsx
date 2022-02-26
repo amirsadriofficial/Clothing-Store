@@ -91,7 +91,7 @@ const Cart = () => {
   }, [])
   const onHandleQuantity = (product, action) => {
     const s = state.currentProducts
-    console.log('s:', s)
+    console.log('s or state.currentProducts :', s)
     const i = product
     console.log('i:', i)
     switch (action) {
