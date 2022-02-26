@@ -118,7 +118,7 @@ const Cart = () => {
   // eslint-disable-next-line no-return-assign
   currentProducts.filter((obj) => (total += obj.quantity * obj.price))
   console.log('total:', total)
-  console.log('currentProducts', currentProducts)
+  console.log('currentProducts:', currentProducts)
 
   return (
     <Container className={classes.container}>
