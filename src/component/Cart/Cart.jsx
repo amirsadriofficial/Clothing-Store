@@ -60,7 +60,6 @@ const Cart = () => {
   const [state, setState] = useState({ isloaded: false, currentProducts: [] })
   useEffect(() => {
     const SelectedProductsID = carts.carts
-    console.log('SelectedProductsID :', SelectedProductsID)
     if (Array.isArray(SelectedProductsID) && SelectedProductsID.length > 0) {
       const SelectedProducts = []
       SelectedProductsID.filter((product) =>
@@ -70,7 +69,6 @@ const Cart = () => {
             : null
         )
       )
-      console.log('SelectedProducts :', SelectedProducts)
       setState({ ...state, isloaded: true, currentProducts: SelectedProducts })
     } else {
       setState({ ...state, isloaded: true })
@@ -78,10 +76,7 @@ const Cart = () => {
   }, [])
   const onHandleQuantity = (product, action) => {
     const s = state.currentProducts
-    console.log('s or state.currentProducts :', s)
     const i = product
-    console.log('i or product :', i)
-    console.log('quantity :', i.quantity)
     if (action === 'increase' && i.quantity < 10) {
       i.quantity += 1
     }
@@ -93,15 +88,10 @@ const Cart = () => {
     )
     setState({ ...state, currentProducts: s })
   }
-  // if (!state.isloaded) {
-  //   return <h1>Loading...</h1>
-  // }
   const { currentProducts } = state
   let total = 0
   // eslint-disable-next-line no-return-assign
   currentProducts.filter((obj) => (total += obj.quantity * obj.price))
-  console.log('total: ', total)
-  console.log('currentProducts: ', currentProducts)
 
   return (
     <Container className={classes.container}>
