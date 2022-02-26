@@ -93,7 +93,7 @@ const Cart = () => {
     const s = state.currentProducts
     console.log('s:', s)
     const i = product
-    console.log('i', i)
+    console.log('i:', i)
     switch (action) {
       case 'increase':
         i.quantity += 1
