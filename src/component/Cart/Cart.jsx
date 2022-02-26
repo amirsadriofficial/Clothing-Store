@@ -97,7 +97,7 @@ const Cart = () => {
     switch (action) {
       case 'increase':
         i.quantity += 1
-        console.log('quantity', i.quantity)
+        console.log('quantity:', i.quantity)
         break
       case 'decrease':
         i.quantity -= 1
