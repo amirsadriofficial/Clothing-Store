@@ -76,11 +76,11 @@ const Cart = () => {
     console.log('SelectedProductsID :', SelectedProductsID)
     if (Array.isArray(SelectedProductsID) && SelectedProductsID.length > 0) {
       const SelectedProducts = []
-      SelectedProductsID.filter((id) =>
-        ProductsData.filter(
-          (obj) =>
-            obj.id === id &&
-            SelectedProducts.push({ ...obj, ...{ quantity: 1 } })
+      SelectedProductsID.filter((product) =>
+        ProductsData.filter((obj) =>
+          obj.id === product.id
+            ? SelectedProducts.push({ ...obj, ...{ quantity: 1 } })
+            : null
         )
       )
       console.log('SelectedProducts :', SelectedProducts)
@@ -94,16 +94,12 @@ const Cart = () => {
     console.log('s or state.currentProducts :', s)
     const i = product
     console.log('i or product :', i)
-    switch (action) {
-      case 'increase':
-        i.quantity += 1
-        console.log('quantity :', i.quantity)
-        break
-      case 'decrease':
-        i.quantity -= 1
-        break
-      default:
-        break
+    console.log('quantity :', i.quantity)
+    if (action === 'increase' && i.quantity < 10) {
+      i.quantity += 1
+    }
+    if (action === 'decrease' && i.quantity > 1) {
+      i.quantity -= 1
     }
     s.filter((obj) =>
       obj.id === i.id ? Object.assign(obj, { quantity: i.quantity }) : null
