@@ -4,7 +4,7 @@ export const ADD_TO_CART_ACTION = (product) => {
   return {
     type: Types.ADD_TO_CART,
     product,
-    qty: 1,
+    qty: 0,
   }
 }
 
