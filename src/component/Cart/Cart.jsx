@@ -26,11 +26,6 @@ import {
 } from '../../redux/favorites/Action'
 import useStyles from './Styles'
 import AllProducts from '../../utils/all-products'
-// import ManProducts from '../../utils/men-products'
-// import BagProducts from '../../utils/bags-products'
-// import WomanProducts from '../../utils/women-products'
-// import ShoesProducts from '../../utils/shoes-products'
-// import WatchesProducts from '../../utils/watches-products'
 
 const Cart = () => {
   const classes = useStyles()
@@ -63,14 +58,6 @@ const Cart = () => {
     }
   }
   const [state, setState] = useState({ isloaded: false, currentProducts: [] })
-  // const ProductsData = [
-  //   ...AllProducts,
-  //   ...ManProducts,
-  //   ...BagProducts,
-  //   ...WomanProducts,
-  //   ...ShoesProducts,
-  //   ...WatchesProducts,
-  // ]
   useEffect(() => {
     const SelectedProductsID = carts.carts
     console.log('SelectedProductsID :', SelectedProductsID)
