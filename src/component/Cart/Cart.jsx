@@ -110,9 +110,9 @@ const Cart = () => {
     )
     setState({ ...state, currentProducts: s })
   }
-  if (!state.isloaded) {
-    return <h1>Loading...</h1>
-  }
+  // if (!state.isloaded) {
+  //   return <h1>Loading...</h1>
+  // }
   const { currentProducts } = state
   let total = 0
   // eslint-disable-next-line no-return-assign
