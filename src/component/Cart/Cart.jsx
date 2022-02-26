@@ -69,9 +69,9 @@ const Cart = () => {
             : null
         )
       )
-      setState({ ...state, isloaded: true, currentProducts: SelectedProducts })
+      setState({ ...state, currentProducts: SelectedProducts })
     } else {
-      setState({ ...state, isloaded: true })
+      setState({ ...state })
     }
   }, [])
   const onHandleQuantity = (product, action) => {
