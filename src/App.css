@@ -10,6 +10,10 @@
   color: #3f51b5 !important;
 }
 
+.active-app-bar-button-hover:hover {
+  color: #3f51b5 !important;
+}
+
 .active-app-bar-menu-item {
   color: #3f51b5 !important;
   border-bottom: 2px solid #3f51b5 !important;
@@ -274,34 +278,5 @@
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
-  }
-}
-
-.button-animation-hover:hover {
-  -webkit-animation: button-animation-hover 0.45s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: button-animation-hover 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-}
-
-@-webkit-keyframes button-animation-hover {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  100% {
-    -webkit-transform: translateZ(160px);
-    transform: translateZ(160px);
-  }
-}
-
-@keyframes button-animation-hover {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  100% {
-    -webkit-transform: translateZ(160px);
-    transform: translateZ(160px);
   }
 }

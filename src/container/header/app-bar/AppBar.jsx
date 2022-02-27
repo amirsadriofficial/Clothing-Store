@@ -104,7 +104,9 @@ const NavBar = () => {
                   <Button
                     key={page.name}
                     className={
-                      location.pathname === page.path && 'active-app-bar-button'
+                      location.pathname === page.path
+                        ? 'active-app-bar-button'
+                        : 'active-app-bar-button-hover'
                     }
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
