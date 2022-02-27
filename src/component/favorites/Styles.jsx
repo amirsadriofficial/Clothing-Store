@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
     display: ' flex',
     flexDirection: 'row',
     justifyContent: 'start',
-    alignItems: 'center',
+    alignItems: 'start',
   },
   cardAction: {
     padding: '10px',
