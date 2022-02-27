@@ -8,10 +8,12 @@
 
 .active-app-bar-button {
   color: #3f51b5 !important;
+  background-color: #fff !important;
 }
 
 .active-app-bar-button-hover:hover {
   color: #3f51b5 !important;
+  background-color: #fff !important;
 }
 
 .active-app-bar-menu-item {
