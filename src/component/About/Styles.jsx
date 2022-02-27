@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     maxHeight: '400px',
     border: '3px solid #888',
     position: 'absolute',
-    top: '33px',
+    top: '30px',
     right: '40px',
     zIndex: '-1',
   },
