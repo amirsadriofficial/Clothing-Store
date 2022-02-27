@@ -5,7 +5,7 @@ const favoritesReducer = (state = { favorites: [] }, action) => {
   switch (action.type) {
     case Types.ADD_TO_FAVORITES:
       newFavorites = [...state.favorites, action.product]
-      localStorage.setItem('Favorites', JSON.stringify(newFavorites))
+      // localStorage.setItem('Favorites', JSON.stringify(newFavorites))
       return {
         ...state,
         favorites: newFavorites,
@@ -16,7 +16,7 @@ const favoritesReducer = (state = { favorites: [] }, action) => {
         state.favorites.findIndex((product) => product === action.product),
         1
       )
-      localStorage.setItem('Favorites', JSON.stringify(newFavorites))
+      // localStorage.setItem('Favorites', JSON.stringify(newFavorites))
       return {
         ...state,
         favorites: newFavorites,

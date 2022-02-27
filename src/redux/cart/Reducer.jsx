@@ -5,7 +5,7 @@ const cartReducer = (state = { carts: [] }, action) => {
   switch (action.type) {
     case Types.ADD_TO_CART:
       newCarts = [...state.carts, action.product]
-      localStorage.setItem('Carts', JSON.stringify(newCarts))
+      // localStorage.setItem('Carts', JSON.stringify(newCarts))
       return {
         ...state,
         carts: newCarts,
@@ -16,7 +16,7 @@ const cartReducer = (state = { carts: [] }, action) => {
         state.carts.findIndex((product) => product === action.product),
         1
       )
-      localStorage.setItem('Carts', JSON.stringify(newCarts))
+      // localStorage.setItem('Carts', JSON.stringify(newCarts))
       return {
         ...state,
         carts: newCarts,
