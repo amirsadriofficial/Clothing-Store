@@ -71,7 +71,7 @@ const Favorites = () => {
                         title={product.name}
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} style={{ marginLeft: '20px' }}>
                       <CardContent>
                         <Typography
                           gutterBottom
