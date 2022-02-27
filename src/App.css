@@ -277,13 +277,14 @@
   }
 }
 
-.slide-fwd-center {
-  -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+.button-animation-hover:hover {
+  -webkit-animation: button-animation-hover 0.45s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: button-animation-hover 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
-  animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@-webkit-keyframes slide-fwd-center {
+@-webkit-keyframes button-animation-hover {
   0% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -294,7 +295,7 @@
   }
 }
 
-@keyframes slide-fwd-center {
+@keyframes button-animation-hover {
   0% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
