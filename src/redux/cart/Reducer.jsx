@@ -11,7 +11,7 @@ const cartReducer = (state = { carts: [] }, action) => {
         carts: newCarts,
       }
     case Types.REMOVE_FROM_CART: {
-      newCarts = { ...state.carts }
+      newCarts = [...state.carts]
       newCarts.splice(
         state.carts.findIndex((product) => product === action.product),
         1
