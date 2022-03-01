@@ -41,8 +41,6 @@ const SingleProduct = () => {
   // const hasFavorite = favorites.map(
   //   (favoriteList) => favoriteList.id === product.id
   // )
-  // console.log('hasProduct: ', hasCart)
-  // console.log('hasFavorite: ', hasFavorite)
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
