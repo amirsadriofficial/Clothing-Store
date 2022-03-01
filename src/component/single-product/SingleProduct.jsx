@@ -104,7 +104,6 @@ const SingleProduct = () => {
       setNum(num - 1)
     }
   }
-  console.log('cartStatus: ', cartStatus)
 
   return (
     <Container className={classes.container}>
