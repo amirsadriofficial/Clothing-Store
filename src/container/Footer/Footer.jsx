@@ -19,13 +19,13 @@ import iconPayFour from '../../assets/images/icons/icon-pay-04.png'
 import iconPayFive from '../../assets/images/icons/icon-pay-05.png'
 import useStyles from './Styles'
 
-const FooterItem = () => {
+const FooterItem = ({ title }) => {
   const classes = useStyles()
 
   return (
     <li className={classes.footerItem}>
       <Link href="#/" className={classes.TextColor}>
-        Men
+        {title}
       </Link>
     </li>
   )
@@ -46,21 +46,9 @@ const Footer = () => {
                   Women
                 </Link>
               </li>
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  Men
-                </Link>
-              </li>
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  Shoes
-                </Link>
-              </li>
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  Watches
-                </Link>
-              </li>
+              <FooterItem title="Men" />
+              <FooterItem title="Shoes" />
+              <FooterItem title="Watches" />
             </ul>
           </Grid>
           <Grid item xs={5} sm={6} md={3}>
@@ -71,6 +59,7 @@ const Footer = () => {
                   Track Order
                 </Link>
               </li>
+              <FooterItem title="Watches" />
               <li className={classes.footerItem}>
                 <Link href="#/" className={classes.TextColor}>
                   Returns
