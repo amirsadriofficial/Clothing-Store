@@ -1,16 +1,10 @@
 const Types = {
-  // Sign In Types
-  SIGN_IN_STARTED: 'SIGN_IN_STARTED',
+  // Sign In Type
   SIGN_IN_SUCCESS: 'SIGN_IN_SUCCESS',
-  SIGN_IN_FAILED: 'SIGN_IN_FAILED',
-  // Sign Up Types
-  SIGN_UP_STARTED: 'SIGN_IN_STARTED',
+  // Sign Up Type
   SIGN_UP_SUCCESS: 'SIGN_IN_SUCCESS',
-  SIGN_UP_FAILED: 'SIGN_IN_FAILED',
-  // Sign Out Types
-  SIGN_OUT_STARTED: 'SIGN_OUT_STARTED',
+  // Sign Out Type
   SIGN_OUT_SUCCESS: 'SIGN_OUT_SUCCESS',
-  SIGN_OUT_FAILED: 'SIGN_OUT_FAILED',
 }
 
 export default Types
