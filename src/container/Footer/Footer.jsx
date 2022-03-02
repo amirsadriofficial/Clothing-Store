@@ -59,22 +59,9 @@ const Footer = () => {
                   Track Order
                 </Link>
               </li>
-              <FooterItem title="Watches" />
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  Returns
-                </Link>
-              </li>
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  Shipping
-                </Link>
-              </li>
-              <li className={classes.footerItem}>
-                <Link href="#/" className={classes.TextColor}>
-                  FAQs
-                </Link>
-              </li>
+              <FooterItem title="Returns" />
+              <FooterItem title="Shipping" />
+              <FooterItem title="FAQs" />
             </ul>
           </Grid>
           <Grid item xs={7} sm={6} md={3}>
