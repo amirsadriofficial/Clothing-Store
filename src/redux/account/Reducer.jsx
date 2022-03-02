@@ -6,12 +6,6 @@ const accountReducer = (state = [], action) => {
   let signoutStorage = []
   switch (action.type) {
     // Sign In
-    case Types.SIGN_IN_STARTED:
-      return {
-        ...state,
-        logged: action.logged,
-        loading: action.loading,
-      }
     case Types.SIGN_IN_SUCCESS:
       signinStorage = [
         {
@@ -33,20 +27,7 @@ const accountReducer = (state = [], action) => {
         loading: action.loading,
         response: action.response,
       }
-    case Types.SIGN_IN_FAILED:
-      return {
-        ...state,
-        logged: action.logged,
-        loading: action.loading,
-        response: action.response,
-      }
     // Sign Up
-    case Types.SIGN_UP_STARTED:
-      return {
-        ...state,
-        logged: action.logged,
-        loading: action.loading,
-      }
     case Types.SIGN_UP_SUCCESS:
       signupStorage = [
         {
@@ -65,13 +46,6 @@ const accountReducer = (state = [], action) => {
         email: signupStorage.email,
         deposit: signupStorage.deposit,
         logged: signupStorage.logged,
-        loading: action.loading,
-        response: action.response,
-      }
-    case Types.SIGN_UP_FAILED:
-      return {
-        ...state,
-        logged: action.logged,
         loading: action.loading,
         response: action.response,
       }
