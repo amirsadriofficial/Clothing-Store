@@ -19,6 +19,18 @@ import iconPayFour from '../../assets/images/icons/icon-pay-04.png'
 import iconPayFive from '../../assets/images/icons/icon-pay-05.png'
 import useStyles from './Styles'
 
+const FooterItem = () => {
+  const classes = useStyles()
+
+  return (
+    <li className={classes.footerItem}>
+      <Link href="#/" className={classes.TextColor}>
+        Men
+      </Link>
+    </li>
+  )
+}
+
 const Footer = () => {
   const classes = useStyles()
 
