@@ -41,11 +41,7 @@ const Footer = () => {
           <Grid item xs={7} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>CATEGORIES</h4>
             <ul>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Women
-                </Link>
-              </li>
+              <FooterItem title="Women" />
               <FooterItem title="Men" />
               <FooterItem title="Shoes" />
               <FooterItem title="Watches" />
@@ -54,11 +50,7 @@ const Footer = () => {
           <Grid item xs={5} sm={6} md={3}>
             <h4 className={classes.titleTextColor}>HELP</h4>
             <ul>
-              <li>
-                <Link href="#/" className={classes.TextColor}>
-                  Track Order
-                </Link>
-              </li>
+              <FooterItem title="Track Order" />
               <FooterItem title="Returns" />
               <FooterItem title="Shipping" />
               <FooterItem title="FAQs" />
