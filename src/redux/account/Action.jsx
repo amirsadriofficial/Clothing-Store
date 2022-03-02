@@ -20,8 +20,6 @@ const SIGN_UP_SUCCESS_ACTION = (formValue) => {
     email: formValue.email,
     deposit: 0.0,
     logged: true,
-    loading: false,
-    response: 'You have successfully signed up!',
   }
 }
 // Sign Out
