@@ -27,8 +27,6 @@ const SIGN_OUT_SUCCESS_ACTION = () => {
   return {
     type: Types.SIGN_OUT_SUCCESS,
     logged: false,
-    loading: false,
-    response: 'You have successfully signed out!',
   }
 }
 
