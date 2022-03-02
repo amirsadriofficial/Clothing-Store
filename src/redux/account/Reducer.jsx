@@ -24,8 +24,6 @@ const accountReducer = (state = [], action) => {
         email: signinStorage.email,
         deposit: signinStorage.deposit,
         logged: signinStorage.logged,
-        loading: action.loading,
-        response: action.response,
       }
     // Sign Up
     case Types.SIGN_UP_SUCCESS:
@@ -46,31 +44,14 @@ const accountReducer = (state = [], action) => {
         email: signupStorage.email,
         deposit: signupStorage.deposit,
         logged: signupStorage.logged,
-        loading: action.loading,
-        response: action.response,
       }
     // Sign Out
-    case Types.SIGN_OUT_STARTED:
-      return {
-        ...state,
-        logged: action.logged,
-        loading: action.loading,
-      }
     case Types.SIGN_OUT_SUCCESS:
       signoutStorage = [{ logged: action.logged }]
       localStorage.setItem('Account', JSON.stringify(signoutStorage))
       return {
         ...state,
         logged: signoutStorage.logged,
-        loading: action.loading,
-        response: action.response,
-      }
-    case Types.SIGN_OUT_FAILED:
-      return {
-        ...state,
-        logged: action.logged,
-        loading: action.loading,
-        response: action.response,
       }
     default:
       return state
