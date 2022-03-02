@@ -9,8 +9,6 @@ const SIGN_IN_SUCCESS_ACTION = (formValue) => {
     email: formValue.email,
     deposit: 420,
     logged: true,
-    loading: false,
-    response: 'You have successfully signed in!',
   }
 }
 // Sign Up
