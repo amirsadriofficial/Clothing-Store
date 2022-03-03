@@ -12,8 +12,6 @@ const IconItems = () => {
   const classes = useStyles()
   const carts = useSelector((state) => state.cartReducer)
   const favorites = useSelector((state) => state.favoritesReducer)
-  // const carts = JSON.parse(localStorage.getItem('Carts'))
-  // const favorites = JSON.parse(localStorage.getItem('Favorites'))
 
   return (
     <>
