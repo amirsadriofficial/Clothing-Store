@@ -45,11 +45,7 @@ const SingleProduct = () => {
     setColor(event.target.value)
   }
   const handleCart = () => {
-    if (
-      cartStatus === 'Removed'
-      // &&
-      // (hasCart === false || hasCart.length === 0)
-    ) {
+    if (cartStatus === 'Removed') {
       dispatch(ADD_TO_CART_ACTION(product))
       setCartStatus('Added')
       Toast.fire({
@@ -67,11 +63,7 @@ const SingleProduct = () => {
     }
   }
   const handleFavorites = () => {
-    if (
-      favoritesStatus === 'Removed'
-      // &&
-      // (hasFavorite === false || hasFavorite.length === 0)
-    ) {
+    if (favoritesStatus === 'Removed') {
       dispatch(ADD_TO_FAVORITES_ACTION(product))
       setFavoritesStatus('Added')
       Toast.fire({
