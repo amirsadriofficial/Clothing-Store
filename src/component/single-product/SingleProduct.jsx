@@ -112,11 +112,7 @@ const SingleProduct = () => {
           </Grid>
         </Hidden>
         <Grid item xs={12} sm={9} md={5}>
-          <img
-            src={product.image}
-            alt="product_image"
-            style={{ width: '100%' }}
-          />
+          <Img product={product} />
         </Grid>
         <Hidden smUp>
           <Grid item xs={12} className={classes.flexRow}>
