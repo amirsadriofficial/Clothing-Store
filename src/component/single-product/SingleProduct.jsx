@@ -32,8 +32,6 @@ const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
   const dispatch = useDispatch()
-  // const favorites = useSelector((state) => state.favoritesReducer)
-  // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
