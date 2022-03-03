@@ -28,11 +28,11 @@ import {
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../redux/favorites/Action'
 
-// const Img = ({ product }) => {
-//   return (
-//     <img src={product.image} alt="product_image" style={{ width: '100%' }} />
-//   )
-// }
+const Img = ({ product }) => {
+  return (
+    <img src={product.image} alt="product_image" style={{ width: '100%' }} />
+  )
+}
 
 const SingleProduct = () => {
   const classes = useStyles()
@@ -101,11 +101,7 @@ const SingleProduct = () => {
         <Hidden xsDown>
           <Grid item xs={12} sm={2} md={1}>
             <Grid item xs={12} md={12}>
-              <img
-                src={product.image}
-                alt="product_image"
-                style={{ width: '100%' }}
-              />
+              <Img product={product} />
             </Grid>
             <Grid item xs={12} md={12}>
               <img
