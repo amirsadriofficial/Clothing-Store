@@ -35,12 +35,6 @@ const SingleProduct = () => {
   // const favorites = useSelector((state) => state.favoritesReducer)
   // const carts = useSelector((state) => state.cartReducer)
   const product = Product.find((item) => item.id === id)
-  // const carts = JSON.parse(localStorage.getItem('Carts'))
-  // const hasCart = carts.map((cartList) => cartList.id === product.id)
-  // const favorites = JSON.parse(localStorage.getItem('Favorites'))
-  // const hasFavorite = favorites.map(
-  //   (favoriteList) => favoriteList.id === product.id
-  // )
   const [num, setNum] = useState(1)
   const [cartStatus, setCartStatus] = useState('Removed')
   const [favoritesStatus, setFavoritesStatus] = useState('Removed')
