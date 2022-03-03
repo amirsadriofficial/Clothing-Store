@@ -24,8 +24,8 @@ import {
   ADD_TO_FAVORITES_ACTION,
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../redux/favorites/Action'
-import useStyles from './Styles'
 import AllProducts from '../../utils/all-products'
+import useStyles from './Styles'
 
 const Cart = () => {
   const classes = useStyles()
