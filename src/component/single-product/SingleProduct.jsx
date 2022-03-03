@@ -28,6 +28,12 @@ import {
   REMOVE_FROM_FAVORITES_ACTION,
 } from '../../redux/favorites/Action'
 
+// const Img = ({ product }) => {
+//   return (
+//     <img src={product.image} alt="product_image" style={{ width: '100%' }} />
+//   )
+// }
+
 const SingleProduct = () => {
   const classes = useStyles()
   const { id } = useParams()
