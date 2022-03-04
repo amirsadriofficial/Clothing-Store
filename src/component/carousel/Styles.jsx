@@ -18,9 +18,6 @@ const useStyles = makeStyles({
     marginTop: '50px',
     marginBottom: '50px',
     backgroundColor: '#f5f5f5',
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
   },
   carouselStyle: {
     paddingBottom: '30px',
