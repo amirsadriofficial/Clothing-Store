@@ -70,9 +70,9 @@ const Cart = () => {
       )
       setState({ ...state, currentProducts: SelectedProducts })
     } else {
-      setState({ ...state })
+      setState({ ...state, currentProducts: SelectedProductsID })
     }
-  }, [])
+  }, [carts])
   const onHandleQuantity = (product, action) => {
     const s = state.currentProducts
     const i = product
